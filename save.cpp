@@ -1,4 +1,4 @@
-###//1. WAP to print Namaste duniya 
+//1. WAP to print Namaste duniya 
 #include<iostream>
 using namespace std;
 int main () {
@@ -6,7 +6,7 @@ int main () {
     return 0;
 }
 
-###// 2.wap to access the variable by declaring it 
+// 2.wap to access the variable by declaring it 
 #include<iostream>
 using namespace std;
 int main () {
@@ -15,7 +15,7 @@ int main () {
     return 0;
 }
 
-###// 3.wap to store values in all data types variables (int,bool,char,float,double)
+// 3.wap to store values in all data types variables (int,bool,char,float,double)
 #include<iostream>
 using namespace std;
 int main () {
