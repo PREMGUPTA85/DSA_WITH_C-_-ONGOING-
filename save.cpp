@@ -8,7 +8,7 @@ int main () {
     return 0;
 }
 ```
-// 2.wap to access the variable by declaring it 
+// ###2.wap to access the variable by declaring it 
 #include<iostream>
 using namespace std;
 int main () {
@@ -17,7 +17,7 @@ int main () {
     return 0;
 }
 
-// 3.wap to store values in all data types variables (int,bool,char,float,double)
+// ###3.wap to store values in all data types variables (int,bool,char,float,double)
 #include<iostream>
 using namespace std;
 int main () {
@@ -40,7 +40,7 @@ int main () {
     return 0;
 } 
 
-// 4.wap to inter_conversion of data - type
+// ###4.wap to inter_conversion of data - type
 #include<iostream>
 #include<iomanip> // iomanip header file used for manipulation/manipulating like decimal precision, output formats setting 
 using namespace std;
@@ -51,7 +51,7 @@ int main () {
     return 0;
 }
 
-// wap to know about the type of data 
+// ###5.wap to know about the type of data 
 #include<iostream>
 #include<typeinfo> // header file type info used for identifying the type of data
 int main (){
@@ -65,7 +65,7 @@ int main (){
 }
 
 
-//6. wap to take an input from the user and print that value by taking input from the user.
+// ###6. wap to take an input from the user and print that value by taking input from the user.
 #include<iostream>
 using namespace std;
 int main () {
@@ -76,7 +76,7 @@ int main () {
     return 0;
 }
 
-// 7.wap to inter conversion of data type by taking an input integer from the user 
+// ###7.wap to inter conversion of data type by taking an input integer from the user 
 #include <iostream>
 #include<iomanip>
 using namespace std;
@@ -93,7 +93,7 @@ int main () {
     return 0;
 }
 
-// 8. wap to enter the budget of user for buying the products.
+// ###8. wap to enter the budget of user for buying the products.
 #include <iostream>
 using namespace std;
 
@@ -117,7 +117,7 @@ int main () {
     return 0;
 }
 
-// 9.wap to enter the marks of user and then print its grade
+// ###9.wap to enter the marks of user and then print its grade
 #include <iostream>
 using namespace std;
 int main () {
@@ -143,7 +143,7 @@ int main () {
     return 0;
 }
 
-// 10.wap by taking an switch statement.
+// ###10.wap by taking an switch statement.
 #include <iostream>
 using namespace std;
 int main () {
@@ -182,7 +182,7 @@ int main () {
     return 0;
 }
 
-// 11.wap using ternary operator in C++
+// ### 11.wap using ternary operator in C++
 #include <iostream>
 using namespace std;
 int main () {
@@ -198,7 +198,7 @@ int main () {
     return 0;
 }
 
-// 12.wap in c++ by using continue keyword
+// ### 12.wap in c++ by using continue keyword
 #include<iostream> // header file included 
 using namespace std;
 // main function of code
