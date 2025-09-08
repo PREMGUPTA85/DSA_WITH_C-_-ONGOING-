@@ -5779,8 +5779,3 @@ int main() {
     return 0;
 }
 
-// auto commit by using extension
-// it shows updates 
-
-// not updated
-// test main branchgit status
