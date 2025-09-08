@@ -1,8 +1,10 @@
-// 2's complement logic
+
+
 #include<iostream>
 #include<vector>
 #include<unordered_map>
 #include<algorithm>
+#include<climits>
 using namespace std;
 
 vector<int> binaryrepresentation(vector<int> &arr){
@@ -53,7 +55,7 @@ void printmap(unordered_map<int, int> freqmap){
 }
 }
 
-int singlenumber(vector<int> &nums){
+int singlenumbermapmethod(vector<int> &nums){
     // freq table
     unordered_map<int, int> freqmap;
   
@@ -111,29 +113,63 @@ void rotatearray(vector<vector<int>> &matrix){
     }
 }
 
+// maximum subarray 
+int maximumsubarraynaivemthod(vector<int> &nums){
+    //naive method
+    // int ans = INT_MIN;
+    // for(int i = 0; i < nums.size(); i++){
+    //     int sum = 0;
+    //     for(int j = i; j < nums.size(); j++){
+    //         sum += nums[j];
+    //         ans = max(ans, sum);
+    //     }
+    // }
+    // return ans;
+}
+
+int maximumsubarraykadanemthod(vector<int> &nums){
+    // kadane algorithm 
+    int ans = INT_MIN;
+    int sum = 0;
+    for(int i = 0; i < nums.size(); i++){
+        sum += nums[i];
+        ans = max(sum, ans);
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return ans;
+}
+
 
 int main() {
     // vector declaration
     //vector<int> arr = {1,0,1,0};
     //binaryrepresentation(arr);
     //  vector<int> arr = {4,1,2,1,2};
-    // cout << singlenumber(arr);
+    // cout << singlenumbermapmethod(arr);
     // 2D vector with representing n * n matrix
-    vector<vector<int>> matrix = {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9}
-    };
-    cout << "Before:\n";
-    int rowsize = matrix.size();
-    int columnsize = matrix[0].size();
-    for(int i = 0; i < rowsize; i++){
-        for(int j = 0; j < columnsize; j++){
-            cout << matrix[i][j] << " ";
-        }
-     cout << endl;
-    }
-    rotatearray(matrix);
+    // vector<vector<int>> matrix = {
+    //     {1,2,3},
+    //     {4,5,6},
+    //     {7,8,9}
+    // };
+    // cout << "Before:\n";
+    // int rowsize = matrix.size();
+    // int columnsize = matrix[0].size();
+    // for(int i = 0; i < rowsize; i++){
+    //     for(int j = 0; j < columnsize; j++){
+    //         cout << matrix[i][j] << " ";
+    //     }
+    //  cout << endl;
+    // }
+    // rotatearray(matrix);
+
+    // maximum subarray 
+    // vector<int> arr = {-2,1,-3,4,-1,2,1,-5,4};
+    // // cout << maximumsubarraynaivemthod(arr);
+    // cout << maximumsubarraykadanemthod(arr);
+
     return 0;
 }
 
