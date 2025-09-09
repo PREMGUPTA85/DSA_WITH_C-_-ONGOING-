@@ -1,6 +1,7 @@
 
 // 10/2 = 5 is output and 10 / - 2 = -5 is output i.e. we need to get quotient but without using /(divisor) and %(modulo) operator
-
+#include<iostream>
+using namespace std;
 int Quotient(int dividend, int divisor){
     int index = -1;
     int start = 0;
