@@ -6133,11 +6133,10 @@ int Quotient(int dividend, int divisor){
 }
 
 int main() {
-    int dividend = 10,  divisor = -3;
+ int dividend = -10,  divisor = -3;
     int ans = Quotient(abs(dividend), abs(divisor));
-    if(dividend < 0 || divisor < 0){
+    if((dividend  > 0 &&  divisor < 0) && (dividend < 0 && divisor > 0)){
         ans = 0 - ans;
     }
-    cout << "dividend = 10,  divisor = -3, Quotient = " << ans;
-    return 0;
+    cout << "dividend = -10,  divisor = -3, Quotient = " << ans;
 }
