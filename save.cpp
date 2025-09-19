@@ -1068,6 +1068,50 @@
 //     }
 // }
 
+// 41.
+// /*
+// 5
+// 1
+// 2*2
+// 3*3*3
+// 4*4*4*4
+// 5*5*5*5*5
+// 4*4*4*4
+// 3*3*3
+// 2*2
+// 1
+// */
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n = 5;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < (2 * i) + 1; j++){
+        if(j & 1){
+            cout << "*";
+        }
+        else {
+            cout << i + 1;
+        }
+    }
+    cout << endl;
+    }
+    for(int i = n - 1; i >= 0; i--){
+        for(int j = 0; j < (2 * i) - 1; j++){
+            if(j & 1){
+                cout << "*";
+            }
+            else {
+                cout << i;
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
 // // 42.
 // /*
 // 5
@@ -1245,6 +1289,18 @@
 //         cout<<endl;
 //     }
 // }
+
+// int main(){
+//     int n = 4;
+//     int print = 4;
+//     for(int i = 0; i < n; i++){
+//         for(int j = 0; j < n - i; j++){
+//             cout << print;
+//         }
+//         print--;
+//         cout << endl;
+//     }
+// }
 // //49.
 // /*
 // 1 
@@ -1406,6 +1462,32 @@
 // *****4*4*4*4*****
 // ****5*5*5*5*5****
 // */
+int main() {
+    int n = 5;
+    int print = 1;
+    for(int i = 0; i < n; i++){
+        // stars
+        for(int j = 0; j < (2 * (n - 1)) - i; j++){
+            cout << "*";
+        }
+
+        for(int j = 0; j < (2 * i) + 1; j++){
+            if(j % 2 == 0){
+                cout << print;
+            }
+            else {
+                cout << "*";
+            }
+        }
+        print++;
+        // stars
+        for(int j = 0; j < (2 * (n - 1)) - i; j++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+    
+}
 // #include<iostream>
 // using namespace std;
 
@@ -1471,6 +1553,44 @@
 //     return 0;
 // }
 
+int main(){
+    int n = 4;
+    int print = 1;
+    for(int i = 0; i < n;i++){
+        for(int j = 0; j < 2 * i + 1; j++){
+            if(j % 2 ==0){
+            cout << print;
+            print++;
+            }
+            else {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+    int ctr = 0;
+    int index;
+    print = (print - n);
+    for(int i = 0; i < n; i++){
+    // print = print - (n - i );
+    // print k index store
+    index = print;
+    int ctr = 0;
+        for(int j = 0; j < (2 * (n - i )- 1); j++){
+            if(j % 2 == 0){
+                cout << print;
+                print++;
+                ctr++;
+            }
+            else {
+                cout << "*";
+            }
+        }
+    print = index - ctr + 1;
+        cout << endl;
+    }
+    return 0;
+}
 // // 55.
 // /*
 // 7
@@ -1961,7 +2081,7 @@
 // #include<iostream>
 // using namespace std;
 
-// //prototype declaration function name and it's three input parameters
+// //prototype declaration function name and it's 2 input parameters
 // int checktarget(int arr[], int size){
 //         int max_ans = INT8_MIN;
 //     for(int i = 0; i < size; i++){
@@ -2033,7 +2153,7 @@
 //         int min_ans = INT8_MAX;
 //     for(int i = 0; i < size; i++){
 //             if(arr[i] < min_ans){
-//                 min_ans = min(min_ans, arr[i]);
+//                 min_ans = arr[i];
 //             }
 //     }
 //     return min_ans;
@@ -2294,6 +2414,38 @@
 //     }
 // }
 
+// void selectionsort(vector<int> &v){
+//     int n = v.size();
+//     for(int i=0; i<n-1; i++){
+//         int minindex = i;
+//         for(int j=i+1; j<n; j++){
+//             if(v[j]<v[minindex]){
+//                 minindex = j;
+//             }
+//         }
+//         swap(v[i], v[minindex]);
+//     }
+//     for(int i=0; i<n; i++){
+//         cout<<v[i]<<" ";
+//     }   
+// }
+
+// void insertionsort(vector<int> &v){
+//     int n = v.size();
+//     for(int i=1; i<n; i++){
+//         int current = v[i];
+//         int j = i-1;
+//         while(v[j]>current && j>=0){
+//             v[j+1] = v[j];
+//             j--;
+//         }
+//         v[j+1] = current;
+//     }
+//     for(int i=0; i<n; i++){
+//         cout<<v[i]<<" ";
+//     }
+// }
+
 // int main () {
 //     int size;
 //     cout << "please enter the size of elements: " << endl;
@@ -2304,6 +2456,9 @@
 //         cin >> arr[i];
 //     }
 //     sortarrays(arr, size);
+//     vector<int> v = {55,44,33,22,11};
+//     selectionsort(v);
+//     insertionsort(v);
 //     return 0;
 // }
 
@@ -2345,7 +2500,7 @@
 //         cin >> a[i];
 //     }
 //     sortZeroOne(a, size);
-//     for(int i = 0;i < size; i++){
+//     for(int i = 0;i < size; i++){-
 //     cout << a[i] << " ";
 //     }
 //     return 0;
@@ -2383,7 +2538,7 @@
 //         cin >> a[i];
 //     }
 //     // sortZeroOne(a, size);
-//     sort(a, a + size); // it will sort the array in ascending order for this we include header file #include<algorithm>
+//    // sort(a, a + size); // it will sort the array in ascending order for this we include header file #include<algorithm>
 //     cout << "after sorting: "<< endl;
 //     for(int i = 0;i < size; i++){
 //     cout << a[i] << " ";
@@ -2528,7 +2683,7 @@
 //         }
 //         cout << endl;
 //     } 
-//     cout << "total triplet pairs: " << count << endl;
+//      cout << "total triplet pairs: " << count << endl;
 // }
 
 // int main () {
@@ -2681,7 +2836,6 @@
 // }
 
 // int findMinimumIn2DArray(int arr[][4], int rowSize, int colSize) {
-
 //     int minValue = INT_MAX;
 
 //     for(int i=0; i<rowSize; i++) {
@@ -3057,12 +3211,7 @@
 
 // int main () {
 //     int n;
-//     cout << "Please enter size: ";
-//     cin >> n;
-//     int arr[1000];
-//     for(int i = 0; i < n; i++){
-//         cin >> arr[i];
-//     }
+//     int arr[] = {1, 10, 9};
 //     pivotindex(arr, n);
 //     return 0;
 // }
@@ -5954,7 +6103,6 @@ int main() {
 }
 
 
-
 int peakmountain(vector<int> &nums){
     int start = 0;
     int end = nums.size() -1;
@@ -6105,10 +6253,6 @@ int main() {
     cout << mySqrt(50);
     return 0;
 }
-
-// git add .
-// git commit -m "update"
-// git push
 
 #include<iostream>
 #include<vector>
@@ -6284,6 +6428,7 @@ int main() {
     return 0;
 }
 
+// Mega class Arrays (Searching and sorting)
 // precision of sqrt
 #include <iostream>
 #include <algorithm>
@@ -6468,3 +6613,138 @@ int main()
     // leetcode qs no. 1482
     return 0;
 }
+
+// custom comparator 
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void print(vector<int> &v) {
+  for (int i = 0; i < v.size(); ++i) {
+    cout << v[i] << " ";
+  }
+  cout << endl;
+}
+
+void printvv(vector<vector<int>> &v) {
+  for (int i = 0; i < v.size(); ++i) {
+    vector<int> &temp = v[i];
+    int a = temp[0];
+    int b = temp[1];
+    cout << a << " " << b << endl;
+  }
+  cout << endl;
+}
+
+// bool mycomp(int &a, int &b) {
+//   // return a < b; // increasing order sorting
+//   return a > b; // decreasing order sorting
+// }
+
+bool mycompfor1stIndex(vector<int> &a, vector<int> &b) {
+  return a[1] > b[1]; // dsc order
+  // return a[1] < b[1]; // asc order
+}
+
+int main() {
+  // vector<int> v = {44, 55, 22, 11, 33};
+  // sort(v.begin(), v.end()); // increasing order sorting
+  // sort(v.begin(), v.end(), mycomp);
+  // print(v);
+
+  // vector of vector sorting
+  vector<vector<int>> v;
+  int n;
+  cout << "Enter size:\n";
+  cin >> n;
+  for (int i = 0; i < n; ++i) {
+    int a, b;
+    cout << "enter a, b" << endl;
+    cin >> a >> b;
+    vector<int> temp;
+    temp.push_back(a);
+    temp.push_back(b);
+    v.push_back(temp);
+  }
+
+  cout << "Here are the Values" << endl;
+  printvv(v);
+  cout << "Sorted by 1st index" << endl;
+  sort(v.begin(), v.end(), mycompfor1stIndex);
+  printvv(v);
+  return 0;
+}
+
+#include<iostream>
+#include<vector>
+#include<set>
+#include<algorithm>
+
+using namespace std;
+  
+// LC:--532
+  
+int findPairs(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        // method -1:-- Two pointer approach
+        int i = 0;
+        int j = 1;
+        // use set for prevent duplicate's
+        set<pair<int, int>> ans;
+        while(j < nums.size()){
+            int diff = nums[j] - nums[i];
+            if(diff == k && i != j){
+                ans.insert({nums[i], nums[j]});
+                i++, j++;
+            }
+            else if(diff > k){
+                i++;
+            }
+            else{
+                j++;
+            }
+        }
+        return ans.size();
+}
+// method -2:-- 
+
+bool bs(vector<int>& nums, int start, int target){
+    int end = nums.size() -1;
+
+    while(start <= end){
+        int mid = (start + end)/2;
+        if(nums[mid] == target){
+            return 1;
+        }
+        else if(nums[mid] > target){
+            // left jao 
+            end = mid - 1;
+        }
+        else {
+            start = mid + 1;
+        }
+    }
+    return 0;
+}
+ int findPairs(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        set<pair<int, int>> ans;
+        for(int i = 0; i < nums.size(); i++){
+            if(bs(nums, i + 1, nums[i] + k) == 1){
+                // insert pair's 
+                ans.insert({nums[i], nums[i] + k});
+            }
+        }
+        return ans.size();
+} 
+
+int main(){
+    vector<int> v = {1,5,1,3,4};
+    // k is diff
+    int k = 2;
+    cout << findPairs(v, k);
+    return 0;   
+}
+
