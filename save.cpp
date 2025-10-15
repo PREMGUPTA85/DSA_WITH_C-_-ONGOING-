@@ -2398,7 +2398,7 @@ int main(){
 // #include<iostream>
 // using namespace std;
 
-// void sortarrays(int arr[], int size){
+// void bubblesort(int arr[], int size){
 //     for(int i = 0; i < size - 1; i++){
 //         for(int j = 0; j < size - i - 1; j++){
 //             if(arr[j] >= arr[j + 1]){
@@ -2455,7 +2455,7 @@ int main(){
 //         cout << "Please enter the number at index: " << i << endl;
 //         cin >> arr[i];
 //     }
-//     sortarrays(arr, size);
+//     bubblesort(arr, size);
 //     vector<int> v = {55,44,33,22,11};
 //     selectionsort(v);
 //     insertionsort(v);
@@ -3223,7 +3223,7 @@ int main(){
 // void pivotindex(int arr[], int n){
 //     int lsum[n] = {0}, rsum[n] = {0};
 //     // cal. lsum array
-//     for(int i = 1; i < n; i++)
+//     for(int i = 1; i < 5; i++)
 //         lsum[i] = lsum[i - 1] + arr[i - 1];
     
 //     // cal.rsum array
@@ -3231,7 +3231,7 @@ int main(){
 //         rsum[i] = rsum[i + 1] + arr[i + 1];
 //     }
 //     // check krte h
-//     for(int i = 0; i < n; i++){
+//     for(int i = 0; i < 5; i++){
 //         if(lsum[i] == rsum[i]) 
 //             cout << "yes index is: " << i;
 //     }
@@ -3239,11 +3239,8 @@ int main(){
 // }
 
 // int main () {
-//     int n;
-//     cout << "Please enter size: ";
-//     cin >> n;
-//     int arr[1000];
-//     for(int i = 0; i < n; i++){
+//     int arr[5] = {1,2,3,0,3};
+//     for(int i = 0; i < 5; i++){
 //         cin >> arr[i];
 //     }
 //     pivotindex(arr, n);
@@ -3349,10 +3346,8 @@ int main(){
 // }
 
 // int main () {
-//     int arr[1000];
-//     int size;
-//     cin >> size;
-//     for(int i = 0; i < size; i++){
+//     int arr[] = {6, 1, 12, -5, -6, 50, 3};
+//     for(int i = 0; i < 7; i++){
 //         cin >> arr[i];
 //     }
 //     int k;
@@ -4617,101 +4612,7 @@ int main() {
     return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //// oops(objects + classes) week 8
+// //// ------------------------------- oops(objects + classes) week 8-------------------------------------------------
 // #include<iostream>
 // #include<string>
 // using namespace std;
@@ -4840,7 +4741,7 @@ int main() {
 // //     }
 
 // //     // parameterised ctor called later
-// //     Student(int id, int age, int nos, string name, float gpa, string gf, ) {
+// //     Student(int id, int age, int nos, string name, float gpa, string gf) {
 // //         cout << "parameterised ctor called.\n";
 // //         this->id = id; 
 // //         this->age = age;
@@ -4877,7 +4778,7 @@ int main() {
 
 // // // creating objects after class
 // // int main () {
-// //    Student A(1,12, "john", 5, 7.8, "Menu");
+// //    Student A(1, 12, 4, "john", 7.8, "Menu");
 
 // //    cout << A.age << endl;
 
@@ -6638,45 +6539,47 @@ void printvv(vector<vector<int>> &v) {
   cout << endl;
 }
 
-// bool mycomp(int &a, int &b) {
-//   // return a < b; // increasing order sorting
-//   return a > b; // decreasing order sorting
-// }
+bool mycomp(int &a, int &b) {
+  // return a < b; // increasing order sorting
+  return a > b; // decreasing order sorting
+}
 
+// yha hum 2 vector k beach m compare kr rhe h isliye pass by reference me 2 vector pass kiye h 
 bool mycompfor1stIndex(vector<int> &a, vector<int> &b) {
   return a[1] > b[1]; // dsc order
   // return a[1] < b[1]; // asc order
 }
 
 int main() {
-  // vector<int> v = {44, 55, 22, 11, 33};
+   vector<int> v = {44, 55, 22, 11, 33};
   // sort(v.begin(), v.end()); // increasing order sorting
-  // sort(v.begin(), v.end(), mycomp);
-  // print(v);
+   sort(v.begin(), v.end(), mycomp);
+   print(v);
 
   // vector of vector sorting
-  vector<vector<int>> v;
-  int n;
-  cout << "Enter size:\n";
-  cin >> n;
-  for (int i = 0; i < n; ++i) {
-    int a, b;
-    cout << "enter a, b" << endl;
-    cin >> a >> b;
-    vector<int> temp;
-    temp.push_back(a);
-    temp.push_back(b);
-    v.push_back(temp);
-  }
+//   vector<vector<int>> v;
+//   int n;
+//   cout << "Enter size:\n";
+//   cin >> n;
+//   for (int i = 0; i < n; ++i) {
+//     int a, b;
+//     cout << "enter a, b" << endl;
+//     cin >> a >> b;
+//     vector<int> temp;
+//     temp.push_back(a);
+//     temp.push_back(b);
+//     v.push_back(temp);
+//   }
 
-  cout << "Here are the Values" << endl;
-  printvv(v);
-  cout << "Sorted by 1st index" << endl;
-  sort(v.begin(), v.end(), mycompfor1stIndex);
-  printvv(v);
-  return 0;
+//   cout << "Here are the Values" << endl;
+//   printvv(v);
+//   cout << "Sorted by 1st index" << endl;
+//   sort(v.begin(), v.end(), mycompfor1stIndex);
+//   printvv(v);
+//   return 0;
 }
 
+// ---------------------------------[Week -4 Assignment]-------------------------------------
 #include<iostream>
 #include<vector>
 #include<set>
@@ -6748,3 +6651,161 @@ int main(){
     return 0;   
 }
 
+// exponential search 
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    int key;
+    cin >> key;
+
+    // exponential search
+    if(arr[0] == key){
+        cout << "Present at index 0" << endl;
+        return 0;
+    }
+    int i = 1;
+    while(i < n && arr[i] <= key){
+        i = i * 2;
+    }
+
+    // binary search
+    int low = i / 2;
+    int high = min(i, n - 1);
+    while(low <= high){
+        int mid = (low + high) / 2;
+        if(arr[mid] == key){
+            cout << "Present at index " << mid << endl;
+            return 0;
+        }
+        else if(arr[mid] < key){
+            low = mid + 1;
+        }
+        else{
+            high = mid - 1;
+        }
+    }
+    cout << "Not present" << endl;
+    return 0;
+}
+
+// book allocation problem 
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+// https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1
+bool isPossible(vector<int> arr, int n, int m, int mid){
+    int studentCount = 1;
+    int pageSum = 0;
+
+    for(int i = 0; i < n; i++){
+        if(arr[i] > mid){
+            return false;
+        }
+        if(pageSum + arr[i] > mid){
+            studentCount++;
+            pageSum = arr[i];
+            if(studentCount > m){
+                return false;
+            }
+        }
+        else{
+            pageSum += arr[i];
+        }
+}
+    return true;
+}
+
+int allocateBooks(vector<int> arr, int n, int m){
+  if(m > n){
+    return -1;}  
+    int start = 0;
+    int end = accumulate(arr.begin(), arr.end(), 0);
+    int ans = -1;
+    // use mid = start + (end - start) / 2 to avoid overflow bcause (start + end) can exceed the range of integer
+
+    while(start <= end){
+      int mid = start + ((end - start) >> 1);
+        if(isPossible(arr, n, m, mid)){
+            ans = mid;
+            end = mid - 1;
+        }
+        else{
+            start = mid + 1;
+        }
+    }
+    return ans;
+}
+
+int main(){
+    int n;
+    cout << "Enter number of books: ";
+    cin >> n;
+    vector<int> arr(n);
+    cout << "Enter number of pages in each book: ";
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    int m;
+    cout << "Enter number of students: ";
+    cin >> m;
+
+    cout << "Minimum number of pages allocated to a student is: " << allocateBooks(arr, n, m) << endl;
+    return 0;
+}
+
+// -----------------------------------------(Char arrays and strings)----------------------------------------
+#include<iostream>
+using namespace std;
+
+
+int getLength(char name[], int size) {
+
+    int count = 0;
+
+    // for(int index=0; index<size; index++) {
+    //     if(arr[index] == '\0') {
+    //         break;
+    //     }
+    //     else {
+    //         count++;
+    //     }
+    // }
+
+    // int index = 0;
+    // while(arr[index] != '\0') {
+    //     //jab tak array me null character nahi milta
+    //     //tab tak increment karo
+    //     //and aage badhi
+    //     count++;
+    //     index++;
+    // }
+    //return kardo count  
+
+    //or
+
+    int count = 0;
+    // for(int i = 0; i < size; i++){
+    //     if(name[i] == '\0') break;
+    //     else if(name[i] == ' ') continue;
+    //     else count++;
+    // }
+
+    // or by using while loop
+    int index = 0;
+     while(name[index] != '\0' && index < size){
+        if(name[index] != ' ')
+            count++;
+        index++;
+    }
+    return count;
+
+}
