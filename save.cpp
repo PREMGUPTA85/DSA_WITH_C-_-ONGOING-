@@ -6809,3 +6809,110 @@ int getLength(char name[], int size) {
     return count;
 
 }
+
+
+    
+//original char -> '@'
+//newChar -> ' '
+void replaceCharacter(char originalChar, char newChar, char arr[], int size) {
+    for(int i=0; i<size; i++) {
+        if(arr[i] == originalChar) {
+            arr[i] = newChar;
+        }
+    }
+} 
+
+
+void convertIntoUpperCase(char arr[], int n) {
+    int len = getLength(arr,n);
+    for(int i=0; i<len; i++) {
+        
+        char ch = arr[i];
+        //if letter is a lowercase letter
+        //then only convert it
+        if(ch >='a' && ch<='z') {
+            ch  = ch -'a' + 'A';
+        }    
+        arr[i] = ch;
+    }
+}
+
+void convertIntoLowerCase(char arr[], int n) {
+    int len = getLength(arr,n);
+    for(int i=0; i<len; i++) {
+        
+        char ch = arr[i];
+        //if letter is a lowercase letter
+        //then only convert it
+        if(ch >='A' && ch<='Z') {
+            ch  = ch -'A' + 'a';
+        }    
+        arr[i] = ch;
+    }
+}
+
+
+void reverseCharArray(char arr[], int n) {
+    int len = getLength(arr,n);
+
+    int i = 0;
+    int j = len-1;
+
+    while(i <= j) {
+        swap(arr[i], arr[j]);
+        i++;
+        j--;
+    }
+}
+
+bool checkPalindrome(char arr[], int n) {
+    int len = getLength(arr,n);
+    int i=0;
+    int j=len-1;
+
+    while(i <= j) {
+        if(arr[i] == arr[j]) {
+            i++;
+            j--;
+        }
+        else {
+            //not a palindrome
+            return false;
+        }
+    }
+    //agar main yha tk aagya
+    //iska maltlab saaare char check ho chuke h
+    //and different character nahi mila
+    //iska matlab valid palindrome hai
+    //iska mtalb return truel
+    return true;
+}
+
+int main() {
+
+    char arr1[100];
+    cout << "Enter the input" << endl;
+    cin >> arr1;
+
+    char arr2[100];
+    cout << "Enter the input" << endl;
+    cin >> arr2;
+
+    //cout << strlen(arr1) << endl;
+    //cout << strcat(arr1,arr2) << endl;
+    
+
+
+    // char arr[1000];
+    // cin >> arr;
+
+    // cout << "Palindomr or not: " << checkPalindrome(arr,1000) << endl;
+
+    // cout << "before " << arr << endl;
+    
+    // reverseCharArray(arr,1000);
+
+    // cout << "after " << arr << endl;
+
+
+
