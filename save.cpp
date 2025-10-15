@@ -6916,3 +6916,42 @@ int main() {
 
 
 
+
+    //convertIntoLowerCase(arr,1000);
+    //convertIntoUpperCase(arr,1000);
+    //replaceCharacter('@', ' ', arr, 1000);
+    //cout << arr << endl;
+    //cout << getLength(arr,1000) << endl;
+
+
+
+
+
+    // char arr[100];
+
+    // cout << "Enter input" << endl;
+    // //cin >> arr;
+    // cin.getline(arr, 80, '.'); 
+    // cout << endl << arr << endl;
+
+
+
+    // //creation
+    // char arr[100];
+
+    // cout << "Enter your name" << endl;
+    // //input
+    // //cin >> arr;
+    // cin.getline(arr, 100);
+    // //print
+    // cout << "Your name is: " << arr << endl;
+    // cout << arr[0] << "-> " << (int)arr[0] << endl;
+    // cout << arr[1] << "-> " << (int)arr[1] << endl;
+    // cout << arr[2] <<"-> " << (int)arr[2] << endl;
+    // cout << arr[3] << "-> " << (int)arr[3] << endl;
+    // cout << arr[4] << "-> " << (int)arr[4] << endl;
+    //cout << arr[5] <<"-> " << (int)arr[5] << endl;
+    return 0;
+}
+
+// 
