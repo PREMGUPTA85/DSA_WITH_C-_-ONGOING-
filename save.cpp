@@ -7181,3 +7181,18 @@ int main() {
     string s;
     cin>>s;
     cout<<countSubstrings(s);     
+/* inout: "abc"  output: 3
+    input: "aaa"  output: 6*/
+    cout << removeDuplicates(s); 
+    /*input: "abbaca" output: "ca"
+    input: "azxxzy" output: "ay"  */
+    cout << removeOccurrences(s, "abc"); 
+    /* input: "daabcbaabcbc" output: "dab"
+     input: "axxxxyyyyb" output: "ab" */
+
+    cout << validPalindrome(s); 
+    /* input: "aba" output: true
+    input: "abca" output: true
+    input: "abc" output: false */
+    return 0;
+}
