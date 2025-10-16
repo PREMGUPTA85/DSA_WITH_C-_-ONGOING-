@@ -7176,3 +7176,8 @@ bool checkPalindrome(string str, int s, int e) {
         //valid palindome, without any deletion
         return true;
     }
+
+int main() {
+    string s;
+    cin>>s;
+    cout<<countSubstrings(s);     
