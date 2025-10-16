@@ -7090,3 +7090,23 @@ int expandAroundCenter(string s, int i, int j) {
     return 0;
 }
 
+
+string removeDuplicates(string s) {
+        //intialise ans string as empty string
+        string ans = "";        
+        int n = s.length();
+
+        for(int i=0; i<n; i++) {
+            char currCharacter = s[i];
+            // push tabhi kro jb string m kuch n ho aur jo jaa rha h vo uske pehle wale k barabar n ho 
+            if(ans.empty() || currCharacter != ans.back()) {
+                //if ans is empty, seedha push karo
+                ans.push_back(currCharacter);
+            }//rightmost character of ans = ans.back()
+            else if(currCharacter == ans.back()) {
+                // same element jaa rha h to pehle wala delete kro 
+                ans.pop_back();
+            }
+        }
+        return ans;
+    }
