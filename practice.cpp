@@ -1,185 +1,33 @@
-// precision of sqrt
-#include <iostream>
-#include <algorithm>
-#include<vector>
+#include<bits/stdc++.h>
 using namespace std;
+vector<int> binaryrepresentation(vector<int> &arr){
+    // size of declared vector
+    int n = arr.size();
+    // new vector 
+    vector<int> twoscomp(n + 1, 0);
 
-bool canWeMakeMBouquetsWithDDays(vector<int> &bloomDay, int m, int k, int D)
-    {
-        int counter = 0;
-        for (int i = 0; i < bloomDay.size(); i++)
-        {
-            // check whether the ith flower is bloomed or not
-            if (bloomDay[i] <= D)
-            {
-                // bloom ho gaya hoga
-                counter++;
-            }
-            if (counter == k)
-            {
-                m--; // i can make a Bouquet
-                counter = 0;
-                if (m == 0)
-                    break;
-            }
-
-            // not bloomed case
-            if (bloomDay[i] > D)
-                counter = 0;
-        }
-        return m == 0; // were you able to make m Bouquets?
-    }
-    int minDays(vector<int> &bloomDay, int m, int k)
-    {
-        long long int requirement = (long long int)m * (long long int)k;
-        if (bloomDay.size() < requirement)
-            return -1;
-
-        int start = *min_element(bloomDay.begin(), bloomDay.end()); // at least 1 flower is bloomed
-        int end = *max_element(bloomDay.begin(), bloomDay.end());   // all flowers are bloomed, pkka bna lunga
-        int ans = 0;
-        while (start <= end)
-        {
-            int mid = (start + end) >> 1;
-            int day = mid;
-            if (canWeMakeMBouquetsWithDDays(bloomDay, m, k, day))
-            {
-                ans = mid;
-                end = mid - 1;
-            }
-            else
-                start = mid + 1;
-        }
-        return ans;
+    // flip the array
+    for(int i = n - 1; i >= 0; i--){
+        twoscomp[i + 1] = arr[i] == 0 ? 1 : 0;
     }
 
-// koko eating bananas
-bool canKokoFinishBananasWithKSpeed(vector<int> &piles, int h, int k)
-    {
-        long long int totalHoursTakenByKokoToFinishAllBananas = 0;
-        for (int i = 0; i < piles.size(); i++)
-            totalHoursTakenByKokoToFinishAllBananas += ceil(piles[i] / (double)k);
-
-        // if(totalHoursTakenByKokoToFinishAllBananas <= h) return true;
-        // return false;
-        return totalHoursTakenByKokoToFinishAllBananas <= h;
+    // add 1 
+    int carry = 1;
+    int sum = 0;
+    for(int i = twoscomp.size() - 1; i >= 0; i--){
+        sum = twoscomp[i] + carry;
+        twoscomp[i] = sum % 2;
+        carry = sum / 2;
     }
 
-    int minEatingSpeed(vector<int> &piles, int h)
-    {
-        int start = 1;
-        // auto it = max_element(piles.begin(), piles.end());
-        // int end = *it;
-        int end = *max_element(piles.begin(), piles.end());
-        // end to mere pkka ans hai,
-        int ans = 0;
-
-        // TC: O(Log(Max(Piles)) * O(n)) -> O(n*log(max(piles)))
-        while (start <= end)
-        {
-            int mid = (start + end) >> 1;
-            int k = mid;
-            if (canKokoFinishBananasWithKSpeed(piles, h, k))
-            {
-                // koko will finish all bananas
-                // without being caught
-                ans = k;
-                end = mid - 1;
-            }
-            else
-                start = mid + 1;
-        }
-        return ans;
+    if(carry == 0){
+        twoscomp.erase(twoscomp.begin());
     }
-
-
-int mySqrt(int n)
-{
-    int s = 0, e = n;
-    int ans = 0;
-    while (s <= e)
-    {
-        int mid = (s + e) >> 1;
-        if (mid * mid <= n)
-        {
-            ans = mid;
-            s = mid + 1; // go right
-        }
-        else
-            e = mid - 1; //  left jata hu
+    // print result
+    for(int i = 0; i < twoscomp.size() ; i++){
+        cout << twoscomp[i];
     }
-    return ans;
-}
+    cout << endl;
 
-double myPrecisionSqrt(int n)
-{
-    double sqrt = mySqrt(n); // -> O(logn)
-
-    /* O(precision) */
-    int precision = 9;
-    double step = 0.1;
-    while (precision--)
-    {
-        double j = sqrt; // j->7.0;
-        while (j * j <= n)
-        {
-            // store and compute
-            sqrt = j;
-            j += step; // j-> 7.1
-        }
-        // after this while loop i got 1 precision ans.
-        step /= 10;
-    }
-    return sqrt;
-}
-
-
-double BSPrecision(int n)
-{
-    double start = 0;
-    double end = n;
-    double ans = 0;
-    while ((end - start) > 0.000000001)
-    {
-        double mid = (start + end) / 2;
-        double sqr = mid * mid;
-        if (sqr <= n)
-        {
-            ans = mid;
-            start = mid + 0.000000000000000000000000001;
-        }
-        else
-            end = mid - 0.000000000000000000000000001;
-    }
-    return ans;
-}
-
-// agar koi no. perfect square nhi h to uska perfect square root nhi ho skta
-int main()
-{
-    int n = 63;
-    // double ans = myPrecisionSqrt(n); // TC: O(logn) + O(Precision).
-    // printf("M1: Precision Sqrt: %.9f\n", ans);
-    // cout << ans << endl;
-    // cout hota hai, it only print 5 precision.
-
-    // zada kes kre?
-
-    // double ans = BSPrecision(n);
-    // printf("M2: Precision Sqrt: %.9f\n", ans);
-
-    // coco eating bananas
-    vector<int> piles = {3,6,7,11};
-    int h = 8; // guard gya h 8 hrs k liye
-    cout << minEatingSpeed(piles, h);  // 4 o/p -->aaya kaise kya chahiye tha 
-    // TOTAL MINIMUM hours <= guard hours hone chahiye 
-    // leetcode qs no. 875
-
-    // m bouquets with k flowers
-    vector<int> bloomDay = {1,10,3,10,2};   
-    int m = 3; // bouquets
-    int k = 1; // flowers in each bouquet   
-    cout << minDays(bloomDay, m, k); // 3 o/p
-    // leetcode qs no. 1482
-    return 0;
+    return twoscomp;
 }
