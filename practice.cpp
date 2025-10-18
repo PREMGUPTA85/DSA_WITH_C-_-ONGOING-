@@ -102,3 +102,19 @@ void rotatearray(vector<vector<int>> &matrix){
     }
 }
 
+
+
+// maximum subarray 
+int maximumsubarraynaivemthod(vector<int> &nums){
+    //naive method
+    // int ans = INT_MIN;
+    // for(int i = 0; i < nums.size(); i++){
+    //     int sum = 0;
+    //     for(int j = i; j < nums.size(); j++){
+    //         sum += nums[j];
+    //         ans = max(ans, sum);
+    //     }
+    // }
+    // return ans;
+}
+
