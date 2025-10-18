@@ -133,3 +133,35 @@ int maximumsubarraykadanemthod(vector<int> &nums){
     return ans;
 }
 
+
+int main() {
+    // vector declaration
+    vector<int> arr = {1,0,1,0};
+    binaryrepresentation(arr);
+    //  vector<int> arr = {4,1,2,1,2};
+    // cout << singlenumbermapmethod(arr);
+    // 2D vector with representing n * n matrix
+    // vector<vector<int>> matrix = {
+    //     {1,2,3},
+    //     {4,5,6},
+    //     {7,8,9}
+    // };
+    // cout << "Before:\n";
+    // int rowsize = matrix.size();
+    // int columnsize = matrix[0].size();
+    // for(int i = 0; i < rowsize; i++){
+    //     for(int j = 0; j < columnsize; j++){
+    //         cout << matrix[i][j] << " ";
+    //     }
+    //  cout << endl;
+    // }
+    // rotatearray(matrix);
+
+    // maximum subarray 
+    // vector<int> arr = {-2,1,-3,4,-1,2,1,-5,4};
+    // // cout << maximumsubarraynaivemthod(arr);
+    // cout << maximumsubarraykadanemthod(arr);
+
+    return 0;
+}
+
