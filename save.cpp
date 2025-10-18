@@ -7287,3 +7287,27 @@ string orderCopy;
         return s;
     }
 
+
+void normalise(string &str) {
+        char start = 'a';
+        unordered_map<char,char> mapping;
+
+        for(int i=0; i<str.length(); i++) {
+            char stringKaCharacter = str[i];
+            if(mapping.find(stringKaCharacter) == mapping.end()) {
+                //if mapping pehle se present nahi h 
+                //then create it and move ahead
+                mapping[stringKaCharacter] = start;
+                start++;
+            }
+        }
+
+        //mapping create ho chuki h 
+        //string str ko update normalise kardo using mapping 
+        for(int i=0; i<str.length(); i++) {
+            char mappedCharacter = mapping[str[i]];
+            str[i] = mappedCharacter;
+        }
+        //toh humne str wali string ko normalise / update krdia 
+    }
+
