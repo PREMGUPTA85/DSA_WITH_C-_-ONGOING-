@@ -31,3 +31,14 @@ vector<int> binaryrepresentation(vector<int> &arr){
 
     return twoscomp;
 }
+
+
+void printmap(unordered_map<int, int> freqmap){
+    unordered_map<int, int>:: iterator it;
+    cout << "\n-- Map has below things--\n" ;
+  for(it = freqmap.begin(); it != freqmap.end(); it++){
+        int key = it->first;
+        int freq = it->second;
+    cout << key << " " << freq << endl;
+}
+}
