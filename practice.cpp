@@ -118,3 +118,18 @@ int maximumsubarraynaivemthod(vector<int> &nums){
     // return ans;
 }
 
+
+int maximumsubarraykadanemthod(vector<int> &nums){
+    // kadane algorithm 
+    int ans = INT_MIN;
+    int sum = 0;
+    for(int i = 0; i < nums.size(); i++){
+        sum += nums[i];
+        ans = max(sum, ans);
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return ans;
+}
+
