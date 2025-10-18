@@ -5794,7 +5794,6 @@ int missingnumbersirlogic(int arr[], int size){
         }
         mid = start + (end - start)/2;
         }
-        
     return index;
     }
 
@@ -6809,8 +6808,6 @@ int getLength(char name[], int size) {
     return count;
 
 }
-
-
     
 //original char -> '@'
 //newChar -> ' '
@@ -6917,6 +6914,8 @@ int main() {
 
 
 
+
+
     //convertIntoLowerCase(arr,1000);
     //convertIntoUpperCase(arr,1000);
     //replaceCharacter('@', ' ', arr, 1000);
@@ -6954,7 +6953,9 @@ int main() {
     return 0;
 }
 
-// #include<iostream>
+// -------------------------------------------(char, arrays and strings)----------------------------------------
+// char , arrays and string class - 1
+#include<iostream>
 using namespace std;
 
 
@@ -7053,6 +7054,9 @@ int main() {
     // cout << str[0] << endl;
 
 
+
+    return 0;
+}
 //-------------------------------------------------------------------------------------------------------------------------------------
 // char, arrays and strings - 2
 #include<bits/stdc++.h>
@@ -7087,11 +7091,7 @@ int expandAroundCenter(string s, int i, int j) {
     }
 
 
-    return 0;
-}
-
-
-string removeDuplicates(string s) {
+    string removeDuplicates(string s) {
         //intialise ans string as empty string
         string ans = "";        
         int n = s.length();
@@ -7112,7 +7112,7 @@ string removeDuplicates(string s) {
     }
 
 
-string removeOccurrences(string full, string pattern) {
+    string removeOccurrences(string full, string pattern) {
         
 
         //jab tak full string k andar pattern string 
@@ -7131,7 +7131,6 @@ string removeOccurrences(string full, string pattern) {
         return full;
 
     }
-
 
 
 bool checkPalindrome(string str, int s, int e) {
@@ -7181,7 +7180,7 @@ int main() {
     string s;
     cin>>s;
     cout<<countSubstrings(s);     
-/* inout: "abc"  output: 3
+    /* inout: "abc"  output: 3
     input: "aaa"  output: 6*/
     cout << removeDuplicates(s); 
     /*input: "abbaca" output: "ca"
@@ -7197,9 +7196,8 @@ int main() {
     return 0;
 }
 
-// Char , arrays and strings class - 3
- #include<bits/stdc++.h>
- using namespace std;
+//------------------------------------------------------------------------------------------------------------------------
+//char, arrays and strings - 3
 int garbageCollection(vector<string>& garbage, vector<int>& travel) {
         // for truck G(glass)
         int pickg = 0, travelg = 0, lasthouseg = 0;
@@ -7243,7 +7241,6 @@ int garbageCollection(vector<string>& garbage, vector<int>& travel) {
         return totalpickingtime + totaltraveltime;
     }
 
-
 string decodeMessage(string key, string message) {
         // create mapping 
         unordered_map<char, char> mapping;
@@ -7274,7 +7271,6 @@ string decodeMessage(string key, string message) {
         }
         return ans;
     }
-
 
 string orderCopy;
     static bool cmp(char a, char b){
@@ -7310,7 +7306,6 @@ void normalise(string &str) {
         }
         //toh humne str wali string ko normalise / update krdia 
     }
-
 
     vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
         vector<string> ans ;
