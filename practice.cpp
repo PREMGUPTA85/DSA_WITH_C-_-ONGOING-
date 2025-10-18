@@ -68,3 +68,37 @@ int singlenumbermapmethod(vector<int> &nums){
     }
     return ans;
 }
+
+void rotatearray(vector<vector<int>> &matrix){
+    // new matrix for store transpose
+
+    // step - 1 transpose 
+    int rowsize = matrix.size();
+    int columnsize = matrix[0].size();
+        vector<vector<int>> newm(rowsize, vector<int>(columnsize, 0));
+    for(int i = 0; i < rowsize; i++){
+        for(int j = 0; j < columnsize; j++){
+            //newm[i][j] = matrix[j][i]; by self method
+            swap(newm[i][j], matrix[j][i]);
+        }
+    }
+    cout << "Transpose:\n";
+    for(int i = 0; i < rowsize; i++){
+        for(int j = 0; j < columnsize; j++){
+            cout << newm[i][j] << " ";
+        }
+        cout << endl;
+    }
+    // step 2. reverse row wise
+    cout << "Rotate array:\n";
+    for(int i = 0; i < rowsize; i++){
+        reverse(newm[i].begin(), newm[i].end());
+    }
+       for(int i = 0; i < rowsize; i++){
+        for(int j = 0; j < columnsize; j++){
+            cout << newm[i][j] << " ";
+        }
+     cout << endl;
+    }
+}
+
