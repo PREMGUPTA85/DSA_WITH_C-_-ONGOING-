@@ -7311,3 +7311,26 @@ void normalise(string &str) {
         //toh humne str wali string ko normalise / update krdia 
     }
 
+
+    vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
+        vector<string> ans ;
+
+        //step A: pattern normalise 
+        normalise(pattern);
+        ///stepB: words ki list me hr ek word ko normlaise 
+        // karna hai, and compare krna h pattern se
+        //if pattern k equal aagya, toh ans me store krna h 
+        for(int i=0; i<words.size(); i++) {
+            //ith string 
+            string currWord = words[i];
+            normalise(currWord);
+            if(currWord.compare(pattern) == 0) {
+                // if both normalised string are equal 
+                // ans m store
+                ans.push_back(words[i]);
+            }
+        }
+
+        return ans;
+    }
+
