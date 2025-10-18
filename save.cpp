@@ -7334,3 +7334,14 @@ void normalise(string &str) {
         return ans;
     }
 
+int main() {
+    // vector<string> garbage = {"G","P","GP","GG"};
+    // vector<int> travel = {2,4,3};
+    // cout << garbageCollection(garbage, travel); // leetcoe qs no. 2391
+    cout << decodeMessage("the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv"); // leetcode qs no. 2325
+    cout << customSortString("cba", "abcd"); // leetcode qs no. 791 // output: "cbad"
+    // here output me cba first aayega kyuki order me cba pehle h then d
+    cout << findAndReplacePattern({"abc","deq","mee","aqq","dkd","ccc"}, "abb"); // leetcode qs no. 890 
+    // here output me mee and aqq aayega bcz dono ka pattern abb type me h 
+    return 0;
+}
