@@ -7242,3 +7242,35 @@ int garbageCollection(vector<string>& garbage, vector<int>& travel) {
         int totaltraveltime = travelp + travelm + travelg;
         return totalpickingtime + totaltraveltime;
     }
+
+
+string decodeMessage(string key, string message) {
+        // create mapping 
+        unordered_map<char, char> mapping;
+        char space = ' ';
+        mapping[space] = space;
+        char start = 'a';
+        int index = 0;
+
+        while(start <= 'z' && index < key.length()){
+            char keyKaCurrentCharacter = key[index];
+            // mapping -> KeyKaCurrentCharacter -> alphabet
+            if(mapping.find(keyKaCurrentCharacter) != mapping.end()){
+                index++;
+            }
+            else {
+                mapping[keyKaCurrentCharacter] = start;
+                start++;
+                index++;
+            }
+        }
+
+        // 
+        string ans = "";
+        for(int i = 0; i < message.length(); i++){
+            char msgCharacter = message[i];
+           char mappedCharacter = mapping[msgCharacter];
+            ans.push_back(mappedCharacter);
+        }
+        return ans;
+    }
