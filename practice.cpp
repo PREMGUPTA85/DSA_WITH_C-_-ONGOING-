@@ -42,3 +42,29 @@ void printmap(unordered_map<int, int> freqmap){
     cout << key << " " << freq << endl;
 }
 }
+
+
+
+int singlenumbermapmethod(vector<int> &nums){
+    // freq table
+    unordered_map<int, int> freqmap;
+  
+    //add freqs to the map table 
+    for(int i = 0; i < nums.size(); i++){
+        int num = nums[i];
+        freqmap[num] += 1;
+        // printmap(freqmap);
+}
+// return -1;
+    unordered_map<int, int>:: iterator it;
+    int ans;
+    for(it = freqmap.begin(); it != freqmap.end(); it++){
+        int key = it->first;
+        int freq = it->second;
+        if(freq == 1){
+            ans = key;
+            break;
+        }
+    }
+    return ans;
+}
