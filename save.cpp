@@ -7274,3 +7274,9 @@ string decodeMessage(string key, string message) {
         }
         return ans;
     }
+
+
+string orderCopy;
+    static bool cmp(char a, char b){
+        return (orderCopy.find(a) < orderCopy.find(b));
+    }
