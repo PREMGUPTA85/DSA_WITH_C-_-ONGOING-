@@ -7197,5 +7197,48 @@ int main() {
     return 0;
 }
 
-// #include<bits/stdc++.h>
-// using namespace std;
+// Char , arrays and strings class - 3
+ #include<bits/stdc++.h>
+ using namespace std;
+int garbageCollection(vector<string>& garbage, vector<int>& travel) {
+        // for truck G(glass)
+        int pickg = 0, travelg = 0, lasthouseg = 0;
+        // for truck M(Metal)
+        int pickm = 0, travelm = 0, lasthousem = 0;
+        // for truck P(paper)
+        int pickp = 0, travelp = 0, lasthousep = 0;
+
+        for(int i = 0; i < garbage.size(); i++){
+            string currhouse = garbage[i];
+            for(int j = 0; j < currhouse.length(); j++){
+                char currgarbage = currhouse[j];
+                if(currgarbage == 'G') {
+                    pickg++;
+                    lasthouseg = i;
+            }
+                else if(currgarbage == 'P'){
+                    pickp++;
+                    lasthousep = i;
+                }
+                else if(currgarbage == 'M'){
+                    pickm++;
+                    lasthousem = i;
+                }
+            }
+        }
+
+        // travel time
+        for(int i = 0; i < lasthouseg ; i++){
+            travelg += travel[i];
+        }
+        for(int i = 0; i < lasthousep ; i++){
+            travelp += travel[i];
+        }
+        for(int i = 0; i < lasthousem ; i++){
+            travelm += travel[i];
+        }
+
+        int totalpickingtime = pickp + pickm + pickg;
+        int totaltraveltime = travelp + travelm + travelg;
+        return totalpickingtime + totaltraveltime;
+    }
