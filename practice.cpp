@@ -3,7 +3,9 @@
 using namespace std;
 
 int main() {
-  cout << 5 << endl;
-  printf("%d", 5);
+  int a;
+  cin >> a;
+  cout << a << endl;
+  printf("%d", a);
   return 0;
 }
