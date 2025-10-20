@@ -20,8 +20,8 @@ public:
         std::cout << "Sparrow is eating\n";
     }
     void fly()
-    {
-        std::cout << "Sparrow is flying \n";
+    {// same as do in it
+        std::cout << "Sparrow is flying \n";// done new line
     }
 };
 class Eagle : public Bird
