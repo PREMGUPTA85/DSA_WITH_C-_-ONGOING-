@@ -21,7 +21,7 @@ public:
     }
     void fly()
     {// same as do in it
-        std::cout << "Sparrow is flying \n";// done new line
+        std::cout << "Sparrow is flying \n";// done new line // with /n
     }
 };
 class Eagle : public Bird
