@@ -12,5 +12,7 @@ int main() {
   // by adding new line we have some methods
   // using endl;
   // or using "\n"
+  cout << endl;
+  cout << "using backslash n in our sentence for creating new line\n";
   return 0;
 }
