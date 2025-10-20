@@ -9,5 +9,6 @@ int main() {
   printf("%d", a);
   // or using cout 
   cout << a << endl;
+  // by adding new line we have some methods
   return 0;
 }
