@@ -2,7 +2,7 @@
 #define BIRD_H
 #include <bits/stdc++.h>
 
-
+// using class
 class Bird {
 public:
     virtual void eat() = 0;
