@@ -10,5 +10,7 @@ int main() {
   // or using cout 
   cout << a << endl;
   // by adding new line we have some methods
+  // using endl;
+  // or using "\n"
   return 0;
 }
