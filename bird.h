@@ -14,6 +14,7 @@ public:
 class Sparrow : public Bird
 {
 public:
+// member functions
     void eat()
     {
         std::cout << "Sparrow is eating\n";
