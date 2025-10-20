@@ -8,5 +8,6 @@ int main() {
   cout << a << endl;
   printf("%d", a);
   // or using cout 
+  cout << a << endl;
   return 0;
 }
