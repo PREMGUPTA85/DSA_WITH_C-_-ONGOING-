@@ -17,5 +17,6 @@ int main() {
   // maintain per day streaks
   // let's start oops
   // it's have 4 pillar's
+  // check mine save.c file for in depth
   return 0;
 }
