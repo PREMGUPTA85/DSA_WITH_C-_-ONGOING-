@@ -14,5 +14,6 @@ int main() {
   // or using "\n"
   cout << endl;
   cout << "using backslash n in our sentence for creating new line\n";
+  // maintain per day streaks
   return 0;
 }
