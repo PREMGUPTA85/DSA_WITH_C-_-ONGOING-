@@ -7,5 +7,6 @@ int main() {
   cin >> a;
   cout << a << endl;
   printf("%d", a);
+  // or using cout 
   return 0;
 }
