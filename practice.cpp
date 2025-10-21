@@ -20,5 +20,6 @@ int main() {
   // check mine save.c file for in depth
   // today streak
   //done
+  // but save in vs code only
   return 0;
 }
