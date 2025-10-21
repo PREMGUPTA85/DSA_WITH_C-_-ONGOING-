@@ -18,5 +18,6 @@ int main() {
   // let's start oops
   // it's have 4 pillar's
   // check mine save.c file for in depth
+  // today streak
   return 0;
 }
