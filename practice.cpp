@@ -44,3 +44,11 @@ int gcd(int a, int b){
 int lcm(int a, int b){
     return (a / gcd(a, b)) * b; // to avoid overflow
 }
+
+
+int main() {
+    int n;
+    cin >> n;
+    cout << countPrimes(n) << endl;
+    return 0;
+}
