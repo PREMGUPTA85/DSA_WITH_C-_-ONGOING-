@@ -26,3 +26,16 @@ int countPrimes(int n)
 
 // Time Complexity: O(n log log n)
 // Space Complexity: O(n)   
+
+
+int gcd(int a, int b){
+    // using subtraction method
+    if(b==0) return a;  
+    if(a==0) return b;
+    
+    while(a > 0 && b > 0){
+        if(a > b) a = a - b;
+        else b = b - a;
+    }
+    return a == 0 ? b : a; // ternary operator
+}
