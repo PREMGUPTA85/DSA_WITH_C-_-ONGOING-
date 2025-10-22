@@ -23,3 +23,6 @@ int countPrimes(int n)
         }
         return ans;
     }
+
+// Time Complexity: O(n log log n)
+// Space Complexity: O(n)   
