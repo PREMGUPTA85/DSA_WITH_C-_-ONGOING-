@@ -6911,11 +6911,6 @@ int main() {
 
     // cout << "after " << arr << endl;
 
-
-
-
-
-
     //convertIntoLowerCase(arr,1000);
     //convertIntoUpperCase(arr,1000);
     //replaceCharacter('@', ' ', arr, 1000);
@@ -7338,5 +7333,316 @@ int main() {
     // here output me cba first aayega kyuki order me cba pehle h then d
     cout << findAndReplacePattern({"abc","deq","mee","aqq","dkd","ccc"}, "abb"); // leetcode qs no. 890 
     // here output me mee and aqq aayega bcz dono ka pattern abb type me h 
+    return 0;
+}
+
+
+//----------------------------------------(basic maths for DSA)-----------------------------------------------------
+// M1
+bool isPrime(int n)
+    {
+        if (n <= 1)
+            return false;
+        for (int i = 2; i < n; i++)
+        {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+int countPrimes(int n)
+    {
+        int c = 0;
+        for (int i = 2; i < n; ++i)
+        {
+            if (isPrime(i))
+                ++c;
+        }
+        return c;
+    }
+// M2
+bool isPrime(int n)
+    {
+        if (n <= 1)
+            return false;
+        for (int i = 2; i * i <= n; i++)
+        {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+int countPrimes(int n)
+    {
+        int c = 0;
+        for (int i = 2; i < n; ++i)
+        {
+            if (isPrime(i))
+                ++c;
+        }
+        return c;
+    }
+// M3 Sieve of Eratosthenes Algorithm
+int countPrimes(int n)
+    {
+        vector<bool> prime(n, true);
+        prime[0] = prime[1] = false;
+        int ans = 0;
+
+        for (int i = 2; i < n; i++)
+        {
+            if (prime[i])
+            {
+                ++ans;
+
+                int j = 2 * i;
+                while (j < n)
+                {
+                    prime[j] = false;
+                    j += i;
+                }
+            }
+        }
+        return ans;
+    }
+// Time Complexity: O(n log log n)
+// Space Complexity: O(n)   
+
+int gcd(int a, int b){
+    // using subtraction method
+    if(b==0) return a;  
+    if(a==0) return b;
+    
+    while(a > 0 && b > 0){
+        if(a > b) a = a - b;
+        else b = b - a;
+    }
+    return a == 0 ? b : a; // ternary operator
+}
+
+int lcm(int a, int b){
+    return (a / gcd(a, b)) * b; // to avoid overflow
+}
+
+long long fastExponentiation(long long x, long long n) {
+        long long ans = 1;
+        long long base = x;
+
+        while (n > 0) {
+            if (n & 1)
+                ans = ans * base;
+            base = base * base;
+            n >>= 1;
+        }
+        return ans;
+}
+
+int slowExponentiation(int a, int b)
+{
+    int ans = 1;
+    while (b--)
+    {
+        ans *= a;
+    }
+    return ans;
+}
+
+int powMod(int x, int n, int M) {
+        long long ans = 1;
+        long long base = x % M;  // take modulo at start
+
+        while (n > 0) {
+            if (n & 1) {
+                ans = (ans * base) % M;
+            }
+            base = (base * base) % M;
+            n >>= 1; // right shift by 1
+        }
+        return (ans + M) % M; // ensure positive
+    }
+
+int main() {
+    // int n;
+    // cin >> n;
+    // cout << countPrimes(n) << endl;
+    // cout << "GCD: " << gcd(24, 72) << endl;
+    // cout << "LCM: " << lcm(24, 72) << endl;
+    cout << "Fast Exponentiation: " << fastExponentiation(2, 10) << endl;
+    cout << "Slow Exponentiation: " << slowExponentiation(2, 10) << endl;
+    cout << "Power Modulo: " << powMod(3, 2, 4) << endl; // gfg qs 
+    return 0;
+}
+// M4 Segmented Sieve Algorithm
+#define M 1000000007
+    vector<bool> Sieve(long long int n)
+    {
+        // create a sieve array telling isPrime till 'n'
+        vector<bool> sieve(n + 1, true);
+        sieve[0] = sieve[1] = false;
+
+        /*for (long long int i = 2; i <= n; i++)*/
+        for (long long int i = 2; i * i <= n; i++) // Optimisation 2: (Outer loop):
+                                                   // if i becomes > sqrt(N), then the
+                                                   // inner loop does not work.
+        {
+            if (sieve[i] == true)
+            {
+                // means, sieve[i] is Prime and mark its multiples
+                //  as non-prime.
+                /*long long long long int j = i * 2;*/
+                long long int j = i * i; // Optimisation 1 (inner loop):
+                                         // first unmarked number would be i*i
+                                         // as, other have been marked by 2 to (i - 1).
+                while (j <= n)
+                {
+                    sieve[j] = false;
+                    j += i;
+                }
+            }
+        }
+        return sieve;
+    }
+
+    vector<bool> segmentedSeive(long long int L, long long int R)
+    {
+        // Get me prime marking array.
+        // to be used to mark primes in segmented sieve.
+        vector<bool> sieve = Sieve(sqrt(R));
+        vector<long long int> basePrimes;
+        for (long long int i = 0; i < sieve.size(); i++)
+        {
+            if (sieve[i])
+                basePrimes.push_back(i);
+        }
+
+        vector<bool> segSieve(R - L + 1, true);
+        if (L == 1)
+        {
+            segSieve[0] = false;
+        }
+
+        for (auto prime : basePrimes)
+        {
+            long long int first_mul = (L / prime) * prime;
+            first_mul = first_mul < L ? first_mul + prime : first_mul;
+            long long int j = max(first_mul, prime * prime);
+            while (j <= R)
+            {
+                segSieve[j - L] = false;
+                j += prime;
+            }
+        }
+        return segSieve;
+    }
+
+    long long primeProduct(long long L, long long R)
+    {
+        vector<bool> segSieve = segmentedSeive(L, R);
+        long long int ans = 1;
+        for (long long int i = 0; i < segSieve.size(); i++)
+        {
+            if (segSieve[i])
+            {
+                long long int actualPrime = (L + i) % M;
+                ans = (ans * actualPrime) % M;
+            }
+        }
+        return ans;
+    }
+int main()
+{
+    long long int L = 10;
+    long long int R = 20;
+    cout << primeProduct(L, R) << endl; // leetcode qs no. 204
+    return 0;
+}
+
+
+//--------------------------------------(optimised sieve and segmented sieve)---------------------------------------
+vector<bool> Sieve(long long n)
+{
+    vector<bool> sieve(n + 1, true);
+    sieve[0] = sieve[1] = false;
+
+    for (long long i = 2; i * i <= n; i++)
+    {
+        if (sieve[i])
+        {
+            long long j = i * i; // first unmarked multiple
+            while (j <= n)
+            {
+                sieve[j] = false;
+                j += i;
+            }
+        }
+    }
+    return sieve;
+}
+
+vector<bool> segmentedSieve(long long L, long long R)
+{
+    vector<bool> sieve = Sieve(sqrt(R));
+    vector<long long> basePrimes;
+
+    for (long long i = 0; i < sieve.size(); i++)
+    {
+        if (sieve[i])
+            basePrimes.push_back(i);
+    }
+
+    vector<bool> segSieve(R - L + 1, true);
+
+    if (L == 1)
+        segSieve[0] = false;
+
+    for (auto prime : basePrimes)
+    {
+        long long first_mul = (L / prime) * prime;
+        if (first_mul < L)
+            first_mul += prime;
+
+        long long j = max(first_mul, prime * prime);
+        while (j <= R)
+        {
+            segSieve[j - L] = false;
+            j += prime;
+        }
+    }
+
+    return segSieve;
+}
+
+long long primeProduct(long long L, long long R)
+{
+    vector<bool> segSieve = segmentedSieve(L, R);
+    long long ans = 1;
+
+    for (long long i = 0; i < segSieve.size(); i++)
+    {
+        if (segSieve[i])
+        {
+            long long actualPrime = (L + i) % M;
+            ans = (ans * actualPrime) % M;
+        }
+    }
+
+    return ans;
+}
+
+int main()
+{
+    long long L = 110, R = 130;
+
+    cout << "Primes between " << L << " and " << R << ": ";
+    vector<bool> segSieve = segmentedSieve(L, R);
+    for (long long i = 0; i < segSieve.size(); i++)
+    {
+        if (segSieve[i])
+            cout << L + i << " ";
+    }
+    cout << endl;
+
+    cout << "Prime Product (mod " << M << "): " << primeProduct(L, R) << endl;
+
     return 0;
 }
