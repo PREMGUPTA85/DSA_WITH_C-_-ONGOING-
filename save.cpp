@@ -7651,3 +7651,9 @@ int main()
 //-----------------------------------------Pointer's in C++------------------------------------------------
 #include<bits/stdc++.h>
 using namespace std;    
+
+int main() {
+    // int a = 5;
+    // cout << a;
+    // int b = a;
+    // int c = &a;// error cannot store address of a in int type variable
