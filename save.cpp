@@ -7646,3 +7646,8 @@ int main()
 
     return 0;
 }
+
+
+//-----------------------------------------Pointer's in C++------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;    
