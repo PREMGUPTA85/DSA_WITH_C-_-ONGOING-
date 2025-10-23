@@ -7664,3 +7664,10 @@ int main() {
     //  cout << "Bits in a pointer: " << sizeof(void*) * 8 << endl;
      //  float f = 5.5;
     //  float *p2 = &f;
+ //     cout << "Address of f: " << p2 << endl;
+    //     cout << sizeof(p2) << endl; // size of pointer variable
+        int *ptr2;
+        cout << *ptr2 << endl; // garbage value
+        // cout << *ptr2 << endl; // segmentation fault as ptr2 is not initialized
+    return 0;
+}
