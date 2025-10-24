@@ -37,3 +37,7 @@ double BSPrecision(int n)
             ans = mid;
             start = mid + 0.000000000000000000000000001;
         }
+ else
+            end = mid - 0.000000000000000000000000001;
+ }
+    return ans;
