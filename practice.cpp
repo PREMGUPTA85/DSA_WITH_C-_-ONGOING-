@@ -22,3 +22,8 @@ double myPrecisionSqrt(int n)
     return sqrt;
 }
 
+
+double BSPrecision(int n)
+{
+    double start = 0;
+    double end = n;
