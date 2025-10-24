@@ -27,3 +27,7 @@ double BSPrecision(int n)
 {
     double start = 0;
     double end = n;
+     double ans = 0;
+    while ((end - start) > 0.000000001)
+    
+    
