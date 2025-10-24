@@ -33,4 +33,7 @@ double BSPrecision(int n)
         double mid = (start + end) / 2;
         double sqr = mid * mid;
         if (sqr <= n)
-    
+         {
+            ans = mid;
+            start = mid + 0.000000000000000000000000001;
+        }
