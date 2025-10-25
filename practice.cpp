@@ -4,3 +4,5 @@
 // using namespace std;
 
 // int main () {
+   // create or declare a queue
+//     deque<int> dq;
