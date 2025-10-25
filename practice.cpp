@@ -12,3 +12,6 @@
 
 //     // here iterator is used 
 // }
+
+// // priority queue 
+// #include<iostream>
