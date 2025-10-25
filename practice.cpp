@@ -35,3 +35,22 @@
 // #include<map>  // header file for map 
 // #include<unordered_map> // header file for unordered_map
 // using namespace std;
+
+// int main () {
+
+//     // another map
+//     map<int, string> table; // map with int as key and string as value
+    
+//     table[3] = "three";
+//     table.insert(make_pair(4, "four"));
+
+//     table.insert(make_pair(1, "one"));
+//     table.insert(make_pair(2, "two"));
+    
+//     map<int,string>::iterator it = table.begin(); // pointing to first element of map 
+//     while(it != table.end()) {
+//        // cout << it->first << " : " << it->second << endl; // accessing key and value
+//        pair<int,string> temp = *it; // dereferencing the iterator to get the pair
+//        cout << temp.first << " : " << temp.second << endl; // accessing key and value
+//         it++;
+//     }
