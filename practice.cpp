@@ -6,3 +6,8 @@
 // int main () {
    // create or declare a queue
 //     deque<int> dq;
+
+
+//     // functionality of member function is same as previous container's
+
+//     // here iterator is used 
