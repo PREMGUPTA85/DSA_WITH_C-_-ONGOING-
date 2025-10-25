@@ -28,3 +28,10 @@
 //     // it stores value in increasing order it gives priority to the min value first 
 
 // }
+
+
+// // map 
+// #include<iostream>
+// #include<map>  // header file for map 
+// #include<unordered_map> // header file for unordered_map
+// using namespace std;
