@@ -29,3 +29,7 @@ class abc{
       void setX(int _val){
         x = _val;
     }
+
+      int getY() const {
+        return *y;
+    }
