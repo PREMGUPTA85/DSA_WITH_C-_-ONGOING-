@@ -37,3 +37,9 @@ class abc{
      void setY(int _val){
         *y = _val;
     }
+
+      int getZ() const { 
+        return z;
+    }
+    friend void printABC(const abc &a);
+};
