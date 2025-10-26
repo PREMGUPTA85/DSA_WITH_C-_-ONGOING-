@@ -71,3 +71,11 @@ int main(){
 //     a = &b;   // pointer itslef can be reassigned
 //     cout << *a << endl;
 
+
+//     constant pointer, but non-constant data
+//     int *const a =new int(2);
+//     cout << *a << endl;
+//     *a = 20;
+//     cout << *a << endl;
+//     int b = 50;
+//     a = &b; // nhi chlega
