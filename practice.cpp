@@ -33,3 +33,7 @@ class abc{
       int getY() const {
         return *y;
     }
+
+     void setY(int _val){
+        *y = _val;
+    }
