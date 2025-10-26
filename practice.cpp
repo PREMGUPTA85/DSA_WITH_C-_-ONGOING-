@@ -62,3 +62,12 @@ int main(){
 //     x = 10;            // but we can't re-assign a value
 //     cout << x << endl;
 
+//     2.const with pointer's
+//     const int *a = new int(2);    // constant data , non-constant pointer
+//     // or int const *a = new int(2);
+//     cout << *a << endl;
+//     // * a = 20;   can't change the content of pointer.
+//     int b = 20;
+//     a = &b;   // pointer itslef can be reassigned
+//     cout << *a << endl;
+
