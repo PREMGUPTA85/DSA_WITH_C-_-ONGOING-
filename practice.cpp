@@ -43,3 +43,15 @@ class abc{
     }
     friend void printABC(const abc &a);
 };
+
+// kisi object ko const banaya to whi function ko call krega jo const ho
+void printABC(const abc &a){
+    cout << a.getX() << " " << a.getY() << " " << a.getZ()  << endl;
+}
+
+int main(){
+    abc b(1,2,3);
+    printABC(b);
+    return 0;
+}
+
