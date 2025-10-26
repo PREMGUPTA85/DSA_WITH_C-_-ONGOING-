@@ -55,3 +55,10 @@ int main(){
     return 0;
 }
 
+
+// int main2() {
+//    initialisation can be done
+//     const int x = 5;  // x is a constant
+//     x = 10;            // but we can't re-assign a value
+//     cout << x << endl;
+
