@@ -26,3 +26,6 @@ class abc{
         return x;
     }
  
+      void setX(int _val){
+        x = _val;
+    }
