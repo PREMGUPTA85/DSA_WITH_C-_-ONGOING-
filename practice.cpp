@@ -30,3 +30,14 @@ void print() const{
 
     friend void print(const A &a);
 };
+
+class B{
+    public:
+    void print(const A &a){
+        // cout << a.getX() << endl;
+        // cout << a.x << endl; // accessing private member of class A
+
+        // better hoga 
+        a.print();
+    }
+};
