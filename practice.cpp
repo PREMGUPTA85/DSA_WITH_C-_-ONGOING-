@@ -15,3 +15,7 @@ public:
 int getX() const {
         return x;
     }   
+
+void setX(int val){
+        x = val;
+    }   
