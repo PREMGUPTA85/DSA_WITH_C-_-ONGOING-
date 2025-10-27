@@ -11,3 +11,7 @@ class A{
 
 public:
     A(int _x) : x(_x) {};
+
+int getX() const {
+        return x;
+    }   
