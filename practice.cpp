@@ -41,3 +41,7 @@ class B{
         a.print();
     }
 };
+
+// void print(const A &a){
+//     cout << a.x << endl; // accessing private member of class A
+// }
