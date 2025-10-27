@@ -24,3 +24,9 @@ void setX(int val){
 void print() const{
         cout << x << endl;
     }
+
+// for accessing private members of class A in class B
+    friend class B;
+
+    friend void print(const A &a);
+};
