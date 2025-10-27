@@ -5353,161 +5353,444 @@ int main() {
 }
 
 // Miscellaneous concepts 
-// local and global variables 
+
+// // Miscellaneous concepts :-- Const keyword , initialization list & macros
 #include<iostream>
 using namespace std;
 
-// global variables 
-int x = 2;
 
-int main () {
-    x = 4;  
-    //or  :: x// global x
-    int x = 20;
-    cout << x << endl; // accessing local variables
-    cout << ::x << endl; // accessing global variables
+// scope defn in cpp -- inside main function from curly braces 
 
-    {
-        int x = 50;
-        cout << x << endl;
-    }
-    return 0;
-}
+// global and local variable
 
-// Miscellaneous concepts :-- Const keyword , initialization list & macros
+// local variable defn :-- variable defined inside a function or block or scope 
+
+// global variable defn :-- variable defined outside all functions and blocks
+// #include<iostream>
+// using namespace std;
+
+// int x = 10; // global variable
+
+// int main() {
+//     cout << x << endl; // 10
+//     int x = 20; // local variable
+//     cout << x << endl; // 20
+//     cout << ::x << endl; // 10; // :: accessing global variable or scope resolution operator
+//     {// inside scope
+//         cout << x << endl; // 20
+//         cout << ::x << endl; // 10
+//         int x = 30;
+//         cout << x << endl; // 30
+//         ::x = 40; // modifying global variable
+//         cout << ::x << endl; // 40
+//     }
+   
+// }
+
+// class abc{
+//     int x;
+//     int *y;
+//     const int z;
+
+//     public:
+//     // ctor : old style
+//     // abc(int _x, int _y, int _z = 0){
+//     //     x = _x;
+//     //     y = new int(_y);
+//     //     z = _z;
+//     // }
+
+//     // initialization list -->aur yha z initialise ho rha h  ek tarika h ctor likhne k   --> z ko const use kiya but isme run ho gya 
+//     // default argument always in right side  
+//     abc(int _x, int _y, int _z = 0) : x(_x) , y(new int(_y)), z(_z){
+//         cout << "In init list" << endl;
+//         *y = *y * 10;
+//     }
+
+//     int getX() const{
+//         return x;
+//     }
+ 
+//     void setX(int _val){
+//         x = _val;
+//     }
+
+//     int getY() const {
+//         return *y;
+//     }
+
+//     void setY(int _val){
+//         *y = _val;
+//     }
+
+//     int getZ() const { 
+//         return z;
+//     }
+//     friend void printABC(const abc &a);
+// };
+
+// // kisi object ko const banaya to whi function ko call krega jo const ho
+// void printABC(const abc &a){
+//     cout << a.getX() << " " << a.getY() << " " << a.getZ()  << endl;
+// }
+
+// int main(){
+//     abc b(1,2,3);
+//     printABC(b);
+//     return 0;
+// }
+
+
+// int main2() {
+//    initialisation can be done
+//     const int x = 5;  // x is a constant
+//     x = 10;            // but we can't re-assign a value
+//     cout << x << endl;
+
+
+//     2.const with pointer's
+//     const int *a = new int(2);    // constant data , non-constant pointer
+//     // or int const *a = new int(2);
+//     cout << *a << endl;
+//     // * a = 20;   can't change the content of pointer.
+//     int b = 20;
+//     a = &b;   // pointer itslef can be reassigned
+//     cout << *a << endl;
+
+//     constant pointer, but non-constant data
+//     int *const a =new int(2);
+//     cout << *a << endl;
+//     *a = 20;
+//     cout << *a << endl;
+//     int b = 50;
+//     a = &b; // nhi chlega
+
+//     const pointer and data
+//     const int *const a = new int(10);
+//     cout << *a << endl;
+//     *a = 50;
+//     int b = 10;
+//     a = &b;
+//     return 0;
+// }
+
+
+// // macros keyword in cpp
+// #include<iostream>
+// using namespace std;
+
+// // macro used with capital letter for better SEO
+// #define Max(a,b) (a > b ? a : b)
+// #define PI 3.14
+// float circleArea(float r){
+//     return PI * r * r;
+// }
+
+// void main() {
+//     cout << Max(10,20) << endl;
+//     cout << Max(100,50) << endl;
+//     cout << Max(1.5, 2.5) << endl;
+//     cout << Max('A', 'B') << endl; // ASCII value comparison
+// }
+
+
+// int main() {
+//     cout << circleArea(1) << endl;
+//     return 0;
+// }
+
+
+// // Static Keyword in class
+// Static data member and static member function
+
+// static data member :-- ek aisa data member jo class k sabhi object k liye common hota h
+// static member function :-- ek aisa member function jo class k sabhi object k liye common hota h
+
+
+// static data member
+// #include<iostream>
+// using namespace std;
+
+// class abc {
+// public:
+//     static int x, y; // static keyword se ye class k sabhi object k liye same rhega
+    
+//     void print(){
+//      cout << x  << " " << y << endl;
+//     }
+// };
+
+// // x and y vo kisi ek object k instance nhi h vo puri class k instance h 
+// int abc::x;
+// int abc::y;
+
+// // print function kisi particular k nhi hoga so abc krke kr skte h 
+// int main() {
+//     abc obj1;
+//     abc::print();
+//     abc obj2;
+//     abc::print();
+//     abc::print();
+//     return 0;
+// }  
+
+// static member function
+// class abc {
+//     public:
+//     int x, y;
+
+//     abc() : x(0), y(0) {}
+
+//     static void print(){
+//         printf("I am in static %s\n", __FUNCTION__); 
+//         // __function__ means current function name
+//         // here print is a static function so it will print print
+//     }
+    
+// };
+
+// int main() {
+//     abc obj1;
+//     obj1.print();
+//     abc::print();
+//     abc obj2;
+//     abc::print();
+//     abc::print();
+//     return 0;
+// }  
+
+// Shallow copy and deep copy in cpp
+// #include<iostream>
+// using namespace std;
+
+// class abc{
+// public: 
+//     int x;
+//     int *y;
+
+//     abc(int _x, int _y) : x(_x), y(new int(_y)) {}
+
+//     // shallow copy constructor
+//     abc(const abc &a){
+//         x = a.x;
+//         y = a.y; // copying address
+//     }
+
+//     // deep copy constructor
+//     // abc(const abc &a){
+//     //     x = a.x;
+//     //     y = new int(*(a.y)); // copying value
+//     // }
+
+//     void print() const {
+//         printf("x: %d\ny: %d\nContent of y(*y): %d\n", x, y, *y);
+//     }
+
+
+//     ~abc(){
+//         delete y;
+//     }
+// };
+
+// int main() {
+//     // abc a(1,2);
+//     // cout << "Printing a:" << endl;
+//     // a.print();
+
+//     // abc b = a; // copy constructor called
+//     // cout << "Printing b: " << endl;
+//     // b.print();
+//     // *b.y = 20; // modifying b's y
+//     // cout << "After modifying b's y:" << endl;
+//     // b.print();
+
+//     // cout << "Printing a again to check if it is affected:" << endl;
+//     // a.print(); // to check if a is affected
+
+//     // if we use shallow copy then a's y will be affected and it gives error at runtime double free or corruption
+//     // if we use deep copy then a's y will not be affected so that's reason we need to use always deep copy constructor when we have pointer in class 
+
+//     abc *a = new abc(1,2);
+//     abc b = *a;
+//     delete a;
+//     b.print();
+
+//     return 0;
+// }
+
+
+// can ctor made private
+// yes , we can make ctor private
+
+// #include<iostream>
+// using namespace std;
+
+// class Box{
+//     int width;
+//     // ctor
+//     Box(int _w) : width(_w) {};
+
+//     public: 
+//     int getWidth() const {
+//         return width;
+//     }
+
+//     void setWidth(int val){
+//         width = val;
+//     }
+
+//     friend class BoxFactory;
+// };
+
+// class BoxFactory {
+//     int count;
+
+// public: 
+//      Box getABox(int _w)
+//      {
+//         ++count;
+//         return Box(_w);
+//      }
+// };
+
+// int main(){
+//     BoxFactory bfact;
+//     Box b = bfact.getABox(5); // here in this line we store width 5 in box object b using BoxFactory
+//     cout << b.getWidth() << endl;
+//     return 0;
+// }
+
+// frined keyword in cpp 
 #include<iostream>
 using namespace std;
 
-class abc{
+class A{
+    private: 
     int x;
-    int *y;
-    const int z;
 
     public:
-    // ctor : old style
-    // abc(int _x, int _y, int _z = 0){
-    //     x = _x;
-    //     y = new int(_y);
-    //     z = _z;
-    // }
+    A(int _x) : x(_x) {};
 
-    // initialization list -->aur yha z initialise ho rha h  ek tarika h ctor likhne k   --> z ko const use kiya but isme run ho gya 
-    // default argument always in right side  
-    abc(int _x, int _y, int _z = 0) : x(_x) , y(new int(_y)), z(_z){
-        cout << "In init list" << endl;
-        *y = *y * 10;
-    }
-
-    int getX() const{
+    int getX() const {
         return x;
-    }
- 
-    void setX(int _val){
-        x = _val;
-    }
+    }   
 
-    int getY() const {
-        return *y;
-    }
+    void setX(int val){
+        x = val;
+    }   
+};
 
-    void setY(int _val){
-        *y = _val;
-    }
-
-    int getZ() const { 
-        return z;
+class B{
+    public:
+    void print(const A &a){
+        cout << a.getX() << endl;
     }
 };
 
-// kisi object ko const banaya to whi function ko call krega jo const ho
-void printABC(const abc &a){
-    cout << a.getX() << " " << a.getY() << " " << a.getZ()  << endl;
+int main() {
+    A c(5);
+    B b;
+    b.print(c);
+    return 0;
 }
+
+
+// friend class
+// frined keyword in cpp 
+#include<iostream>
+using namespace std;
+
+// freind class is a class that can access private and protected members of another class in which it is declared as a friend.
+class A{
+    private: 
+    int x;
+
+    public:
+    A(int _x) : x(_x) {};
+
+    int getX() const {
+        return x;
+    }   
+
+    void setX(int val){
+        x = val;
+    }   
+
+    void print() const{
+        cout << x << endl;
+    }
+    // for accessing private members of class A in class B
+    friend class B;
+
+    friend void print(const A &a);
+};
+
+class B{
+    public:
+    void print(const A &a){
+        // cout << a.getX() << endl;
+        // cout << a.x << endl; // accessing private member of class A
+
+        // better hoga 
+        a.print();
+    }
+};
+
+// void print(const A &a){
+//     cout << a.x << endl; // accessing private member of class A
+// }
+
+int main() {
+    A c(5);
+    B b;
+    c.print();
+    b.print(c);
+    //print(c);
+    return 0;
+}
+
+// real world me use nhi krna chahiye bcz kisi class k private members ko dusri class se access krna koi means nhi banta hai. Ye sirf educational purpose k liye h  ai.
+
+
+// Virtual keyword 
+#include<iostream>
+using namespace std;
+
+// virtual keyword in cpp
+class Base {
+public:
+    Base()
+    {
+        cout << "Base ctor\n";
+    }
+
+    virtual ~Base(){
+        cout << "Base dtor\n";
+    }
+};
+
+class Derived : public Base 
+{
+    int *a;
+
+    public:
+    
+    Derived(){
+        cout << "Derived ctor\n";
+    }
+
+    ~Derived(){
+        cout << "Derived dtor\n";
+    }
+};
 
 int main(){
-    abc a(1,2,3);
-    printABC(a);
+    Base *b = new Derived();
+    delete b;
     return 0;
 }
 
 
-int main2() {
-   initialisation can be done
-    const int x = 5;  // x is a constant
-    x = 10;            // but we can't re-assign a value
-    cout << x << endl;
-
-
-    2.const with pointer's
-    const int *a = new int(2);    // constant data , non-constant pointer
-    // or int const *a = new int(2);
-    cout << *a << endl;
-    // * a = 20;   can't change the content of pointer.
-    int b = 20;
-    a = &b;   // pointer itslef can be reassigned
-    cout << *a << endl;
-
-    constant pointer, but non-constant data
-    int *const a =new int(2);
-    cout << *a << endl;
-    *a = 20;
-    cout << *a << endl;
-    int b = 50;
-    a = &b; // nhi chlega
-
-    const pointer and data
-    const int *const a = new int(10);
-    cout << *a << endl;
-    *a = 50;
-    int b = 10;
-    a = &b;
-    return 0;
-}
-
-
-// macros
-#include<iostream>
-using namespace std;
-
-// macro used with capital letter for better SEO
-#define PI 3.14
-float circleArea(float r){
-    return PI * r * r;
-}
-
-int main() {
-    cout << circleArea(1) << endl;
-    return 0;
-}
-
-
-// Static Keyword in class
-#include<iostream>
-using namespace std;
-
-class abc {
-public:
-    int x, y;
-    
-    abc() : x(0) , y(0) {}
-    // static member function :-- there is no instance of that class is being passed into that method
-    static void print(){
-      //  cout << x  << " " << y << endl;
-      printf("I am in static %s\n", __FUNCTION__);
-      // __FUNCTION__ --> gives the function name
-    }
-};
-// x and y vo kisi ek object k instance nhi h vo puri class k instance h 
-
-// print function kisi particular k nhi hoga so abc krke kr skte h 
-int main() {
-    abc obj1;
-    abc::print();
-    abc obj2;
-    abc::print();
-    abc::print();
-    return 0;
-}  
 
 // Binary search -- Monotonic function
 
@@ -5589,7 +5872,7 @@ int main() {
 #include<iostream>
 using namespace std;
 
-void findlastOccurence(int nums[],int n, int target, int &ansindex){
+void findlastOccurence(int nums[],int n, int target, int &ansindex){l
     int start = 0;
     int end = n - 1;
     while(start <= end){
@@ -5828,7 +6111,7 @@ int main() {
     return 0;
 }
 
-
+// ----------------- Mega Class Arrays -------------------
 #include<iostream>
 #include<vector>
 #include<unordered_map>
@@ -6002,7 +6285,7 @@ int main() {
     return 0;
 }
 
-
+// (Searching and Sorting class -2)
 int peakmountain(vector<int> &nums){
     int start = 0;
     int end = nums.size() -1;
@@ -6328,7 +6611,7 @@ int main() {
     return 0;
 }
 
-// Mega class Arrays (Searching and sorting)
+// Mega class (Searching and sorting)
 // precision of sqrt
 #include <iostream>
 #include <algorithm>
@@ -7647,7 +7930,6 @@ int main()
     return 0;
 }
 
-
 //-----------------------------------------Pointer's in C++------------------------------------------------
 #include<bits/stdc++.h>
 using namespace std;    
@@ -7662,12 +7944,13 @@ int main() {
     // int *ptr = &a; // pointer variable to store address of a
     // cout << sizeof(ptr) << endl; // size of pointer variable
     //  cout << "Bits in a pointer: " << sizeof(void*) * 8 << endl;
-     //  float f = 5.5;
-    //  float *p2 = &f;
- //     cout << "Address of f: " << p2 << endl;
+    //  float f = 5.5;
+    //  float *p2 = &f;    
+    //     cout << "Address of f: " << p2 << endl;
     //     cout << sizeof(p2) << endl; // size of pointer variable
         int *ptr2;
         cout << *ptr2 << endl; // garbage value
         // cout << *ptr2 << endl; // segmentation fault as ptr2 is not initialized
+    return 0;
     return 0;
 }
