@@ -8,3 +8,6 @@ using namespace std;
 class A{
     private: 
     int x;
+
+public:
+    A(int _x) : x(_x) {};
