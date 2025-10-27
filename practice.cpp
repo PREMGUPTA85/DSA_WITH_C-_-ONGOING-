@@ -19,3 +19,8 @@ int getX() const {
 void setX(int val){
         x = val;
     }   
+
+
+void print() const{
+        cout << x << endl;
+    }
