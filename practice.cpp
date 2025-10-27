@@ -45,3 +45,13 @@ class B{
 // void print(const A &a){
 //     cout << a.x << endl; // accessing private member of class A
 // }
+
+
+int main() {
+    A c(5);
+    B b;
+    c.print();
+    b.print(c);
+    //print(c);
+    return 0;
+}
