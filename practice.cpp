@@ -74,3 +74,9 @@ int main() {
     cout << "First Occ index: " << ansindex << endl;
     return 0;
 }
+
+
+// last occurence with binary search with store and compute
+
+#include<iostream>
+using namespace std;
