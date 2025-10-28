@@ -105,3 +105,15 @@ void findlastOccurence(int nums[],int n, int target, int &ansindex){l
     }
 }
 
+int main() {
+    int arr[] = {5,10, 10,20,20,20,20,20,30,40,50,60};
+    int n = 12;
+    int target = 20;
+    // -1 means index not found
+    int ansindex = -1;
+    // binary search lgane jaa rha hu to pakka array sorted hi hoga
+    findlastOccurence(arr, n , target, ansindex);
+    cout << "First Occ index: " << ansindex << endl;
+    return 0;
+}
+
