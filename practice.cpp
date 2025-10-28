@@ -69,3 +69,8 @@ int main() {
     int target = 60;
 // -1 means index not found
     int ansindex = -1;
+// binary search lgane jaa rha hu to pakka array sorted hi hoga
+    findFirstOccurence(arr, n , target, ansindex);
+    cout << "First Occ index: " << ansindex << endl;
+    return 0;
+}
