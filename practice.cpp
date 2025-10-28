@@ -32,3 +32,8 @@ int main() {
     cout << binarysearch(arr, target);
     return 0;
 }
+
+// first occurence with binary search with store and compute
+
+#include<iostream>
+using namespace std;
