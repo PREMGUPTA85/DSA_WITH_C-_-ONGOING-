@@ -62,3 +62,8 @@ void findFirstOccurence(int nums[],int n, int target, int &ansindex){
     }
 }
 
+
+int main() {
+    int arr[] = {5,10,20,20,20,20,20,30,40,50,60};
+    int n = 11;
+    int target = 60;
