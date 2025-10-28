@@ -25,3 +25,10 @@ int binarysearch(vector<int> &nums, int target){
     }
     return -1;
 }
+
+int main() {
+    vector<int>arr = {-1,0,3,5,9,12};
+    int target = 9;
+    cout << binarysearch(arr, target);
+    return 0;
+}
