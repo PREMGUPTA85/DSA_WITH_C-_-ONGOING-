@@ -1,3 +1,10 @@
+// Binary search -- Monotonic function
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+
 int binarysearch(vector<int> &nums, int target){
     int n = nums.size();
     int start = 0;
