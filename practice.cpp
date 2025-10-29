@@ -18,3 +18,25 @@ public:
         }
         return false;
     }
+
+
+    int aggressiveCows(vector<int> &stalls, int k) {
+        sort(stalls.begin(), stalls.end());
+
+        int start = 0;
+        int end = stalls.back() - stalls.front();
+        int ans = -1;
+
+        while (start <= end) {
+            int mid = (start + end) >> 1;
+
+            if (isPossibleSolution(stalls, k, mid)) {
+                ans = mid;
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return ans;
+    }
+};
