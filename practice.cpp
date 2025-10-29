@@ -51,3 +51,6 @@ int main() {
 vector<int> stalls(n);
     cout << "Enter stall positions: ";
     for (int i = 0; i < n; i++) cin >> stalls[i];
+
+ cout << "Enter number of cows: ";
+    cin >> k;
