@@ -59,3 +59,5 @@ vector<int> stalls(n);
     cout << "Maximum minimum distance = " << result << endl;
 
     return 0;
+
+}
