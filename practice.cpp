@@ -54,3 +54,8 @@ vector<int> stalls(n);
 
  cout << "Enter number of cows: ";
     cin >> k;
+
+ int result = ob.aggressiveCows(stalls, k);
+    cout << "Maximum minimum distance = " << result << endl;
+
+    return 0;
