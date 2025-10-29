@@ -40,3 +40,10 @@ public:
         return ans;
     }
 };
+
+
+int main() {
+    Solution ob;
+    int n, k;
+    cout << "Enter number of stalls: ";
+    cin >> n;
