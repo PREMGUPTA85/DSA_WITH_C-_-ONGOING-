@@ -27,3 +27,9 @@ int main() {
     // cout << v[5] << endl;
     // size function used
     // cout << age.size() << endl;// prints the size of the vector
+// empty function used 
+    // if(age.empty()) {
+    //     cout << "Vector is empty" << endl; // checks if the vector is empty
+    // } else {
+    //     cout << "Vector is not empty" << endl;
+    // }
