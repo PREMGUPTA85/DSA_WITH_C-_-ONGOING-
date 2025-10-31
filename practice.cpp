@@ -42,3 +42,9 @@ int main() {
      // front and back functions used
     cout << "Front element: " << v.front() << endl; // prints the first element of the vector
     cout << "Back element: " << v.back() << endl; // prints the last
+// push_back or pop_back functions used
+    v.push_back(30); // adds an element to the end of the vector    
+    cout << "After push_back: ";
+    for (auto it = v.begin(); it != v.end(); ++it) {                    
+        cout << *it << " "; // prints the elements of the vector after push_back    
+    }
