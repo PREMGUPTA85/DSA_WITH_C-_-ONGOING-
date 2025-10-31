@@ -39,3 +39,6 @@ int main() {
     // max_size function used
     cout << age.max_size() << endl;
     cout << v.max_size() << endl;
+     // front and back functions used
+    cout << "Front element: " << v.front() << endl; // prints the first element of the vector
+    cout << "Back element: " << v.back() << endl; // prints the last
