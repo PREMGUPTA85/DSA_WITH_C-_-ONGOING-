@@ -48,3 +48,7 @@ int main() {
     for (auto it = v.begin(); it != v.end(); ++it) {                    
         cout << *it << " "; // prints the elements of the vector after push_back    
     }
+     v.pop_back();  // delete last element of a vector
+    for (auto it = v.begin(); it != v.end(); ++it) {                    
+        cout << *it << " "; // prints the elements of the vector after push_back    
+    }
