@@ -22,3 +22,8 @@ int main() {
     // v.push_back(60);
     
     // v.push_back(60);
+     // v.push_back(60);
+    // v.push_back(60);
+    // cout << v[5] << endl;
+    // size function used
+    // cout << age.size() << endl;// prints the size of the vector
