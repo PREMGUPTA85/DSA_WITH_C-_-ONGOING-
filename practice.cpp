@@ -6,3 +6,5 @@ using namespace std;
 #include<vector> // for using vector
 
 int main() {
+// vector initialise with values 
+    vector <int> v = {10,20};
