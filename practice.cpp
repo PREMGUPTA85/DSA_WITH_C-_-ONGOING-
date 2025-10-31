@@ -58,3 +58,8 @@ int main() {
      for (auto it = v.begin(); it != v.end(); ++it) {                    
         cout << *it << " "; // prints the elements of the vector after push_back    
     }    
+// erase function used
+    v.erase(v.begin(), v.end() - 1); 
+    for (auto it = v.begin(); it != v.end(); ++it) {        
+        cout << *it << " "; // prints the elements of the vector after erase    
+    }
