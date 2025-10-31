@@ -13,3 +13,12 @@ int main() {
     age.push_back(10); // adds an element to the end of the vector
     age.push_back(20); // adds another element to the end of the vector     
     age.push_back(30);
+
+ // Using begin() and end()
+    // for (auto it = v.begin(); it != v.end(); ++it) {
+    //     cout << *it << " ";
+    // }
+    // v.reserve(4);
+    // v.push_back(60);
+    
+    // v.push_back(60);
