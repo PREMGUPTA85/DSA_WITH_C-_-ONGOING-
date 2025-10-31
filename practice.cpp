@@ -33,3 +33,9 @@ int main() {
     // } else {
     //     cout << "Vector is not empty" << endl;
     // }
+// Capacity function using
+    cout << age.capacity() << " ";
+
+    // max_size function used
+    cout << age.max_size() << endl;
+    cout << v.max_size() << endl;
