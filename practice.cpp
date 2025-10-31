@@ -52,3 +52,5 @@ int main() {
     for (auto it = v.begin(); it != v.end(); ++it) {                    
         cout << *it << " "; // prints the elements of the vector after push_back    
     }
+ // insert function used
+    v.insert(v.begin(), 80); // inserts an element at the beginning of the vector
