@@ -63,3 +63,10 @@ int main() {
     for (auto it = v.begin(); it != v.end(); ++it) {        
         cout << *it << " "; // prints the elements of the vector after erase    
     }
+
+    // clear function used 
+    v.clear(); // clears the vector, removing all elements
+    cout << v.size() << endl; // prints the size of the vector after clearing it
+     for (auto it = v.begin(); it != v.end(); ++it) {        
+        cout << *it << " "; // prints the elements of the vector after erase    
+    }
