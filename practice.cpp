@@ -70,3 +70,9 @@ int main() {
      for (auto it = v.begin(); it != v.end(); ++it) {        
         cout << *it << " "; // prints the elements of the vector after erase    
     }
+// swap function used 
+    cout << "Before Swap: " << "\n";
+    cout << "Age vector is : ";
+    for (auto it = age.begin(); it != age.end(); ++it) {    
+        cout << *it << " "; // prints the elements of the vector after erase    
+    }
