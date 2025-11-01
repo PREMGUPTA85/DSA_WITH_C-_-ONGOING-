@@ -8027,5 +8027,7 @@ int main() {
 
 //     // int a = 5;
 //     // int *ptr = &a; // pointer variable to store address of a
+//     // cout << sizeof(ptr) << endl; // size of pointer variable
 //    
+// }
 
