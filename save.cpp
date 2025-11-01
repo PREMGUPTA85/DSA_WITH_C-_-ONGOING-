@@ -8022,4 +8022,10 @@ int main() {
 // int main() {
 //     // int a = 5;
 //     // cout << a;
-//     
+//     // int b = a;
+//     // int c = &a;// error cannot store address of a in int type variable
+
+//     // int a = 5;
+//     // int *ptr = &a; // pointer variable to store address of a
+//    
+
