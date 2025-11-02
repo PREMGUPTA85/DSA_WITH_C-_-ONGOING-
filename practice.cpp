@@ -68,4 +68,5 @@ int main() {
     int n;
     cout << "Enter number of nodes: ";
     cin >> n;
-  
+  cout << "Enter elements:\n";
+   
