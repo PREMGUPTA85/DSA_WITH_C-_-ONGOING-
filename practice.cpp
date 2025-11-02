@@ -70,3 +70,8 @@ int main() {
     cin >> n;
   cout << "Enter elements:\n";
    
+ Node* head = createList(n);
+
+  
+
+
