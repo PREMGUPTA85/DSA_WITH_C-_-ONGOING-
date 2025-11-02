@@ -74,4 +74,7 @@ int main() {
 
   
   cout << "Sum of alternate nodes (starting from first): " << sumOfAlternate(head);
-  
+    return 0;
+}
+
+
