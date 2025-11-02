@@ -1,78 +1,52 @@
+// linked_list class -1
 
-// In container's vector part cover up
-// C++ with STL :-- (contgainer's) -- 1.vector part 
 #include<iostream>
 using namespace std;
-#include<vector> // for using vector
+
+class Node{
+    public:
+    int data;
+    Node* next;
+
+    // constructor
+    Node(int value){
+        this->data = value;
+        this->next = NULL;
+        // starting me jb bhi koi new node craete krte h to uske next k andar by default null value daalte h
+    }
+};
 
 int main() {
-// vector initialise with values 
-    vector <int> v = {10,20};
- // vector initialise without values
-    vector<int> age; // creates a vector of size 10 with all elements initialized to 0
-    age.push_back(10); // adds an element to the end of the vector
-    age.push_back(20); // adds another element to the end of the vector     
-    age.push_back(30);
+    // stack
+    Node first;
+    heap(dynamic memory allocation use)
+    Node* first = new Node();
+    cout << "Hello world!" << endl;
+    return 0;
+}
 
- // Using begin() and end()
-    // for (auto it = v.begin(); it != v.end(); ++it) {
-    //     cout << *it << " ";
-    // }
-    // v.reserve(4);
-    // v.push_back(60);
-    
-    // v.push_back(60);
-     // v.push_back(60);
-    // v.push_back(60);
-    // cout << v[5] << endl;
-    // size function used
-    // cout << age.size() << endl;// prints the size of the vector
-// empty function used 
-    // if(age.empty()) {
-    //     cout << "Vector is empty" << endl; // checks if the vector is empty
-    // } else {
-    //     cout << "Vector is not empty" << endl;
-    // }
-// Capacity function using
-    cout << age.capacity() << " ";
+// waap to find sum of altrnates valuesin starting from first node 
+#include<iostream>
+using namespace std;
 
-    // max_size function used
-    cout << age.max_size() << endl;
-    cout << v.max_size() << endl;
-     // front and back functions used
-    cout << "Front element: " << v.front() << endl; // prints the first element of the vector
-    cout << "Back element: " << v.back() << endl; // prints the last
-// push_back or pop_back functions used
-    v.push_back(30); // adds an element to the end of the vector    
-    cout << "After push_back: ";
-    for (auto it = v.begin(); it != v.end(); ++it) {                    
-        cout << *it << " "; // prints the elements of the vector after push_back    
-    }
-     v.pop_back();  // delete last element of a vector
-    for (auto it = v.begin(); it != v.end(); ++it) {                    
-        cout << *it << " "; // prints the elements of the vector after push_back    
-    }
- // insert function used
-    v.insert(v.begin(), 80); // inserts an element at the beginning of the vector
-    cout << "After insert: ";  
-     for (auto it = v.begin(); it != v.end(); ++it) {                    
-        cout << *it << " "; // prints the elements of the vector after push_back    
-    }    
-// erase function used
-    v.erase(v.begin(), v.end() - 1); 
-    for (auto it = v.begin(); it != v.end(); ++it) {        
-        cout << *it << " "; // prints the elements of the vector after erase    
-    }
+struct Node {
+    int data;
+    Node* next;
+};
 
-    // clear function used 
-    v.clear(); // clears the vector, removing all elements
-    cout << v.size() << endl; // prints the size of the vector after clearing it
-     for (auto it = v.begin(); it != v.end(); ++it) {        
-        cout << *it << " "; // prints the elements of the vector after erase    
+Node* createList(int n) {
+    Node* head = nullptr, *temp = nullptr;
+    for (int i = 0; i < n; i++) {
+        Node* newNode = new Node();
+        cin >> newNode->data;
+        newNode->next = nullptr;
+
+        if (head == nullptr)
+            head = temp = newNode;
+        else {
+            temp->next = newNode;
+            temp = newNode;
+        }
     }
-// swap function used 
-    cout << "Before Swap: " << "\n";
-    cout << "Age vector is : ";
-    for (auto it = age.begin(); it != age.end(); ++it) {    
-        cout << *it << " "; // prints the elements of the vector after erase    
-    }
+    return head;
+}
