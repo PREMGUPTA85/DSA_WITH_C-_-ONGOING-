@@ -73,5 +73,5 @@ int main() {
  Node* head = createList(n);
 
   
-
-
+  cout << "Sum of alternate nodes (starting from first): " << sumOfAlternate(head);
+  
