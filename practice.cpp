@@ -1,5 +1,5 @@
 // linked_list class -1
-
+//gfdgdgdgf
 #include<iostream>
 using namespace std;
 
