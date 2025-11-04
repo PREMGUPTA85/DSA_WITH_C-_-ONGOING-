@@ -1,7 +1,7 @@
-// linked_list class -1
-//gfdgdgdgf
-// fhbfabfabfd
-// fuhdhfdsfusdhfu
+
+//132.Search target in a nearly sorted array where each element may be misplaced by ±1 index
+int nearlysearch(int arr[],int size,int target){
+   
 #include<iostream>
 using namespace std;
 
