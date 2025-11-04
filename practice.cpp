@@ -1,6 +1,7 @@
 // linked_list class -1
 //gfdgdgdgf
 // fhbfabfabfd
+// fuhdhfdsfusdhfu
 #include<iostream>
 using namespace std;
 
