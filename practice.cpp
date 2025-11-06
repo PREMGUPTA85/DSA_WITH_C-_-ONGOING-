@@ -10,3 +10,11 @@ class Node{
     public:
     int data;
     Node* next;
+
+  // constructor
+    Node(int value){
+        this->data = value;
+        this->next = NULL;
+        // starting me jb bhi koi new node craete krte h to uske next k andar by default null value daalte h
+    }
+};
