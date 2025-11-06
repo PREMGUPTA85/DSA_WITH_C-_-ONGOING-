@@ -18,3 +18,12 @@ class Node{
         // starting me jb bhi koi new node craete krte h to uske next k andar by default null value daalte h
     }
 };
+
+int main() {
+    // stack
+    Node first;
+    // heap(dynamic memory allocation use)
+    Node* first = new Node();
+    cout << "Hello world!" << endl;
+    return 0;
+}
