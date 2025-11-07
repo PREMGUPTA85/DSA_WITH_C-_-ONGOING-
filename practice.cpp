@@ -12,3 +12,13 @@ int binaryconversion(int num){
         cout << num % 2;
     }
 }
+
+
+int main(){
+    int num;
+    cin >> num;
+    binaryconversion(num);
+    return 0;
+}
+
+
