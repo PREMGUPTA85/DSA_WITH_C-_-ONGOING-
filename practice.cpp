@@ -9,4 +9,6 @@ using namespace std;
 int binaryconversion(int num){
     if(num > 0){
         binaryconversion(num / 2);
-  
+        cout << num % 2;
+ 
+
