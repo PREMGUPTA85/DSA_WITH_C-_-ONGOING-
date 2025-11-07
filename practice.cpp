@@ -27,3 +27,8 @@ int main() {
     cout << "Hello world!" << endl;
     return 0;
 }
+
+
+// wap to convert decimal into binary using backtracking 
+#include<iostream>
+using namespace std;
