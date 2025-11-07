@@ -7,4 +7,5 @@ using namespace std;
 
 
 int binaryconversion(int num){
-   
+    if(num > 0){
+       
