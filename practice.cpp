@@ -9,4 +9,6 @@ public:
 
         while (it)
         {
-           
+            if (it->child)
+            {
+              
