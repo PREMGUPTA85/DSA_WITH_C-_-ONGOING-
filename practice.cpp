@@ -14,6 +14,6 @@ public:
                 if(sum<0) l++;
                 else if(sum>0) r--;
                 else{
-               
-
-
+                    ans.push_back({nums[i], nums[l], nums[r]});
+                    l++; r--;
+                    
