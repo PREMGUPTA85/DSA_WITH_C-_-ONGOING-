@@ -20,6 +20,10 @@ public:
                 if (temp)
                     temp->prev = childTail;
                 it->child = nullptr;
-      
+            }
+            tail = it;
+            it = it->next;
+        }
+   
 
 
