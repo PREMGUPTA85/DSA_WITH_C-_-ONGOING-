@@ -4157,333 +4157,327 @@ int main() {
         cout << "Element not found" << endl;
     }
     
-// //     // count function
-// //     if(st.count(155) == 1){
-// //         cout << "Element found" << endl;
-// //     } else {
-// //         cout << "Element not found" << endl;
-// //     }
-// // }
+    // count function
+    if(st.count(155) == 1){
+        cout << "Element found" << endl;
+    } else {
+        cout << "Element not found" << endl;
+    }
+}
 
-// // // map 
-// // #include<iostream>
-// // #include<map>  // header file for map 
-// // #include<unordered_map> // header file for unordered_map
-// // using namespace std;
+// map 
+#include<iostream>
+#include<map>  // header file for map 
+#include<unordered_map> // header file for unordered_map
+using namespace std;
 
-// // int main () {
+int main () {
 
-// //     // another map
-// //     map<int, string> table; // map with int as key and string as value
+    // another map
+    map<int, string> table; // map with int as key and string as value
     
-// //     table[3] = "three";
-// //     table.insert(make_pair(4, "four"));
+    table[3] = "three";
+    table.insert(make_pair(4, "four"));
 
-// //     table.insert(make_pair(1, "one"));
-// //     table.insert(make_pair(2, "two"));
-// //     map<int,string>::iterator it = table.begin(); // pointing to first element of map 
-// //     while(it != table.end()) {
-// //        // cout << it->first << " : " << it->second << endl; // accessing key and value
-// //        pair<int,string> temp = *it; // dereferencing the iterator to get the pair
-// //        cout << temp.first << " : " << temp.second << endl; // accessing key and value
-// //         it++;
-// //         }
+    table.insert(make_pair(1, "one"));
+    table.insert(make_pair(2, "two"));
+    map<int,string>::iterator it = table.begin(); // pointing to first element of map 
+    while(it != table.end()) {
+       // cout << it->first << " : " << it->second << endl; // accessing key and value
+       pair<int,string> temp = *it; // dereferencing the iterator to get the pair
+       cout << temp.first << " : " << temp.second << endl; // accessing key and value
+        it++;
+        }
 
-// //     // find function
-// //     if(table.find(2) != table.end()) {
-// //         cout << "Key 2 found in the map." << endl;      
-// //     } else {
-// //         cout << "Key 2 not found in the map." << endl;  
-// //          //count function
-// //     if(table.count(1) > 0) { 
-// //         cout << "Key 1 exists in the map." << endl;
-// //     } else {
-// //         cout << "Key 1 does not exist in the map." << endl;
-// //     }
-// // }
-// // }
+    // find function
+    if(table.find(2) != table.end()) {
+        cout << "Key 2 found in the map." << endl;      
+    } else {
+        cout << "Key 2 not found in the map." << endl;  
+         //count function
+    if(table.count(1) > 0) { 
+        cout << "Key 1 exists in the map." << endl;
+    } else {
+        cout << "Key 1 does not exist in the map." << endl;
+    }
+}
+}
 
-// // // Algorithms 
-// // // Algorithms in STL
-// // // Iterator's and iterating algorithms
-// // #include<iostream>
-// // #include<vector>
-// // #include<algorithm>
-// // using namespace std;
+// Algorithms 
+// Algorithms in STL
+// Iterator's and iterating algorithms
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
 
-// // void printdouble(int x) {
-// //     cout <<  x * 2 << " ";
-// // }
+void printdouble(int x) {
+    cout <<  x * 2 << " ";
+}
 
-// // bool checkeven(int x) {
-// //     return x % 2 == 0;
-// // }
-// // int main () {
-// //     // Iterator's and Iterating Algorithms
+bool checkeven(int x) {
+    return x % 2 == 0;
+}
+int main () {
+    // Iterator's and Iterating Algorithms
     
-// //     // using vector bcz we need dynamic array
-// //     vector<int> v;
-// //     v.push_back(10);
-// //     v.push_back(15);    
-// //     v.push_back(20);
-// //     v.push_back(27);
-// //     v.push_back(32);
-// //     v.push_back(33);
+    // using vector bcz we need dynamic array
+    vector<int> v;
+    v.push_back(10);
+    v.push_back(15);    
+    v.push_back(20);
+    v.push_back(27);
+    v.push_back(32);
+    v.push_back(33);
 
-// //     // for_each loop to print vector elements by double  
-// //     //for_each(v.begin(), v.end(), printdouble);
+    // for_each loop to print vector elements by double  
+    for_each(v.begin(), v.end(), printdouble);
 
-// //     // find_if algorithm to find an element in vector
-// //    // auto it = find_if(v.begin(), v.end(), checkeven);
-// //     // cout << *it << endl;  // sbse pehle element jo conatiner me hoga vo return hoga 
+    // find_if algorithm to find an element in vector
+   auto it = find_if(v.begin(), v.end(), checkeven);
+    cout << *it << endl;  // sbse pehle element jo conatiner me hoga vo return hoga 
 
-// //     // count algorithm to count even numbers in vector      
-// //     //int target = 20;
-// //    //cout << count(v.begin(), v.end(), target) << endl;
+    // count algorithm to count even numbers in vector      
+    int target = 20;
+   cout << count(v.begin(), v.end(), target) << endl;
 
-// //    // count_if algorithm to count even numbers in vector
-// // //    count_if(v.begin(), v.end(), checkeven);
-// // //    cout << count_if(v.begin(), v.end(), checkeven) << endl;
+//    count_if algorithm to count even numbers in vector
+   count_if(v.begin(), v.end(), checkeven);
+   cout << count_if(v.begin(), v.end(), checkeven) << endl;
 
-// //     // sort algorithm to sort the vector
-// //    sort(v.begin(), v.end()); // sort the vector in ascending order
-// //    // cout << "After sorting: ";
-// //     // for(auto it:v) {
-// //     //     cout << it << " ";
-// //     // }
-// //     // cout << endl;
+    // sort algorithm to sort the vector
+   sort(v.begin(), v.end()); // sort the vector in ascending order
+   cout << "After sorting: ";
+    for(auto it:v) {
+        cout << it << " ";
+    }
+    cout << endl;
 
-// //     // reverse algorithm to reverse the vector
-// //     // reverse(v.begin(), v.end());
-// //     // for(auto it: v){
-// //     //    // cout << it << " ";
-// //     // }
+    // reverse algorithm to reverse the vector
+    reverse(v.begin(), v.end());
+    for(auto it: v){
+       cout << it << " ";
+    }
 
-// //     // rotate algorithm to rotate the vector
-// //     // rotate(v.begin(), v.begin() + 5, v.end());
-// //     // for(auto it: v){
-// //     //     cout << it << " ";
-// //     // }
+    // rotate algorithm to rotate the vector
+    rotate(v.begin(), v.begin() + 5, v.end());
+    for(auto it: v){
+        cout << it << " ";
+    }
 
-// //     // unique algorithm to remove
-// //     // auto it = unique(v.begin(), v.end());
-// //     // v.erase(it, v.end()); // remove duplicates
-// //     // cout << "After removing duplicates: ";
-// //     // for(auto it: v){
-// //     //     cout << it << " ";
-// //     // }
+    // unique algorithm to remove
+    // auto it = unique(v.begin(), v.end());
+    v.erase(it, v.end()); // remove duplicates
+    cout << "After removing duplicates: ";
+    for(auto it: v){
+        cout << it << " ";
+    }
 
-// //     // partition algorithm to partition the vector
-// //     auto it = partition(v.begin(), v.end(), checkeven);
-// //     for(auto a: v) {
-// //         cout << a << " ";
-// //     }
-// // }
+    // partition algorithm to partition the vector
+    auto it = partition(v.begin(), v.end(), checkeven);
+    for(auto a: v) {
+        cout << a << " ";
+    }
+}
 
-// // // Algorithms in STL
-// // #include<iostream>
-// // #include<vector>
-// // #include<algorithm>
-// // using namespace std;
+// 103.Algorithms in STL
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
 
-// // // void printdouble(int x) {
-// // //     cout <<  x * 2 << " ";
-// // // }
-
-// // int checkeven(int x) {
-// //     return x % 2 == 0;
-// // }
-
-// // int main () {
-// //     // Iterator's and Iterating Algorithms
-    
-// //     // using vector bcz we need dynamic array
-// //     vector<int> v = {1,2,3,4,5,6};
-
-// //     // for_each loop to print vector elements by double  
-// //     //for_each(v.begin(), v.end(), printdouble);
-
-// //     // find algorithm to find an element in vector  
-// //     //[] int target = 3;
-// //     // auto it = find(v.begin(), v.end(), target);
-// //     // cout << *it << endl;  // sbse pehle element jo conatiner me hoga vo return hoga
-    
-// //     // find_if algorithm to find an element in vector
-// //    //auto it = find_if(v.begin(), v.end(), checkeven);
-// //     //cout << *it << endl;  // sbse pehle element jo conatiner me hoga vo return hoga 
-
-// //     // count algorithm to count even numbers in vector      
-// //     //int target = 20;
-// //    //cout << count(v.begin(), v.end(), target) << endl;
-
-// //    // count_if algorithm to count even numbers in vector
-// //     // int ans = count_if(v.begin(), v.end(), checkeven);
-// //     // cout << ans << endl;
-
-// //     // sort algorithm to sort the vector
-// //   // sort(v.begin(), v.end()); // sort the vector in ascending order
-// //    // cout << "After sorting: ";
-// //     // for(auto it:v) {
-// //     //     cout << it << " ";
-// //     // }
-// //     // cout << endl;
-
-// //     // reverse algorithm to reverse the vector
-// //     // reverse(v.begin(), v.end());
-// //     // for(auto it: v){
-// //     //    // cout << it << " ";
-// //     // }
-
-// //     // rotate algorithm to rotate the vector
-// //     // rotate(v.begin(), v.begin() + 2, v.end()); // left shift by 5 elements
-// //     // rotate(v.begin(), v.end() - 2, v.end());  // right shift by 2 elements
-
-// //     // for(auto it: v){
-// //     //     cout << it << " ";
-// //     // }
-
-// //     // unique algorithm to remove
-// //     // auto it = unique(v.begin(), v.end());
-// //     // v.erase(it, v.end()); // remove duplicates
-// //     // cout << "After removing duplicates: ";
-// //     // for(auto it: v){
-// //     //     cout << it << " ";
-// //     // }
-
-// //    // partition algorithm to partition the vector
-// //     partition(v.begin(), v.end(), checkeven);
-// //     for(auto a: v) {
-// //         cout << a << " ";
-// //     }
-// // }
-
-// // // iterator.cpp
-// // #include<iostream>
-// // #include<vector>
-// // #include<forward_list>
-// // using namespace std;
-
-// // int main () {
-// //     // create vector 
-// //     //vector<int> v = {1,2,3};
-
-// //     // create iterator for traversing the vector
-// //     // vector<int>:: iterator it = v.begin();
-// //     // while(it != v.end()){
-// //     //     cout << *it << " ";
-// //     //     it++;
-// //     // }
-// //     // cout << endl;
-
-// //     // types of iterator's
-// //     // 3. forward iterator
-// //     forward_list<int> list;
-// //     list.push_front(10);
-// //     list.push_front(20);     
-// //     list.push_front(30);
-
-// //     // traverse the singly linked list using forward iterator
-// //     forward_list<int>:: iterator it = list.begin();
-// //     while(it != list.end()){
-// //         // write the iterator value
-// //         (*it) = (*it) + 5; // increment each element by 5
-// //        // read the iterator value
-// //         cout << *it << " ";
-// //         it++;
-// //     }
-// //     // cout << "this not print anything." << endl;
-
-// //     //bidirectional iterator :-- in which we initialise the iterator be like list.begin() for forward iteration and list.end() - 1 for backward iterating 
-
-// //     // Random access iterator :-- used like list.begin() + 3 be like that
-
-// // }
-
-// // // for functor's firstly we need to study OOPS concepts 
-
-// #include<iostream>
-// using namespace std;
-
-// class functorOne {
-//     public:
-//         bool operator()(int a, int b) {
-//             ///descending order me cmp karna chahte ho
-//             // if  a>b -> true, a should be placed before b
-//             // that's why descending order banata h
-//             return a > b;
-//         }
-// };
-
-// int main() {
-
-//     functorOne cmp;
-
-//     if( cmp(10,5 ) == true ) {
-//         cout << "10 is greater than 5" << endl; 
-//     }
-//     else {
-//         cout << "10 is less than 5";
-//     }
-
-
-//     return 0;
+// void printdouble(int x) {
+//     cout <<  x * 2 << " ";
 // }
 
-// #include<iostream>
-// #include<vector>
-// #include<algorithm>
-// #include<queue>
-// using namespace std;
+int checkeven(int x) {
+    return x % 2 == 0;
+}
 
-// class Student{
-//     public:
-//         int marks;
-//         string name;
-//         Student() {
+int main () {
+    // Iterator's and Iterating Algorithms
+    
+    // using vector bcz we need dynamic array
+    vector<int> v = {1,2,3,4,5,6};
 
-//         }
-//         Student(int m, string n) {
-//             this->marks = m;
-//             this->name = n;
-//         }
-// };
+    // for_each loop to print vector elements by double  
+    for_each(v.begin(), v.end(), printdouble);
 
-// class comparator{
-//     public:
-//         bool operator()(Student a, Student b) {
-//             //criteria -> max marks->high priority
-//             return a.marks < b.marks;
-//         }
-// };
+    // find algorithm to find an element in vector  
+    [] int target = 3;
+    auto it = find(v.begin(), v.end(), target);
+    cout << *it << endl;  // sbse pehle element jo conatiner me hoga vo return hoga
+    
+    // find_if algorithm to find an element in vector
+   auto it = find_if(v.begin(), v.end(), checkeven);
+    cout << *it << endl;  // sbse pehle element jo conatiner me hoga vo return hoga 
 
-// int main() {
+    // count algorithm to count even numbers in vector      
+    int target = 20;
+   cout << count(v.begin(), v.end(), target) << endl;
 
-//     priority_queue<Student, vector<Student>, comparator > pq;
+//    count_if algorithm to count even numbers in vector
+    int ans = count_if(v.begin(), v.end(), checkeven);
+    // cout << ans << endl;
 
-//     pq.push(Student(90,"Love"));
-//     pq.push(Student(27,"Lakshay"));
-//     pq.push(Student(99,"Amit"));
-//     pq.push(Student(82,"Sharma"));
+    // sort algorithm to sort the vector
+  sort(v.begin(), v.end()); // sort the vector in ascending order
+   cout << "After sorting: ";
+    for(auto it:v) {
+        cout << it << " ";
+    }
+    cout << endl;
 
-//     cout << pq.top().marks << " " << pq.top().name << endl;
-//     pq.pop();
-//     cout << pq.top().marks << " " << pq.top().name << endl;
-//     pq.pop();
-//     cout << pq.top().marks << " " << pq.top().name << endl;
-//     pq.pop();
-//     cout << pq.top().marks << " " << pq.top().name << endl;
+    // reverse algorithm to reverse the vector
+    reverse(v.begin(), v.end());
+    for(auto it: v){
+       // cout << it << " ";
+    }
 
-//     //max heap
-//     // priority_queue<int> pq;
-//     // priority_queue<int,vector<int>, less<int> > pq3;
-//     // //min-heap
-//     // priority_queue<int,vector<int>, greater<int> > pq2;
+    // rotate algorithm to rotate the vector
+    rotate(v.begin(), v.begin() + 2, v.end()); // left shift by 5 elements
+    rotate(v.begin(), v.end() - 2, v.end());  // right shift by 2 elements
+
+    for(auto it: v){
+        cout << it << " ";
+    }
+
+    // unique algorithm to remove
+    auto it = unique(v.begin(), v.end());
+    v.erase(it, v.end()); // remove duplicates
+    cout << "After removing duplicates: ";
+    for(auto it: v){
+        cout << it << " ";
+    }
+
+   // partition algorithm to partition the vector
+    partition(v.begin(), v.end(), checkeven);
+    for(auto a: v) {
+        cout << a << " ";
+    }
+}
+
+// //104. iterator.cpp
+#include<iostream>
+#include<vector>
+#include<forward_list>
+using namespace std;
+
+int main () {
+    // create vector 
+    //vector<int> v = {1,2,3};
+
+    create iterator for traversing the vector
+    vector<int>:: iterator it = v.begin();
+    while(it != v.end()){
+        cout << *it << " ";
+        it++;
+    }
+    cout << endl;
+
+    // types of iterator's
+    // 3. forward iterator
+    forward_list<int> list;
+    list.push_front(10);
+    list.push_front(20);     
+    list.push_front(30);
+
+    // traverse the singly linked list using forward iterator
+    forward_list<int>:: iterator it = list.begin();
+    while(it != list.end()){
+        // write the iterator value
+        (*it) = (*it) + 5; // increment each element by 5
+       // read the iterator value
+        cout << *it << " ";
+        it++;
+    }
+    // cout << "this not print anything." << endl;
+
+    //bidirectional iterator :-- in which we initialise the iterator be like list.begin() for forward iteration and list.end() - 1 for backward iterating 
+
+    // Random access iterator :-- used like list.begin() + 3 be like that
+
+}
+
+//105.for functor's firstly we need to study OOPS concepts 
+
+#include<iostream>
+using namespace std;
+
+class functorOne {
+    public:
+        bool operator()(int a, int b) {
+            return a > b;
+        }
+};
+
+int main() {
+    functorOne cmp;
+    if( cmp(10,5 ) == true ) {
+        cout << "10 is greater than 5" << endl; 
+    }
+    else {
+        cout << "10 is less than 5";
+    }
+    return 0;
+}
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<queue>
+using namespace std;
+
+class Student{
+    public:
+        int marks;
+        string name;
+        Student() {
+
+        }
+        Student(int m, string n) {
+            this->marks = m;
+            this->name = n;
+        }
+};
+
+class comparator{
+    public:
+        bool operator()(Student a, Student b) {
+            //criteria -> max marks->high priority
+            return a.marks < b.marks;
+        }
+};
+
+int main() {
+
+    priority_queue<Student, vector<Student>, comparator > pq;
+
+    pq.push(Student(90,"Love"));
+    pq.push(Student(27,"Lakshay"));
+    pq.push(Student(99,"Amit"));
+    pq.push(Student(82,"Sharma"));
+
+    cout << pq.top().marks << " " << pq.top().name << endl;
+    pq.pop();
+    cout << pq.top().marks << " " << pq.top().name << endl;
+    pq.pop();
+    cout << pq.top().marks << " " << pq.top().name << endl;
+    pq.pop();
+    cout << pq.top().marks << " " << pq.top().name << endl;
+
+    //max heap
+    // priority_queue<int> pq;
+    // priority_queue<int,vector<int>, less<int> > pq3;
+    // //min-heap
+    // priority_queue<int,vector<int>, greater<int> > pq2;
 
 
 
-//     return 0;
-// }
+    return 0;
+}
 
+// 106.
 // #include<iostream>
 // #include<vector>
 // #include<algorithm>
@@ -4564,744 +4558,745 @@ int main() {
 // }
 
 // // //// ------------------------------- oops(objects + classes) week 8-------------------------------------------------
-// // #include<iostream>
-// // #include<string>
-// // using namespace std;
+//107. Write a C++ program to demonstrate class creation with constructors, copy constructor, destructor, and dynamic memory allocation.
+#include<iostream>
+#include<string>
+using namespace std;
 
-// // // class creation 
-// // class Student {
-// //     public:   // encapsulation
+// class creation 
+class Student {
+    public:   // encapsulation
 
-// //     // Attributes
-// //     int id, age, nos;
-// //     string name;
-// //     int *gpa;
+    // Attributes
+    int id, age, nos;
+    string name;
+    int *gpa;
 
 
-// //     // ctor constructor
-// //      Student() {
-// //      cout << "Student default ctor called." << endl;
-// //      }
+    // ctor constructor
+     Student() {
+     cout << "Student default ctor called." << endl;
+     }
     
-// //     // parameterised constructor 
-// //     Student(int id, int age, int nos, string name, float gpa){
-// //         this->id = id;
-// //         this->age = age;
-// //         this->nos = nos;
-// //         this->name = name;
-// //         cout << "Student parameterised ctor called." << endl;
-// //         this->gpa = new int(gpa); // dynamic memory allocation for gpa
-// //     }
+    // parameterised constructor 
+    Student(int id, int age, int nos, string name, float gpa){
+        this->id = id;
+        this->age = age;
+        this->nos = nos;
+        this->name = name;
+        cout << "Student parameterised ctor called." << endl;
+        this->gpa = new int(gpa); // dynamic memory allocation for gpa
+    }
 
-// //     // copy constructor
-// //     Student(const Student &srcobj){
-// //         cout << "Student copy ctor called." << endl;
-// //         this->id = srcobj.id;
-// //         this->age = srcobj.age;
-// //         this->nos = srcobj.nos;
-// //         this->name = srcobj.name;
-// //     }
+    // copy constructor
+    Student(const Student &srcobj){
+        cout << "Student copy ctor called." << endl;
+        this->id = srcobj.id;
+        this->age = srcobj.age;
+        this->nos = srcobj.nos;
+        this->name = srcobj.name;
+    }
 
-// //     // behaviour /functions / methods
-// //     void study() {
-// //         cout << this->name << " Studying" << endl;
-// //     }   
+    // behaviour /functions / methods
+    void study() {
+        cout << this->name << " Studying" << endl;
+    }   
 
-// //     void sleep() {
-// //         cout << this->name << " sleeping..." << endl;
-// //     }   
+    void sleep() {
+        cout << this->name << " sleeping..." << endl;
+    }   
 
-// //     void bunk() {
-// //         cout << this->name << " bunking..." << endl;
-// //     }
+    void bunk() {
+        cout << this->name << " bunking..." << endl;
+    }
 
-// //     // dtor destructor 
-// //     ~Student(){
-// //     cout << "Student default dtor called" << endl;
-// //     delete this->gpa; // deallocating the memory allocated for gpa
-// //     }
-// // };
+    // dtor destructor 
+    ~Student(){
+    cout << "Student default dtor called" << endl;
+    delete this->gpa; // deallocating the memory allocated for gpa
+    }
+};
 
-// // // object creation
-// // int main() {
-// //     // Student A;
-// //     // A.id = 1;
-// //     // A.age = 20;
-// //     // A.nos = 5;  
-// //     // A.name = "John";
-// //     // A.study();
+// object creation
+int main() {
+    Student A;
+    A.id = 1;
+    A.age = 20;
+    A.nos = 5;  
+    A.name = "John";
+    A.study();
 
-// //     // Student B;
-// //     // B.id = 1;
-// //     // B.age = 20;
-// //     // B.nos = 5;  
-// //     // B.name = "Doe";
-// //     // B.sleep();
+    Student B;
+    B.id = 1;
+    B.age = 20;
+    B.nos = 5;  
+    B.name = "Doe";
+    B.sleep();
 
-// //     // Another way to create an object
-// //     // Student A(1, 20, 5, "John");   // for this to work, we need to define a parameterised constructor
-// //     //Student B(2, 21, 6, "Doe");
+    // Another way to create an object
+    Student A(1, 20, 5, "John");   // for this to work, we need to define a parameterised constructor
+    Student B(2, 21, 6, "Doe");
 
-// //     // A.study();
-// //     // B.bunk();
+    A.study();
+    B.bunk();
 
-// //     // ctor copy
-// //    // Student C = A; // copy all the attributes of A to C
-// //     // Student C(A); // copy all the attributes of A to C
-// //     // cout << "C.id: " << C.id << endl; 
+    ctor copy
+   Student C = A; // copy all the attributes of A to C
+    Student C(A); // copy all the attributes of A to C
+    cout << "C.id: " << C.id << endl; 
 
-// //     // C.name = "Cathy"; // changing the name of C
-// //     // C.study();
+    C.name = "Cathy"; // changing the name of C
+    // C.study();
 
-// //     // Dynamic allocation or student pointer
-// //     Student *D = new Student(3,24,8,"Alice", 9.8);
-// //     cout << D->name << endl;
-// //     cout << D->id << endl;
-// //     cout << D->age << endl;
-// //     cout << D->nos << endl;
-// //     cout << *(D->gpa) << endl;
-// //     D->study(); // using arrow operator to access the method of the object
-// //     delete D; // Deallocating the memory allocated for D
+    // Dynamic allocation or student pointer
+    Student *D = new Student(3,24,8,"Alice", 9.8);
+    cout << D->name << endl;
+    cout << D->id << endl;
+    cout << D->age << endl;
+    cout << D->nos << endl;
+    cout << *(D->gpa) << endl;
+    D->study(); // using arrow operator to access the method of the object
+    delete D; // Deallocating the memory allocated for D
 
-// //     return 0;
-// // }
+    return 0;
+}
 
 // // // // Implementing Encapsulation(binds data and methods) in C++
-// // // // oops = fundamental concepts of (object + classes)
-// // // #include<iostream>
-// // // #include<string> // header file for string class
-// // // using namespace std;
+// oops = fundamental concepts of (object + classes)
+#include<iostream>
+#include<string> // header file for string class
+using namespace std;
 
-// // // // for defining object in C++ firstly we need to create a class
+// for defining object in C++ firstly we need to create a class
 
-// // // class Student {
-// // //     public: // access specifier / Encapsulation
+class Student {
+    public: // access specifier / Encapsulation
 
-// // //     // attributes :-- those variable which use to describe the object
-// // //     int id, age, nos;
-// // //     string name;
+    // attributes :-- those variable which use to describe the object
+    int id, age, nos;
+    string name;
 
-// // // private: 
-// // //     float *gpa;
-// // //     string gf;
+private: 
+    float *gpa;
+    string gf;
 
-// // // public:   // access modifier
-// // //     // ctor 
-// // //     Student() {
-// // //         cout << "Default ctor called.\n";
-// // //     }
+public:   // access modifier
+    // ctor 
+    Student() {
+        cout << "Default ctor called.\n";
+    }
 
-// // //     // parameterised ctor called later
-// // //     Student(int id, int age, int nos, string name, float gpa, string gf) {
-// // //         cout << "parameterised ctor called.\n";
-// // //         this->id = id; 
-// // //         this->age = age;
-// // //         this->nos = nos;
-// // //         this->name = name;
-// // //         this->gpa = new float(gpa);
-// // //         this->gf = gf;
-// // //     }
+    // parameterised ctor called later
+    Student(int id, int age, int nos, string name, float gpa, string gf) {
+        cout << "parameterised ctor called.\n";
+        this->id = id; 
+        this->age = age;
+        this->nos = nos;
+        this->name = name;
+        this->gpa = new float(gpa);
+        this->gf = gf;
+    }
 
-// // //     // behaviour/ functions / methods
-// // //     void dance() {
-// // //         cout << this->name << " dancing\n";
-// // //     }
-// // //     void study() {
-// // //         cout << this->name << " studying\n";
-// // //     }
-// // //     void sleep() {
-// // //         cout << this->name << " Sleeping\n";
-// // //     }
+    // behaviour/ functions / methods
+    void dance() {
+        cout << this->name << " dancing\n";
+    }
+    void study() {
+        cout << this->name << " studying\n";
+    }
+    void sleep() {
+        cout << this->name << " Sleeping\n";
+    }
 
-// // //     // dtor called 
-// // //     ~Student() {
-// // //         cout << "Default dtor called.\n";
-// // //         delete this->gpa;
-// // //     }
+    // dtor called 
+    ~Student() {
+        cout << "Default dtor called.\n";
+        delete this->gpa;
+    }
 
-// // // private: 
-// // //     void gfchatting() 
-// // //     {
-// // //         cout << this->name << " chatting with gf \n" ;
-// // //     }
+private: 
+    void gfchatting() 
+    {
+        cout << this->name << " chatting with gf \n" ;
+    }
     
-// // // };
+};
 
-// // // // creating objects after class
-// // // int main () {
-// // //    Student A(1, 12, 4, "john", 7.8, "Menu");
+// creating objects after class
+int main () {
+   Student A(1, 12, 4, "john", 7.8, "Menu");
 
-// // //    cout << A.age << endl;
+   cout << A.age << endl;
 
-// // //     A.sleep();
-// // //     return 0; 
-// // // }
+    A.sleep();
+    return 0; 
+}
 
-// // // Perfect Encapsulation :-- all attributes is hidden 
-// // // Implementing Encapsulation(binds data and methods) in C++
-// // // oops = fundamental concepts of (object + classes)
-// // #include<iostream>
-// // #include<string> // header file for string class
-// // using namespace std;
+// Perfect Encapsulation :-- all attributes is hidden 
+// Implementing Encapsulation(binds data and methods) in C++
+// oops = fundamental concepts of (object + classes)
+#include<iostream>
+#include<string> // header file for string class
+using namespace std;
 
-// // // for defining object in C++ firstly we need to create a class
+// for defining object in C++ firstly we need to create a class
 
-// // class Student {
-// //  private:  // access specifier / Encapsulation
+class Student {
+ private:  // access specifier / Encapsulation
 
-// //     // attributes :-- those variable which use to describe the object
-// //     int id, age, nos;
-// //     string name;
-// //     float *gpa;
-// //     string gf;
+    // attributes :-- those variable which use to describe the object
+    int id, age, nos;
+    string name;
+    float *gpa;
+    string gf;
 
-// // public:  
-// //     // getter and setter
+public:  
+    // getter and setter
 
      
-// //     void setgpa(float a){
-// //         // layer of authentication
-// //         *this->gpa = a;
-// //     }
+    void setgpa(float a){
+        // layer of authentication
+        *this->gpa = a;
+    }
 
-// //     float getgpa() const{
-// //         return *this->gpa;
-// //     }
+    float getgpa() const{
+        return *this->gpa;
+    }
 
-// //     float getAge() const{
-// //         return this->age;
-// //     }
+    float getAge() const{
+        return this->age;
+    }
     
 
-// //     // ctor 
-// //     Student() {
-// //         cout << "Default ctor called.\n";
-// //     }
+    // ctor 
+    Student() {
+        cout << "Default ctor called.\n";
+    }
 
-// //     // parameterised ctor called later
-// //     Student(int id, int age, int nos, string name, float gpa, string gf) {
-// //         cout << "parameterised ctor called.\n";
-// //         this->id = id; 
-// //         this->age = age;
-// //         this->nos = nos;
-// //         this->name = name;
-// //         this->gpa = new float(gpa);
-// //         this->gf = gf;
-// //     }
+    // parameterised ctor called later
+    Student(int id, int age, int nos, string name, float gpa, string gf) {
+        cout << "parameterised ctor called.\n";
+        this->id = id; 
+        this->age = age;
+        this->nos = nos;
+        this->name = name;
+        this->gpa = new float(gpa);
+        this->gf = gf;
+    }
 
-// //     // behaviour/ functions / methods
-// //     void dance() {
-// //         cout << this->name << " dancing\n";
-// //     }
-// //     void study() {
-// //         cout << this->name << " studying\n";
-// //     }
-// //     void sleep() {
-// //         cout << this->name << " Sleeping\n";
-// //     }
+    // behaviour/ functions / methods
+    void dance() {
+        cout << this->name << " dancing\n";
+    }
+    void study() {
+        cout << this->name << " studying\n";
+    }
+    void sleep() {
+        cout << this->name << " Sleeping\n";
+    }
 
-// //     // dtor called 
-// //     ~Student() {
-// //         cout << "Default dtor called.\n";
-// //         delete this->gpa;
-// //     }
+    // dtor called 
+    ~Student() {
+        cout << "Default dtor called.\n";
+        delete this->gpa;
+    }
 
-// // private: 
-// //     void gfchatting() 
-// //     {
-// //         cout << this->name << " chatting with gf \n" ;
-// //     }
+private: 
+    void gfchatting() 
+    {
+        cout << this->name << " chatting with gf \n" ;
+    }
     
-// // };
+};
 
-// // // creating objects after class
-// // int main () {
-// //    Student A(1,12, 5, "john", 7.8, "Menu");
+// creating objects after class
+int main () {
+   Student A(1,12, 5, "john", 7.8, "Menu");
 
-// //    // getter and setter lgane k baad aap access nhi kr paoge cout k through 
-// //    //cout << A.age << endl; 
+   // getter and setter lgane k baad aap access nhi kr paoge cout k through 
+   //cout << A.age << endl; 
    
-// //    cout << A.getgpa() << endl;
-// //    A.setgpa(9.8);
-// //    cout << A.getgpa() << endl;
-// //     cout << A.getAge() << endl;
-// //     A.sleep();
-// //     return 0; 
-// // }
-
-
-// // // Implementing inheritance in C++ by using vehicle example
-// // #include<iostream>
-// // #include<string>
-
-// // using namespace std;
-
-// // class Vehicle{                     // base class or parent class
-// // protected: 
-// //     string name;
-// //     string model;
-// //     int no_of_tyres;
-
-// // public:
-// //     Vehicle(string _name, string _model, int _no_of_tyres){
-// //         cout << "I am inside Vehicle constructor" << endl;
-// //         this->name = _name;
-// //         this->model = _model;           
-// //         this->no_of_tyres = _no_of_tyres;
-// //     }
-// // public:
-// //     void start_engine(){
-// //         cout << "Engine started " << name << " " << model <<endl;
-// //     }
-// //     void stop_engine(){
-// //         cout << "Engine stopped " << name << " " << model << endl;
-// //     }
-
-// //     //dtor 
-// //     ~Vehicle(){
-// //         cout << "I am inside Vehicle destructor" << endl;
-// //     }
-// // };    
-
-// // class Car : public Vehicle{              // inheritance used here 
-// // protected:
-// //     int no_of_doors;                    // specific to car h
-// //     string transmission_type;
-
-// // public:
-// //     Car(string _name, string _model, int _no_of_tyres, int _no_of_doors, string _transmission_type) : Vehicle(_name,_model, _no_of_tyres){
-// //         cout << "I am inside Car constructor" << endl; 
-// //         this->no_of_doors = _no_of_doors;
-// //         this->transmission_type = _transmission_type;
-// //     }
-
-// //     void start_AC(){
-// //         cout << "AC started " << name << endl;
-// //     }
-
-// //     // dtor 
-// //     ~Car(){
-// //         cout << "I am inside Car destructor" << endl;
-// //     }
-// // };
-
-// // class Motorcycle : public Vehicle{
-// // protected:
-// //     string handlebarstyle;
-// //     string suspensionstype;
-
-// //     // parameterised ctor called
-// // public:
-// //     Motorcycle(string _name, string _model, int _no_of_tyres,string _handlebarstyle, string _suspensiontype) : Vehicle(_name,_model, _no_of_tyres){
-// //         cout << "I am inside Motorcycle constructor" << endl;
-// //         this->handlebarstyle = _handlebarstyle;
-// //         this->suspensionstype = _suspensiontype;
-// //     }
-
-// //     void wheelie(){
-// //         cout << "Wheeeeee "<< name << endl;
-// //     }   
-// //     // dtor
-// //     ~Motorcycle(){
-// //         cout << "I am inside Motorcycle destructor" << endl;
-// //     }
-// // };
-
-// // int main() {
-// //     Car A("BMW", "X5", 4, 4, "manual");
-// //     A.start_engine();
-// //     A.start_AC();
-// //     A.stop_engine(); 
-
-// //     // Motorcycle B("KTM", "Duke", 2, "flat", "monoshock");
-// //     // B.start_engine();
-// //     // B.wheelie();
-// //     // B.stop_engine();
-// //     return 0;
-// // }
-
-
-// // // types of inheritance through code 
-// // #include<iostream>
-// // #include<string>
-// // using namespace std;
-
-// // // Base class for Single Inheritance
-// // class Employee
-// // {
-// // protected:
-// //     string name;
-// //     int employeeId;
-
-// // public:
-// //     Employee(const string &empName, int empId) : name(empName), employeeId(empId)
-// //     {
-// //         // cout << __FUNCTION__ << endl;
-// //     }
-
-// //     void display() const
-// //     {
-// //         cout << "Employee: " << name << ", ID: " << employeeId << endl;
-// //     }
-// // };
-
-// // // Derived class for Single Inheritance
-// // class Developer : public Employee
-// // {
-// // private:
-// //     string programmingLanguage;
-
-// // public:
-// //     Developer(const string &empName, int empId, const string &lang)
-// //         : Employee(empName, empId)
-// //     {
-// //         this->programmingLanguage = lang;
-// //     }
-
-// //     void show() const
-// //     {
-// //         display();
-// //         cout << "Specialization: Developer, Programming Language: " << programmingLanguage << endl;
-// //     }
-// // };
-
-// // // Base classes for Multiple Inheritance
-// // class ProjectManager
-// // {
-// // protected:
-// //     string projectManaged;
-
-// // public:
-// //     ProjectManager(const string &project) : projectManaged(project) {}
-
-// //     void manageProject() const
-// //     {
-// //         cout << "Project Manager managing project: " << projectManaged << endl;
-// //     }
-// // };
-
-// // class TeamLead
-// // {
-// // protected:
-// //     int teamSize;
-
-// // public:
-// //     TeamLead(int size) : teamSize(size) {}
-
-// //     void leadTeam() const
-// //     {
-// //         cout << "Team Lead leading a team of " << teamSize << " members." << endl;
-// //     }
-// // };
-
-// // // Derived class for Multiple Inheritance
-// // class TechLead : public Employee, public ProjectManager, public TeamLead
-// // {
-// // public:
-// //     TechLead(const string &empName, int empId, const string &project, int teamSize)
-// //         : Employee(empName, empId), ProjectManager(project), TeamLead(teamSize) {}
-
-// //     void displayInfo() const
-// //     {
-// //         display();
-// //         manageProject();
-// //         leadTeam();
-// //     }
-// // };
-
-// // // Base class for Multi-level Inheritance
-// // class HRManager : public Employee
-// // {
-// // public:
-// //     HRManager(const string &empName, int empId) : Employee(empName, empId)
-// //     {
-// //         cout << __FUNCTION__ << endl;
-// //     }
-
-// //     void handleHRDuties() const
-// //     {
-// //         cout << "HR Manager handling human resources duties." << endl;
-// //     }
-// // };
-
-// // // Derived class for Multi-level Inheritance
-// // class HRDirector : public HRManager
-// // {
-// // public:
-// //     HRDirector(const string &empName, int empId) : HRManager(empName, empId)
-// //     {
-// //         cout << __FUNCTION__ << endl;
-// //     }
-
-// //     void manageHRDepartment() const
-// //     {
-// //         cout << "HR Director managing the HR department." << endl;
-// //     }
-// // };
-
-// // // Base class for Hierarchical Inheritance
-// // class Executive : public Employee
-// // {
-// // public:
-// //     Executive(const string &empName, int empId) : Employee(empName, empId) {}
-
-// //     void makeExecutiveDecisions() const
-// //     {
-// //         cout << "Executive making executive decisions." << endl;
-// //     }
-// // };
-
-// // // Derived classes for Hierarchical Inheritance
-// // class CEO : public Executive
-// // {
-// // public:
-// //     CEO(const string &empName, int empId) : Executive(empName, empId) {}
-
-// //     void leadCompany() const
-// //     {
-// //         makeExecutiveDecisions();
-// //         cout << "CEO leading the company." << endl;
-// //     }
-// // };
-
-// // // Base classes for Hybrid Inheritance
-// // class MarketingManager : public Employee
-// // {
-// // public:
-// //     MarketingManager(const string &empName, int empId) : Employee(empName, empId) {}
-
-// //     void createMarketingStrategy() const
-// //     {
-// //         cout << "Marketing Manager creating a marketing strategy." << endl;
-// //     }
-// // };
-
-// // class SalesManager : public Employee
-// // {
-// // public:
-// //     SalesManager(const string &empName, int empId) : Employee(empName, empId) {}
-
-// //     void boostSales() const
-// //     {
-// //         cout << "Sales Manager boosting sales." << endl;
-// //     }
-// // };
-
-// // class BusinessDevelopmentManager : public MarketingManager, public SalesManager
-// // {
-// // public:
-// //     BusinessDevelopmentManager(const string &empName, int empId)
-// //         : MarketingManager(empName, empId), SalesManager(empName, empId) {}
-
-// //     void coordinateBusinessDevelopment() const
-// //     {
-// //         createMarketingStrategy();
-// //         boostSales();
-// //         cout << "Business Development Manager coordinating business development efforts." << endl;
-// //     }
-// // };
-
-// // int main()
-// // {
-// //     // Single Inheritance
-// //     // Developer dev("Ramu Kaka", 101, "C++");
-// //     // dev.show();
-
-// //     // // Multiple Inheritance
-// //     TechLead techLead("Anna Dev", 202, "Project X", 5);
-// //     techLead.displayInfo();
-
-// //     // // Multi-level Inheritance
-// //     // HRDirector hrDirector("Lucy Madam", 303);
-// //     // hrDirector.handleHRDuties();
-// //     // hrDirector.manageHRDepartment();
-
-// //     // Hierarchical Inheritance
-// //     // CEO ceo("Devi Lal", 404);
-// //     // ceo.leadCompany();
-
-// //     // // Hybrid Inheritance
-// //     // BusinessDevelopmentManager bdManager("Sam Uncle", 606);
-// //     // bdManager.coordinateBusinessDevelopment();
-
-// //     return 0;
-// // }
-
-// //Compile time polymorphism
-// // Polymorphism in C++
-// // function overloading 
-// #include<iostream>
-// using namespace std;
-
-// // class add{
-// //     public:
-// //     int sum(int a, int b){
-// //         return a+b;
-// //     }
-// //     int sum(int a, int b, int c){
-// //         return a+b+c;
-// //     }
-// //     double sum(double a, double b){
-// //         return a + b;
-// //     }
-// // };
-
-// // operator overloading
-// #include<iostream>
-// using namespace std;
-
-// class Complex{
-// public:
-//     // attributes 
-//     double real, imag;
-
-//     // by default when no any value is passing 
-//     Complex() {
-//         real = imag = -1;
-//     }
-
-//     // parameterised constructor called
-//     Complex(double r, double i){
-//         this->real = r;
-//         this->imag = i;
-//     }
-
-//     // operator overloading concept 
-//     Complex operator+(const Complex &C3){
-//         Complex temp;
-//         temp.real = this->real + C3.real;
-//         temp.imag = this->imag + C3.imag;
-//         return temp;
-//     }
-
-//     Complex operator-(const Complex &C3){
-//         return Complex(real - C3.real,imag - C3.imag);
-//     }
-
-//     Complex operator*(const Complex &other){
-//         return Complex(real * other.real - imag * other.imag, real * other.imag + imag * other.real);
-//     }
-
-//     Complex operator/(const Complex &other){
-//         double denom = other.real * other.real + other.imag * other.imag;
-//         return Complex((real * other.real + imag * other.imag)/ denom, (imag * other.real - real * other.imag)/denom);
-//     }
-
-//     bool operator==(const Complex &other){
-//         return (real == real && imag == other.imag);
-//     }
-//     void print(){
-//         cout << real << " + i" << imag << endl;
-//     }
-// };
-
-// int main() {
-//     // Complex c1;
-//     // cout << c1.real << endl;
-//     // cout << c1.imag << endl;
-
-//     Complex C2(4,5);
-//     C2.print();
-//     Complex C3(4,5);
-//     C3.print();
-
-//     // addition of complex number
-//     // Complex C4 = C2 + C3;
-//     // cout << "Addition: \n";
-//     // C4.print();
-
-//     // same for substraction 
-//     // Complex C5 = C2 - C3;
-//     // cout << "Substraction: \n";
-//     // C5.print();
-
-//     // for multiplication
-//     // Complex C6 = C2 * C3;
-//     // cout << "Multiplication: \n";
-//     // C6.print();
-
-//     // for division 
-//     // Complex C7 = C2 / C3;
-//     // cout << "Division: \n";
-//     // C7.print();
-
-//     // for Equality 
-//     if(C2 == C3){
-//         cout << "C2 and C3 are equal.\n";
-//     }
-//     else {
-//         cout << "C2 and C3 are not equal.\n";
-//     }
-//     return 0;
-// }
-
-// // Runtime Polymorphism
-// #include<iostream>
-// using namespace std;
-
-// // base class 
-// class Shape{
+   cout << A.getgpa() << endl;
+   A.setgpa(9.8);
+   cout << A.getgpa() << endl;
+    cout << A.getAge() << endl;
+    A.sleep();
+    return 0; 
+}
+
+
+// Implementing inheritance in C++ by using vehicle example
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+class Vehicle{                     // base class or parent class
+protected: 
+    string name;
+    string model;
+    int no_of_tyres;
+
+public:
+    Vehicle(string _name, string _model, int _no_of_tyres){
+        cout << "I am inside Vehicle constructor" << endl;
+        this->name = _name;
+        this->model = _model;           
+        this->no_of_tyres = _no_of_tyres;
+    }
+public:
+    void start_engine(){
+        cout << "Engine started " << name << " " << model <<endl;
+    }
+    void stop_engine(){
+        cout << "Engine stopped " << name << " " << model << endl;
+    }
+
+    //dtor 
+    ~Vehicle(){
+        cout << "I am inside Vehicle destructor" << endl;
+    }
+};    
+
+class Car : public Vehicle{              // inheritance used here 
+protected:
+    int no_of_doors;                    // specific to car h
+    string transmission_type;
+
+public:
+    Car(string _name, string _model, int _no_of_tyres, int _no_of_doors, string _transmission_type) : Vehicle(_name,_model, _no_of_tyres){
+        cout << "I am inside Car constructor" << endl; 
+        this->no_of_doors = _no_of_doors;
+        this->transmission_type = _transmission_type;
+    }
+
+    void start_AC(){
+        cout << "AC started " << name << endl;
+    }
+
+    // dtor 
+    ~Car(){
+        cout << "I am inside Car destructor" << endl;
+    }
+};
+
+class Motorcycle : public Vehicle{
+protected:
+    string handlebarstyle;
+    string suspensionstype;
+
+    // parameterised ctor called
+public:
+    Motorcycle(string _name, string _model, int _no_of_tyres,string _handlebarstyle, string _suspensiontype) : Vehicle(_name,_model, _no_of_tyres){
+        cout << "I am inside Motorcycle constructor" << endl;
+        this->handlebarstyle = _handlebarstyle;
+        this->suspensionstype = _suspensiontype;
+    }
+
+    void wheelie(){
+        cout << "Wheeeeee "<< name << endl;
+    }   
+    // dtor
+    ~Motorcycle(){
+        cout << "I am inside Motorcycle destructor" << endl;
+    }
+};
+
+int main() {
+    Car A("BMW", "X5", 4, 4, "manual");
+    A.start_engine();
+    A.start_AC();
+    A.stop_engine(); 
+
+    // Motorcycle B("KTM", "Duke", 2, "flat", "monoshock");
+    // B.start_engine();
+    // B.wheelie();
+    // B.stop_engine();
+    return 0;
+}
+
+
+// 110.types of inheritance through code 
+#include<iostream>
+#include<string>
+using namespace std;
+
+// Base class for Single Inheritance
+class Employee
+{
+protected:
+    string name;
+    int employeeId;
+
+public:
+    Employee(const string &empName, int empId) : name(empName), employeeId(empId)
+    {
+        // cout << __FUNCTION__ << endl;
+    }
+
+    void display() const
+    {
+        cout << "Employee: " << name << ", ID: " << employeeId << endl;
+    }
+};
+
+// Derived class for Single Inheritance
+class Developer : public Employee
+{
+private:
+    string programmingLanguage;
+
+public:
+    Developer(const string &empName, int empId, const string &lang)
+        : Employee(empName, empId)
+    {
+        this->programmingLanguage = lang;
+    }
+
+    void show() const
+    {
+        display();
+        cout << "Specialization: Developer, Programming Language: " << programmingLanguage << endl;
+    }
+};
+
+// Base classes for Multiple Inheritance
+class ProjectManager
+{
+protected:
+    string projectManaged;
+
+public:
+    ProjectManager(const string &project) : projectManaged(project) {}
+
+    void manageProject() const
+    {
+        cout << "Project Manager managing project: " << projectManaged << endl;
+    }
+};
+
+class TeamLead
+{
+protected:
+    int teamSize;
+
+public:
+    TeamLead(int size) : teamSize(size) {}
+
+    void leadTeam() const
+    {
+        cout << "Team Lead leading a team of " << teamSize << " members." << endl;
+    }
+};
+
+// Derived class for Multiple Inheritance
+class TechLead : public Employee, public ProjectManager, public TeamLead
+{
+public:
+    TechLead(const string &empName, int empId, const string &project, int teamSize)
+        : Employee(empName, empId), ProjectManager(project), TeamLead(teamSize) {}
+
+    void displayInfo() const
+    {
+        display();
+        manageProject();
+        leadTeam();
+    }
+};
+
+// Base class for Multi-level Inheritance
+class HRManager : public Employee
+{
+public:
+    HRManager(const string &empName, int empId) : Employee(empName, empId)
+    {
+        cout << __FUNCTION__ << endl;
+    }
+
+    void handleHRDuties() const
+    {
+        cout << "HR Manager handling human resources duties." << endl;
+    }
+};
+
+// Derived class for Multi-level Inheritance
+class HRDirector : public HRManager
+{
+public:
+    HRDirector(const string &empName, int empId) : HRManager(empName, empId)
+    {
+        cout << __FUNCTION__ << endl;
+    }
+
+    void manageHRDepartment() const
+    {
+        cout << "HR Director managing the HR department." << endl;
+    }
+};
+
+// Base class for Hierarchical Inheritance
+class Executive : public Employee
+{
+public:
+    Executive(const string &empName, int empId) : Employee(empName, empId) {}
+
+    void makeExecutiveDecisions() const
+    {
+        cout << "Executive making executive decisions." << endl;
+    }
+};
+
+// Derived classes for Hierarchical Inheritance
+class CEO : public Executive
+{
+public:
+    CEO(const string &empName, int empId) : Executive(empName, empId) {}
+
+    void leadCompany() const
+    {
+        makeExecutiveDecisions();
+        cout << "CEO leading the company." << endl;
+    }
+};
+
+// Base classes for Hybrid Inheritance
+class MarketingManager : public Employee
+{
+public:
+    MarketingManager(const string &empName, int empId) : Employee(empName, empId) {}
+
+    void createMarketingStrategy() const
+    {
+        cout << "Marketing Manager creating a marketing strategy." << endl;
+    }
+};
+
+class SalesManager : public Employee
+{
+public:
+    SalesManager(const string &empName, int empId) : Employee(empName, empId) {}
+
+    void boostSales() const
+    {
+        cout << "Sales Manager boosting sales." << endl;
+    }
+};
+
+class BusinessDevelopmentManager : public MarketingManager, public SalesManager
+{
+public:
+    BusinessDevelopmentManager(const string &empName, int empId)
+        : MarketingManager(empName, empId), SalesManager(empName, empId) {}
+
+    void coordinateBusinessDevelopment() const
+    {
+        createMarketingStrategy();
+        boostSales();
+        cout << "Business Development Manager coordinating business development efforts." << endl;
+    }
+};
+
+int main()
+{
+    // Single Inheritance
+    // Developer dev("Ramu Kaka", 101, "C++");
+    // dev.show();
+
+    // // Multiple Inheritance
+    TechLead techLead("Anna Dev", 202, "Project X", 5);
+    techLead.displayInfo();
+
+    // // Multi-level Inheritance
+    // HRDirector hrDirector("Lucy Madam", 303);
+    // hrDirector.handleHRDuties();
+    // hrDirector.manageHRDepartment();
+
+    // Hierarchical Inheritance
+    // CEO ceo("Devi Lal", 404);
+    // ceo.leadCompany();
+
+    // // Hybrid Inheritance
+    // BusinessDevelopmentManager bdManager("Sam Uncle", 606);
+    // bdManager.coordinateBusinessDevelopment();
+
+    return 0;
+}
+
+//Compile time polymorphism
+// Polymorphism in C++
+// function overloading 
+#include<iostream>
+using namespace std;
+
+// class add{
 //     public:
-
-//     virtual void draw() {
-//         cout << "Generic drawing..." << endl;
+//     int sum(int a, int b){
+//         return a+b;
+//     }
+//     int sum(int a, int b, int c){
+//         return a+b+c;
+//     }
+//     double sum(double a, double b){
+//         return a + b;
 //     }
 // };
 
-// // derived class, children class , sub_class 
-// class Circle: public Shape{
-// public:
-//     void draw() override{
-//         cout << "Circle drawing..." << endl;
-//     }
-// }; 
+// 111.operator overloading
+#include<iostream>
+using namespace std;
 
-// class Rectangle: public Shape{
-// public:
-//     void draw() override{
-//         cout << "Rectangle drawing..." << endl;
-//     }
-// };
+class Complex{
+public:
+    // attributes 
+    double real, imag;
 
-// class Triangle: public Shape{
-// public:
-//     void draw() override{
-//         cout << "Triangle drawing..." << endl;
-//     }
-// };
+    // by default when no any value is passing 
+    Complex() {
+        real = imag = -1;
+    }
 
-// // early binding --> compile n sbse pehle shape dekha to shape call hoga
+    // parameterised constructor called
+    Complex(double r, double i){
+        this->real = r;
+        this->imag = i;
+    }
 
-// // late binding ho rhi h with virtual keyword 
-// void shapedrawing(Shape *s){
-//     s->draw();     // draw is polymorphic
-// }
-// // for creating objects
-// int main() {
-//     // Circle c;
-//     // Rectangle r;
-//     // Triangle t;
-//     // shapedrawing(&c);
-//     // shapedrawing(&r);
-//     // shapedrawing(&t);
+    // operator overloading concept 
+    Complex operator+(const Complex &C3){
+        Complex temp;
+        temp.real = this->real + C3.real;
+        temp.imag = this->imag + C3.imag;
+        return temp;
+    }
 
-//     // w/o virtual keyword
-//     Shape *s = new Shape();
-//     s->draw();
+    Complex operator-(const Complex &C3){
+        return Complex(real - C3.real,imag - C3.imag);
+    }
 
-//     // UPCASTING --> Parent pointer/reference me child object store karna
-//     Shape *s3 = new Circle();
-//     s3->draw();
+    Complex operator*(const Complex &other){
+        return Complex(real * other.real - imag * other.imag, real * other.imag + imag * other.real);
+    }
 
-//     Circle *c = new Circle();
-//     c-> draw();
+    Complex operator/(const Complex &other){
+        double denom = other.real * other.real + other.imag * other.imag;
+        return Complex((real * other.real + imag * other.imag)/ denom, (imag * other.real - real * other.imag)/denom);
+    }
 
-//     // Downcasting --> child pointer me parent 
-//     Shape *s2 = new Shape(); // shape k object bnaya 
-//     Circle *c2 = (Circle *)s2; // forcefully circle m downcast
-//     c2->draw();
-//     return 0;
-// }
+    bool operator==(const Complex &other){
+        return (real == real && imag == other.imag);
+    }
+    void print(){
+        cout << real << " + i" << imag << endl;
+    }
+};
+
+int main() {
+    Complex c1;
+    cout << c1.real << endl;
+    cout << c1.imag << endl;
+
+    Complex C2(4,5);
+    C2.print();
+    Complex C3(4,5);
+    C3.print();
+
+    // addition of complex number
+    Complex C4 = C2 + C3;
+    cout << "Addition: \n";
+    C4.print();
+
+    same for substraction 
+    Complex C5 = C2 - C3;
+    cout << "Substraction: \n";
+    C5.print();
+
+    for multiplication
+    Complex C6 = C2 * C3;
+    cout << "Multiplication: \n";
+    C6.print();
+
+    for division 
+    Complex C7 = C2 / C3;
+    cout << "Division: \n";
+    C7.print();
+
+    // for Equality 
+    if(C2 == C3){
+        cout << "C2 and C3 are equal.\n";
+    }
+    else {
+        cout << "C2 and C3 are not equal.\n";
+    }
+    return 0;
+}
+
+//112. Runtime Polymorphism
+#include<iostream>
+using namespace std;
+
+// base class 
+class Shape{
+    public:
+
+    virtual void draw() {
+        cout << "Generic drawing..." << endl;
+    }
+};
+
+// derived class, children class , sub_class 
+class Circle: public Shape{
+public:
+    void draw() override{
+        cout << "Circle drawing..." << endl;
+    }
+}; 
+
+class Rectangle: public Shape{
+public:
+    void draw() override{
+        cout << "Rectangle drawing..." << endl;
+    }
+};
+
+class Triangle: public Shape{
+public:
+    void draw() override{
+        cout << "Triangle drawing..." << endl;
+    }
+};
+
+// early binding --> compile n sbse pehle shape dekha to shape call hoga
+
+// late binding ho rhi h with virtual keyword 
+void shapedrawing(Shape *s){
+    s->draw();     // draw is polymorphic
+}
+// for creating objects
+int main() {
+    Circle c;
+    Rectangle r;
+    Triangle t;
+    shapedrawing(&c);
+    shapedrawing(&r);
+    shapedrawing(&t);
+
+    // w/o virtual keyword
+    Shape *s = new Shape();
+    s->draw();
+
+    // UPCASTING --> Parent pointer/reference me child object store karna
+    Shape *s3 = new Circle();
+    s3->draw();
+
+    Circle *c = new Circle();
+    c-> draw();
+
+    // Downcasting --> child pointer me parent 
+    Shape *s2 = new Shape(); // shape k object bnaya 
+    Circle *c2 = (Circle *)s2; // forcefully circle m downcast
+    c2->draw();
+    return 0;
+}
 
 // // Miscellaneous concepts 
 
@@ -5310,75 +5305,77 @@ int main() {
 // using namespace std;
 
 
-// // scope defn in cpp -- inside main function from curly braces 
+// 113.Demonstrate Global vs Local Variables and Scope Resolution (::) in C++.
+// scope defn in cpp -- inside main function from curly braces 
 
-// // global and local variable
+// global and local variable
 
-// // local variable defn :-- variable defined inside a function or block or scope 
+// local variable defn :-- variable defined inside a function or block or scope 
 
-// // global variable defn :-- variable defined outside all functions and blocks
-// // #include<iostream>
-// // using namespace std;
+// global variable defn :-- variable defined outside all functions and blocks
+#include<iostream>
+using namespace std;
 
-// // int x = 10; // global variable
+int x = 10; // global variable
 
-// // int main() {
-// //     cout << x << endl; // 10
-// //     int x = 20; // local variable
-// //     cout << x << endl; // 20
-// //     cout << ::x << endl; // 10; // :: accessing global variable or scope resolution operator
-// //     {// inside scope
-// //         cout << x << endl; // 20
-// //         cout << ::x << endl; // 10
-// //         int x = 30;
-// //         cout << x << endl; // 30
-// //         ::x = 40; // modifying global variable
-// //         cout << ::x << endl; // 40
-// //     }
+int main() {
+    cout << x << endl; // 10
+    int x = 20; // local variable
+    cout << x << endl; // 20
+    cout << ::x << endl; // 10; // :: accessing global variable or scope resolution operator
+    {// inside scope
+        cout << x << endl; // 20
+        cout << ::x << endl; // 10
+        int x = 30;
+        cout << x << endl; // 30
+        ::x = 40; // modifying global variable
+        cout << ::x << endl; // 40
+    }
    
-// // }
+}
 
-// // class abc{
-// //     int x;
-// //     int *y;
-// //     const int z;
+//114.Demonstrate Initialization List and Const Data Member in C++.
+ class abc{
+    int x;
+    int *y;
+    const int z;
 
-// //     public:
-// //     // ctor : old style
-// //     // abc(int _x, int _y, int _z = 0){
-// //     //     x = _x;
-// //     //     y = new int(_y);
-// //     //     z = _z;
-// //     // }
+    public:
+    // ctor : old style
+    // abc(int _x, int _y, int _z = 0){
+    //     x = _x;
+    //     y = new int(_y);
+    //     z = _z;
+    // }
 
-// //     // initialization list -->aur yha z initialise ho rha h  ek tarika h ctor likhne k   --> z ko const use kiya but isme run ho gya 
-// //     // default argument always in right side  
-// //     abc(int _x, int _y, int _z = 0) : x(_x) , y(new int(_y)), z(_z){
-// //         cout << "In init list" << endl;
-// //         *y = *y * 10;
-// //     }
+    // initialization list -->aur yha z initialise ho rha h  ek tarika h ctor likhne k   --> z ko const use kiya but isme run ho gya 
+    // default argument always in right side  
+    abc(int _x, int _y, int _z = 0) : x(_x) , y(new int(_y)), z(_z){
+        cout << "In init list" << endl;
+        *y = *y * 10;
+    }
 
-// //     int getX() const{
-// //         return x;
-// //     }
+    int getX() const{
+        return x;
+    }
  
-// //     void setX(int _val){
-// //         x = _val;
-// //     }
+    void setX(int _val){
+        x = _val;
+    }
 
-// //     int getY() const {
-// //         return *y;
-// //     }
+    int getY() const {
+        return *y;
+    }
 
-// //     void setY(int _val){
-// //         *y = _val;
-// //     }
+    void setY(int _val){
+        *y = _val;
+    }
 
-// //     int getZ() const { 
-// //         return z;
-// //     }
-// //     friend void printABC(const abc &a);
-// // };
+    int getZ() const { 
+        return z;
+    }
+    friend void printABC(const abc &a);
+};
 
 // // // kisi object ko const banaya to whi function ko call krega jo const ho
 // // void printABC(const abc &a){
@@ -5391,64 +5388,65 @@ int main() {
 // //     return 0;
 // // }
 
+// 115.Explain and demonstrate how the const keyword works with variables and pointers in C++.
 
-// // int main2() {
-// //    initialisation can be done
-// //     const int x = 5;  // x is a constant
-// //     x = 10;            // but we can't re-assign a value
-// //     cout << x << endl;
+#include<iostream>
+using namespace std;
+int main(){
 
+    // 1. const variable
+    const int x = 5;  
+    // x = 10;  ❌ can't reassign a value
+    cout << x << endl;
 
-// //     2.const with pointer's
-// //     const int *a = new int(2);    // constant data , non-constant pointer
-// //     // or int const *a = new int(2);
-// //     cout << *a << endl;
-// //     // * a = 20;   can't change the content of pointer.
-// //     int b = 20;
-// //     a = &b;   // pointer itslef can be reassigned
-// //     cout << *a << endl;
+    // 2. pointer to const data (constant data, non-constant pointer)
+    const int *a = new int(2);
+    cout << *a << endl;
+    // *a = 20;  ❌ can't modify the data
+    int b = 20;
+    a = &b;  // ✅ pointer itself can be reassigned
+    cout << *a << endl;
 
-// //     constant pointer, but non-constant data
-// //     int *const a =new int(2);
-// //     cout << *a << endl;
-// //     *a = 20;
-// //     cout << *a << endl;
-// //     int b = 50;
-// //     a = &b; // nhi chlega
+    // 3. const pointer (constant pointer, non-constant data)
+    int *const p = new int(2);
+    cout << *p << endl;
+    *p = 20;  // ✅ allowed to modify data
+    cout << *p << endl;
+    // int b2 = 50; p = &b2;  ❌ pointer can't be reassigned
 
-// //     const pointer and data
-// //     const int *const a = new int(10);
-// //     cout << *a << endl;
-// //     *a = 50;
-// //     int b = 10;
-// //     a = &b;
-// //     return 0;
-// // }
+    // 4. const pointer to const data (both constant)
+    const int *const q = new int(10);
+    cout << *q << endl;
+    // *q = 50;  ❌ can't modify data
+    // int b3 = 10; q = &b3;  ❌ can't reassign pointer
 
-
-// // // macros keyword in cpp
-// // #include<iostream>
-// // using namespace std;
-
-// // // macro used with capital letter for better SEO
-// // #define Max(a,b) (a > b ? a : b)
-// // #define PI 3.14
-// // float circleArea(float r){
-// //     return PI * r * r;
-// // }
-
-// // void main() {
-// //     cout << Max(10,20) << endl;
-// //     cout << Max(100,50) << endl;
-// //     cout << Max(1.5, 2.5) << endl;
-// //     cout << Max('A', 'B') << endl; // ASCII value comparison
-// // }
+    return 0;
+}
 
 
-// // int main() {
-// //     cout << circleArea(1) << endl;
-// //     return 0;
-// // }
+// macros keyword in cpp
+#include<iostream>
+using namespace std;
+
+// macro used with capital letter for better SEO
+#define Max(a,b) (a > b ? a : b)
+#define PI 3.14
+float circleArea(float r){
+    return PI * r * r;
+}
+
+void main() {
+    cout << Max(10,20) << endl;
+    cout << Max(100,50) << endl;
+    cout << Max(1.5, 2.5) << endl;
+    cout << Max('A', 'B') << endl; // ASCII value comparison
+}
+
+
+int main() {
+    cout << circleArea(1) << endl;
+    return 0;
+}
 
 
 // // // Static Keyword in class
@@ -5510,925 +5508,858 @@ int main() {
 // //     return 0;
 // // }  
 
-// // Shallow copy and deep copy in cpp
-// // #include<iostream>
-// // using namespace std;
+// 118.Shallow copy and deep copy in cpp
+#include<iostream>
+using namespace std;
 
-// // class abc{
-// // public: 
-// //     int x;
-// //     int *y;
+class abc{
+public: 
+    int x;
+    int *y;
 
-// //     abc(int _x, int _y) : x(_x), y(new int(_y)) {}
+    abc(int _x, int _y) : x(_x), y(new int(_y)) {}
 
-// //     // shallow copy constructor
-// //     abc(const abc &a){
-// //         x = a.x;
-// //         y = a.y; // copying address
-// //     }
+    // shallow copy constructor
+    abc(const abc &a){
+        x = a.x;
+        y = a.y; // copying address
+    }
 
-// //     // deep copy constructor
-// //     // abc(const abc &a){
-// //     //     x = a.x;
-// //     //     y = new int(*(a.y)); // copying value
-// //     // }
+    // deep copy constructor
+    // abc(const abc &a){
+    //     x = a.x;
+    //     y = new int(*(a.y)); // copying value
+    // }
 
-// //     void print() const {
-// //         printf("x: %d\ny: %d\nContent of y(*y): %d\n", x, y, *y);
-// //     }
-
-
-// //     ~abc(){
-// //         delete y;
-// //     }
-// // };
-
-// // int main() {
-// //     // abc a(1,2);
-// //     // cout << "Printing a:" << endl;
-// //     // a.print();
-
-// //     // abc b = a; // copy constructor called
-// //     // cout << "Printing b: " << endl;
-// //     // b.print();
-// //     // *b.y = 20; // modifying b's y
-// //     // cout << "After modifying b's y:" << endl;
-// //     // b.print();
-
-// //     // cout << "Printing a again to check if it is affected:" << endl;
-// //     // a.print(); // to check if a is affected
-
-// //     // if we use shallow copy then a's y will be affected and it gives error at runtime double free or corruption
-// //     // if we use deep copy then a's y will not be affected so that's reason we need to use always deep copy constructor when we have pointer in class 
-
-// //     abc *a = new abc(1,2);
-// //     abc b = *a;
-// //     delete a;
-// //     b.print();
-
-// //     return 0;
-// // }
+    void print() const {
+        printf("x: %d\ny: %d\nContent of y(*y): %d\n", x, y, *y);
+    }
 
 
-// // can ctor made private
-// // yes , we can make ctor private
+    ~abc(){
+        delete y;
+    }
+};
 
-// // #include<iostream>
-// // using namespace std;
+int main() {
+    abc a(1,2);
+    cout << "Printing a:" << endl;
+    a.print();
 
-// // class Box{
-// //     int width;
-// //     // ctor
-// //     Box(int _w) : width(_w) {};
+    abc b = a; // copy constructor called
+    cout << "Printing b: " << endl;
+    b.print();
+    *b.y = 20; // modifying b's y
+    cout << "After modifying b's y:" << endl;
+    b.print();
 
-// //     public: 
-// //     int getWidth() const {
-// //         return width;
-// //     }
+    cout << "Printing a again to check if it is affected:" << endl;
+    a.print(); // to check if a is affected
 
-// //     void setWidth(int val){
-// //         width = val;
-// //     }
+    // if we use shallow copy then a's y will be affected and it gives error at runtime double free or corruption
+    // if we use deep copy then a's y will not be affected so that's reason we need to use always deep copy constructor when we have pointer in class 
 
-// //     friend class BoxFactory;
-// // };
+    abc *a = new abc(1,2);
+    abc b = *a;
+    delete a;
+    b.print();
 
-// // class BoxFactory {
-// //     int count;
+    return 0;
+}
 
-// // public: 
-// //      Box getABox(int _w)
-// //      {
-// //         ++count;
-// //         return Box(_w);
-// //      }
-// // };
 
-// // int main(){
-// //     BoxFactory bfact;
-// //     Box b = bfact.getABox(5); // here in this line we store width 5 in box object b using BoxFactory
-// //     cout << b.getWidth() << endl;
-// //     return 0;
-// // }
+//119. can ctor made private
+// yes , we can make ctor private
 
-// // frined keyword in cpp 
-// #include<iostream>
-// using namespace std;
+#include<iostream>
+using namespace std;
 
-// class A{
-//     private: 
-//     int x;
+class Box{
+    int width;
+    // ctor
+    Box(int _w) : width(_w) {};
 
-//     public:
-//     A(int _x) : x(_x) {};
+    public: 
+    int getWidth() const {
+        return width;
+    }
 
-//     int getX() const {
-//         return x;
-//     }   
+    void setWidth(int val){
+        width = val;
+    }
 
-//     void setX(int val){
-//         x = val;
-//     }   
-// };
+    friend class BoxFactory;
+};
 
-// class B{
-//     public:
-//     void print(const A &a){
-//         cout << a.getX() << endl;
-//     }
-// };
+class BoxFactory {
+    int count;
 
-// int main() {
-//     A c(5);
-//     B b;
-//     b.print(c);
-//     return 0;
+public: 
+     Box getABox(int _w)
+     {
+        ++count;
+        return Box(_w);
+     }
+};
+
+int main(){
+    BoxFactory bfact;
+    Box b = bfact.getABox(5); // here in this line we store width 5 in box object b using BoxFactory
+    cout << b.getWidth() << endl;
+    return 0;
+}
+
+// 120.frined keyword in cpp 
+#include<iostream>
+using namespace std;
+
+class A{
+    private: 
+    int x;
+
+    public:
+    A(int _x) : x(_x) {};
+
+    int getX() const {
+        return x;
+    }   
+
+    void setX(int val){
+        x = val;
+    }   
+};
+
+class B{
+    public:
+    void print(const A &a){
+        cout << a.getX() << endl;
+    }
+};
+
+int main() {
+    A c(5);
+    B b;
+    b.print(c);
+    return 0;
+}
+
+
+// friend class
+// 120.frined keyword in cpp 
+#include<iostream>
+using namespace std;
+
+// freind class is a class that can access private and protected members of another class in which it is declared as a friend.
+class A{
+    private: 
+    int x;
+
+    public:
+    A(int _x) : x(_x) {};
+
+    int getX() const {
+        return x;
+    }   
+
+    void setX(int val){
+        x = val;
+    }   
+
+    void print() const{
+        cout << x << endl;
+    }
+    // for accessing private members of class A in class B
+    friend class B;
+
+    friend void print(const A &a);
+};
+
+class B{
+    public:
+    void print(const A &a){
+        // cout << a.getX() << endl;
+        // cout << a.x << endl; // accessing private member of class A
+
+        // better hoga 
+        a.print();
+    }
+};
+
+// void print(const A &a){
+//     cout << a.x << endl; // accessing private member of class A
 // }
 
+int main() {
+    A c(5);
+    B b;
+    c.print();
+    b.print(c);
+    //print(c);
+    return 0;
+}
 
-// // friend class
-// // frined keyword in cpp 
-// #include<iostream>
-// using namespace std;
-
-// // freind class is a class that can access private and protected members of another class in which it is declared as a friend.
-// class A{
-//     private: 
-//     int x;
-
-//     public:
-//     A(int _x) : x(_x) {};
-
-//     int getX() const {
-//         return x;
-//     }   
-
-//     void setX(int val){
-//         x = val;
-//     }   
-
-//     void print() const{
-//         cout << x << endl;
-//     }
-//     // for accessing private members of class A in class B
-//     friend class B;
-
-//     friend void print(const A &a);
-// };
-
-// class B{
-//     public:
-//     void print(const A &a){
-//         // cout << a.getX() << endl;
-//         // cout << a.x << endl; // accessing private member of class A
-
-//         // better hoga 
-//         a.print();
-//     }
-// };
-
-// // void print(const A &a){
-// //     cout << a.x << endl; // accessing private member of class A
-// // }
-
-// int main() {
-//     A c(5);
-//     B b;
-//     c.print();
-//     b.print(c);
-//     //print(c);
-//     return 0;
-// }
-
-// // real world me use nhi krna chahiye bcz kisi class k private members ko dusri class se access krna koi means nhi banta hai. Ye sirf educational purpose k liye h  ai.
+// real world me use nhi krna chahiye bcz kisi class k private members ko dusri class se access krna koi means nhi banta hai. Ye sirf educational purpose k liye h  ai.
 
 
-// // Virtual keyword 
-// #include<iostream>
-// using namespace std;
+// 121.Virtual keyword 
+#include<iostream>
+using namespace std;
 
-// // virtual keyword in cpp
-// class Base {
-// public:
-//     Base()
-//     {
-//         cout << "Base ctor\n";
-//     }
+// virtual keyword in cpp
+class Base {
+public:
+    Base()
+    {
+        cout << "Base ctor\n";
+    }
 
-//     virtual ~Base(){
-//         cout << "Base dtor\n";
-//     }
-// };
+    virtual ~Base(){
+        cout << "Base dtor\n";
+    }
+};
 
-// class Derived : public Base 
-// {
-//     int *a;
+class Derived : public Base 
+{
+    int *a;
 
-//     public:
+    public:
     
-//     Derived(){
-//         cout << "Derived ctor\n";
-//     }
+    Derived(){
+        cout << "Derived ctor\n";
+    }
 
-//     ~Derived(){
-//         cout << "Derived dtor\n";
-//     }
-// };
+    ~Derived(){
+        cout << "Derived dtor\n";
+    }
+};
 
-// int main(){
-//     Base *b = new Derived();
-//     delete b;
-//     return 0;
-// }
-
-
-
-// // Binary search -- Monotonic function
-
-// #include<iostream>
-// #include<vector>
-// using namespace std;
-
-// int binarysearch(vector<int> &nums, int target){
-//     int n = nums.size();
-//     int start = 0;
-//     int end = n - 1;
-//     while(start <= end){
-//         int mid = start + (end - start)/2;
-//          if(nums[mid] == target){
-//             return mid;
-//         }
-//         else if(target > nums[mid]){
-//             // right side me jao
-//             start = mid + 1;
-//         }
-//         else if(target < nums[mid]){
-//             end = mid - 1;
-//         }
-//         // mid = (start + end)/2;
-//     }
-//     return -1;
-// }
-
-// int main() {
-//     vector<int>arr = {-1,0,3,5,9,12};
-//     int target = 9;
-//     cout << binarysearch(arr, target);
-//     return 0;
-// }
-
-// // first occurence with binary search with store and compute
-
-// #include<iostream>
-// using namespace std;
-
-// void findFirstOccurence(int nums[],int n, int target, int &ansindex){
-//     int start = 0;
-//     int end = n - 1;
-//     while(start <= end){
-//         int mid = start + (end - start)/2;
-//          if(nums[mid] == target){
-//             // ans found --> may or may not be first occurence
-//             // store and compute
-//             ansindex = mid;
-//             // kyoki first occurence ki baat ho rhi h toh left me hi jana pdega
-//             end = mid - 1;
-//         }
-//         else if(target > nums[mid]){
-//             // right side me jao
-//             start = mid + 1;
-//         }
-//         else if(target < nums[mid]){
-//             end = mid - 1;
-//         }
-//         // mid = (start + end)/2;
-//     }
-// }
-
-// int main() {
-//     int arr[] = {5,10,20,20,20,20,20,30,40,50,60};
-//     int n = 11;
-//     int target = 60;
-//     // -1 means index not found
-//     int ansindex = -1;
-//     // binary search lgane jaa rha hu to pakka array sorted hi hoga
-//     findFirstOccurence(arr, n , target, ansindex);
-//     cout << "First Occ index: " << ansindex << endl;
-//     return 0;
-// }
+int main(){
+    Base *b = new Derived();
+    delete b;
+    return 0;
+}
 
 
-// // last occurence with binary search with store and compute
 
-// #include<iostream>
-// using namespace std;
+//122. Binary search -- Monotonic function
 
-// void findlastOccurence(int nums[],int n, int target, int &ansindex){l
-//     int start = 0;
-//     int end = n - 1;
-//     while(start <= end){
-//         int mid = start + (end - start)/2;
-//          if(nums[mid] == target){
-//             // ans found --> may or may not be first occurence
-//             // store and compute
-//             ansindex = mid;
-//             // kyoki first occurence ki baat ho rhi h toh left me hi jana pdega
-//             start = mid + 1;
-//         }
-//         else if(target > nums[mid]){
-//             // right side me jao
-//             start = mid + 1;
-//         }
-//         else if(target < nums[mid]){
-//             end = mid - 1;
-//         }
-//         // mid = (start + end)/2;
-//     }
-// }
+#include<iostream>
+#include<vector>
+using namespace std;
 
-// int main() {
-//     int arr[] = {5,10, 10,20,20,20,20,20,30,40,50,60};
-//     int n = 12;
-//     int target = 20;
-//     // -1 means index not found
-//     int ansindex = -1;
-//     // binary search lgane jaa rha hu to pakka array sorted hi hoga
-//     findlastOccurence(arr, n , target, ansindex);
-//     cout << "First Occ index: " << ansindex << endl;
-//     return 0;
-// }
+int binarysearch(vector<int> &nums, int target){
+    int n = nums.size();
+    int start = 0;
+    int end = n - 1;
+    while(start <= end){
+        int mid = start + (end - start)/2;
+         if(nums[mid] == target){
+            return mid;
+        }
+        else if(target > nums[mid]){
+            // right side me jao
+            start = mid + 1;
+        }
+        else if(target < nums[mid]){
+            end = mid - 1;
+        }
+        // mid = (start + end)/2;
+    }
+    return -1;
+}
 
-// // binary search (Ascending order)
-// #include<iostream>
-// #include<algorithm>
-// using namespace std;
+int main() {
+    vector<int>arr = {-1,0,3,5,9,12};
+    int target = 9;
+    cout << binarysearch(arr, target);
+    return 0;
+}
 
-// int binarysearchasc(int arr[], int size, int target){
-//     int s = 0;
-//     int e = size - 1;
-//     int mid = s + (e - s)/ 2;
-//     while(s <= e){
-//         // jb equal ho jae y target mil jae
-//         if(arr[mid] == target){
-//             return mid;
-//         }
-//         else if(arr[mid] > target){
-//             // left m searh kro
-//             e = mid - 1;
-//         }
-//         else if(arr[mid] < target){
-//             // right m search kro 
-//             s = mid + 1;
-//         }
-//         // mid value updation
-//         mid = s + (e - s)/2;
-//     }
-//     return -1;
-// }
+// first occurence with binary search with store and compute
 
-// int binarysearchdsc(int arr[], int size, int target){
-//     int start = 0;
-//     int end = size - 1;
-//     int mid = start + (end - start) / 2;
-//     while(start <= end){
-//         // jb equal ho jae
-//         if(arr[mid] == target){
-//             return mid;
-//         }
-//         else if(arr[mid] > target){
-//             start = mid + 1;
-//         }
-//         else if(arr[mid] < target){
-//             end = mid - 1;
-//         }
-//         mid = start + (end - start)/ 2;
-//     }
-//     return -1;
-// }
+#include<iostream>
+using namespace std;
 
-// int binarysearchfirstoccur(int arr[], int size, int target, int &index){
-//     int start = 0;
-//     int end = size - 1;
-//     int mid = start + (end - start) / 2;
-//     while(start <= end){
-//         if(arr[mid] == target){
-//             // index p store kro
-//              index = mid;
-//             // check kro ki usse pehle to nhi h 
-//             // left p move kro
-//             end = mid - 1;
-//         }
-//         else if(target < arr[mid]){
-//             // left p move kro
-//             end = mid - 1;
-//         }
-//         else if(arr[mid] < target){
-//             // right jao
-//             start = mid + 1;
-//         }
-//         // mid ko update 
-//         mid = start + (end - start) / 2;
-//     }
-//     return index;
-// }
+void findFirstOccurence(int nums[],int n, int target, int &ansindex){
+    int start = 0;
+    int end = n - 1;
+    while(start <= end){
+        int mid = start + (end - start)/2;
+         if(nums[mid] == target){
+            // ans found --> may or may not be first occurence
+            // store and compute
+            ansindex = mid;
+            // kyoki first occurence ki baat ho rhi h toh left me hi jana pdega
+            end = mid - 1;
+        }
+        else if(target > nums[mid]){
+            // right side me jao
+            start = mid + 1;
+        }
+        else if(target < nums[mid]){
+            end = mid - 1;
+        }
+        // mid = (start + end)/2;
+    }
+}
 
-// int binarysearchlastoccur(int arr[], int size, int target, int &index){
-//     int start = 0;
-//     int end = size - 1;
-//     int mid = start + (end - start) / 2;
-//     while(start <= end){
-//         if(arr[mid] == target){
-//             // index p store kro
-//              index = mid;
-//             // check kro ki usse baad to nhi h 
-//             // right p move kro
-//             start = mid + 1;
-//         }
-//         else if(target < arr[mid]){
-//             // left p move kro
-//             end = mid - 1;
-//         }
-//         else if(arr[mid] < target){
-//             // right jao
-//             start = mid + 1;
-//         }
-//         // mid ko update 
-//         mid = start + (end - start) / 2;
-//     }
-//     return index;
-// }
+int main() {
+    int arr[] = {5,10,20,20,20,20,20,30,40,50,60};
+    int n = 11;
+    int target = 60;
+    // -1 means index not found
+    int ansindex = -1;
+    // binary search lgane jaa rha hu to pakka array sorted hi hoga
+    findFirstOccurence(arr, n , target, ansindex);
+    cout << "First Occ index: " << ansindex << endl;
+    return 0;
+}
 
-// int totaloccur(int arr[], int size, int target, int &index){
-//     int first = -1, last = -1;
+
+// last occurence with binary search with store and compute
+
+#include<iostream>
+using namespace std;
+
+void findlastOccurence(int nums[],int n, int target, int &ansindex){l
+    int start = 0;
+    int end = n - 1;
+    while(start <= end){
+        int mid = start + (end - start)/2;
+         if(nums[mid] == target){
+            // ans found --> may or may not be first occurence
+            // store and compute
+            ansindex = mid;
+            // kyoki first occurence ki baat ho rhi h toh left me hi jana pdega
+            start = mid + 1;
+        }
+        else if(target > nums[mid]){
+            // right side me jao
+            start = mid + 1;
+        }
+        else if(target < nums[mid]){
+            end = mid - 1;
+        }
+        // mid = (start + end)/2;
+    }
+}
+
+int main() {
+    int arr[] = {5,10, 10,20,20,20,20,20,30,40,50,60};
+    int n = 12;
+    int target = 20;
+    // -1 means index not found
+    int ansindex = -1;
+    // binary search lgane jaa rha hu to pakka array sorted hi hoga
+    findlastOccurence(arr, n , target, ansindex);
+    cout << "First Occ index: " << ansindex << endl;
+    return 0;
+}
+
+// binary search (Ascending order)
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int binarysearchasc(int arr[], int size, int target){
+    int s = 0;
+    int e = size - 1;
+    int mid = s + (e - s)/ 2;
+    while(s <= e){
+        // jb equal ho jae y target mil jae
+        if(arr[mid] == target){
+            return mid;
+        }
+        else if(arr[mid] > target){
+            // left m searh kro
+            e = mid - 1;
+        }
+        else if(arr[mid] < target){
+            // right m search kro 
+            s = mid + 1;
+        }
+        // mid value updation
+        mid = s + (e - s)/2;
+    }
+    return -1;
+}
+
+int binarysearchdsc(int arr[], int size, int target){
+    int start = 0;
+    int end = size - 1;
+    int mid = start + (end - start) / 2;
+    while(start <= end){
+        // jb equal ho jae
+        if(arr[mid] == target){
+            return mid;
+        }
+        else if(arr[mid] > target){
+            start = mid + 1;
+        }
+        else if(arr[mid] < target){
+            end = mid - 1;
+        }
+        mid = start + (end - start)/ 2;
+    }
+    return -1;
+}
+
+int binarysearchfirstoccur(int arr[], int size, int target, int &index){
+    int start = 0;
+    int end = size - 1;
+    int mid = start + (end - start) / 2;
+    while(start <= end){
+        if(arr[mid] == target){
+            // index p store kro
+             index = mid;
+            // check kro ki usse pehle to nhi h 
+            // left p move kro
+            end = mid - 1;
+        }
+        else if(target < arr[mid]){
+            // left p move kro
+            end = mid - 1;
+        }
+        else if(arr[mid] < target){
+            // right jao
+            start = mid + 1;
+        }
+        // mid ko update 
+        mid = start + (end - start) / 2;
+    }
+    return index;
+}
+
+int binarysearchlastoccur(int arr[], int size, int target, int &index){
+    int start = 0;
+    int end = size - 1;
+    int mid = start + (end - start) / 2;
+    while(start <= end){
+        if(arr[mid] == target){
+            // index p store kro
+             index = mid;
+            // check kro ki usse baad to nhi h 
+            // right p move kro
+            start = mid + 1;
+        }
+        else if(target < arr[mid]){
+            // left p move kro
+            end = mid - 1;
+        }
+        else if(arr[mid] < target){
+            // right jao
+            start = mid + 1;
+        }
+        // mid ko update 
+        mid = start + (end - start) / 2;
+    }
+    return index;
+}
+
+int totaloccur(int arr[], int size, int target, int &index){
+    int first = -1, last = -1;
     
-//     binarysearchfirstoccur( arr,  size,  target, first);
+    binarysearchfirstoccur( arr,  size,  target, first);
     
 
-//     binarysearchlastoccur( arr,  size,  target, last);
+    binarysearchlastoccur( arr,  size,  target, last);
 
-//     if(first == -1 || last == -1){
-//         return -1;
-//     }
-//     return last - first + 1;
-// }
+    if(first == -1 || last == -1){
+        return -1;
+    }
+    return last - first + 1;
+}
 
-// int missingnumberindexlogic(int arr[], int &size){
-//     for(int i = 0; i < size; i++){
-//         if(arr[i] != i)
-//         return i;
-//     }
-//     return size;
-// }
+int missingnumberindexlogic(int arr[], int &size){
+    for(int i = 0; i < size; i++){
+        if(arr[i] != i)
+        return i;
+    }
+    return size;
+}
 
-// int missingnumberxorlogic(int arr[], int &size){
-//     // by taking xor of all elements of an array with all no. withing a range from 0 to n
+int missingnumberxorlogic(int arr[], int &size){
+    // by taking xor of all elements of an array with all no. withing a range from 0 to n
 
-//     int xor1 = 0;
-//     int xor2 = 0;
-//     // xor of elements in range
-//     for(int i = 0; i <= size; i++){
-//         xor1 = (xor1) ^ i;
-//     }
+    int xor1 = 0;
+    int xor2 = 0;
+    // xor of elements in range
+    for(int i = 0; i <= size; i++){
+        xor1 = (xor1) ^ i;
+    }
 
-//     // xor of elements in an array 
-//     for(int i = 0; i < size; i++){
-//         xor2 = arr[i] ^ xor2;
-// }
-//     return xor1 ^ xor2;
+    // xor of elements in an array 
+    for(int i = 0; i < size; i++){
+        xor2 = arr[i] ^ xor2;
+}
+    return xor1 ^ xor2;
 
-// }
+}
 
-// int missingnumbersumlogic(int arr[], int &n){
-//     int total = n * (n + 1)/2;
-//     int sum = 0;
-//     for(int i = 0; i < n; i++){
-//         sum += arr[i];
-//     }
-//     return total - sum;
-// }
+int missingnumbersumlogic(int arr[], int &n){
+    int total = n * (n + 1)/2;
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        sum += arr[i];
+    }
+    return total - sum;
+}
 
-// int missingnumbersirlogic(int arr[], int size){
-//     int start = 0;
-//     int end = size - 1;
-//     int mid = start + (end - start)/2;
-//     int index = size;
-//     while(start <= end){
-//         // found cdn 
-//         int diff = arr[mid] - mid;  
+int missingnumbersirlogic(int arr[], int size){
+    int start = 0;
+    int end = size - 1;
+    int mid = start + (end - start)/2;
+    int index = size;
+    while(start <= end){
+        // found cdn 
+        int diff = arr[mid] - mid;  
 
-//         if(diff == 0){
-//             // right m jao 
-//             start = mid + 1;
-//         }
-//         else if(diff == 1){
-//             // store krwao
-//             index = mid;
-//             // left m check krke aao
-//             end = mid - 1;
-//         }
-//         mid = start + (end - start)/2;
-//         }
-//     return index;
-//     }
+        if(diff == 0){
+            // right m jao 
+            start = mid + 1;
+        }
+        else if(diff == 1){
+            // store krwao
+            index = mid;
+            // left m check krke aao
+            end = mid - 1;
+        }
+        mid = start + (end - start)/2;
+        }
+    return index;
+    }
 
-// int main() {
-//     // asc order 
-//     //int arr[] = {6,7,8,9,10,12,14};
-//     // dsc order
-//     //int arr[] = {99, 97, 92, 72, 63, 42};
-//     // first occur and last occur arr
-//     // int arr[] = {10, 20 , 20 , 20 , 20 , 20 ,  60, 80, 90};
-//     // int size = sizeof(arr) / sizeof(arr[0]);
-//     // int target ;
-//     // cin >> target;
-//     //cout << binarysearchasc(arr, size, target);
-//     //cout << binarysearchdsc(arr, size, target);
-   
-//     //cout << binarysearchfirstoccur(arr, size, target, index);
-//     //cout << binarysearchlastoccur(arr, size, target, index);
-//     // int index = -1;
-//     // int arr[] = {10, 20 , 20 , 20 , 20 , 20 ,  60, 80, 90};
-//     // int size = sizeof(arr) / sizeof(arr[0]);
-//     // int target ;
-//     // cin >> target;
-//     // cout << totaloccur(arr, size, target, index);
-//     int arr[] = {3, 4, 0, 1};
-//     int size = sizeof(arr) / sizeof(arr[0]);
-//     sort(arr, arr + size);
-//     cout << missingnumbersirlogic(arr, size);
-//     //cout << missingnumberindexlogic(arr, size);
-//     //cout << missingnumberxorlogic(arr, size);
-//     //cout << missingnumbersumlogic(arr, size);
-//     return 0;
-// }
+int main() {
+    // asc order 
+    int arr[] = {6,7,8,9,10,12,14};
+    // dsc order
+    int arr[] = {99, 97, 92, 72, 63, 42};
+    // first occur and last occur arr
+    int arr[] = {10, 20 , 20 , 20 , 20 , 20 ,  60, 80, 90};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target ;
+    cin >> target;
+    cout << binarysearchasc(arr, size, target);
+    cout << binarysearchdsc(arr, size, target);
+    cout << binarysearchfirstoccur(arr, size, target, index);
+    cout << binarysearchlastoccur(arr, size, target, index);
+    int index = -1;
+    int arr[] = {10, 20 , 20 , 20 , 20 , 20 ,  60, 80, 90};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target ;
+    cin >> target;
+    cout << totaloccur(arr, size, target, index);
+    int arr[] = {3, 4, 0, 1};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    sort(arr, arr + size);
+    cout << missingnumbersirlogic(arr, size);
+    cout << missingnumberindexlogic(arr, size);
+    cout << missingnumberxorlogic(arr, size);
+    cout << missingnumbersumlogic(arr, size);
+    return 0;
+}
 
 // // ----------------- Mega Class Arrays -------------------
-// #include<iostream>
-// #include<vector>
-// #include<unordered_map>
-// #include<algorithm>
-// #include<climits>
-// using namespace std;
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+#include<algorithm>
+#include<climits>
+using namespace std;
 
-// vector<int> binaryrepresentation(vector<int> &arr){
-//     // size of declared vector
-//     int n = arr.size();
-//     // new vector 
-//     vector<int> twoscomp(n + 1, 0);
+//123.Write a program to find the 2’s complement of a binary number stored in a vector.
 
-//     // flip the array
-//     for(int i = n - 1; i >= 0; i--){
-//         twoscomp[i + 1] = arr[i] == 0 ? 1 : 0;
-//     }
+vector<int> binaryrepresentation(vector<int> &arr){
+    // size of declared vector
+    int n = arr.size();
+    // new vector 
+    vector<int> twoscomp(n + 1, 0);
+    // flip the array
+    for(int i = n - 1; i >= 0; i--){
+        twoscomp[i + 1] = arr[i] == 0 ? 1 : 0;
+    }
 
-//     // // check print
-//     // for(int i = 0; i < twoscomp.size() ; i++){
-//     //     cout << twoscomp[i] ;
-//     // }
-//     // cout << endl;
+    // // check print
+    // for(int i = 0; i < twoscomp.size() ; i++){
+    //     cout << twoscomp[i] ;
+    // }
+    // cout << endl;
 
-//     // add 1 
-//     int carry = 1;
-//     int sum = 0;
-//     for(int i = twoscomp.size() - 1; i >= 0; i--){
-//         sum = twoscomp[i] + carry;
-//         twoscomp[i] = sum % 2;
-//         carry = sum / 2;
-//     }
+    // add 1 
+    int carry = 1;
+    int sum = 0;
+    for(int i = twoscomp.size() - 1; i >= 0; i--){
+        sum = twoscomp[i] + carry;
+        twoscomp[i] = sum % 2;
+        carry = sum / 2;
+    }
 
-//     if(carry == 0){
-//         twoscomp.erase(twoscomp.begin());
-//     }
-//     // // check print
-//     for(int i = 0; i < twoscomp.size() ; i++){
-//         cout << twoscomp[i] ;
-//     }
-//     cout << endl;
+    if(carry == 0){
+        twoscomp.erase(twoscomp.begin());
+    }
+    // // check print
+    for(int i = 0; i < twoscomp.size() ; i++){
+        cout << twoscomp[i] ;
+    }
+    cout << endl;
 
-//     return twoscomp;
-// }
+    return twoscomp;
+}
 
-// void printmap(unordered_map<int, int> freqmap){
-//     unordered_map<int, int>:: iterator it;
-//     cout << "\n-- Map has below things--\n" ;
-//   for(it = freqmap.begin(); it != freqmap.end(); it++){
-//         int key = it->first;
-//         int freq = it->second;
-//     cout << key << " " << freq << endl;
-// }
-// }
+//124.Wap to count the frequency of each element in an array and print it using a map.
+void printmap(unordered_map<int, int> freqmap){
+    unordered_map<int, int>:: iterator it;
+    cout << "\n-- Map has below things--\n" ;
+  for(it = freqmap.begin(); it != freqmap.end(); it++){
+        int key = it->first;
+        int freq = it->second;
+    cout << key << " " << freq << endl;
+    }
+}
 
-// int singlenumbermapmethod(vector<int> &nums){
-//     // freq table
-//     unordered_map<int, int> freqmap;
+//125. Find the element that appears only once in an array where every other element appears twice using a frequency map.
+int singlenumbermapmethod(vector<int> &nums){
+    // freq table
+    unordered_map<int, int> freqmap;
   
-//     //add freqs to the map table 
-//     for(int i = 0; i < nums.size(); i++){
-//         int num = nums[i];
-//         freqmap[num] += 1;
-//         // printmap(freqmap);
-// }
-// // return -1;
-//     unordered_map<int, int>:: iterator it;
-//     int ans;
-//     for(it = freqmap.begin(); it != freqmap.end(); it++){
-//         int key = it->first;
-//         int freq = it->second;
-//         if(freq == 1){
-//             ans = key;
-//             break;
-//         }
-//     }
-//     return ans;
-// }
+    //add freqs to the map table 
+    for(int i = 0; i < nums.size(); i++){
+        int num = nums[i];
+        freqmap[num] += 1;
+        // printmap(freqmap);
+}
+// return -1;
+    unordered_map<int, int>:: iterator it;
+    int ans;
+    for(it = freqmap.begin(); it != freqmap.end(); it++){
+        int key = it->first;
+        int freq = it->second;
+        if(freq == 1){
+            ans = key;
+            break;
+        }
+    }
+    return ans;
+}
 
-// // interview most asking qs
-// void rotatearray(vector<vector<int>> &matrix){
-//     // new matrix for store transpose
+//126.Rotate a given square matrix by 90 degrees clockwise using the transpose + reverse method.
+void rotatearray(vector<vector<int>> &matrix){
+    // new matrix for store transpose
+    // step - 1 transpose 
+    int rowsize = matrix.size();
+    int columnsize = matrix[0].size();
+        vector<vector<int>> newm(rowsize, vector<int>(columnsize, 0));
+    for(int i = 0; i < rowsize; i++){
+        for(int j = 0; j < columnsize; j++){
+            //newm[i][j] = matrix[j][i]; by self method
+            swap(newm[i][j], matrix[j][i]);
+        }
+    }
+    // cout << "Transpose:\n";
+    // for(int i = 0; i < rowsize; i++){
+    //     for(int j = 0; j < columnsize; j++){
+    //         cout << newm[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // step 2. reverse row wise
+    cout << "Rotate array:\n";
+    for(int i = 0; i < rowsize; i++){
+        reverse(newm[i].begin(), newm[i].end());
+    }
+       for(int i = 0; i < rowsize; i++){
+        for(int j = 0; j < columnsize; j++){
+            cout << newm[i][j] << " ";
+        }
+     cout << endl;
+    }
+}
 
-//     // step - 1 transpose 
-//     int rowsize = matrix.size();
-//     int columnsize = matrix[0].size();
-//         vector<vector<int>> newm(rowsize, vector<int>(columnsize, 0));
-//     for(int i = 0; i < rowsize; i++){
-//         for(int j = 0; j < columnsize; j++){
-//             //newm[i][j] = matrix[j][i]; by self method
-//             swap(newm[i][j], matrix[j][i]);
-//         }
-//     }
-//     cout << "Transpose:\n";
-//     for(int i = 0; i < rowsize; i++){
-//         for(int j = 0; j < columnsize; j++){
-//             cout << newm[i][j] << " ";
-//         }
-//         cout << endl;
-//     }
-//     // step 2. reverse row wise
-//     cout << "Rotate array:\n";
-//     for(int i = 0; i < rowsize; i++){
-//         reverse(newm[i].begin(), newm[i].end());
-//     }
-//        for(int i = 0; i < rowsize; i++){
-//         for(int j = 0; j < columnsize; j++){
-//             cout << newm[i][j] << " ";
-//         }
-//      cout << endl;
-//     }
-// }
-
-// // maximum subarray 
+// maximum subarray 
 // int maximumsubarraynaivemthod(vector<int> &nums){
-//     //naive method
-//     // int ans = INT_MIN;
-//     // for(int i = 0; i < nums.size(); i++){
-//     //     int sum = 0;
-//     //     for(int j = i; j < nums.size(); j++){
-//     //         sum += nums[j];
-//     //         ans = max(ans, sum);
-//     //     }
-//     // }
-//     // return ans;
-// }
-
-// int maximumsubarraykadanemthod(vector<int> &nums){
-//     // kadane algorithm 
+//     // naive method
 //     int ans = INT_MIN;
-//     int sum = 0;
 //     for(int i = 0; i < nums.size(); i++){
-//         sum += nums[i];
-//         ans = max(sum, ans);
-//         if(sum < 0){
-//             sum = 0;
+//         int sum = 0;
+//         for(int j = i; j < nums.size(); j++){
+//             sum += nums[j];
+//             ans = max(ans, sum);
 //         }
 //     }
 //     return ans;
 // }
 
+//127.Find the maximum sum of any contiguous subarray in the given array (Maximum Subarray Problem).
+int maximumsubarraykadanemthod(vector<int> &nums){
+    // kadane algorithm 
+    int ans = INT_MIN;
+    int sum = 0;
+    for(int i = 0; i < nums.size(); i++){
+        sum += nums[i];
+        ans = max(sum, ans);
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    return ans;
+}
 
-// int main() {
-//     // vector declaration
-//     //vector<int> arr = {1,0,1,0};
-//     //binaryrepresentation(arr);
-//     //  vector<int> arr = {4,1,2,1,2};
-//     // cout << singlenumbermapmethod(arr);
-//     // 2D vector with representing n * n matrix
-//     // vector<vector<int>> matrix = {
-//     //     {1,2,3},
-//     //     {4,5,6},
-//     //     {7,8,9}
-//     // };
-//     // cout << "Before:\n";
-//     // int rowsize = matrix.size();
-//     // int columnsize = matrix[0].size();
-//     // for(int i = 0; i < rowsize; i++){
-//     //     for(int j = 0; j < columnsize; j++){
-//     //         cout << matrix[i][j] << " ";
-//     //     }
-//     //  cout << endl;
-//     // }
-//     // rotatearray(matrix);
 
-//     // maximum subarray 
-//     // vector<int> arr = {-2,1,-3,4,-1,2,1,-5,4};
-//     // // cout << maximumsubarraynaivemthod(arr);
-//     // cout << maximumsubarraykadanemthod(arr);
+int main() {
+    // vector declaration
+    vector<int> arr = {1,0,1,0};
+    binaryrepresentation(arr);
+     vector<int> arr = {4,1,2,1,2};
+    cout << singlenumbermapmethod(arr);
+    // 2D vector with representing n * n matrix
+    vector<vector<int>> matrix = {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    cout << "Before:\n";
+    int rowsize = matrix.size();
+    int columnsize = matrix[0].size();
+    for(int i = 0; i < rowsize; i++){
+        for(int j = 0; j < columnsize; j++){
+            cout << matrix[i][j] << " ";
+        }
+     cout << endl;
+    }
+    rotatearray(matrix);
 
-//     return 0;
-// }
+    // maximum subarray 
+    vector<int> arr = {-2,1,-3,4,-1,2,1,-5,4};
+    // cout << maximumsubarraynaivemthod(arr);
+    cout << maximumsubarraykadanemthod(arr);
 
-// // (Searching and Sorting class -2)
-// int peakmountain(vector<int> &nums){
-//     int start = 0;
-//     int end = nums.size() -1;
-//     int mid = start + (end - start)/2;
-//     while(start < end){
-//         if(nums[mid] < nums[mid + 1]){
-//             // right jao
-//              start = mid + 1;
-//         }
-//         else{
-//             // left jao 
-//             end = mid ;
-//         }
-//         mid = start + (end - start)/2;
-//     }
-//     return mid;
-// }
+    return 0;
+}
 
-// int getpivotindex(vector<int> &arr){
-//         int start = 0;
-//         int size = arr.size(); 
-//         int end =size - 1;
-//         int mid = start + (end - start)/2;
-//         while(start <= end){
-//             if(mid + 1 < size && arr[mid] > arr[mid + 1]){
-//                   return mid;
-//                 }
-//             // line B
-//             else if(arr[mid] < arr[0]){
-//                 // left jao 
-//                 end = mid - 1;
-//             }
-//             else {
-//                 // line A m h 
-//                 // right jao 
-//                 start = mid + 1;
-//             }
-//             mid = start + (end - start) / 2;
-//         }
-//         return -1;
-//     }
-//     int binarysearch(int start, int end , int target, vector<int> &arr){
+//-------------(Searching and Sorting class -2)---------
+//128.Find the index of the peak element in a mountain array (an array that first increases then decreases) using binary search.
+int peakmountain(vector<int> &nums){
+    int start = 0;
+    int end = nums.size() -1;
+    int mid = start + (end - start)/2;
+    while(start < end){
+        if(nums[mid] < nums[mid + 1]){
+            // right jao
+             start = mid + 1;
+        }
+        else{
+            // left jao 
+            end = mid ;
+        }
+        mid = start + (end - start)/2;
+    }
+    return mid;
+}
 
-//         int mid = start + (end - start)/2;
-//         while(start <= end){
-//            if(arr[mid] == target){
-//                return mid;
-//            }
-//            else if(arr[mid] < target){
-//                 // right jao
-//                 start = mid + 1;
-//            }
-//            else{
-//             // left jao 
-//             end = mid - 1;
-//            }
-//             mid = start + (end - start)/2;
-//            }
-//            return -1;
-//         }
-//         int searchinarotatedarray(vector<int>& nums, int target) {
-//         int size = nums.size() - 1;
-//       int pivotindex = getpivotindex(nums);
-//       //Searching in Line A check target exist in line a
-//       if(target >= nums[0] && target <= nums[pivotindex]) {
-//             int ans = binarysearch(0, pivotindex, target, nums);
-//             return ans;
-//       }
-//      // Searching n line B
-//      else {
-//         int index = binarysearch(pivotindex + 1, size, target, nums);
-//             return index;
-//         }
-//     return -1;
-//     }
+//129.Search for a target element in a rotated sorted array using the pivot + binary search approach.
+int getPivotIndex(vector<int> &arr){
+    int s=0,e=arr.size()-1,mid=s+(e-s)/2;
+    while(s<=e){
+        if(mid+1<arr.size() && arr[mid]>arr[mid+1]) return mid;
+        else if(arr[mid]<arr[0]) e=mid-1;
+        else s=mid+1;
+        mid=s+(e-s)/2;
+    }
+    return -1;
+}
 
-// bool searchina2DMatrix(vector<vector<int>>& matrix, int target) {
-//         int rows = matrix.size();
-//         int columns = matrix[0].size();
-//         //total elements
-//         int n = rows * columns;
+int binarySearch(int s,int e,int target,vector<int> &arr){
+    int mid=s+(e-s)/2;
+    while(s<=e){
+        if(arr[mid]==target) return mid;
+        else if(arr[mid]<target) s=mid+1;
+        else e=mid-1;
+        mid=s+(e-s)/2;
+    }
+    return -1;
+}
 
-//         int s = 0;
-//         int e = n-1;
-//         int mid = s+(e-s)/2;
+int searchInRotatedArray(vector<int>& nums,int target){
+    int pivot=getPivotIndex(nums),n=nums.size()-1;
+    if(pivot==-1) return binarySearch(0,n,target,nums);
+    if(target>=nums[0] && target<=nums[pivot]) return binarySearch(0,pivot,target,nums);
+    else return binarySearch(pivot+1,n,target,nums);
+}
+//130.Search an element in a 2D matrix (each row & col sorted) using binary search.
+bool searchIn2DMatrix(vector<vector<int>>& matrix,int target){
+    int rows=matrix.size(),cols=matrix[0].size();
+    int s=0,e=rows*cols-1,mid=s+(e-s)/2;
+    while(s<=e){
+        int row=mid/cols,col=mid%cols;
+        if(matrix[row][col]==target) return true;
+        else if(target>matrix[row][col]) s=mid+1;
+        else e=mid-1;
+        mid=s+(e-s)/2;
+    }
+    return false;
+}
 
-//         while(s <= e) {
-//             //mid ka use karkek 2D array ka rowIndex and colIndex find krenge
-//             int rowIndex = mid/columns;
-//             int colIndex = mid%columns;
+ //131. Find square root of a number using binary search (return floor value)
+int mySqrt(int x){
+    int s=0,e=x,ans=-1; long long mid=s+(e-s)/2;
+    while(s<=e){
+        long long sq=mid*mid;
+        if(sq==x) return mid;
+        if(sq<x){ ans=mid; s=mid+1; }
+        else e=mid-1;
+        mid=s+(e-s)/2;
+    }
+    return ans;
+}
 
-//             if(matrix[rowIndex][colIndex] == target) {
-//                 return true;
-//             }
-//             if(target > matrix[rowIndex][colIndex] ) {
-//                 //right
-//                 s = mid+1;
-//             }
-//             else {
-//                 //left
-//                 e = mid-1;
-//             }
-//             mid = s+(e-s)/2;
-//         }
-//         return false;
-//     }
+int main() {
+    // vector<int> arr = {0, 10, 5, 2};
+    // cout << peakmountain(arr);
+    // vector<int> arr = {4,5,6,7, 0, 1,2};
+    // cout << searchinarotatedarray(arr, 0);
+    // vector<vector<int>> arr = {
+    //     {1,2,3,4},
+    //     {5,6,7,8},
+    //     {9,10,11,12},
+    //     {13,14,15,16}
+    // };
+    // cout << searchina2DMatrix(arr, 10);
+    cout << mySqrt(50);
+    return 0;
+}
 
-//  int mySqrt(int x) {
-//         int s = 0;
-//         int e = x;
-//         long long int mid = s+(e-s)/2;
-//         int ans  = -1;
+#include<iostream>
+#include<vector>
+using namespace std;
 
-//         while(s<=e) {
-//             //happy case
-//             long long int product = mid * mid;
-//             if(product == x) {
-//                 return mid;
-//             }
-//             if(product < x) {
-//                 //may or may not be 
-//                 //store and compute
-//                 ans = mid;
-//                 //go to right to find or jada paas ka answer
-//                 s = mid+1;
-//             }
-//             else {
-//                 //mid*mid > x -> left
-//                 e = mid-1;
-//             }
-//             mid = s+(e-s)/2;
-//         }
-//         return ans;
-//     }
+// Given two integers one is a dividend and the other is the divisor, we need to find the quotient when the dividend is divided by the divisor without the use of any ” / “ and ” % “ operators
 
-// int main() {
-//     // vector<int> arr = {0, 10, 5, 2};
-//     // cout << peakmountain(arr);
-//     // vector<int> arr = {4,5,6,7, 0, 1,2};
-//     // cout << searchinarotatedarray(arr, 0);
-//     // vector<vector<int>> arr = {
-//     //     {1,2,3,4},
-//     //     {5,6,7,8},
-//     //     {9,10,11,12},
-//     //     {13,14,15,16}
-//     // };
-//     // cout << searchina2DMatrix(arr, 10);
-//     cout << mySqrt(50);
-//     return 0;
-// }
+// Input: dividend = 10, divisor = 2
+// Output: 5
+// Explanation: 10/2 = 5.
 
-// #include<iostream>
-// #include<vector>
-// using namespace std;
+// Input: dividend = 10, divisor = 3
+// Output: 3
+// Explanation: 10/3 = 3.33333… which is truncated to 3.
 
-// // Given two integers one is a dividend and the other is the divisor, we need to find the quotient when the dividend is divided by the divisor without the use of any ” / “ and ” % “ operators
-
-// // Input: dividend = 10, divisor = 2
-// // Output: 5
-// // Explanation: 10/2 = 5.
-
-// // Input: dividend = 10, divisor = 3
-// // Output: 3
-// // Explanation: 10/3 = 3.33333… which is truncated to 3.
-
-// // Input: dividend = 10, divisor = -2
-// // Output: -5
-// // Explanation: 10/-2 = -5
-
-// int Quotient(int dividend, int divisor){
-//     int index = -1;
-//     int start = 0;
-//     int end = dividend;
-//     int quotient = start + ((end - start) >> 1);
-//     while(start <= end){
-//         if(divisor * quotient == dividend){
-//             return quotient;
-//         }
-//         else if(divisor * quotient < dividend){
-//             // store 
-//             index = quotient;
-//             // compute 
-//             start = quotient + 1;
-//         }
-//         else {
-//             // left jao 
-//             end = quotient - 1;
-//         }
-//         quotient = start + (end - start) / 2;
-//     }
-//     return index;
-// }
+//134.Divide two integers without using / or % and return the quotient (truncate toward zero).
+int Quotient(int dividend, int divisor){
+    int index = -1;
+    int start = 0;
+    int end = dividend;
+    int quotient = start + ((end - start) >> 1);
+    while(start <= end){
+        if(divisor * quotient == dividend){
+            return quotient;
+        }
+        else if(divisor * quotient < dividend){index = quotient;
+            start = quotient + 1;
+        }
+        else  end = quotient - 1;
+        quotient = start + (end - start) / 2;
+    }
+    return index;
+}
 
 // // Given a sorted array arr[] of size N, some elements of array are moved to either of the adjacent positions, i.e., arr[i] may be present at arr[i+1] or arr[i-1] i.e. arr[i] can only be swapped with either arr[i+1] or arr[i-1]. The task is to search for an element in this array.
 
@@ -6440,313 +6371,222 @@ int main() {
 // // Output: -1
 // // Explanation: -1 is returned to indicate the element is not present
 
-// int nearlysearch(int arr[], int size, int target){
-//     int s = 0;
-//     int e = size - 1;
-//     int mid = s + (e - s) / 2;
+//132.Search target in a nearly sorted array where each element may be misplaced by ±1 index
+int nearlysearch(int arr[],int size,int target){
+    int s=0,e=size-1,mid=s+(e-s)/2;
+    while(s<=e){
+        if(arr[mid]==target) return mid;
+        if(arr[mid-1]==target) return mid-1;
+        if(arr[mid+1]==target) return mid+1;
+        if(target>arr[mid]) s=mid+2;
+        else e=mid-2;
+        mid=s+(e-s)/2;
+    }
+    return -1;
+}
 
-//     while (s <= e)
-//     {
-//         // cout << "printing mid:  " << mid << endl;
-//         // cout << "target " << target << endl;
-//         // cout << "arr[mid]: " << arr[mid] << endl << endl;
-//         if (arr[mid] == target)
-//         {
-//             return mid;
-//         }
-//         if (arr[mid - 1] == target)
-//         {
-//             return mid - 1;
-//         }
-//         if (arr[mid + 1] == target)
-//         {
-//             return mid + 1;
-//         }
+// 133.Find the single non-duplicate element in a sorted array
+int singleelementinasortedarray(vector<int> &arr){
+    int s=0,n=arr.size(),e=n-1,mid=s+(e-s)/2;
+    while(s<=e){
+    if(s==e)return arr[s];
+    int currVal=arr[mid];
+    int leftVal=-1;
+    if(mid-1>=0)leftVal=arr[mid-1];
+    int rightVal=-1;
+    if(mid+1<n)rightVal=arr[mid+1];
+    if(currVal!=leftVal&&currVal!=rightVal)return currVal;
+    if(currVal==leftVal&&currVal!=rightVal){
+    int pairStartingIndex=mid-1;
+    if(pairStartingIndex&1)e=mid-1;
+    else s=mid+1;
+}
+else if(currVal!=leftVal&&currVal==rightVal){
+int pairStartingIndex=mid;
+if(pairStartingIndex&1)e=mid-1;
+else s=mid+1;
+}
+mid=s+(e-s)/2;
+}
+return -1;
+}
 
-//         if (target > arr[mid])
-//         {
-//             // right
-//             s = mid + 2;
-//         }
-//         else
-//         {
-//             // left
-//             e = mid - 2;
-//         }
-//         mid = s + (e - s) / 2;
-//     }
-//     return -1;
-// }
-
-// int singleelementinasortedarray(vector<int> &arr){
-//      int s = 0;
-//         int n = arr.size();
-//         int e = n-1;
-//         int mid = s+(e-s)/2;
-
-//         while(s <= e) {
-//             //case 1: single element
-//             if(s == e) {
-//                 return arr[s];
-//             }
-
-//             //mid index pr value 
-//             int currVal = arr[mid];
-//             //mid-1 index pr value, if exists
-//             int leftVal = -1;
-//             if(mid-1 >= 0) {
-//                 leftVal = arr[mid-1];
-//             }
-//             //mid+1 index pr value, if exists
-//             int rightVal = -1;
-//             if(mid+1 < n) {
-//                 rightVal = arr[mid+1];
-//             }
-
-//             //case 2: non duplicates
-//             if(currVal != leftVal && currVal != rightVal) {
-//                 return currVal;
-//             }
-//             //case 3: left me duplicate mila 
-//             if(currVal == leftVal && currVal != rightVal) {
-//                 int pairStartingIndex = mid-1;
-//                 if(pairStartingIndex & 1) {
-//                     //agar index odd hua 
-//                     //standing on right part
-//                     //move to left
-//                     e = mid-1;
-//                 }
-//                 else {
-//                     //move to right
-//                     s = mid+1;
-//                 }
-//             }//case 4: right me duplicate mila 
-//             else if(currVal != leftVal && currVal == rightVal) {
-//                 int pairStartingIndex = mid;
-//                  if(pairStartingIndex & 1) {
-//                     //agar index odd hua 
-//                     //standing on right part
-//                     //move to left
-//                     e = mid-1;
-//                 }
-//                 else {
-//                     //move to right
-//                     s = mid+1;
-//                 }
-//             }
-//             mid = s+(e-s)/2;
-//         }
-//         return -1;
-//     }
-
-// int main() {
-//     // int dividend = -10,  divisor = -3;
-//     // int ans = Quotient(abs(dividend), abs(divisor));
-//     // if((dividend  > 0 &&  divisor < 0) && (dividend < 0 && divisor > 0)){
-//     //     ans = 0 - ans;
-//     // }
-//     // cout << "dividend = -10,  divisor = -3, Quotient = " << ans;
-
-
-//     // int arr[] = {10, 3, 40, 20, 50, 80, 70};
-//     // int size = 7;
-
-//     // int target = 20;
-
-//     // int ans = nearlysearch(arr, size, target);
-//     // cout << "Found at Index: " << ans << endl;
-
-//     vector<int> arr = {1,2,2,3,3};
-//     cout <<  singleelementinasortedarray(arr);
     
-//     return 0;
-// }
 
-// // Mega class (Searching and sorting)
+int main() {
+    int dividend = -10,  divisor = -3;
+    int ans = Quotient(abs(dividend), abs(divisor));
+    if((dividend  > 0 &&  divisor < 0) && (dividend < 0 && divisor > 0)){
+        ans = 0 - ans;
+    }
+    cout << "dividend = -10,  divisor = -3, Quotient = " << ans;
+
+
+    int arr[] = {10, 3, 40, 20, 50, 80, 70};
+    int size = 7;
+
+    int target = 20;
+
+    int ans = nearlysearch(arr, size, target);
+    cout << "Found at Index: " << ans << endl;
+
+    vector<int> arr = {1,2,2,3,3};
+    cout <<  singleelementinasortedarray(arr);
+    
+    return 0;
+}
+
+//++++++++++++++++++++Mega class (Searching and sorting)+++++++++++++++
 // // precision of sqrt
 // #include <iostream>
 // #include <algorithm>
 // #include<vector>
 // using namespace std;
 
+// 135.Given an array bloomDay where bloomDay[i] is the day the i‑th flower blooms, find the minimum number of days required to make m bouquets, each consisting of k consecutive flowers. If it’s impossible, return -1.
+bool canWeMakeMBouquetsWithDDays(vector<int>& bloomDay,int m,int k,int D){
+    int counter=0;
+    for(int i=0;i<bloomDay.size();i++){
+        if(bloomDay[i]<=D) counter++;
+        if(counter==k){
+            m--; counter=0;
+            if(m==0) break;
+        }
+        if(bloomDay[i]>D) counter=0;
+    }
+    return m==0;
+}
 
-// bool canWeMakeMBouquetsWithDDays(vector<int> &bloomDay, int m, int k, int D)
-//     {
-//         int counter = 0;
-//         for (int i = 0; i < bloomDay.size(); i++)
-//         {
-//             // check whether the ith flower is bloomed or not
-//             if (bloomDay[i] <= D)
-//             {
-//                 // bloom ho gaya hoga
-//                 counter++;
-//             }
-//             if (counter == k)
-//             {
-//                 m--; // i can make a Bouquet
-//                 counter = 0;
-//                 if (m == 0)
-//                     break;
-//             }
+int minDays(vector<int>& bloomDay,int m,int k){
+    long long requirement=(long long)m*k;
+    if(bloomDay.size()<requirement) return -1;
+    int start=*min_element(bloomDay.begin(),bloomDay.end());
+    int end=*max_element(bloomDay.begin(),bloomDay.end());
+    int ans=0;
+    while(start<=end){
+        int mid=(start+end)>>1;
+        if(canWeMakeMBouquetsWithDDays(bloomDay,m,k,mid)){
+            ans=mid; end=mid-1;
+        }else start=mid+1;
+    }
+    return ans;
+}
 
-//             // not bloomed case
-//             if (bloomDay[i] > D)
-//                 counter = 0;
-//         }
-//         return m == 0; // were you able to make m Bouquets?
-//     }
-//     int minDays(vector<int> &bloomDay, int m, int k)
-//     {
-//         long long int requirement = (long long int)m * (long long int)k;
-//         if (bloomDay.size() < requirement)
-//             return -1;
+// 136.Koko loves eating bananas. Given an array piles where piles[i] is the number of bananas in the i‑th pile and an integer h hours, find the minimum eating speed k (bananas per hour) so that Koko can eat all bananas within h hours.
+bool canKokoFinishBananasWithKSpeed(vector<int> &piles, int h, int k)
+    {
+           long long int totalHoursTakenByKokoToFinishAllBananas = 0;
+    for (int i = 0; i < piles.size(); i++)
+        totalHoursTakenByKokoToFinishAllBananas += ceil(piles[i] / (double)k);
+    return totalHoursTakenByKokoToFinishAllBananas <= h;
+}
 
-//         int start = *min_element(bloomDay.begin(), bloomDay.end()); // at least 1 flower is bloomed
-//         int end = *max_element(bloomDay.begin(), bloomDay.end());   // all flowers are bloomed, pkka bna lunga
-//         int ans = 0;
-//         while (start <= end)
-//         {
-//             int mid = (start + end) >> 1;
-//             int day = mid;
-//             if (canWeMakeMBouquetsWithDDays(bloomDay, m, k, day))
-//             {
-//                 ans = mid;
-//                 end = mid - 1;
-//             }
-//             else
-//                 start = mid + 1;
-//         }
-//         return ans;
-//     }
+int minEatingSpeed(vector<int> &piles, int h){
 
-// // koko eating bananas
-// bool canKokoFinishBananasWithKSpeed(vector<int> &piles, int h, int k)
-//     {
-//         long long int totalHoursTakenByKokoToFinishAllBananas = 0;
-//         for (int i = 0; i < piles.size(); i++)
-//             totalHoursTakenByKokoToFinishAllBananas += ceil(piles[i] / (double)k);
+    int start = 1;
+    int end = *max_element(piles.begin(), piles.end());
+    int ans = 0;
+    while (start <= end){
+        int mid = (start + end) >> 1;
+        int k = mid;
+        if (canKokoFinishBananasWithKSpeed(piles, h, k)){
+            ans = k;
+            end = mid - 1;
+        }
+        else start = mid + 1;
+    }
+    return ans;
+}
 
-//         // if(totalHoursTakenByKokoToFinishAllBananas <= h) return true;
-//         // return false;
-//         return totalHoursTakenByKokoToFinishAllBananas <= h;
-//     }
+//137.find the square root of a number n with decimal precision using binary search for integer part and incremental search for decimal part
+int mySqrt(int n)
+{
+    int s = 0, e = n;
+    int ans = 0;
+    while (s <= e)
+    {
+        int mid = (s + e) >> 1;
+        if(mid * mid <= n)
+        {
+            ans = mid;
+            s = mid + 1; // go right
+        }
+        else e = mid - 1; //  left jata hu
+    }
+    return ans;
+}
 
-//     int minEatingSpeed(vector<int> &piles, int h)
-//     {
-//         int start = 1;
-//         // auto it = max_element(piles.begin(), piles.end());
-//         // int end = *it;
-//         int end = *max_element(piles.begin(), piles.end());
-//         // end to mere pkka ans hai,
-//         int ans = 0;
+double myPrecisionSqrt(int n)
+{
+    double sqrt = mySqrt(n); // -> O(logn)
 
-//         // TC: O(Log(Max(Piles)) * O(n)) -> O(n*log(max(piles)))
-//         while (start <= end)
-//         {
-//             int mid = (start + end) >> 1;
-//             int k = mid;
-//             if (canKokoFinishBananasWithKSpeed(piles, h, k))
-//             {
-//                 // koko will finish all bananas
-//                 // without being caught
-//                 ans = k;
-//                 end = mid - 1;
-//             }
-//             else
-//                 start = mid + 1;
-//         }
-//         return ans;
-//     }
+    /* O(precision) */
+    int precision = 9;
+    double step = 0.1;
+    while (precision--)
+    {
+        double j = sqrt; // j->7.0;
+        while (j * j <= n)
+        {
+            // store and compute
+            sqrt = j;
+            j += step; // j-> 7.1
+        }
+        // after this while loop i got 1 precision ans.
+        step /= 10;
+    }
+    return sqrt;
+}
+//138.Find the square root of a number n with high precision (up to 9 decimal places) using binary search instead of built-in sqrt()
+double BSPrecision(int n)
+{
+    double start = 0;
+    double end = n;
+    double ans = 0;
+    while ((end - start) > 0.000000001)
+    {
+        double mid = (start + end) / 2;
+        double sqr = mid * mid;
+        if (sqr <= n)
+        {
+            ans = mid;
+            start = mid + 0.000000000000000000000000001;
+        }
+        else
+            end = mid - 0.000000000000000000000000001;
+    }
+    return ans;
+}
 
-// int mySqrt(int n)
-// {
-//     int s = 0, e = n;
-//     int ans = 0;
-//     while (s <= e)
-//     {
-//         int mid = (s + e) >> 1;
-//         if (mid * mid <= n)
-//         {
-//             ans = mid;
-//             s = mid + 1; // go right
-//         }
-//         else
-//             e = mid - 1; //  left jata hu
-//     }
-//     return ans;
-// }
+// agar koi no. perfect square nhi h to uska perfect square root nhi ho skta
+int main()
+{
+    int n = 63;
+    double ans = myPrecisionSqrt(n); // TC: O(logn) + O(Precision).
+    printf("M1: Precision Sqrt: %.9f\n", ans);
+    cout << ans << endl;
+    // cout hota hai, it only print 5 precision.
 
-// double myPrecisionSqrt(int n)
-// {
-//     double sqrt = mySqrt(n); // -> O(logn)
+    // zada kes kre?
 
-//     /* O(precision) */
-//     int precision = 9;
-//     double step = 0.1;
-//     while (precision--)
-//     {
-//         double j = sqrt; // j->7.0;
-//         while (j * j <= n)
-//         {
-//             // store and compute
-//             sqrt = j;
-//             j += step; // j-> 7.1
-//         }
-//         // after this while loop i got 1 precision ans.
-//         step /= 10;
-//     }
-//     return sqrt;
-// }
+    double ans = BSPrecision(n);
+    printf("M2: Precision Sqrt: %.9f\n", ans);
 
-// double BSPrecision(int n)
-// {
-//     double start = 0;
-//     double end = n;
-//     double ans = 0;
-//     while ((end - start) > 0.000000001)
-//     {
-//         double mid = (start + end) / 2;
-//         double sqr = mid * mid;
-//         if (sqr <= n)
-//         {
-//             ans = mid;
-//             start = mid + 0.000000000000000000000000001;
-//         }
-//         else
-//             end = mid - 0.000000000000000000000000001;
-//     }
-//     return ans;
-// }
+    // coco eating bananas
+    vector<int> piles = {3,6,7,11};
+    int h = 8; // guard gya h 8 hrs k liye
+    cout << minEatingSpeed(piles, h);  // 4 o/p -->aaya kaise kya chahiye tha 
+    // TOTAL MINIMUM hours <= guard hours hone chahiye 
+    // leetcode qs no. 875
 
-// // agar koi no. perfect square nhi h to uska perfect square root nhi ho skta
-// int main()
-// {
-//     int n = 63;
-//     // double ans = myPrecisionSqrt(n); // TC: O(logn) + O(Precision).
-//     // printf("M1: Precision Sqrt: %.9f\n", ans);
-//     // cout << ans << endl;
-//     // cout hota hai, it only print 5 precision.
-
-//     // zada kes kre?
-
-//     // double ans = BSPrecision(n);
-//     // printf("M2: Precision Sqrt: %.9f\n", ans);
-
-//     // coco eating bananas
-//     vector<int> piles = {3,6,7,11};
-//     int h = 8; // guard gya h 8 hrs k liye
-//     cout << minEatingSpeed(piles, h);  // 4 o/p -->aaya kaise kya chahiye tha 
-//     // TOTAL MINIMUM hours <= guard hours hone chahiye 
-//     // leetcode qs no. 875
-
-//     // m bouquets with k flowers
-//     vector<int> bloomDay = {1,10,3,10,2};   
-//     int m = 3; // bouquets
-//     int k = 1; // flowers in each bouquet   
-//     cout << minDays(bloomDay, m, k); // 3 o/p
-//     // leetcode qs no. 1482
-//     return 0;
-// }
+    // m bouquets with k flowers
+    vector<int> bloomDay = {1,10,3,10,2};   
+    int m = 3; // bouquets
+    int k = 1; // flowers in each bouquet   
+    cout << minDays(bloomDay, m, k); // 3 o/p
+    // leetcode qs no. 1482
+    return 0;
+}
 
 // // custom comparator 
 // #include <algorithm>
@@ -6755,27 +6595,27 @@ int main() {
 
 // using namespace std;
 
-// void print(vector<int> &v) {
-//   for (int i = 0; i < v.size(); ++i) {
-//     cout << v[i] << " ";
-//   }
-//   cout << endl;
-// }
+void print(vector<int> &v) {
+  for (int i = 0; i < v.size(); ++i) {
+    cout << v[i] << " ";
+  }
+  cout << endl;
+}
 
-// void printvv(vector<vector<int>> &v) {
-//   for (int i = 0; i < v.size(); ++i) {
-//     vector<int> &temp = v[i];
-//     int a = temp[0];
-//     int b = temp[1];
-//     cout << a << " " << b << endl;
-//   }
-//   cout << endl;
-// }
+void printvv(vector<vector<int>> &v) {
+  for (int i = 0; i < v.size(); ++i) {
+    vector<int> &temp = v[i];
+    int a = temp[0];
+    int b = temp[1];
+    cout << a << " " << b << endl;
+  }
+  cout << endl;
+}
 
-// bool mycomp(int &a, int &b) {
-//   // return a < b; // increasing order sorting
-//   return a > b; // decreasing order sorting
-// }
+bool mycomp(int &a, int &b) {
+  // return a < b; // increasing order sorting
+  return a > b; // decreasing order sorting
+}
 
 // // yha hum 2 vector k beach m compare kr rhe h isliye pass by reference me 2 vector pass kiye h 
 // bool mycompfor1stIndex(vector<int> &a, vector<int> &b) {
@@ -6783,347 +6623,279 @@ int main() {
 //   // return a[1] < b[1]; // asc order
 // }
 
-// int main() {
-//    vector<int> v = {44, 55, 22, 11, 33};
-//   // sort(v.begin(), v.end()); // increasing order sorting
-//    sort(v.begin(), v.end(), mycomp);
-//    print(v);
+int main() {
+   vector<int> v = {44, 55, 22, 11, 33};
+//   sort(v.begin(), v.end()); // increasing order sorting
+   sort(v.begin(), v.end(), mycomp);
+   print(v);
 
-//   // vector of vector sorting
-// //   vector<vector<int>> v;
-// //   int n;
-// //   cout << "Enter size:\n";
-// //   cin >> n;
-// //   for (int i = 0; i < n; ++i) {
-// //     int a, b;
-// //     cout << "enter a, b" << endl;
-// //     cin >> a >> b;
-// //     vector<int> temp;
-// //     temp.push_back(a);
-// //     temp.push_back(b);
-// //     v.push_back(temp);
-// //   }
+  // vector of vector sorting
+  vector<vector<int>> v;
+  int n;
+  cout << "Enter size:\n";
+  cin >> n;
+  for (int i = 0; i < n; ++i) {
+    int a, b;
+    cout << "enter a, b" << endl;
+    cin >> a >> b;
+    vector<int> temp;
+    temp.push_back(a);
+    temp.push_back(b);
+    v.push_back(temp);
+  }
 
-// //   cout << "Here are the Values" << endl;
-// //   printvv(v);
-// //   cout << "Sorted by 1st index" << endl;
-// //   sort(v.begin(), v.end(), mycompfor1stIndex);
-// //   printvv(v);
-// //   return 0;
-// }
-
-// // ---------------------------------[Week -4 Assignment]-------------------------------------
-// #include<iostream>
-// #include<vector>
-// #include<set>
-// #include<algorithm>
-
-// using namespace std;
-  
-// // LC:--532
-  
-// int findPairs(vector<int>& nums, int k) {
-//         sort(nums.begin(), nums.end());
-//         // method -1:-- Two pointer approach
-//         int i = 0;
-//         int j = 1;
-//         // use set for prevent duplicate's
-//         set<pair<int, int>> ans;
-//         while(j < nums.size()){
-//             int diff = nums[j] - nums[i];
-//             if(diff == k && i != j){
-//                 ans.insert({nums[i], nums[j]});
-//                 i++, j++;
-//             }
-//             else if(diff > k){
-//                 i++;
-//             }
-//             else{
-//                 j++;
-//             }
-//         }
-//         return ans.size();
-// }
-// // method -2:-- 
-
-// bool bs(vector<int>& nums, int start, int target){
-//     int end = nums.size() -1;
-
-//     while(start <= end){
-//         int mid = (start + end)/2;
-//         if(nums[mid] == target){
-//             return 1;
-//         }
-//         else if(nums[mid] > target){
-//             // left jao 
-//             end = mid - 1;
-//         }
-//         else {
-//             start = mid + 1;
-//         }
-//     }
-//     return 0;
-// }
-//  int findPairs(vector<int>& nums, int k) {
-//         sort(nums.begin(), nums.end());
-//         set<pair<int, int>> ans;
-//         for(int i = 0; i < nums.size(); i++){
-//             if(bs(nums, i + 1, nums[i] + k) == 1){
-//                 // insert pair's 
-//                 ans.insert({nums[i], nums[i] + k});
-//             }
-//         }
-//         return ans.size();
-// } 
-
-// int main(){
-//     vector<int> v = {1,5,1,3,4};
-//     // k is diff
-//     int k = 2;
-//     cout << findPairs(v, k);
-//     return 0;   
-// }
-
-// // exponential search 
-// #include<iostream>
-// using namespace std;
-
-// int main() {
-//     int n;
-//     cin >> n;
-//     int arr[n];
-//     for(int i = 0; i < n; i++){
-//         cin >> arr[i];
-//     }
-//     int key;
-//     cin >> key;
-
-//     // exponential search
-//     if(arr[0] == key){
-//         cout << "Present at index 0" << endl;
-//         return 0;
-//     }
-//     int i = 1;
-//     while(i < n && arr[i] <= key){
-//         i = i * 2;
-//     }
-
-//     // binary search
-//     int low = i / 2;
-//     int high = min(i, n - 1);
-//     while(low <= high){
-//         int mid = (low + high) / 2;
-//         if(arr[mid] == key){
-//             cout << "Present at index " << mid << endl;
-//             return 0;
-//         }
-//         else if(arr[mid] < key){
-//             low = mid + 1;
-//         }
-//         else{
-//             high = mid - 1;
-//         }
-//     }
-//     cout << "Not present" << endl;
-//     return 0;
-// }
-
-// // book allocation problem 
-// #include<iostream>
-// #include<vector>
-// #include<algorithm>
-// #include<numeric>
-// using namespace std;
-// // https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1
-// bool isPossible(vector<int> arr, int n, int m, int mid){
-//     int studentCount = 1;
-//     int pageSum = 0;
-
-//     for(int i = 0; i < n; i++){
-//         if(arr[i] > mid){
-//             return false;
-//         }
-//         if(pageSum + arr[i] > mid){
-//             studentCount++;
-//             pageSum = arr[i];
-//             if(studentCount > m){
-//                 return false;
-//             }
-//         }
-//         else{
-//             pageSum += arr[i];
-//         }
-// }
-//     return true;
-// }
-
-// int allocateBooks(vector<int> arr, int n, int m){
-//   if(m > n){
-//     return -1;}  
-//     int start = 0;
-//     int end = accumulate(arr.begin(), arr.end(), 0);
-//     int ans = -1;
-//     // use mid = start + (end - start) / 2 to avoid overflow bcause (start + end) can exceed the range of integer
-
-//     while(start <= end){
-//       int mid = start + ((end - start) >> 1);
-//         if(isPossible(arr, n, m, mid)){
-//             ans = mid;
-//             end = mid - 1;
-//         }
-//         else{
-//             start = mid + 1;
-//         }
-//     }
-//     return ans;
-// }
-
-// int main(){
-//     int n;
-//     cout << "Enter number of books: ";
-//     cin >> n;
-//     vector<int> arr(n);
-//     cout << "Enter number of pages in each book: ";
-//     for(int i = 0; i < n; i++){
-//         cin >> arr[i];
-//     }
-//     int m;
-//     cout << "Enter number of students: ";
-//     cin >> m;
-
-//     cout << "Minimum number of pages allocated to a student is: " << allocateBooks(arr, n, m) << endl;
-//     return 0;
-// }
-
-// painter_partition prblm 
-
-
-#include <iostream>
-#include <vector>
-#include <numeric>
-using namespace std;
-
-// Check if it's possible to paint all boards within 'mid' time
-bool isPossible(vector<int>& boards, int n, int k, int mid) {
-    int painterCount = 1;
-    int timeSum = 0;
-
-    for (int i = 0; i < n; i++) {
-        if (boards[i] > mid)
-            return false;
-
-        if (timeSum + boards[i] > mid) {
-            painterCount++;
-            timeSum = boards[i];
-
-            if (painterCount > k)
-                return false;
-        } else {
-            timeSum += boards[i];
-        }
-    }
-    return true;
+  cout << "Here are the Values" << endl;
+  printvv(v);
+  cout << "Sorted by 1st index" << endl;
+  sort(v.begin(), v.end(), mycompfor1stIndex);
+  printvv(v);
+  return 0;
 }
 
-// Binary search to find minimum time
-int painterPartition(vector<int>& boards, int n, int k) {
-    int start = 0;
-    int end = accumulate(boards.begin(), boards.end(), 0);
-    int ans = -1;
+// // ---------------------------------[Week -4 Assignment]-------------------------------------
+#include<iostream>
+#include<vector>
+#include<set>
+#include<algorithm>
 
-    while (start <= end) {
-        int mid = start + (end - start) / 2;
-
-        if (isPossible(boards, n, k, mid)) {
-            ans = mid;
-            end = mid - 1;
-        } else {
-            start = mid + 1;
+using namespace std;
+  
+// LC:--532
+// 142.K different pair's in an array 
+int findPairs(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        // method -1:-- Two pointer approach
+        int i = 0;
+        int j = 1;
+        // use set for prevent duplicate's
+        set<pair<int, int>> ans;
+        while(j < nums.size()){
+            int diff = nums[j] - nums[i];
+            if(diff == k && i != j){
+                ans.insert({nums[i], nums[j]});
+                i++, j++;
+            }
+            else if(diff > k){
+                i++;
+            }
+            else{
+                j++;
+            }
         }
+        return ans.size();
+}
+// method -2:-- 
+bool bs(vector<int>& nums, int start, int target){
+    int end = nums.size() -1;
+    while(start <= end){
+        int mid = (start + end)/2;
+        if(nums[mid] == target) return 1;
+        else if(nums[mid] > target) end = mid - 1;
+        else  start = mid + 1;
+    }
+    return 0;
+}
+ int findPairs(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        set<pair<int, int>> ans;
+        for(int i = 0; i < nums.size(); i++){
+            if(bs(nums, i + 1, nums[i] + k) == 1)ans.insert({nums[i], nums[i] + k});
+        }
+        return ans.size();
+} 
+
+int main(){
+    vector<int> v = {1,5,1,3,4};
+    // k is diff
+    int k = 2;
+    cout << findPairs(v, k);
+    return 0;   
+}
+
+//143.Find K-Closest Element 
+vector<int> twoptrmethod(vector<int> &arr, int k, int x){
+    int l=0,h=arr.size()-1;
+    while(h-l>=k){
+        if(x-arr[l]>arr[h]-x) l++;
+        else h--;
+    }
+    return vector<int>(arr.begin()+l,arr.begin()+h+1);
+}
+
+// method -02
+int lowerbound(vector<int> &arr,int x){
+    int start=0,end=arr.size()-1,ans=end;
+    while(start<=end){
+        int mid=(start+end)/2;
+        if(arr[mid]>=x){ans=mid;end=mid-1;}
+        else start=mid+1;
     }
     return ans;
 }
 
-int main() {
-    int n;
-    cout << "Enter number of boards: ";
-    cin >> n;
-
-    vector<int> boards(n);
-    cout << "Enter length of each board: ";
-    for (int i = 0; i < n; i++) {
-        cin >> boards[i];
+vector<int> bs_method(vector<int> &arr,int k,int x){
+    int h=lowerbound(arr,x);
+    int l=h-1;
+    while(k--){
+        if(l<0) h++;
+        else if(h>=arr.size()) l--;
+        else if(x-arr[l]>arr[h]-x) h++;
+        else l--;
     }
+    return vector<int>(arr.begin()+l+1,arr.begin()+h);
+}
 
-    int k;
-    cout << "Enter number of painters: ";
-    cin >> k;
+vector<int> findClosestElements(vector<int>& arr,int k,int x){
+    // return twoptrmethod(arr,k,x); // method-1
+    return bs_method(arr,k,x);       // method-2
+}
 
-    cout << "Minimum time to paint all boards is: "
-         << painterPartition(boards, n, k) << endl;
-
+int main(){
+    vector<int> arr={1,2,3,4,5};
+    int k=4,x=3;
+    vector<int> ans=findClosestElements(arr,k,x);
+    for(int i:ans) cout<<i<<" ";
     return 0;
 }
 
-// aggressive cows 
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// 	144.Find the position of a key in a sorted array using Exponential Search
+#include<iostream>
+#include<algorithm>
 using namespace std;
 
-class Solution {
-public:
-    bool isPossibleSolution(vector<int> &stalls, int k, int mid) {
-        int c = 1;           // count of cows placed
-        int pos = stalls[0]; // position of last placed cow
+int main(){
+    int n;cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++) cin>>arr[i];
+    int key;cin>>key;
 
-        for (int i = 1; i < stalls.size(); i++) {
-            if (stalls[i] - pos >= mid) {
-                c++;
-                pos = stalls[i];
-            }
-            if (c == k) return true;
-        }
-        return false;
+    if(arr[0]==key){cout<<"Present at index 0"<<endl;return 0;}
+
+    int i=1;
+    while(i<n && arr[i]<=key) i*=2;
+
+    int low=i/2,high=min(i,n-1);
+    while(low<=high){
+        int mid=(low+high)/2;
+        if(arr[mid]==key){cout<<"Present at index "<<mid<<endl;return 0;}
+        else if(arr[mid]<key) low=mid+1;
+        else high=mid-1;
     }
+    cout<<"Not present"<<endl;
+    return 0;
+}
 
-    int aggressiveCows(vector<int> &stalls, int k) {
-        sort(stalls.begin(), stalls.end());
 
-        int start = 0;
-        int end = stalls.back() - stalls.front();
-        int ans = -1;
+#include<iostream>
+#include<vector>
+#include<numeric>
+using namespace std;
 
-        while (start <= end) {
-            int mid = (start + end) >> 1;
-
-            if (isPossibleSolution(stalls, k, mid)) {
-                ans = mid;
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
-        }
-        return ans;
+// 145.Allocate minimum number of pages to each student so that the maximum pages assigned are minimized.
+bool isPossible(vector<int> arr,int n,int m,int mid){
+    int studentCount=1,pageSum=0;
+    for(int i=0;i<n;i++){
+        if(arr[i]>mid) return false;
+        if(pageSum+arr[i]>mid){
+            studentCount++;
+            pageSum=arr[i];
+            if(studentCount>m) return false;
+        }else pageSum+=arr[i];
     }
-};
+    return true;
+}
 
-int main() {
-    Solution ob;// gfg qs 
-    int n, k;
-    cout << "Enter number of stalls: ";
-    cin >> n;
+int allocateBooks(vector<int> arr,int n,int m){
+    if(m>n) return -1;
+    int start=0,end=accumulate(arr.begin(),arr.end(),0),ans=-1;
+    while(start<=end){
+        int mid=start+((end-start)>>1);
+        if(isPossible(arr,n,m,mid)){ans=mid;end=mid-1;}
+        else start=mid+1;
+    }
+    return ans;
+}
 
+int main(){
+    int n;cin>>n;
+    vector<int> arr(n);
+    for(int i=0;i<n;i++) cin>>arr[i];
+    int m;cin>>m;
+    cout<<allocateBooks(arr,n,m);
+    return 0;
+}
+
+
+// painter_partition prblm 
+// Check if it's possible to paint all boards within 'mid' time
+
+//146.Find the minimum time required to paint all boards using k painters
+bool isPossible(vector<int>& boards,int n,int k,int mid){
+    int painterCount=1,timeSum=0;
+    for(int i=0;i<n;i++){
+        if(boards[i]>mid) return false;
+        if(timeSum+boards[i]>mid){
+            painterCount++;timeSum=boards[i];
+            if(painterCount>k) return false;
+        }else timeSum+=boards[i];
+    }
+    return true;
+}
+
+int painterPartition(vector<int>& boards,int n,int k){
+    int start=0,end=accumulate(boards.begin(),boards.end(),0),ans=-1;
+    while(start<=end){
+        int mid=start+(end-start)/2;
+        if(isPossible(boards,n,k,mid)){ans=mid;end=mid-1;}
+        else start=mid+1;
+    }
+    return ans;
+}
+
+int main(){
+    int n;cin>>n;
+    vector<int> boards(n);
+    for(int i=0;i<n;i++) cin>>boards[i];
+    int k;cin>>k;
+    cout<<painterPartition(boards,n,k);
+    return 0;
+}
+
+
+// 	147.Place k cows in n stalls such that the minimum distance between any two cows is maximized.
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+bool isPossibleSolution(vector<int>& stalls,int k,int mid){
+    int c=1,pos=stalls[0];
+    for(int i=1;i<stalls.size();i++){
+        if(stalls[i]-pos>=mid){
+            c++;pos=stalls[i];
+        }
+        if(c==k) return true;
+    }
+    return false;
+}
+
+int aggressiveCows(vector<int>& stalls,int k){
+    sort(stalls.begin(),stalls.end());
+    int start=0,end=stalls.back()-stalls.front(),ans=-1;
+    while(start<=end){
+        int mid=(start+end)>>1;
+        if(isPossibleSolution(stalls,k,mid)){ans=mid;start=mid+1;}
+        else end=mid-1;
+    }
+    return ans;
+}
+
+int main(){
+    int n,k;cin>>n;
     vector<int> stalls(n);
-    cout << "Enter stall positions: ";
-    for (int i = 0; i < n; i++) cin >> stalls[i];
-
-    cout << "Enter number of cows: ";
-    cin >> k;
-
-    int result = ob.aggressiveCows(stalls, k);
-    cout << "Maximum minimum distance = " << result << endl;
-
+    for(int i=0;i<n;i++) cin>>stalls[i];
+    cin>>k;
+    cout<<aggressiveCows(stalls,k);
     return 0;
 }
 
@@ -7132,564 +6904,515 @@ int main() {
 // #include<iostream>
 // using namespace std;
 
-
-// int getLength(char name[], int size) {
-
-//     int count = 0;
-
-//     // for(int index=0; index<size; index++) {
-//     //     if(arr[index] == '\0') {
-//     //         break;
-//     //     }
-//     //     else {
-//     //         count++;
-//     //     }
-//     // }
-
-//     // int index = 0;
-//     // while(arr[index] != '\0') {
-//     //     //jab tak array me null character nahi milta
-//     //     //tab tak increment karo
-//     //     //and aage badhi
-//     //     count++;
-//     //     index++;
-//     // }
-//     //return kardo count  
-
-//     //or
-
-//     int count = 0;
-//     // for(int i = 0; i < size; i++){
-//     //     if(name[i] == '\0') break;
-//     //     else if(name[i] == ' ') continue;
-//     //     else count++;
-//     // }
-
-//     // or by using while loop
-//     int index = 0;
-//      while(name[index] != '\0' && index < size){
-//         if(name[index] != ' ')
-//             count++;
-//         index++;
-//     }
-//     return count;
-
-// }
+//150.Find the length of a character array (string) without counting spaces.
+int getLength(char name[],int size){
+    int count=0,index=0;
+    while(name[index]!='\0' && index<size){
+        if(name[index]!=' ') count++;
+        index++;
+    }
+    return count;
+}
     
-// //original char -> '@'
-// //newChar -> ' '
-// void replaceCharacter(char originalChar, char newChar, char arr[], int size) {
-//     for(int i=0; i<size; i++) {
-//         if(arr[i] == originalChar) {
-//             arr[i] = newChar;
-//         }
-//     }
-// } 
+	
+//151.Replace all occurrences of a specific character in a character array with a new character.
+void replaceCharacter(char originalChar,char newChar,char arr[],int size){
+    for(int i=0;i<size;i++){
+        if(arr[i]==originalChar) arr[i]=newChar;
+    }
+}
 
+//152.Convert all lowercase letters in a character array to uppercase.
+void convertIntoUpperCase(char arr[],int n){
+    int len=getLength(arr,n);
+    // int len = strlen(arr); // inbuilt function
+    for(int i=0;i<len;i++){
+        char ch=arr[i];
+        if(ch>='a' && ch<='z') ch=ch-'a'+'A';
+        arr[i]=ch;
+    }
+}
 
-// void convertIntoUpperCase(char arr[], int n) {
-//     int len = getLength(arr,n);
-//     for(int i=0; i<len; i++) {
-        
-//         char ch = arr[i];
-//         //if letter is a lowercase letter
-//         //then only convert it
-//         if(ch >='a' && ch<='z') {
-//             ch  = ch -'a' + 'A';
-//         }    
-//         arr[i] = ch;
-//     }
-// }
+//153.Convert all uppercase letters in a character array to lowercase.
+void convertIntoLowerCase(char arr[],int n){
+    int len=getLength(arr,n);
+    // int len = strlen(arr); // inbuilt function
+    for(int i=0;i<len;i++){
+        char ch=arr[i];
+        if(ch>='A' && ch<='Z') ch=ch-'A'+'a';
+        arr[i]=ch;
+    }
+}
+//154.Reverse a given character array (string).
+void reverseCharArray(char arr[],int n){
+    int len=getLength(arr,n);
+    // int len = strlen(arr); // inbuilt function
+    int i=0,j=len-1;
+    while(i<=j){
+        swap(arr[i],arr[j]);
+        i++;j--;
+    }
+}
 
-// void convertIntoLowerCase(char arr[], int n) {
-//     int len = getLength(arr,n);
-//     for(int i=0; i<len; i++) {
-        
-//         char ch = arr[i];
-//         //if letter is a lowercase letter
-//         //then only convert it
-//         if(ch >='A' && ch<='Z') {
-//             ch  = ch -'A' + 'a';
-//         }    
-//         arr[i] = ch;
-//     }
-// }
+// 155.Check if a given character array (string) is a palindrome.
+bool checkPalindrome(char arr[],int n){
+    int len=getLength(arr,n);
+    // int len = strlen(arr); // inbuilt function
+    int i=0,j=len-1;
+    while(i<=j){
+        if(arr[i]==arr[j]){i++;j--;}
+        else return false;
+    }
+    return true;
+}
 
+int main() {
 
-// void reverseCharArray(char arr[], int n) {
-//     int len = getLength(arr,n);
+    char arr1[100];
+    cout << "Enter the input" << endl;
+    cin >> arr1;
 
-//     int i = 0;
-//     int j = len-1;
+    char arr2[100];
+    cout << "Enter the input" << endl;
+    cin >> arr2;
 
-//     while(i <= j) {
-//         swap(arr[i], arr[j]);
-//         i++;
-//         j--;
-//     }
-// }
-
-// bool checkPalindrome(char arr[], int n) {
-//     int len = getLength(arr,n);
-//     int i=0;
-//     int j=len-1;
-
-//     while(i <= j) {
-//         if(arr[i] == arr[j]) {
-//             i++;
-//             j--;
-//         }
-//         else {
-//             //not a palindrome
-//             return false;
-//         }
-//     }
-//     //agar main yha tk aagya
-//     //iska maltlab saaare char check ho chuke h
-//     //and different character nahi mila
-//     //iska matlab valid palindrome hai
-//     //iska mtalb return truel
-//     return true;
-// }
-
-// int main() {
-
-//     char arr1[100];
-//     cout << "Enter the input" << endl;
-//     cin >> arr1;
-
-//     char arr2[100];
-//     cout << "Enter the input" << endl;
-//     cin >> arr2;
-
-//     //cout << strlen(arr1) << endl;
-//     //cout << strcat(arr1,arr2) << endl;
+    cout << strlen(arr1) << endl;
+    cout << strcat(arr1,arr2) << endl;
     
 
 
-//     // char arr[1000];
-//     // cin >> arr;
+    char arr[1000];
+    cin >> arr;
 
-//     // cout << "Palindomr or not: " << checkPalindrome(arr,1000) << endl;
+    cout << "Palindomr or not: " << checkPalindrome(arr,1000) << endl;
 
-//     // cout << "before " << arr << endl;
+    cout << "before " << arr << endl;
     
-//     // reverseCharArray(arr,1000);
+    reverseCharArray(arr,1000);
 
-//     // cout << "after " << arr << endl;
+    cout << "after " << arr << endl;
 
-//     //convertIntoLowerCase(arr,1000);
-//     //convertIntoUpperCase(arr,1000);
-//     //replaceCharacter('@', ' ', arr, 1000);
-//     //cout << arr << endl;
-//     //cout << getLength(arr,1000) << endl;
-
-
+    convertIntoLowerCase(arr,1000);
+    convertIntoUpperCase(arr,1000);
+    replaceCharacter('@', ' ', arr, 1000);
+    cout << arr << endl;
+    cout << getLength(arr,1000) << endl;
 
 
 
-//     // char arr[100];
-
-//     // cout << "Enter input" << endl;
-//     // //cin >> arr;
-//     // cin.getline(arr, 80, '.'); 
-//     // cout << endl << arr << endl;
 
 
+    char arr[100];
 
-//     // //creation
-//     // char arr[100];
+    cout << "Enter input" << endl;
+    //cin >> arr;
+    cin.getline(arr, 80, '.'); 
+    cout << endl << arr << endl;
 
-//     // cout << "Enter your name" << endl;
-//     // //input
-//     // //cin >> arr;
-//     // cin.getline(arr, 100);
-//     // //print
-//     // cout << "Your name is: " << arr << endl;
-//     // cout << arr[0] << "-> " << (int)arr[0] << endl;
-//     // cout << arr[1] << "-> " << (int)arr[1] << endl;
-//     // cout << arr[2] <<"-> " << (int)arr[2] << endl;
-//     // cout << arr[3] << "-> " << (int)arr[3] << endl;
-//     // cout << arr[4] << "-> " << (int)arr[4] << endl;
-//     //cout << arr[5] <<"-> " << (int)arr[5] << endl;
-//     return 0;
-// }
+
+
+    //creation
+    char arr[100];
+
+    cout << "Enter your name" << endl;
+    //input
+    //cin >> arr;
+    cin.getline(arr, 100);
+    //print
+    cout << "Your name is: " << arr << endl;
+    cout << arr[0] << "-> " << (int)arr[0] << endl;
+    cout << arr[1] << "-> " << (int)arr[1] << endl;
+    cout << arr[2] <<"-> " << (int)arr[2] << endl;
+    cout << arr[3] << "-> " << (int)arr[3] << endl;
+    cout << arr[4] << "-> " << (int)arr[4] << endl;
+    cout << arr[5] <<"-> " << (int)arr[5] << endl;
+    return 0;
+}
 
 // // -------------------------------------------(char, arrays and strings)----------------------------------------
-// // char , arrays and string class - 1
-// #include<iostream>
-// using namespace std;
+// char , arrays and string class - 1
+#include<iostream>
+using namespace std;
 
 
-// int main() {
-//     string s1 = "prem";
-//     string s2 = "love";
+int main() {
+    string s1 = "prem";
+    string s2 = "love";
 
-//     // cout << s1.compare(s2) << endl;
-//     // if this is 0 then both are equal
-//     // if this is negative then s1 < s2
-//     // if this is positive then s1 > s2
-
-
-//     string name = "Hello Jee Kaise ho Saare" ;
-//     // string word = "Kaise ho";
-
-//     // if(name.find(word) != string::npos) {
-//     //     ///found
-//     // }
-//     // else {
-//     //     //not found
-//     // }
-
-//     // int ans = name.find(word);
-//     // cout << ans << endl;
-
-//     // cout << name.substr(5);
-
-//     //position and upto len
-//     // cout << name.substr(5,5);
-
-//     // string fName = "Love";
-//     // string lName = "babbar";
-
-//     // string ans = fName + " " + lName;
-//     // cout << ans << endl;
-
-//     // string name = "Maharana Pratap";
-//     // name.clear();
-//     // if(name.empty() ){
-//     //     cout << "String is empty" ; 
-//     // }
-//     // else {
-//     //     cout << "string is not empty";
-//     // }
+    cout << s1.compare(s2) << endl;
+    if this is 0 then both are equal
+    if this is negative then s1 < s2
+    if this is positive then s1 > s2
 
 
+    string name = "Hello Jee Kaise ho Saare" ;
+    string word = "Kaise ho";
 
-//     // auto it = name.begin();
+    if(name.find(word) != string::npos) {
+        ///found
+    }
+    else {
+        //not found
+    }
 
-//     // while(it != name.end()) {
-//     //     cout << *it << " ";
-//     //     it++;
-//     // }
-//     // cout << endl;
+    int ans = name.find(word);
+    cout << ans << endl;
+
+    // cout << name.substr(5);
+
+    //position and upto len
+    // cout << name.substr(5,5);
+
+    // string fName = "Love";
+    // string lName = "babbar";
+
+    string ans = fName + " " + lName;
+    cout << ans << endl;
+
+    string name = "Maharana Pratap";
+    name.clear();
+    if(name.empty() ){
+        cout << "String is empty" ; 
+    }
+    else {
+        cout << "string is not empty";
+    }
 
 
 
-//     // cout << name[0] << endl;
-//     // cout << name.at(0) << endl;
+    auto it = name.begin();
 
-//     // cout << name.front() << endl;
-//     // cout << name.back() << endl;
-//     // cout << name.length() << endl;
+    while(it != name.end()) {
+        cout << *it << " ";
+        it++;
+    }
+    cout << endl;
 
 
 
+    cout << name[0] << endl;
+    cout << name.at(0) << endl;
+
+    cout << name.front() << endl;
+    cout << name.back() << endl;
+    cout << name.length() << endl;
 
 
 
 
-//     // string sentence;
-
-//     // //cin >> sentence;
-//     // getline(cin, sentence, '\n');
-
-//     // cout << sentence << endl;
 
 
 
+    // string sentence;
 
-//     // //creation
-//     // string str;
-//     // str.push_back('l');
-//     // str.push_back('o');
-//     // str.push_back('v');
-//     // str.push_back('e');
-//     // str.pop_back();
-//     // cout << str << endl;
+    //cin >> sentence;
+    getline(cin, sentence, '\n');
+
+    cout << sentence << endl;
+
+
+
+
+    //creation
+    string str;
+    str.push_back('l');
+    str.push_back('o');
+    str.push_back('v');
+    str.push_back('e');
+    str.pop_back();
+    cout << str << endl;
     
-//     // cout << "enter the input" << endl;
-//     // //input
-//     // cin >> str;
-//     // //output
-//     // cout << "Str: " << str << endl;
-//     // cout << str[0] << endl;
+    cout << "enter the input" << endl;
+    //input
+    cin >> str;
+    //output
+    cout << "Str: " << str << endl;
+    cout << str[0] << endl;
+
+    #include<iostream>
+#include<string>
+using namespace std;
+
+int main(){
+    string s1="Prem",s2="Kumar";
+    cout<<"s1: "<<s1<<", s2: "<<s2<<"\n\n";
+
+    //1. length() / size()
+    cout<<"Length of s1: "<<s1.length()<<endl;
+
+    //2. empty()
+    cout<<"Is s1 empty? "<<(s1.empty()?"Yes":"No")<<endl;
+
+    //3. append() / operator+
+    string s3=s1; s3.append(s2);
+    cout<<"append(): "<<s3<<endl;
+    cout<<"Concatenation (+): "<<s1+" "+s2<<endl;
+
+    //4. push_back() / pop_back()
+    string s4="Hello";
+    s4.push_back('!');
+    cout<<"After push_back: "<<s4<<endl;
+    s4.pop_back();
+    cout<<"After pop_back: "<<s4<<endl;
+
+    //5. compare()
+    cout<<"Compare s1 & s2: "<<s1.compare(s2)<<endl;
+
+    //6. assign()
+    string s5; s5.assign("Gupta");
+    cout<<"assign(): "<<s5<<endl;
+
+    //7. substr(pos,len)
+    cout<<"Substring (1,3): "<<s1.substr(1,3)<<endl;
+
+    //8. insert(pos,str)
+    string s6="Prem";
+    s6.insert(4," Gupta");
+    cout<<"After insert(): "<<s6<<endl;
+    //9. erase(pos,len)
+    s6.erase(4,6);
+    cout<<"After erase(): "<<s6<<endl;
+    //10. replace(pos,len,str)
+    s6.replace(0,4,"Love");
+    cout<<"After replace(): "<<s6<<endl;
+    //11. find() / rfind()
+    string text="Hello world, world!";
+    cout<<"find('world'): "<<text.find("world")<<endl;
+    cout<<"rfind('world'): "<<text.rfind("world")<<endl;
+
+    //12. front() / back()
+    cout<<"Front of s1: "<<s1.front()<<endl;
+    cout<<"Back of s1: "<<s1.back()<<endl;
+
+    //13. at(pos)
+    cout<<"Character at 2: "<<s1.at(2)<<endl;
+
+    //14. clear()
+    string temp="test"; temp.clear();
+    cout<<"After clear(): "<<(temp.empty()?"empty":"not empty")<<endl;
+
+    //15. swap()
+    cout<<"\nBefore swap -> s1: "<<s1<<", s2: "<<s2<<endl;
+    s1.swap(s2);
+    cout<<"After swap -> s1: "<<s1<<", s2: "<<s2<<endl;
+
+    //16. getline()
+    string sentence;
+    cout<<"\nEnter a sentence: ";
+    getline(cin,sentence);
+    cout<<"You entered: "<<sentence<<endl;
+
+    return 0;
+}
 
 
+    return 0;
+}
 
-//     return 0;
-// }
 // //-------------------------------------------------------------------------------------------------------------------------------------
 // // char, arrays and strings - 2
 // #include<bits/stdc++.h>
 // using namespace std;
 
 
-// //this function returns the count of palindromic substrings
-// //using i and j as center and exapanding around it in every iteration, if possible.
-// int expandAroundCenter(string s, int i, int j) {
-//         int count = 0;
-//         while(i >= 0 && j <s.length() && s[i] == s[j]) {
-//             count++;
-//             i--;
-//             j++;
-//         }
-//         return count;
-//     }
-//     int countSubstrings(string s) {
-//         int totalCount = 0;
-//         for(int center=0; center<s.length(); center++) {
-//             //odd
-//             int i = center;
-//             int j = center;
-//             int oddPalSubStringKaCount = expandAroundCenter(s,i,j);
-//             //even
-//             i = center;
-//             j = center+1;
-//             int evenPalSubStringKaCount = expandAroundCenter(s,i,j);
-//             totalCount = totalCount + oddPalSubStringKaCount + evenPalSubStringKaCount;
-//         }
-//         return totalCount;
-//     }
+// 159. Count total number of palindromic substrings in a given string
+int expandAroundCenter(string s,int i,int j){
+    int count=0;
+    while(i>=0 && j<s.length() && s[i]==s[j]){
+        count++;
+        i--;
+        j++;
+    }
+    return count;
+}
+int countSubstrings(string s){
+    int totalCount=0;
+    for(int center=0;center<s.length();center++){
+        totalCount+=expandAroundCenter(s,center,center);     // odd-length palindromes
+        totalCount+=expandAroundCenter(s,center,center+1);   // even-length palindromes
+    }
+    return totalCount;
+}
+// Time Complexity: O(n²)
 
 
-//     string removeDuplicates(string s) {
-//         //intialise ans string as empty string
-//         string ans = "";        
-//         int n = s.length();
+// 156.Remove all adjacent duplicate characters from a string
+string removeDuplicates(string s){
+    string ans=""; int n=s.length();
+    for(int i=0;i<n;i++){
+        char curr=s[i];
+        if(ans.empty()||curr!=ans.back()) ans.push_back(curr);
+        else ans.pop_back();
+    }
+    return ans;
 
-//         for(int i=0; i<n; i++) {
-//             char currCharacter = s[i];
-//             // push tabhi kro jb string m kuch n ho aur jo jaa rha h vo uske pehle wale k barabar n ho 
-//             if(ans.empty() || currCharacter != ans.back()) {
-//                 //if ans is empty, seedha push karo
-//                 ans.push_back(currCharacter);
-//             }//rightmost character of ans = ans.back()
-//             else if(currCharacter == ans.back()) {
-//                 // same element jaa rha h to pehle wala delete kro 
-//                 ans.pop_back();
-//             }
-//         }
-//         return ans;
-//     }
-
-
-//     string removeOccurrences(string full, string pattern) {
-        
-
-//         //jab tak full string k andar pattern string 
-//         //milti rahegi, tab tak loop chalao
-        
-//         while(full.find(pattern) != string::npos) {
-//             //full string me se erase karo
-//             //erase function k 2 argument hai
-//             //first arguement me, pattern ka starting index dena hai
-//             // full.find(pattern), hume starting index of pattern inside
-//             //full string provide krra hau
-//             //2nd argument, usme specify krna hai, k kitne character
-//             //remove karna chahte ho, starting index se
-//             full.erase(full.find(pattern), pattern.length());
-//         }
-//         return full;
-
-//     }
+    // or alternative way
+    int i=0;
+    while(i+1<s.length()){
+        if(s[i]==s[i+1]){
+            s.erase(i,2);
+            if(i>0) i--;
+        }else i++;
+    }
+    return s;
+}
+//157.Remove all occurrences of a substring (pattern) from a given string
+string removeOccurrences(string full,string pattern){
+    while(full.find(pattern)!=string::npos){
+        full.erase(full.find(pattern),pattern.length());
+    }
+    return full;
+}
 
 
-// bool checkPalindrome(string str, int s, int e) {
-//         while(s <= e) {
-//             if(str[s] != str[e]) {
-//                 return false;
-//             }
-//             else {
-//                 s++;
-//                 e--;
-//             }
-//         }
-//         //valid palindrome
-//         return true;
-//     }
-//     bool validPalindrome(string s) {
-//         int len = s.length();
-//         int i=0; 
-//         int j = len-1;
+// 158.Check if a string can become a palindrome after deleting at most one character
+bool checkPalindrome(string str,int s,int e){
+    while(s<=e){
+        if(str[s]!=str[e]) return false;
+        s++; e--;
+    }
+    return true;
+}
+bool validPalindrome(string s){
+    int i=0,j=s.length()-1;
+    while(i<=j){
+        if(s[i]==s[j]){i++;j--;}
+        else{
+            bool ansOne=checkPalindrome(s,i+1,j);
+            bool ansTwo=checkPalindrome(s,i,j-1);
+            return ansOne||ansTwo;
+        }
+    }
+    return true;
+}
 
-//         while(i <= j) {
-//             //same 
-//             if(s[i] == s[j]) {
-//                 i++;
-//                 j--;
-//             }
-//             //different
-//             else {
-//                 //s[i] != s[j]
-//                 //iss case me character delete krke dekho
-//                 //2 options
-//                 //delete ith index wala character
-//                 bool ansOne = checkPalindrome(s, i+1, j);
-//                 if(ansOne == true)
-//                     return true;
-//                 //delete jth index wala character
-//                 bool ansTwo = checkPalindrome(s,i,j-1);
-//                 bool finalAns = ansOne || ansTwo;
-//                 return finalAns;
-//             }
-//         }
-//         //valid palindome, without any deletion
-//         return true;
-//     }
+// Time Complexity: O(n)
 
-// int main() {
-//     string s;
-//     cin>>s;
-//     cout<<countSubstrings(s);     
-//     /* inout: "abc"  output: 3
-//     input: "aaa"  output: 6*/
-//     cout << removeDuplicates(s); 
-//     /*input: "abbaca" output: "ca"
-//     input: "azxxzy" output: "ay"  */
-//     cout << removeOccurrences(s, "abc"); 
-//     /* input: "daabcbaabcbc" output: "dab"
-//      input: "axxxxyyyyb" output: "ab" */
+int main() {
+    string s;
+    cin>>s;
+    cout<<countSubstrings(s);     
+    /* inout: "abc"  output: 3
+    input: "aaa"  output: 6*/
+    cout << removeDuplicates(s); 
+    /*input: "abbaca" output: "ca"
+    input: "azxxzy" output: "ay"  */
+    cout << removeOccurrences(s, "abc"); 
+    /* input: "daabcbaabcbc" output: "dab"
+     input: "axxxxyyyyb" output: "ab" */
 
-//     cout << validPalindrome(s); 
-//     /* input: "aba" output: true
-//     input: "abca" output: true
-//     input: "abc" output: false */
-//     return 0;
-// }
+    cout << validPalindrome(s); 
+    /* input: "aba" output: true
+    input: "abca" output: true
+    input: "abc" output: false */
+    return 0;
+}
 
 // //------------------------------------------------------------------------------------------------------------------------
-// //char, arrays and strings - 3
-// int garbageCollection(vector<string>& garbage, vector<int>& travel) {
-//         // for truck G(glass)
-//         int pickg = 0, travelg = 0, lasthouseg = 0;
-//         // for truck M(Metal)
-//         int pickm = 0, travelm = 0, lasthousem = 0;
-//         // for truck P(paper)
-//         int pickp = 0, travelp = 0, lasthousep = 0;
+// 161: Calculate total time to collect all garbage (Paper, Metal, Glass)
+int garbageCollection(vector<string>& garbage, vector<int>& travel){
+    int pickg=0,travelg=0,lasthouseg=0;
+    int pickm=0,travelm=0,lasthousem=0;
+    int pickp=0,travelp=0,lasthousep=0;
 
-//         for(int i = 0; i < garbage.size(); i++){
-//             string currhouse = garbage[i];
-//             for(int j = 0; j < currhouse.length(); j++){
-//                 char currgarbage = currhouse[j];
-//                 if(currgarbage == 'G') {
-//                     pickg++;
-//                     lasthouseg = i;
-//             }
-//                 else if(currgarbage == 'P'){
-//                     pickp++;
-//                     lasthousep = i;
-//                 }
-//                 else if(currgarbage == 'M'){
-//                     pickm++;
-//                     lasthousem = i;
-//                 }
-//             }
-//         }
+    for(int i=0;i<garbage.size();i++){
+        string currhouse=garbage[i];
+        for(int j=0;j<currhouse.length();j++){
+            char currgarbage=currhouse[j];
+            if(currgarbage=='G'){pickg++;lasthouseg=i;}
+            else if(currgarbage=='P'){pickp++;lasthousep=i;}
+            else if(currgarbage=='M'){pickm++;lasthousem=i;}
+        }
+    }
 
-//         // travel time
-//         for(int i = 0; i < lasthouseg ; i++){
-//             travelg += travel[i];
-//         }
-//         for(int i = 0; i < lasthousep ; i++){
-//             travelp += travel[i];
-//         }
-//         for(int i = 0; i < lasthousem ; i++){
-//             travelm += travel[i];
-//         }
+    for(int i=0;i<lasthouseg;i++) travelg+=travel[i];
+    for(int i=0;i<lasthousep;i++) travelp+=travel[i];
+    for(int i=0;i<lasthousem;i++) travelm+=travel[i];
 
-//         int totalpickingtime = pickp + pickm + pickg;
-//         int totaltraveltime = travelp + travelm + travelg;
-//         return totalpickingtime + totaltraveltime;
-//     }
-
-// string decodeMessage(string key, string message) {
-//         // create mapping 
-//         unordered_map<char, char> mapping;
-//         char space = ' ';
-//         mapping[space] = space;
-//         char start = 'a';
-//         int index = 0;
-
-//         while(start <= 'z' && index < key.length()){
-//             char keyKaCurrentCharacter = key[index];
-//             // mapping -> KeyKaCurrentCharacter -> alphabet
-//             if(mapping.find(keyKaCurrentCharacter) != mapping.end()){
-//                 index++;
-//             }
-//             else {
-//                 mapping[keyKaCurrentCharacter] = start;
-//                 start++;
-//                 index++;
-//             }
-//         }
-
-//         // 
-//         string ans = "";
-//         for(int i = 0; i < message.length(); i++){
-//             char msgCharacter = message[i];
-//            char mappedCharacter = mapping[msgCharacter];
-//             ans.push_back(mappedCharacter);
-//         }
-//         return ans;
-//     }
-
-// string orderCopy;
-//     static bool cmp(char a, char b){
-//         return (orderCopy.find(a) < orderCopy.find(b));
-//     }
-
-//     string customSortString(string order, string s) {
-//         orderCopy = order;
-//         sort(s.begin(), s.end(), cmp);
-//         return s;
-//     }
+    int totalpickingtime=pickp+pickm+pickg;
+    int totaltraveltime=travelp+travelm+travelg;
+    return totalpickingtime+totaltraveltime;
+}
+// Time Complexity: O(n * m)
 
 
-// void normalise(string &str) {
-//         char start = 'a';
-//         unordered_map<char,char> mapping;
+// 160: Decode a message using a substitution key
+string decodeMessage(string key,string message){
+    unordered_map<char,char> mapping;
+    char space=' '; mapping[space]=space;
+    char start='a'; int index=0;
 
-//         for(int i=0; i<str.length(); i++) {
-//             char stringKaCharacter = str[i];
-//             if(mapping.find(stringKaCharacter) == mapping.end()) {
-//                 //if mapping pehle se present nahi h 
-//                 //then create it and move ahead
-//                 mapping[stringKaCharacter] = start;
-//                 start++;
-//             }
-//         }
+    while(start<='z' && index<key.length()){
+        char keyKaCurrentCharacter=key[index];
+        if(mapping.find(keyKaCurrentCharacter)!=mapping.end()) index++;
+        else{
+            mapping[keyKaCurrentCharacter]=start;
+            start++; index++;
+        }
+    }
 
-//         //mapping create ho chuki h 
-//         //string str ko update normalise kardo using mapping 
-//         for(int i=0; i<str.length(); i++) {
-//             char mappedCharacter = mapping[str[i]];
-//             str[i] = mappedCharacter;
-//         }
-//         //toh humne str wali string ko normalise / update krdia 
-//     }
+    string ans="";
+    for(int i=0;i<message.length();i++){
+        char msgCharacter=message[i];
+        char mappedCharacter=mapping[msgCharacter];
+        ans.push_back(mappedCharacter);
+    }
+    return ans;
+}
+// Time Complexity: O(n+m)
 
-//     vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
-//         vector<string> ans ;
 
-//         //step A: pattern normalise 
-//         normalise(pattern);
-//         ///stepB: words ki list me hr ek word ko normlaise 
-//         // karna hai, and compare krna h pattern se
-//         //if pattern k equal aagya, toh ans me store krna h 
-//         for(int i=0; i<words.size(); i++) {
-//             //ith string 
-//             string currWord = words[i];
-//             normalise(currWord);
-//             if(currWord.compare(pattern) == 0) {
-//                 // if both normalised string are equal 
-//                 // ans m store
-//                 ans.push_back(words[i]);
-//             }
-//         }
+// 162. Sort string s according to the given custom order
+string orderCopy;
 
-//         return ans;
-//     }
+static bool cmp(char a,char b){
+    return (orderCopy.find(a) < orderCopy.find(b));
+}
+
+string customSortString(string order,string s){
+    orderCopy = order;
+    sort(s.begin(), s.end(), cmp);
+    return s;
+}
+
+// Time Complexity: O(n log n)
+
+
+// 163: Find all words that match the given pattern after normalization
+void normalise(string &str){
+    char start='a';
+    unordered_map<char,char> mapping;
+    for(int i=0;i<str.length();i++){
+        char ch=str[i];
+        if(mapping.find(ch)==mapping.end()){
+            mapping[ch]=start;
+            start++;
+        }
+    }
+    for(int i=0;i<str.length();i++){
+        str[i]=mapping[str[i]];
+    }
+}
+
+vector<string> findAndReplacePattern(vector<string>& words,string pattern){
+    vector<string> ans;
+    normalise(pattern);
+    for(int i=0;i<words.size();i++){
+        string curr=words[i];
+        normalise(curr);
+        if(curr.compare(pattern)==0)
+            ans.push_back(words[i]);
+    }
+    return ans;
+}
+
+// Input:
+// words = [abc,deq,mee,aqq,dkd,ccc], pattern = abb
+// Output:
+// [mee,aqq]
+
+// Time Complexity: O(n * m), where n = number of words, m = length of each word
+
 
 // int main() {
 //     // vector<string> garbage = {"G","P","GP","GG"};
@@ -7750,83 +7473,86 @@ int main() {
 //         return c;
 //     }
 // // M3 Sieve of Eratosthenes Algorithm
-// int countPrimes(int n)
-//     {
-//         vector<bool> prime(n, true);
-//         prime[0] = prime[1] = false;
-//         int ans = 0;
+// Qs: Count the number of prime numbers less than n using Sieve of Eratosthenes
+int countPrimes(int n){
+    vector<bool> prime(n,true);
+    if(n<=2) return 0;
+    prime[0]=prime[1]=false;
+    int ans=0;
+    for(int i=2;i<n;i++){
+        if(prime[i]){
+            ++ans;
+            int j=2*i;
+            while(j<n){
+                prime[j]=false;
+                j+=i;
+            }
+        }
+    }
+    return ans;
+}
 
-//         for (int i = 2; i < n; i++)
-//         {
-//             if (prime[i])
-//             {
-//                 ++ans;
+// Input:
+// n = 10
+// Output:
+// 4  (Prime numbers are 2, 3, 5, 7)
 
-//                 int j = 2 * i;
-//                 while (j < n)
-//                 {
-//                     prime[j] = false;
-//                     j += i;
-//                 }
-//             }
-//         }
-//         return ans;
-//     }
-// // Time Complexity: O(n log log n)
-// // Space Complexity: O(n)   
+// Time Complexity: O(n log log n)
 
-// int gcd(int a, int b){
-//     // using subtraction method
-//     if(b==0) return a;  
-//     if(a==0) return b;
+//Find GCD/HCF and LCM(24, 72) 
+int gcd(int a, int b){
+    // using subtraction method
+    if(b==0) return a;  
+    if(a==0) return b;
     
-//     while(a > 0 && b > 0){
-//         if(a > b) a = a - b;
-//         else b = b - a;
-//     }
-//     return a == 0 ? b : a; // ternary operator
-// }
+    while(a > 0 && b > 0){
+        if(a > b) a = a - b;
+        else b = b - a;
+    }
+    return a == 0 ? b : a; // ternary operator
+}
 
-// int lcm(int a, int b){
-//     return (a / gcd(a, b)) * b; // to avoid overflow
-// }
+int lcm(int a, int b){
+    return (a / gcd(a, b)) * b; // to avoid overflow
+}
 
-// long long fastExponentiation(long long x, long long n) {
-//         long long ans = 1;
-//         long long base = x;
+//166.fastExponentiation
+long long fastExponentiation(long long x, long long n) {
+        long long ans = 1;
+        long long base = x;
 
-//         while (n > 0) {
-//             if (n & 1)
-//                 ans = ans * base;
-//             base = base * base;
-//             n >>= 1;
-//         }
-//         return ans;
-// }
+        while (n > 0) {
+            if (n & 1)
+                ans = ans * base;
+            base = base * base;
+            n >>= 1;
+        }
+        return ans;
+}
 
-// int slowExponentiation(int a, int b)
-// {
-//     int ans = 1;
-//     while (b--)
-//     {
-//         ans *= a;
-//     }
-//     return ans;
-// }
+int slowExponentiation(int a, int b)
+{
+    int ans = 1;
+    while (b--)
+    {
+        ans *= a;
+    }
+    return ans;
+}
 
-// int powMod(int x, int n, int M) {
-//         long long ans = 1;
-//         long long base = x % M;  // take modulo at start
+int powMod(int x, int n, int M) {
+        long long ans = 1;
+        long long base = x % M;  // take modulo at start
 
-//         while (n > 0) {
-//             if (n & 1) {
-//                 ans = (ans * base) % M;
-//             }
-//             base = (base * base) % M;
-//             n >>= 1; // right shift by 1
-//         }
-//         return (ans + M) % M; // ensure positive
-//     }
+        while (n > 0) {
+            if (n & 1) {
+                ans = (ans * base) % M;
+            }
+            base = (base * base) % M;
+            n >>= 1; // right shift by 1
+        }
+        return (ans + M) % M; // ensure positive
+    }
 
 // int main() {
 //     // int n;
@@ -7926,117 +7652,1521 @@ int main() {
 
 
 // //--------------------------------------(optimised sieve and segmented sieve)---------------------------------------
-// vector<bool> Sieve(long long n)
-// {
-//     vector<bool> sieve(n + 1, true);
-//     sieve[0] = sieve[1] = false;
+vector<bool> Sieve(long long n){
+    vector<bool> sieve(n + 1, true);
+    sieve[0] = sieve[1] = false;
+    for (long long i = 2; i * i <= n; i++) {
+        if (sieve[i]){
+            long long j = i * i; // first unmarked multiple
+            while (j <= n) {sieve[j] = false;
+                j += i;}
+        }
+    }
+    return sieve;
+}
 
-//     for (long long i = 2; i * i <= n; i++)
-//     {
-//         if (sieve[i])
-//         {
-//             long long j = i * i; // first unmarked multiple
-//             while (j <= n)
-//             {
-//                 sieve[j] = false;
-//                 j += i;
-//             }
-//         }
-//     }
-//     return sieve;
-// }
+vector<bool> segmentedSieve(long long L, long long R){
+    vector<bool> sieve = Sieve(sqrt(R));
+    vector<long long> basePrimes;
+    for (long long i = 0; i < sieve.size(); i++){ if (sieve[i])
+            basePrimes.push_back(i); }
 
-// vector<bool> segmentedSieve(long long L, long long R)
-// {
-//     vector<bool> sieve = Sieve(sqrt(R));
-//     vector<long long> basePrimes;
+    vector<bool> segSieve(R - L + 1, true);
+    if (L == 1)   segSieve[0] = false;
 
-//     for (long long i = 0; i < sieve.size(); i++)
-//     {
-//         if (sieve[i])
-//             basePrimes.push_back(i);
-//     }
+    for (auto prime : basePrimes) {
+        long long first_mul = (L / prime) * prime;
+        if (first_mul < L)first_mul += prime;
+        long long j = max(first_mul, prime * prime);
+        while (j <= R){
+            segSieve[j - L] = false;
+            j += prime;
+        }
+    }
+    return segSieve;
+}
 
-//     vector<bool> segSieve(R - L + 1, true);
+long long primeProduct(long long L, long long R)
+{
+    vector<bool> segSieve = segmentedSieve(L, R);
+    long long ans = 1;
 
-//     if (L == 1)
-//         segSieve[0] = false;
+    for (long long i = 0; i < segSieve.size(); i++)
+    {
+        if (segSieve[i])
+        {
+            long long actualPrime = (L + i) % M;
+            ans = (ans * actualPrime) % M;
+        }
+    }
 
-//     for (auto prime : basePrimes)
-//     {
-//         long long first_mul = (L / prime) * prime;
-//         if (first_mul < L)
-//             first_mul += prime;
+    return ans;
+}
 
-//         long long j = max(first_mul, prime * prime);
-//         while (j <= R)
-//         {
-//             segSieve[j - L] = false;
-//             j += prime;
-//         }
-//     }
+int main()
+{
+    long long L = 110, R = 130;
 
-//     return segSieve;
-// }
+    cout << "Primes between " << L << " and " << R << ": ";
+    vector<bool> segSieve = segmentedSieve(L, R);
+    for (long long i = 0; i < segSieve.size(); i++)
+    {
+        if (segSieve[i])
+            cout << L + i << " ";
+    }
+    cout << endl;
 
-// long long primeProduct(long long L, long long R)
-// {
-//     vector<bool> segSieve = segmentedSieve(L, R);
-//     long long ans = 1;
+    cout << "Prime Product (mod " << M << "): " << primeProduct(L, R) << endl;
 
-//     for (long long i = 0; i < segSieve.size(); i++)
-//     {
-//         if (segSieve[i])
-//         {
-//             long long actualPrime = (L + i) % M;
-//             ans = (ans * actualPrime) % M;
-//         }
-//     }
-
-//     return ans;
-// }
-
-// int main()
-// {
-//     long long L = 110, R = 130;
-
-//     cout << "Primes between " << L << " and " << R << ": ";
-//     vector<bool> segSieve = segmentedSieve(L, R);
-//     for (long long i = 0; i < segSieve.size(); i++)
-//     {
-//         if (segSieve[i])
-//             cout << L + i << " ";
-//     }
-//     cout << endl;
-
-//     cout << "Prime Product (mod " << M << "): " << primeProduct(L, R) << endl;
-
-//     return 0;
-// }
-
+    return 0;
+}
 // //-----------------------------------------Pointer's in C++------------------------------------------------
-// #include<bits/stdc++.h>
-// using namespace std;    
 
 
-// int main() {
-//     // int a = 5;
-//     // cout << a;
-//     // int b = a;
-//     // int c = &a;// error cannot store address of a in int type variable
+// ptr class -1 
+#include<iostream>
+#include<vector>
+using namespace std;
 
-//     // int a = 5;
-//     // int *ptr = &a; // pointer variable to store address of a
-//     // cout << sizeof(ptr) << endl; // size of pointer variable
-//     //  cout << "Bits in a pointer: " << sizeof(void*) * 8 << endl;
-//     //  float f = 5.5;
-//     //  float *p2 = &f;    
-//     //     cout << "Address of f: " << p2 << endl;
-//     //     cout << sizeof(p2) << endl; // size of pointer variable
-//         int *ptr2;
-//         cout << *ptr2 << endl; // garbage value
-//         // cout << *ptr2 << endl; // segmentation fault as ptr2 is not initialized
-//     return 0;
-//     return 0;
+
+// void solve(int* arr, int size) {
+//     cout << sizeof(arr) << endl;
 // }
 
+// void solve(vector<int> &v) {
+//     cout << sizeof(v) << endl;
+// }
+
+int main() {
+
+    int a = 50;
+    int* p = &a;
+    int** q = &p;
+    int** r = q;
+
+    cout << **r << endl;
+
+
+
+
+    // vector<int> v;
+    // v.push_back(10);
+    // v.push_back(20);
+    // v.push_back(30);
+    // solve(v);
+
+    // int arr[] = {10,20,30,40,50};
+    // int size = 5;
+    
+    // solve(arr,size);
+
+
+
+
+    return 0;
+}
+
+
+// pointer class - 2
+int main() {
+
+    //2D array -> stack memory 
+    // int arr[2][4] = { 
+    //                 {2,4,6,8},
+    //                 {1,2,3,4}
+    //                 };
+
+    //2D array -> heap memory
+    // 4 -> row count
+    // 3 -> col count 
+    int** arr = new int*[4];
+
+    for(int i=0; i<4; i++) {
+        //hr pointer k liye ek 1D array create krna h 
+        arr[i] = new int[3];
+    }
+
+    //taking input 
+    for(int i=0; i<4; i++) {
+        for(int j=0; j<3; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    cout << endl << "Printing the 2D array " << endl;
+    for(int i=0; i<4; i++) {
+        for(int j=0; j<3; j++) {
+            cout <<  arr[i][j] << ' ';
+        }
+        cout << endl;
+    }
+
+    for(int i=0; i<4; i++) {
+        delete[] arr[i];
+    }
+
+
+
+    //array -> stack memory
+    // int arr[5] = {0};
+    // cout << arr[0] << arr[1] << arr[2] <<endl;
+
+    // //array - heap memory 
+    // int* brr =  new int[5];
+    // cout << brr[0] << brr[1] << brr[2] ;
+
+
+
+    //integer - > stack memory
+    // int a = 5 ;
+    // cout << a << endl;
+
+    // //integer -> Heap Memory 
+    // int* p = new int;
+    // *p = 5;
+    // cout << *p << endl;
+    // //deallocate -> delete keyword
+    // delete p;
+
+    return 0;
+}
+
+
+// ----------------------------------------------(linked list class -1) ---------------------------------------------
+#include <iostream>
+using namespace std;
+
+class Node{
+  public:
+    int data;
+    Node* next;
+
+    //constructor
+    Node(int value) {
+      this->data = value;
+      this->next = NULL;
+    }
+};
+//returns head of the new LLL after insertion
+Node* insertAtHead(int value, Node* &head, Node* &tail) {
+  //LL is empty -> head and tail both nULL ko point krre honge
+  //it means we are creating first node of LL
+  if(head == NULL && tail == NULL ) {
+    //step1: create a new node
+    Node* newNode = new Node(value);
+    //step2: head ko node pr lagado
+    head = newNode;
+    //step3: tail ko newNOde pr lagado 
+    tail = newNode;
+  }
+  else {
+    //LL is not empty
+    //pehle se node present hai 
+    //insert at head
+    //step1: create node
+    Node* newNode = new Node(value);
+    //step2: connect this newNOde to head node
+    newNode->next = head;
+    //step3: head update krdo 
+    head = newNode;
+    
+  }
+  return head;
+
+
+}
+
+//return head of the updated list 
+void insertAtTail(int value, Node* &head, Node* &tail) {
+  if(head == NULL && tail == NULL) {
+    //LL is empty
+    //iska mtlb abhi tum first node create krne jaa rhe ho LL ki
+    //steps: create node, head on that node, tail on that node
+    Node* newNode = new Node(value);
+    head = newNode;
+    tail = newNode;
+  }
+  else {
+    //LL is not empty
+    //step1: create node
+    Node* newNode = new Node(value);
+    //step2: tail node ko new node se connect karo 
+    tail->next  = newNode;
+    //step3: tail update
+    tail = newNode;
+  }
+
+}
+
+void print(Node* head) {
+  Node* temp = head;
+  //jab tak merea temp NULL k equal nahi h, tab tak node print krte raho
+  while(temp != NULL) {
+    cout << temp -> data << "->";
+    temp = temp-> next;
+  }
+  cout<<"NULL" << endl;
+}
+
+int getLength(Node* head) {
+  int len = 0;
+  Node* temp = head;
+
+  while(temp != NULL) {
+    temp = temp->next;
+    len++;
+  }
+  return len;
+}
+
+void insertAtPosition(int position,int value, Node* &head, Node* &tail ){
+  //assume -> valid positions input
+  int length = getLength(head);
+  if(position == 1) {
+    //insert at ahead krna chahta hu 
+    head = insertAtHead(value, head, tail);
+  }
+  else if(position == length + 1) {
+    //insert at tail krna chahta hu 
+    insertAtTail(value, head, tail);
+  }
+  else {
+    //insert in between kahin krna chahta hu 
+    Node* temp = head;
+    for(int i=0; i<position-2; i++) {
+      temp = temp -> next;
+    }
+    Node* newNode = new Node(value);
+    newNode->next = temp->next;
+    temp->next = newNode;
+  }
+}
+
+//HW -> exact position return karo, jaha pr target aapko mila
+//if not found, then return -1
+bool searchLL(int target, Node* head) {
+  Node* temp = head;
+  while(temp != NULL) {
+    if(temp ->data == target) {
+      return true;
+    }
+    temp = temp->next;
+  }
+  //agar yaha tak main pohoch gya
+  //iska matlab, poori LL traverse ho chuki h,/
+  //and kahin pr bhi target nahi mila
+  //iska mtlab return false krdo 
+  return false;
+}
+
+void deleteNodeFromLL(int position, Node* &head, Node* &tail) {
+  //if LL is empty, then we cannot delete
+  if(head == NULL && tail == NULL) {
+    cout << "No node to delete" << endl;
+    return;
+  }
+  //single node in LL
+  if(head == tail) {
+    Node* temp = head;
+    head = NULL;
+    tail = NULL;
+    delete temp;
+  }
+  else {
+    //multiple nodes inside LL
+    //2 case 
+    //first case -> pos = 1 delete krna chahte h 
+    if(position == 1) {
+      Node* temp = head;
+      head = temp->next;
+      temp->next = NULL;
+      delete temp;
+    }
+    else {
+      //any other node except the first one
+      Node* prev = head;
+      for(int i=0; i<position-2; i++) {
+        prev = prev -> next;
+      }
+      Node* curr = prev ->next;
+      Node* forward = curr ->next;
+      prev->next = forward;
+      curr->next = NULL;
+      delete curr;
+    }
+
+  }
+}
+
+int main() {
+
+  Node* head = NULL;
+  Node* tail = NULL;
+  //LL is empty
+  insertAtTail(101,head,tail);
+  //print(head);
+  //101 -> NULL
+  insertAtTail(102,head,tail);
+  //print(head);
+  //101->102->NULL
+  insertAtTail(103,head,tail);
+  //print(head);
+  //101->102->103->NULL
+  insertAtPosition(1, 42, head, tail);
+  //print(head);
+  insertAtPosition(5,57,head,tail);
+  //print(head);
+  insertAtPosition(3,420,head,tail);
+  print(head);
+  //cout << searchLL(1030,head);
+  deleteNodeFromLL(1,head,tail);
+  print(head);
+  deleteNodeFromLL(3,head,tail);
+  print(head);
+  deleteNodeFromLL(4,head,tail);
+  print(head);
+
+
+
+
+
+  // Node* head = NULL;
+  // Node* tail = NULL;
+  // //LL is empty
+  // head = insertAtHead(10, head, tail);
+  //   print(head);
+  // //10 -> NULL
+  // head  = insertAtHead(20,head,tail);
+  //   print(head);
+  // //20->10->NULL
+  // head = insertAtHead(30,head,tail);
+  //   print(head);
+  //30->20->10->NULL
+
+  //print(head);
+
+  //stack
+  //Node first;
+  //dynamic memory
+  //Node* first = new Node(10);
+  return 0;
+}
+
+
+
+
+---------------------------------------------------------(linked list class - 2)-----------------------------------------------
+#include <iostream>
+using namespace std;
+
+class Node{
+  public: 
+  int data;
+  Node* prev;
+  Node* next;
+
+  Node(int value) {
+    data = value;
+    prev = NULL;
+    next = NULL;
+  }
+};
+
+void insertAtHead(int value, Node* &head, Node* &tail) {
+  //2 cases -> LL is empty / non-empty
+  //empty wala case
+  if(head == NULL && tail == NULL) {
+    //iska mtlb, main firstb node create krne wala hu 
+    Node* newNode = new Node(value);
+    head = newNode;
+    tail= newNode;
+  }
+  else {
+    //LL is not empty
+    Node* newNode = new Node(value);
+    newNode->next = head;
+    head -> prev = newNode;
+    head = newNode;
+  }
+}
+
+void print(Node* head) {
+  Node* temp = head;
+  while(temp != NULL) {
+    cout << temp->data << "->";
+    temp = temp ->next;
+  }
+  cout << "NULL"<<endl;
+}
+
+void printReverse(Node* tail) {
+  Node* temp = tail;
+  while(temp != NULL) {
+    cout << temp->data <<"->";
+    temp = temp->prev;
+  }
+  cout << "NULL" << endl;
+}
+
+void insertAtTail(int value, Node* &head, Node* &tail ){
+  //2 case -> LL is empty or non-empty;
+  if(head == NULL && tail == NULL) {
+    //LL is empty
+    //Step1: create a new node
+    Node* newNode = new Node(value);
+    //step2: head update
+    head = newNode;
+    //step3: tail update
+    tail = newNode;
+  }
+  else {
+    //LL is non-empty
+    //step1: create a new node
+    Node* newNode = new Node(value);
+    //step3: connect newNode with tail node
+    newNode->prev = tail;
+    //step2: connect tail node with newNode
+    tail->next = newNode;
+    //step4: tail update
+    tail = newNode;
+  }
+}
+
+int getLength(Node* &head) {
+  Node* temp = head;
+  int count = 0;
+  while(temp != NULL) {
+    count++;
+    temp = temp ->next;
+  }
+  return count;
+}
+
+void insertAtPosition(int position,int value, Node* &head, Node* &tail) {
+  //3 cases -> leftmost end, rightmost end, middle me insert krna chahte ho
+  int len = getLength(head);
+  if(position == 1) {
+    //insert leftmost me krna chahte h 
+    insertAtHead(value, head,tail);
+  }
+  else if(position == len+1) {
+    //rightmost end pr insert krna chahta hu
+    //tail pr insert krna chahta hu
+    insertAtTail(value, head, tail);
+  }
+  else {
+    //middle me kisi poistion pr insert krna chahta hu 
+    Node* temp = head;
+    //fer main temp ko position-2 steps aage badhaya 
+    for(int i=0; i<position-2; i++) {
+      temp = temp ->next;
+    }
+    //create node
+    Node* newNode = new Node(value);
+    //forward pointer set
+    Node* forward = temp->next;
+    //pointers ko set krra hu 
+    newNode->prev = temp;
+    temp->next = newNode;
+    forward->prev = newNode;
+    newNode->next = forward;
+  }
+  
+
+}
+
+bool searchElement(Node* head, int target) {
+  Node* temp = head;
+  while(temp != NULL) {
+    if(temp ->data == target) {
+      return true;
+    }
+    temp = temp -> next;
+  }
+  //agar yaha tk pahuch gye, iska mtlb
+ // LL poori travel krli h and target nahi mila
+  return false;
+}
+
+
+void deleteFromPosition(int position, Node* &head, Node* &tail) {
+  int length = getLength(head);
+  //LL is empty
+  if(head == NULL && tail == NULL) {
+    cout << "no nodes to delete" << endl;
+    return;
+  }
+  else if(head == tail) {
+    //single node to delete
+    Node* temp = head;
+    head = NULL;
+    tail = NULL;
+    delete temp;
+  }
+  else if(position == 1) {
+    //we want to delete head node
+    Node* temp = head;
+    head = head->next;
+    head->prev = NULL;
+    temp->next = NULL;
+    delete temp;
+  }
+  else if(length == position) {
+    //we want to delete the tail node
+    Node* temp = tail;
+    tail = temp->prev;
+    tail->next = NULL;
+    temp->prev = NULL;
+    delete temp;
+  }
+  else {
+    //we want to delete any other node than head and tail node
+    Node* backward = head;
+    for(int i=0; i<position-2; i++) {
+      backward = backward -> next;
+    }
+    Node* curr = backward->next;
+    Node* forward = curr->next;
+
+    //pointers change
+    backward->next = forward;
+    forward->prev = backward;
+    //curr ko isolate karna h 
+    curr->prev = NULL;
+    curr->next = NULL;
+    //curr isolate ho chuka h 
+    delete curr;
+
+  }
+}
+
+int main() {
+  Node* head = NULL;
+  Node* tail = NULL;
+  //cout << "hello" << endl;
+  insertAtTail(10,head,tail);
+  //10->NULL;
+  insertAtTail(20,head,tail);
+  //10->20->NULL;
+  insertAtTail(30,head,tail);
+  //10->20->30->NULL;
+  //print(head);
+  insertAtPosition(4, 420, head, tail);
+  print(head);
+  deleteFromPosition(4, head, tail);
+  print(head);
+
+
+
+  // insertAtHead(10,head,tail);
+  // //10->NULL
+  // insertAtHead(20,head,tail);
+  // //20->10->NULL
+  // insertAtHead(30,head,tail);
+  // //30->20->10->NULL
+  // print(head);
+  // printReverse(tail);
+  return 0;
+}
+
+---------------------------------------------------(linked list - 3)---------------------------------------------------------------
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    // ListNode* reverseList(ListNode* &prev, ListNode* &curr) {
+    //     //base case
+    //     if(curr == NULL) {
+    //         //iska mtlb LL reverse ho chuki h
+    //         //reversed LL k  starting node pr prev wala pointer hai
+    //         return prev;
+    //     }
+    //     //1 case hum solve karenge 
+    //     ListNode* forward = curr->next;
+    //     //current node ko piche ki disha me point karwaya 
+    //     curr->next = prev;
+    //     //pointers ko 1 step aage badhaya and recursion ko pakkda dia aage solve krne k liye 
+    //     prev = curr;
+    //     curr = forward;
+    //     //baaki recursion sambhal lega
+    //     return reverseList(prev, curr);
+    // }
+    ListNode* reverseList(ListNode* head) {
+
+        //iterative approach
+        ListNode* prev = NULL;
+        ListNode* curr = head;
+
+        while(curr != NULL) {
+            ListNode* forward = curr->next;
+            //forward pointer set hogya, ab aage ki list lost nhi hogi 
+            curr->next = prev;
+            prev = curr;
+            curr = forward;
+        }
+
+        //newHead of linkedlist ko hoga -> prev pointer
+        return prev;
+
+
+        // ListNode* prev = NULL;
+        // ListNode* curr = head;
+
+        // ListNode* newHead = reverseList(prev, curr);
+        // return newHead;
+    }
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* getMiddle(ListNode* head, ListNode* &middleNodeKaPrev) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while(fast != NULL) {
+            fast = fast -> next;
+            if(fast != NULL) {
+                fast = fast -> next;
+                middleNodeKaPrev = slow;
+                slow = slow -> next;
+            }
+        }
+        return slow;
+    }
+    ListNode* reverseList(ListNode* & prev, ListNode* &curr) {
+        while(curr != NULL) {
+            ListNode* forward = curr->next;
+            curr->next = prev;
+            prev= curr;
+            curr = forward;
+        }
+        return prev;
+    }
+    bool isPalindrome(ListNode* head) {
+        if(head == NULL) {
+            //LL is empty
+            return true;
+        }
+        if(head->next == NULL ) {
+            //single node
+            return true;
+        }
+
+        //travel till middle node and break the LL in 2 halves
+        ListNode* firstHalfHead = head;
+        ListNode* middleNodeKaPrev = NULL;
+        ListNode* middleNode = getMiddle(head, middleNodeKaPrev); 
+        //break
+        middleNodeKaPrev -> next = NULL;
+
+        //reverse the second half
+        ListNode* prev = NULL;
+        ListNode* curr = middleNode;
+        ListNode* secondHalfHead = reverseList(prev, curr);
+
+        //compare both the halves and decide T/F
+        //even len wale case me dono part ki length equal hogi
+        //odd wale case , second half ki length badi hogi by 1 
+        //that's why main comparison hamesha first half ki length k hisaab se karunga 
+        ListNode* temphead1 = firstHalfHead;
+        ListNode* temphead2 = secondHalfHead;
+        while(temphead1 != NULL) {
+            if(temphead1 ->val != temphead2 ->val) {
+                //not a palindrome
+                return false;
+            }
+            else {
+                //data equal hai, toh let's move to aage wali nodes
+                temphead1 = temphead1 -> next;
+                temphead2 = temphead2 -> next;
+            }
+        }
+        //agar main yaha tk pohoch gya
+        //iska mtlab kahin por bhi 
+        //data mismatch nahi hua
+        //palindrome haib 
+        return true;
+    }
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    // ListNode* reverseList(ListNode* &prev, ListNode* &curr) {
+    //     //base case
+    //     if(curr == NULL) {
+    //         //iska mtlb LL reverse ho chuki h
+    //         //reversed LL k  starting node pr prev wala pointer hai
+    //         return prev;
+    //     }
+    //     //1 case hum solve karenge 
+    //     ListNode* forward = curr->next;
+    //     //current node ko piche ki disha me point karwaya 
+    //     curr->next = prev;
+    //     //pointers ko 1 step aage badhaya and recursion ko pakkda dia aage solve krne k liye 
+    //     prev = curr;
+    //     curr = forward;
+    //     //baaki recursion sambhal lega
+    //     return reverseList(prev, curr);
+    // }
+    ListNode* reverseList(ListNode* head) {
+
+        //iterative approach
+        ListNode* prev = NULL;
+        ListNode* curr = head;
+
+        while(curr != NULL) {
+            ListNode* forward = curr->next;
+            //forward pointer set hogya, ab aage ki list lost nhi hogi 
+            curr->next = prev;
+            prev = curr;
+            curr = forward;
+        }
+
+        //newHead of linkedlist ko hoga -> prev pointer
+        return prev;
+
+
+        // ListNode* prev = NULL;
+        // ListNode* curr = head;
+
+        // ListNode* newHead = reverseList(prev, curr);
+        // return newHead;
+    }
+};
+
+//{ Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h> 
+using namespace std; 
+
+struct Node
+{
+    int data;
+    struct Node* next;
+    
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+
+void printList(Node* node) 
+{ 
+    while (node != NULL) { 
+        cout << node->data%10; 
+        node = node->next; 
+    }  
+    cout<<"\n";
+} 
+
+
+// } Driver Code Ends
+//User function template for C++
+
+/* 
+
+struct Node
+{
+    int data;
+    struct Node* next;
+    
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+};
+
+*/
+
+class Solution
+{
+    public:
+    Node* reverseList(Node* &head) {
+        Node* prev = NULL;
+        Node* curr = head;
+        while(curr != NULL) {
+            Node* forward = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = forward;
+        }
+        return prev;
+    }
+    Node* addOne(Node *head) 
+    {
+        //step1: reverse list;
+        head = reverseList(head);
+        //step2: add one
+        //mujhe plus one karna h, toh main carry ko hi 1 maaanleta hu
+        int carry = 1;
+        Node* temp = head;
+        
+        while(temp != NULL) {
+            int sum = carry + temp->data;
+            //current node me 1 hi digit store hoga, double digit nahi ho skta 
+            int digit = sum % 10;
+            carry = sum / 10;
+            
+            temp -> data = digit;
+            //move to next node
+            //special case, jo last node k liye hoga
+            if(temp -> next == NULL && carry != 0) {
+                Node* newNode = new Node(carry);
+                newNode->next = NULL;
+                
+                temp->next = newNode;
+                temp = newNode;
+            }
+            //traverse krre h, toh aage toh badhna hi h 
+            temp = temp -> next;
+        }
+
+        
+        //step3: reverseList;
+        head = reverseList(head);
+        
+        return head;
+        
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        
+        Node* head = new Node( s[0]-'0' );
+        Node* tail = head;
+        for(int i=1; i<s.size(); i++)
+        {
+            tail->next = new Node( s[i]-'0' );
+            tail = tail->next;
+        }
+        Solution ob;
+        head = ob.addOne(head);
+        printList(head); 
+    }
+    return 0; 
+} 
+
+// } Driver Code Ends
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while(fast != NULL) {
+            fast = fast -> next;
+            if(fast != NULL) {
+                fast = fast -> next;
+                slow = slow -> next;
+                if(fast == slow) {
+                    //cycle present
+                    return true;
+                }
+            }
+            
+        }
+        //loop se bahar, cycle absent
+        return false;
+
+
+
+        // unordered_map<ListNode* ,bool> m;
+        // ListNode* temp = head;
+        
+        // while(temp != NULL) {
+        //     if(m[temp] == true) {
+        //         ////pehlse hi true h
+        //         //cycle present
+        //         return true;
+        //     }
+        //     else {
+        //         //pehle se true nahi h, yaani false;
+        //         //toh main visit krra hu ise
+        //         m[temp] = true;
+        //     }
+        //     temp = temp -> next;
+        // }
+        // //agar yaha tk pohoch gye ho, iska mtlb loop se bahar aagye ho
+        // //iska mtlb link list poori traverse hogyi
+        // //and end me NULL milgya
+        // //no cycle present
+        // return false;
+
+    }
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        
+        // 1case -> LL is empty
+        if(head == NULL) {
+            return head;
+        }
+        //2 case -> LL -> single node 
+        if(head -> next == NULL) {
+            return head;
+        }
+        //3 case >1 node 
+        // atleast 2 node toh pkka hogi 
+        ListNode* prev = head;
+        ListNode* temp = head->next;
+
+        while(temp != NULL) {
+            
+            //duplicate check karo 
+            if(temp->val == prev->val) {
+                //duplicate found
+                prev->next = temp->next;
+                temp->next = NULL;
+                delete temp;
+            }
+            else {
+                //duplicate not found
+                prev = prev->next;
+                temp = temp->next;
+            }
+            //temp ko set kardo
+            temp = prev->next;
+        } 
+        return head;
+
+    }
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    int getLength(ListNode* head) {
+        int len = 0;
+        ListNode* temp = head;
+        while(temp != NULL) {
+            len++;
+            temp = temp -> next;
+        }
+        return len;
+    }
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        // LL is empty
+        if(head == NULL ) {
+            return head;
+        }
+        //Single Node
+        if(head -> next == NULL) {
+            return head;
+        }
+        ///atleast 2 node, or >1 nodes
+        
+      
+        //check for LL length
+        int len = getLength(head);
+        if(len < k) {
+            //toh reverse krne ki need nhi h,as per question
+            return head;
+        }
+
+        //1 case hum akrenge , baaaki recursion sambhal lega
+        //1 case -> k length ko reverse karna h 
+
+        ListNode* prev = NULL;
+        ListNode* curr = head;
+        int position = 0;
+
+        while(position < k) {
+            ListNode* forward = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = forward;
+            position++;
+        }
+
+        //baaki recursion sambhal lega
+        if(curr != NULL) {
+            ListNode* recursionKaHead = reverseKGroup(curr, k);
+            head->next = recursionKaHead;
+        } 
+
+        return prev;
+
+    }
+};
+
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+
+using namespace std;
+/* Link list Node */
+struct Node {
+    int data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+
+struct Node *start = NULL;
+
+
+// } Driver Code Ends
+/*
+ 
+  Node is defined as
+  struct Node {
+    int data;
+    struct Node *next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+
+*/
+class Solution
+{
+    public:
+    void print(Node* head) {
+        Node* temp = head;
+        while(temp != NULL) {
+            cout << temp->data << "->";
+            temp = temp -> next;
+        }
+        cout << "NULL" << endl;
+    }
+    void insertAtTail(Node* &toMove, Node* &head, Node* &tail) {
+       //LL is empty
+       if(head == NULL && tail == NULL) {
+           head = toMove;
+           tail = toMove;
+       }
+       else {
+           tail->next = toMove;
+           tail = toMove;
+       }
+    }
+    //Function to sort a linked list of 0s, 1s and 2s.
+    Node* segregate(Node *head) {
+        
+        Node* zeroHead = NULL;
+        Node* zeroTail = NULL;
+        
+        Node* oneHead = NULL;
+        Node* oneTail = NULL;
+        
+        Node* twoHead = NULL;
+        Node* twoTail = NULL;
+        
+        // LL pr traverse larenge and ye 3 LL ready krenge separate
+        Node* temp = head;
+        while(temp != NULL) {
+            
+            //create toMove node and isolate it
+            Node* toMove = temp;
+            temp = temp -> next;
+            toMove->next = NULL;
+            
+            if(toMove->data == 0) {
+                insertAtTail(toMove, zeroHead, zeroTail);
+            }
+            else if(toMove->data == 1) {
+                insertAtTail(toMove, oneHead, oneTail);
+            }
+            else if(toMove->data == 2) {
+                insertAtTail(toMove, twoHead, twoTail);
+            }
+            
+        }
+
+        //yaha jab pohoche, toh teeno LL ready h 
+        //merge them 
+        //empty wali possibility bhulna mat
+        if(zeroHead != NULL) {
+            //zero list is non-empty
+            if(oneHead != NULL) {
+                //one list is non-empty
+                zeroTail->next = oneHead;
+                //merge with 2 wali list
+                oneTail->next = twoHead;
+            }
+            else {
+                //one list is empty
+                zeroTail->next = twoHead;
+            }
+            return zeroHead;
+        }
+        else {
+            //zero List is empty
+            if(oneHead != NULL) {
+                oneTail->next = twoHead;
+                return oneHead;
+            }
+            else {
+                return twoHead;
+            }
+        }
+    }
+};
+
+
+//{ Driver Code Starts.
+
+// Function to sort a linked list of 0s, 1s and 2s
+void printList(struct Node *Node) {
+    while (Node != NULL) {
+        printf("%d ", Node->data);
+        Node = Node->next;
+    }
+    printf("\n");
+}
+
+/* Drier program to test above function*/
+void insert(int n1) {
+    int n, value, i;
+    // scanf("%d",&n);
+    n = n1;
+    struct Node *temp;
+    for (i = 0; i < n; i++) {
+        scanf("%d", &value);
+
+        if (i == 0) {
+            start = new Node(value);
+            temp = start;
+            continue;
+        } else {
+            temp->next = new Node(value);
+            temp = temp->next;
+            temp->next = NULL;
+        }
+    }
+}
+
+int main() {
+
+    int n;
+
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        scanf("%d", &n);
+
+        insert(n);
+        Solution ob;
+        struct Node *newHead = ob.segregate(start);
+        printList(newHead);
+    }
+
+    return 0;
+}
+// } Driver Code Ends
+
+----------------------------------(mega class ll)------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class Node
+{
+public:
+    int data;
+    Node *next;
+
+    // constructor
+    Node(int value)
+    {
+        this->data = value;
+        this->next = NULL;
+    }
+};
+
+void print(Node *head)
+{
+    Node *temp = head;
+    // jab tak merea temp NULL k equal nahi h, tab tak node print krte raho
+    while (temp != NULL)
+    {
+        cout << temp->data << "->";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+
+void solve(Node *head, int &carry)
+{
+    if (!head)
+        return;
+    solve(head->next, carry); 0->0 ->0-> x
+
+    // 1 case
+    int sum = head->data + carry;
+    int digit = sum % 10;
+    carry = sum / 10; // imp.
+    head->data = digit;
+}
+
+Node *add1(Node *head, int &carry)
+{
+    solve(head, carry);
+    if (carry)
+    {
+        // insertAtHead
+        Node *newHead = new Node(carry);
+        newHead->next = head;
+        head = newHead;
+    }
+    return head;
+}
+
+int main()
+{
+    Node *head = new Node(9);
+    head->next = new Node(9);
+    head->next->next = new Node(9);
+
+    print(head);
+    int carry = 1;
+    head = add1(head, carry);
+    print(head);
+    return 0;
+}
+
+// add two no.s
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution
+{
+public:
+    ListNode *iterative(ListNode *l1, ListNode *l2)
+    {
+        ListNode *ans = new ListNode(-1);
+        ListNode *it = ans;
+
+        int carry = 0;
+        while (l1 || l2 || carry)
+        {
+            int a = l1 ? l1->val : 0;
+            int b = l2 ? l2->val : 0;
+            int sum = a + b + carry;
+            int digit = sum % 10;
+            carry = sum / 10;
+            it->next = new ListNode(digit);
+            it = it->next;
+            l1 = l1 ? l1->next : nullptr;
+            l2 = l2 ? l2->next : nullptr;
+        }
+        ListNode *finalAns = ans->next;
+        delete ans;
+        return finalAns;
+    }
+
+    ListNode *recursive(ListNode *l1, ListNode *l2, int carry = 0)
+    {
+        if (!l1 && !l2 && !carry)
+            return 0;
+
+        int a = l1 ? l1->val : 0;
+        int b = l2 ? l2->val : 0;
+        int sum = a + b + carry;
+        int digit = sum % 10;
+        carry = sum / 10;
+
+        // build the ans LL
+        ListNode *ans = new ListNode(digit);
+        ans->next = recursive(l1 ? l1->next : l1, l2 ? l2->next : l2, carry);
+        return ans;
+    }
+
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+    {
+        // return iterative(l1, l2);
+        return recursive(l1, l2);
+    }
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution
+{
+public:
+    ListNode *hasCycle(ListNode *head)
+    {
+        ListNode *slow = head;
+        ListNode *fast = head;
+
+        while (fast != NULL)
+        {
+            fast = fast->next;
+            if (fast != NULL)
+            {
+                fast = fast->next;
+                slow = slow->next;
+                if (fast == slow)
+                {
+                    return fast;
+                }
+            }
+        }
+        return nullptr;
+    }
+
+    ListNode *detectCycle(ListNode *head)
+    {
+        // step 1: check if loop is there or not
+        ListNode *fast = hasCycle(head);
+        if (!fast)
+            return nullptr;
+
+        // fast is non-null means, cycle is there.
+        // let's find starting point of cycle
+        ListNode *slow = head;
+        // now move slow & fast ptr with 1x speed, and
+        // return where they meet.
+
+        ListNode *prev = 0;
+
+        while (slow != fast)
+        {
+            slow = slow->next;
+            prev = fast;
+            fast = fast->next;
+        }
+        prev->next = nullptr; // loop removing
+        return slow;          // Starting point
+    }
+};
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution
+{
+public:
+    vector<ListNode *> splitListToParts(ListNode *head, int k)
+    {
+        int N = 0;
+        auto it = head;
+        while (it)
+        {
+            N++;
+            it = it->next;
+        }
+
+        // determine size of each part/bucket
+        int partSize = N / k;
+        int extraNodes = N % k; // divide bucket by bucket
+
+        vector<ListNode *> ans(k, nullptr);
+        it = head;
+
+        for (int i = 0; i < k && it; i++)
+        {
+            ans[i] = it;
+            int currentPartSize = partSize + (extraNodes-- > 0 ? 1 : 0);
+            for (int j = 0; j < currentPartSize - 1; j++)
+                it = it->next;
+
+            auto nextPartStarting = it->next;
+            it->next = nullptr;
+            it = nextPartStarting;
+        }
+        return ans;
+    }
+};
+
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* prev;
+    Node* next;
+    Node* child;
+};
+*/
