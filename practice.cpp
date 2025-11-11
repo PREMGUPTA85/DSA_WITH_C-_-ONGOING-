@@ -36,6 +36,8 @@ public:
         return head;
     }
 };
-   
+
+void insertAtHead(int value, Node* &head, Node* &tail) {
+  
 
 
