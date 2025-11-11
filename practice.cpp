@@ -39,7 +39,6 @@ public:
 
 void insertAtHead(int value, Node* &head, Node* &tail) {
     //2 cases -> LL is empty / non-empty
- 
+  //empty wala case
+  if(head == NULL && tail == NULL) {
   
-
-
