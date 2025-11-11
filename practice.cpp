@@ -41,4 +41,6 @@ void insertAtHead(int value, Node* &head, Node* &tail) {
     //2 cases -> LL is empty / non-empty
   //empty wala case
   if(head == NULL && tail == NULL) {
-  
+    //iska mtlb, main firstb node create krne wala hu 
+    Node* newNode = new Node(value);
+ 
