@@ -43,4 +43,6 @@ void insertAtHead(int value, Node* &head, Node* &tail) {
   if(head == NULL && tail == NULL) {
     //iska mtlb, main firstb node create krne wala hu 
     Node* newNode = new Node(value);
+    head = newNode;
+    tail= newNode;
  
