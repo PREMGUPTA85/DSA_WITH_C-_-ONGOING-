@@ -49,5 +49,11 @@ void insertAtHead(int value, Node* &head, Node* &tail) {
   else {
     //LL is not empty
  
+  Node* newNode = new Node(value);
+    newNode->next = head;
+    head -> prev = newNode;
+    head = newNode;
+  }
+}
 
 
