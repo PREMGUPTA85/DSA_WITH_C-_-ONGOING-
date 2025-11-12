@@ -15,3 +15,6 @@ if(position == 1) {
   else {
     //insert in between kahin krna chahta hu 
     Node* temp = head;
+    for(int i=0; i<position-2; i++) {
+      temp = temp -> next;
+    }
