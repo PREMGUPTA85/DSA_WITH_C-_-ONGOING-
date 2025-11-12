@@ -18,3 +18,8 @@ if(position == 1) {
     for(int i=0; i<position-2; i++) {
       temp = temp -> next;
     }
+    Node* newNode = new Node(value);
+    newNode->next = temp->next;
+    temp->next = newNode;
+  }
+}
