@@ -12,3 +12,6 @@ if(position == 1) {
     //insert at tail krna chahta hu 
     insertAtTail(value, head, tail);
   }
+  else {
+    //insert in between kahin krna chahta hu 
+    Node* temp = head;
