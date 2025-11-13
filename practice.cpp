@@ -1,29 +1,18 @@
-
-void insertAtPosition(int position,int value, Node* &head, Node* &tail ){
-  //assume -> valid positions input
-  int length = getLength(head);
-if(position == 1) {
-    
-//insert at ahead krna chahta hu 
-    head = insertAtHead(value, head, tail);
- 
- }
-  else if(position == length + 1) {
-    //insert at tail krna chahta hu 
-    insertAtTail(value, head, tail);
-  }
-  else {
-    //insert in between kahin krna chahta hu 
-    Node* temp = head;
-    for(int i=0; i<position-2; i++) {
-      temp = temp -> next;
+//134.Divide two integers without using / or % and return the quotient (truncate toward zero).
+int Quotient(int dividend, int divisor){
+    int index = -1;
+    int start = 0;
+    int end = dividend;
+    int quotient = start + ((end - start) >> 1);
+    while(start <= end){
+        if(divisor * quotient == dividend){
+            return quotient;
+        }
+        else if(divisor * quotient < dividend){index = quotient;
+            start = quotient + 1;
+        }
+        else  end = quotient - 1;
+        quotient = start + (end - start) / 2;
     }
-    Node* newNode = new Node(value);
-    newNode->next = temp->next;
-    temp->next = newNode;
-  }
+    return index;
 }
-// asfdsfd
-// sfzfsafas
-//YYUIUIUGHIU
-// TODAY DONE
