@@ -9,5 +9,11 @@ int nearlysearch(int arr[],int size,int target){
         if(target>arr[mid]) s=mid+2;
         else e=mid-2;
         mid=s+(e-s)/2;
+}    return -1;
 }
+
+
+
+    
+
 
