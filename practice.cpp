@@ -3,4 +3,5 @@
 int nearlysearch(int arr[],int size,int target){
     int s=0,e=size-1,mid=s+(e-s)/2;
     while(s<=e){
-     
+        if(arr[mid]==target) return mid;
+      
