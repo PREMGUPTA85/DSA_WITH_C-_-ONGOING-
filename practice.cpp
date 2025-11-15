@@ -20,3 +20,6 @@ public:
             sum -= nums[i];     // remove old element
             i++;
 
+
+            maxsum = max(maxsum, sum);
+   
