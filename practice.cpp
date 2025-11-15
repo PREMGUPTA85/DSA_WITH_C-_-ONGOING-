@@ -16,3 +16,7 @@ public:
     while(j + 1 < nums.size()){
             j++;
          
+   sum += nums[j];     // add new element
+            sum -= nums[i];     // remove old element
+            i++;
+
