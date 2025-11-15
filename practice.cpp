@@ -25,3 +25,6 @@ public:
      }
 
     
+    double maxavg = maxsum / (double)k;
+  
+   
