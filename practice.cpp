@@ -8,7 +8,8 @@ public:
 
         for(int x = i; x <= j; x++){
             sum += nums[x];
-     
    }
+     int maxsum = sum;   // starting window best
 
-   
+        // --- Step 2: Slide window exactly like your i++ j++ loop ---
+    
