@@ -9,3 +9,6 @@ public:
         for(int x = i; x <= j; x++){
             sum += nums[x];
      
+   }
+
+   
