@@ -13,3 +13,6 @@ public:
 
         // --- Step 2: Slide window exactly like your i++ j++ loop ---
     
+    while(j + 1 < nums.size()){
+            j++;
+         
