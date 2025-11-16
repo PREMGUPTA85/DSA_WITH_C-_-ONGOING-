@@ -10,7 +10,10 @@ Node* reverse(Node* head) {
         prev = curr;       // Move pointers one position ahead
         curr = next;
     }
+    return prev; // New head of the reversed list
+}
     
+
    
 
 bool isloop(Node* head) {
