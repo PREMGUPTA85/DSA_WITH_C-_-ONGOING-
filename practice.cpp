@@ -3,7 +3,9 @@
 Node* reverse(Node* head) {
     Node* prev = NULL;
     Node* curr = head;
+    Node* next;
 
+   
 
 bool isloop(Node* head) {
     Node* slow = head;
