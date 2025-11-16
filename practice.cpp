@@ -1,4 +1,10 @@
 
+
+Node* reverse(Node* head) {
+    Node* prev = NULL;
+   
+
+
 bool isloop(Node* head) {
     Node* slow = head;
     Node* fast = head;
