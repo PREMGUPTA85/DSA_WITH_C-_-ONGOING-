@@ -6,6 +6,8 @@ Node* reverse(Node* head) {
     Node* next;
  while (curr != NULL) {
         next = curr->next; // Store next node
+    curr->next = prev; // Reverse current node's pointer
+   
     
 
    
