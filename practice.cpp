@@ -2,7 +2,7 @@
 
 Node* reverse(Node* head) {
     Node* prev = NULL;
-   
+    Node* curr = head;
 
 
 bool isloop(Node* head) {
