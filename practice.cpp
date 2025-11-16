@@ -9,9 +9,8 @@ Node* reverse(Node* head) {
     curr->next = prev; // Reverse current node's pointer
         prev = curr;       // Move pointers one position ahead
         curr = next;
-  
+    }
     
-
    
 
 bool isloop(Node* head) {
