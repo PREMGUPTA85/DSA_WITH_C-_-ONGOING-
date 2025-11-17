@@ -15,5 +15,14 @@ public:
  else {
             mergedHead = head2;
             head2 = head2->next;
+       }
+
+        ListNode* mergedTail = mergedHead;
+
+        while (head1 && head2) {
+            if (head1->val < head2->val) {
+        
+        return mergedHead;
+    }
       
 };
