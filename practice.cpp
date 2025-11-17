@@ -23,18 +23,4 @@ public:
                 mergedTail->next = head1;
                 head1 = head1->next;
             } else {
-                mergedTail->next = head2;
-                head2 = head2->next;
-            }
-            mergedTail = mergedTail->next;
-        }
-
-        if (head1) mergedTail->next = head1;
-        else mergedTail->next = head2;
-
-        return mergedHead;
-    }
-      
-};
-
-       
+        
