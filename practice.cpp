@@ -14,4 +14,6 @@ public:
         }
  else {
             mergedHead = head2;
- 
+            head2 = head2->next;
+      
+};
