@@ -1,32 +1,14 @@
+// Merge two sorted linked lists
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
 
+        if (!head1) return head2;
+        if (!head2) return head1;
 
-Node* reverse(Node* head) {
-    Node* prev = NULL;
-    Node* curr = head;
-    Node* next;
- while (curr != NULL) {
-        next = curr->next; // Store next node
-    curr->next = prev; // Reverse current node's pointer
-        prev = curr;       // Move pointers one position ahead
-        curr = next;
-    }
-    return prev; // New head of the reversed list
-}
-    
+        ListNode* mergedHead = nullptr;
 
-   
-
-bool isloop(Node* head) {
-    Node* slow = head;
-    Node* fast = head;
-
-    while (fast != NULL && fast->next != NULL) {
-        slow = slow->next;          // Move slow by one
-        fast = fast->next->next;    // Move fast by two
-
-        if (slow == fast) {
-            return true; // Loop detected
+        if (head1->val < head2->val) {
+            mergedHead = head1;
+            head1 = head1->next;
         }
-    }
-    return false; // No loop
-}
