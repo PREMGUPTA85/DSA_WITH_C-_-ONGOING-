@@ -1,4 +1,6 @@
 
+    Node *solve(Node *head)
+    {
         auto it = head;
         auto tail = it; 
  while (it)
