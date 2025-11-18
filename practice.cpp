@@ -1,4 +1,5 @@
-// for tracking tail node.
+
+        auto tail = it; 
  while (it)
         {
             if (it->child)
