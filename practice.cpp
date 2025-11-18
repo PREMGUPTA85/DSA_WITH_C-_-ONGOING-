@@ -1,4 +1,7 @@
-
+// for tracking tail node.
+class Solution
+{
+public:
     Node *solve(Node *head)
     {
         auto it = head;
