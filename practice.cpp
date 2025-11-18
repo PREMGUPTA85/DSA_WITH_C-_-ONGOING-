@@ -1,4 +1,6 @@
 
+                childTail->next = temp;
+                if (temp)
                     temp->prev = childTail;
                 it->child = nullptr;
             }
