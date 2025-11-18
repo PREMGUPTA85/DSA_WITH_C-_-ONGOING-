@@ -1,9 +1,13 @@
-class Solution
-{
-public:
-    Node *solve(Node *head)
-    {
-        auto it = head;
-        auto tail = it; // for tracking tail node.
 
+    }
+
+    Node *flatten(Node *head)
+    {
+        if (!head)
+            return nullptr;
+        solve(head);
+        return head;
+    }
+};
++
        
