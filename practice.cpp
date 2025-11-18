@@ -1,4 +1,6 @@
 
+            tail = it;
+            it = it->next;
         }
         return tail;
     }
