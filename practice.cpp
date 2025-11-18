@@ -1,4 +1,7 @@
-
+// for tracking tail node.
+ while (it)
+        {
+            if (it->child)
             {
                 auto childTail = solve(it->child); // tail node
                 // flatten ka kaam
