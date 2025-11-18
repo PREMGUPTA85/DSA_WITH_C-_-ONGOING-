@@ -1,4 +1,5 @@
 
+        auto it = head;
         auto tail = it; 
  while (it)
         {
