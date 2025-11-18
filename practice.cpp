@@ -1,4 +1,6 @@
 
+        }
+        return tail;
     }
 
     Node *flatten(Node *head)
