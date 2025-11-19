@@ -1,4 +1,11 @@
+// waap to find sum of altrnates valuesin starting from first node 
+#include<iostream>
+using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
 
 Node* createList(int n) {
     Node* head = nullptr, *temp = nullptr;
