@@ -1,38 +1,21 @@
-// for tracking tail node.
-class Solution
-{
-public:
-    Node *solve(Node *head)
-    {
-        auto it = head;
-        auto tail = it; 
- while (it)
-        {
-            if (it->child)
-            {
-                auto childTail = solve(it->child); // tail node
-                // flatten ka kaam
-                auto temp = it->next;
-                it->next = it->child;
-                it->next->prev = it;
-                childTail->next = temp;
-                if (temp)
-                    temp->prev = childTail;
-                it->child = nullptr;
-            }
-            tail = it;
-            it = it->next;
-        }
-        return tail;
-    }
+#include<iostream>
+using namespace std;
 
-    Node *flatten(Node *head)
-    {
-        if (!head)
-            return nullptr;
-        solve(head);
-        return head;
+class info{
+    public: 
+    float area;
+    float perimeter;
+}
+
+class circle{
+    public:
+    int radius;
+
+    info calculate(){
+        info ans = info();
+        ans.area = 3.14 * radius * radius;
+        ans.perimeter = 2 * 3.14 * radius;
+        return ans;
     }
-};
-+
-       
+}
+
