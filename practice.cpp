@@ -22,4 +22,5 @@ Node* createList(int n) {
 }
 
 int sumOfAlternate(Node* head) {
-    
+    int sum = 0;
+  
