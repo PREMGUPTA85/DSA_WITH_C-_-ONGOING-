@@ -1,4 +1,5 @@
 
+    int data;
     Node* next;
 };
 
