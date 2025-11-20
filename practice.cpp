@@ -1,4 +1,5 @@
 
+        Node* newNode = new Node();
         cin >> newNode->data;
         newNode->next = nullptr;
 
