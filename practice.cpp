@@ -1,4 +1,5 @@
 
+            temp->next = newNode;
             temp = newNode;
         }
     }
