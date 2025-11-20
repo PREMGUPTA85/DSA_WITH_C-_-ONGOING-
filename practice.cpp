@@ -29,4 +29,10 @@ int sumOfAlternate(Node* head) {
         take = !take;
         head = head->next;
     }
-    return 
+    return sum;
+}
+
+
+    
+
+
