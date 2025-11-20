@@ -1,4 +1,7 @@
 
+    Node* next;
+};
+
 Node* createList(int n) {
     Node* head = nullptr, *temp = nullptr;
     for (int i = 0; i < n; i++) {
