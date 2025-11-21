@@ -7760,7 +7760,57 @@ int main() {
     
     // solve(arr,size);
 
+    int a = 10; // ek dabba uske andar 10 dabbe k address 104;
+    int *p = &a; //ek dabba uske andar 104 dabbe k address 204;
+    int *q = p; // ek dabba uske andar 104 dabbe k address 304;
+    int *r = q; // ek dabba uske andar 104 dabbe k address 404;
 
+    // cout << a << endl; // 10;
+    // cout << &a << endl; // 104;
+    // // cout << *a << endl; // error; bcz derefernce operator is used for pointer's only
+    // cout << p << endl; // 204;
+    // cout << &p << endl; // 204;
+    // cout << *p << endl; // 10; // value at address stored in p 
+    // cout << q << endl; // 204;
+    // cout << &q << endl; // 304;
+    // cout << *q << endl; // 10
+    // cout << r << endl;  //104
+    // cout << &r << endl; // 404
+    // cout << *r << endl; //10
+
+
+    // pointer with arrays
+    int arr[] = {10,20,30,40};
+    // here arr, &arr, &arr[0] all three are same they stored the address of first element of array
+    cout << arr << endl; // address of first element
+    cout << &arr << endl; // address of first element
+    cout << &arr[0] << endl; // address of first element
+    cout << arr[0] << endl; // 10
+
+    int *ptr = arr; // or int *ptr = &arr[0];
+    cout << ptr << endl; // address of first element
+    cout << &ptr << endl; // address of pointer variable ptr
+    cout << *ptr << endl; // 10
+
+    // arr[i] == i[arr]
+    // arr[i] = *(arr + i)
+    cout << arr[2] == *(arr + 2) << endl;
+    // i[arr] = *(i + arr) // 30 bcz *(104 + 2) = *(112) = 30
+    cout << *(arr + 1) << endl; // 20 bcz *(104 + 1) = *(108) = 20
+
+
+    // character with pointers
+    char ch[100] = "Babbar";
+    char* cptr = ch;
+
+    cout << ch << endl; // Babbar
+    cout << &ch  << endl; // address of first element
+    cout << ch[0] << endl; // B
+    cout << cptr << endl; // Babbar
+    cout << &cptr << endl; // address of pointer variable cptr
+    cout << *cptr << endl; // B
+    cout << *(cptr + 3) << endl; // b 
+    cout << cptr + 2 << endl; // bbar
 
 
     return 0;
@@ -7875,7 +7925,6 @@ Node* insertAtHead(int value, Node* &head, Node* &tail) {
 
 
 }
-
 //return head of the updated list 
 void insertAtTail(int value, Node* &head, Node* &tail) {
   if(head == NULL && tail == NULL) {
@@ -7983,19 +8032,45 @@ void deleteNodeFromLL(int position, Node* &head, Node* &tail) {
       delete temp;
     }
     else {
-      //any other node except the first one
-      Node* prev = head;
-      for(int i=0; i<position-2; i++) {
-        prev = prev -> next;
-      }
-      Node* curr = prev ->next;
-      Node* forward = curr ->next;
-      prev->next = forward;
-      curr->next = NULL;
-      delete curr;
+         Node* prev = head;
+            for(int i=0; i<position-2; i++) {
+                prev = prev->next;
+            }
+            Node* curr = prev->next;
+            Node* forward = curr->next;
+            prev->next = forward;
+            // FIX: If deleting last node
+            if(forward == NULL) {
+                tail = prev;
+            }
+            curr->next = NULL;
+            delete curr;
+    //any other node except the first one
+    //   Node* prev = head;
+    //   for(int i=0; i<position-2; i++) {
+    //     prev = prev -> next;
+    //   }
+    //   Node* curr = prev ->next;
+    //   Node* forward = curr ->next;
+    //   prev->next = forward;
+    //   curr->next = NULL;
+    //   delete curr;
     }
-
   }
+}
+
+Node* findmid(Node* head) {
+    if (head == nullptr) {
+        // throw invalid_argument("List is empty");
+        return nullptr;
+    }
+    Node* slow = head;
+    Node* fast = head;
+    while (fast != nullptr && fast->next != nullptr) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
 }
 
 int main() {
@@ -8004,46 +8079,46 @@ int main() {
   Node* tail = NULL;
   //LL is empty
   insertAtTail(101,head,tail);
-  //print(head);
+  print(head);
   //101 -> NULL
   insertAtTail(102,head,tail);
-  //print(head);
+  print(head);
   //101->102->NULL
   insertAtTail(103,head,tail);
-  //print(head);
+  print(head);
   //101->102->103->NULL
-  insertAtPosition(1, 42, head, tail);
+//   insertAtPosition(1, 42, head, tail);
   //print(head);
-  insertAtPosition(5,57,head,tail);
-  //print(head);
-  insertAtPosition(3,420,head,tail);
-  print(head);
-  //cout << searchLL(1030,head);
-  deleteNodeFromLL(1,head,tail);
-  print(head);
-  deleteNodeFromLL(3,head,tail);
-  print(head);
-  deleteNodeFromLL(4,head,tail);
-  print(head);
+//   insertAtPosition(5,57,head,tail);
+//   //print(head);
+//   insertAtPosition(3,420,head,tail);
+//   print(head);
+//   //cout << searchLL(1030,head);
+//   deleteNodeFromLL(1,head,tail);
+//   print(head);
+//   deleteNodeFromLL(3,head,tail);
+//   print(head);
+//   deleteNodeFromLL(4,head,tail);
+//   print(head);
 
 
 
 
 
-  // Node* head = NULL;
-  // Node* tail = NULL;
-  // //LL is empty
-  // head = insertAtHead(10, head, tail);
-  //   print(head);
-  // //10 -> NULL
-  // head  = insertAtHead(20,head,tail);
-  //   print(head);
-  // //20->10->NULL
-  // head = insertAtHead(30,head,tail);
-  //   print(head);
-  //30->20->10->NULL
+//   Node* head = NULL;
+//   Node* tail = NULL;
+//   //LL is empty
+//   head = insertAtHead(10, head, tail);
+//     print(head);
+//   //10 -> NULL
+//   head  = insertAtHead(20,head,tail);
+//     print(head);
+//   //20->10->NULL
+//   head = insertAtHead(30,head,tail);
+//     print(head);
+//   30->20->10->NULL
 
-  //print(head);
+//   print(head);
 
   //stack
   //Node first;
@@ -8052,9 +8127,34 @@ int main() {
   return 0;
 }
 
+Node* reverse(Node* head) {
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* next;
 
+    while (curr != NULL) {
+        next = curr->next; // Store next node
+        curr->next = prev; // Reverse current node's pointer
+        prev = curr;       // Move pointers one position ahead
+        curr = next;
+    }
+    return prev; // New head of the reversed list
+}
 
+bool isloop(Node* head) {
+    Node* slow = head;
+    Node* fast = head;
 
+    while (fast != NULL && fast->next != NULL) {
+        slow = slow->next;          // Move slow by one
+        fast = fast->next->next;    // Move fast by two
+
+        if (slow == fast) {
+            return true; // Loop detected
+        }
+    }
+    return false; // No loop
+}
 ---------------------------------------------------------(linked list class - 2)-----------------------------------------------
 #include <iostream>
 using namespace std;
@@ -8187,7 +8287,6 @@ bool searchElement(Node* head, int target) {
  // LL poori travel krli h and target nahi mila
   return false;
 }
-
 
 void deleteFromPosition(int position, Node* &head, Node* &tail) {
   int length = getLength(head);
@@ -8927,7 +9026,7 @@ int main() {
 }
 // } Driver Code Ends
 
-----------------------------------(mega class ll)------------------------------------------------------------------
+//----------------------------------------------(mega class ll)------------------------------------------------------------------
 #include <iostream>
 using namespace std;
 
@@ -9207,4 +9306,3 @@ public:
         return head;
     }
 };
-
