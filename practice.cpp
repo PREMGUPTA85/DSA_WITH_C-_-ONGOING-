@@ -26,4 +26,7 @@ Node* createList(int n) {
 
 int sumOfAlternate(Node* head) {
     int sum = 0;
+   bool take = true;
+    while (head != nullptr) {
+  
  
