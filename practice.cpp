@@ -29,5 +29,7 @@ int sumOfAlternate(Node* head) {
    bool take = true;
     while (head != nullptr) {
         if (take) sum += head->data;
- 
+        take = !take;
+     
+
  
