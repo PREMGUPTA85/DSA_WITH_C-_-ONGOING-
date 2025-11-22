@@ -36,6 +36,5 @@ int sumOfAlternate(Node* head) {
 }
 
 
-
- 
-
+int main() {
+  
