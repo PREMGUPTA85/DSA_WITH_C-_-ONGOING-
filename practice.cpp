@@ -1,4 +1,5 @@
 
+    int **q = &p;     // pointer to pointer to an int
 
     cout << "Value of a: " << a << endl;
     cout << "Address of a: " << &a << endl;
