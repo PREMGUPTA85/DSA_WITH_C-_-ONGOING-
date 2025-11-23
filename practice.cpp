@@ -1,4 +1,5 @@
 
+    cout << "Value of a: " << a << endl;
     cout << "Address of a: " << &a << endl;
 
     cout << "Value of p (address of a): " << p << endl;
