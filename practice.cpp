@@ -1,4 +1,6 @@
 
+
+    cout << "Value of p (address of a): " << p << endl;
     cout << "Value pointed by p (*p): " << *p << endl;
 
     cout << "Value of q (address of p): " << q << endl;
