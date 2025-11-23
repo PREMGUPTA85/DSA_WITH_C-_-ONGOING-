@@ -1,4 +1,8 @@
 
+// pointer class -2
+#include<iostream>
+using namespace std;
+
 // double pointer level
 int main() {
     int a = 5;
