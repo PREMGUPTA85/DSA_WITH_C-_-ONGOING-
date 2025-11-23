@@ -1,4 +1,5 @@
 
+    int *p = &a;
     int **q = &p;
     int **r = q;
     int ***s = &q;
