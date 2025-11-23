@@ -1,4 +1,6 @@
 
+// double pointer level
+int main() {
     int a = 5;
     int *p = &a;      // pointer to an int
     int **q = &p;     // pointer to pointer to an int
