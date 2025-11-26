@@ -1,4 +1,6 @@
 
+  cout << s.size() << endl;
+  //check empty or not 
   cout << s.empty() << endl;
   //peek 
   cout << s.top() << endl;
