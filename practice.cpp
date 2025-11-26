@@ -1,4 +1,7 @@
 
+using namespace std;
+
+int main() {
   //creation
   stack<int> s;
   //insertion
