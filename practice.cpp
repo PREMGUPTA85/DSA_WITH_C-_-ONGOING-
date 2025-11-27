@@ -1,4 +1,6 @@
 
+        {
+            if (it->child)
             {
                 auto childTail = solve(it->child); // tail node
                 // flatten ka kaam
