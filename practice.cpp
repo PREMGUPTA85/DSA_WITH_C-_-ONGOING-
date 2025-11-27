@@ -1,4 +1,8 @@
 
+                it->child = nullptr;
+            }
+            tail = it;
+            it = it->next;
         }
         return tail;
     }
