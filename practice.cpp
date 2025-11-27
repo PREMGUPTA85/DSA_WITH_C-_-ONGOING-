@@ -1,4 +1,6 @@
- // tail node
+
+            {
+                auto childTail = solve(it->child); // tail node
                 // flatten ka kaam
                 auto temp = it->next;
                 it->next = it->child;
