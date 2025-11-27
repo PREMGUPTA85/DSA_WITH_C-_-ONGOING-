@@ -1,4 +1,5 @@
-
+ // tail node
+                // flatten ka kaam
                 auto temp = it->next;
                 it->next = it->child;
                 it->next->prev = it;
