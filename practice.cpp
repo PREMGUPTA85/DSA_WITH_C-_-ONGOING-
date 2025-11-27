@@ -1,4 +1,6 @@
 
+
+        while (it)
         {
             if (it->child)
             {
