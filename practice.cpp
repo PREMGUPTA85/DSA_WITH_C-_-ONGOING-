@@ -1,4 +1,6 @@
 
+class Solution
+{
 public:
     Node *solve(Node *head)
     {
