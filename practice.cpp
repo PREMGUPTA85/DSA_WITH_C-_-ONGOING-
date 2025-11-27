@@ -1,4 +1,7 @@
 
+                auto temp = it->next;
+                it->next = it->child;
+                it->next->prev = it;
                 childTail->next = temp;
                 if (temp)
                     temp->prev = childTail;
