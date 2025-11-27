@@ -1,4 +1,8 @@
 
+        }
+        return tail;
+    }
+
     Node *flatten(Node *head)
     {
         if (!head)
