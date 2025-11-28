@@ -1,4 +1,5 @@
 
+  stack<char> s;
   string name = "amitwala";
 
   //inseration of characters into the stack
