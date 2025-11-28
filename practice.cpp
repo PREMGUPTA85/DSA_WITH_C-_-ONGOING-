@@ -1,4 +1,5 @@
 
+int main() {
   stack<char> s;
   string name = "amitwala";
 
