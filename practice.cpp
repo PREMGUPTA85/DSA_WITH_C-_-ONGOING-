@@ -1,4 +1,5 @@
 
+    char ch = name[i];
     s.push(ch);
   }
 
