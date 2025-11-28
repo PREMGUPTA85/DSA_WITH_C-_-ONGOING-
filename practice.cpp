@@ -1,4 +1,7 @@
 
+  string name = "amitwala";
+
+  //inseration of characters into the stack
   for(int i=0; i<name.length(); i++) {
     char ch = name[i];
     s.push(ch);
