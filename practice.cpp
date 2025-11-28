@@ -1,4 +1,5 @@
 
+    s.push(ch);
   }
 
   //retrieval of characters from the stack 
