@@ -1,4 +1,6 @@
 
+          top2 = size;
+        }
 
         void push1(int value) {
           //if space available, then push
