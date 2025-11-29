@@ -1,4 +1,6 @@
 
+        int top2;
+
         Stack(int capacity) {
           arr= new int[capacity];
           size = capacity;
