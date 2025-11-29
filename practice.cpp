@@ -1,4 +1,16 @@
 
+
+        void pop2() {
+            if(top2 == size) {
+              //stack 2 is empty, no element to pop
+              cout << "Stack Underflow" << endl;
+            }
+            else {
+              arr[top2] = 0;
+              top2++;
+            }
+        }
+
         void print() {
           cout << "Top1: " << top1 << endl;
           cout << "Top2: " << top2 << endl;
