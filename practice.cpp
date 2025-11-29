@@ -1,4 +1,5 @@
 
+          top1 = -1;
           top2 = size;
         }
 
