@@ -1,4 +1,7 @@
 
+  public:
+        int* arr;
+        int size;
         int top1; 
         int top2;
 
