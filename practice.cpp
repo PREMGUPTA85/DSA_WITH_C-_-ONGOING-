@@ -1,4 +1,9 @@
 
+          else {
+            top1++;
+            arr[top1] = value;
+          }
+        }
 
         void push2(int value) {
           if(top2-top1 == 1) {
