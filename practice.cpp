@@ -1,4 +1,12 @@
 
+
+        void push1(int value) {
+          //if space available, then push
+          //else stack overflow karjaega
+          if(top2-top1 == 1) {
+            //cannot insert
+            cout << "Stack Overflow"<<endl;
+          }
           else {
             top1++;
             arr[top1] = value;
