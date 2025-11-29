@@ -1,4 +1,5 @@
 
+        int top1; 
         int top2;
 
         Stack(int capacity) {
