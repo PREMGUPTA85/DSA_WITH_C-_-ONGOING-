@@ -1,4 +1,8 @@
 
+// implement array using double stack
+#include <iostream>
+using namespace std;
+class Stack{
   public:
         int* arr;
         int size;
