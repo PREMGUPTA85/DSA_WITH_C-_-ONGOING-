@@ -1,4 +1,6 @@
 
+
+        void push1(int value) {
           //if space available, then push
           //else stack overflow karjaega
           if(top2-top1 == 1) {
