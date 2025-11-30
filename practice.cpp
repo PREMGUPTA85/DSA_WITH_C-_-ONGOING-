@@ -1,4 +1,17 @@
 
+// implement array using double stack
+#include <iostream>
+using namespace std;
+class Stack{
+  public:
+        int* arr;
+        int size;
+        int top1; 
+        int top2;
+
+        Stack(int capacity) {
+          arr= new int[capacity];
+          size = capacity;
           top1 = -1;
           top2 = size;
         }
