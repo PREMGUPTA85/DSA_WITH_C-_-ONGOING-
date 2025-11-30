@@ -1,4 +1,13 @@
 
+        }
+
+        void pop1() {
+          //if element available then pop
+          //if stack empty, then dont pop
+          if(top1 == -1){
+            //stack 1 is empty
+            cout << "Stack Underflow" << endl;
+          }
           else {
             arr[top1] = 0;
             top1--;
