@@ -1,5 +1,6 @@
 
 
+
         void push2(int value) {
           if(top2-top1 == 1) {
             cout << "Stack Overflow" << endl;
