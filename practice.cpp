@@ -1,4 +1,10 @@
 
+    if(count == 0) {
+      cout << s.top() << endl;
+      return;
+    }
+
+    //1 case solve krna h 
     int topElement = s.top();
     s.pop();
     count--;
