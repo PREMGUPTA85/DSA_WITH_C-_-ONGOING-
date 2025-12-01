@@ -1,5 +1,8 @@
 
 
+    //baaki rec
+    printMiddle(s,count);
+
     //backtrack
     s.push(topElement);
 }
