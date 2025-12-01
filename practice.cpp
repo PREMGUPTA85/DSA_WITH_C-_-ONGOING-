@@ -1,4 +1,9 @@
+#include <iostream>
+#include<stack>
+using namespace std;
 
+void printMiddle(stack<int>& s, int count ) {
+  //base case {
     if(count == 0) {
       cout << s.top() << endl;
       return;
