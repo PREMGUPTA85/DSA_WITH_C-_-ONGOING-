@@ -1,4 +1,5 @@
 
+    int topElement = s.top();
     s.pop();
     count--;
 
