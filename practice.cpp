@@ -1,4 +1,5 @@
 
+    count--;
 
     //baaki rec
     printMiddle(s,count);
