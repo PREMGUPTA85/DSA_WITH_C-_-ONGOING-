@@ -1,4 +1,5 @@
 
+    s.pop();
     count--;
 
     //baaki rec
