@@ -1,4 +1,5 @@
 
+class stack;{
   int *arr;
   int size;
   int top;
