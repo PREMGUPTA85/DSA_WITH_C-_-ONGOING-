@@ -1,4 +1,9 @@
 
+    top = -1;
+  }
+
+  // perform push operation 
+  void push(int val){
     if(top == size - 1){
       cout << "Stack Overflow" << endl;
       return;
