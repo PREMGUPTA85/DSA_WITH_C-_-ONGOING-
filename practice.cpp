@@ -1,4 +1,8 @@
 
+    if(top == size - 1){
+      cout << "Stack Overflow" << endl;
+      return;
+    }
     else {
       top++;
       arr[top] = val;
