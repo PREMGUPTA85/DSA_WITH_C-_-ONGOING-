@@ -1,4 +1,7 @@
 
+  int top;
+
+  stack(int capacity){
     arr = new int[capacity];
     size = capacity;
     top = -1;
