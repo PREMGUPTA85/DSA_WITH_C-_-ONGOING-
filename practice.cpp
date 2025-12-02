@@ -1,4 +1,8 @@
 
+// stack using arrays 
+#include<iosteram>
+using namespace std;
+
 class stack;{
   int *arr;
   int size;
