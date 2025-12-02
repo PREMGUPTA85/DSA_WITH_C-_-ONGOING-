@@ -1,4 +1,6 @@
 
+    arr = new int[capacity];
+    size = capacity;
     top = -1;
   }
 
