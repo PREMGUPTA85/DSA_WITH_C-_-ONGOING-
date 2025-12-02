@@ -1,4 +1,6 @@
 
+  int *arr;
+  int size;
   int top;
 
   stack(int capacity){
