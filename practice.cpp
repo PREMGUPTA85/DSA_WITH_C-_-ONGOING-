@@ -1,4 +1,10 @@
 
+
+          void push(int val) {
+              if(top == size-1) {
+                //astack is already full, agar insert karoge, toh stack overflow hojaega
+                cout << "Stack Overflow" << endl;
+              }
               else {
                 //normal case -> stack me khaali jagah hai abhi
                 top++;
