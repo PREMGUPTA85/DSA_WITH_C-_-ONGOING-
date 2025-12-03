@@ -1,4 +1,7 @@
 
+
+          int getSize() {
+              return top+1;
           }
 
           bool isEmpty() {
