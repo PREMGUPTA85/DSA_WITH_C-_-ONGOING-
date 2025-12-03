@@ -1,4 +1,10 @@
 
+              else {
+                //normal case
+                arr[top] = 0;
+                top--;
+              }
+          }
 
           int getSize() {
               return top+1;
