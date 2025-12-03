@@ -1,4 +1,15 @@
 
+class Stack{
+    public:
+          int* arr;
+          int size;
+          int top;
+
+          Stack(int capacity) {
+            arr = new int[capacity];
+            size = capacity;
+            top = -1;
+          }
 
           void push(int val) {
               if(top == size-1) {
