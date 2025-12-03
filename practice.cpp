@@ -1,5 +1,15 @@
 
               else {
+                return false;
+              }
+          }
+
+          int getTop() {
+              if(top == -1) {
+                cout << "There is no element at the top, as stack is empty";
+                return -1;
+              }
+              else {
                 //normal case
                 return arr[top];
               }
