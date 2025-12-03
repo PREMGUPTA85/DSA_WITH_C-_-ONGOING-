@@ -1,5 +1,17 @@
 
               else {
+                //normal case -> stack me khaali jagah hai abhi
+                top++;
+                arr[top] = val;
+              }
+          }
+
+          void pop() {
+              if(top == -1) {
+                //stack is empty, cannot pop in this case, coz there is no elemnt to pop
+                cout << "Stack Underflow" << endl;
+              }
+              else {
                 //normal case
                 arr[top] = 0;
                 top--;
