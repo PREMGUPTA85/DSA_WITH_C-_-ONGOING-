@@ -1,4 +1,9 @@
 
+              else {
+                //normal case
+                return arr[top];
+              }
+          }
 
           void print() {
             cout << "Printing Stack" << endl;
