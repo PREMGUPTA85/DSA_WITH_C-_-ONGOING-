@@ -7880,8 +7880,336 @@ int main() {
 
     return 0;
 }
+//-----------------------------------------------(Recursion class -1)-----------------------------
+#include<iostream>
+using namespace std;
+
+int getSum(int n) {
+    //base case
+    if(n == 1) 
+        return 1;
+    //recursive relation
+    //sum(n) = sum(n-1) + n;
+    int ans = getSum(n-1) + n;
+    return ans;
+    //processing
+}
+
+int fib(int n) {
+    if(n == 0 || n == 1) 
+        return n;
+    int ans = fib(n-1) + fib(n-2);
+    return ans; 
+}
+
+// int fib(int n) {
+//    //base case
+//    if(n == 0 || n == 1) {
+//     return n;
+//    }
+//    //recursive relation
+//    //fib(n) = fib(n-1) + fib(n-2);
+//    int ans = fib(n-1) + fib(n-2);
+//    return ans;
+//    //processing  
+// }
 
 
+int pow(int n) {
+    //base case
+    if( n == 0) {
+        return 1;
+    }
+    //recursive relation 
+    //pow(n) = 2 * pow(n-1);
+    int recKaAns = pow(n-1);
+    int finalAns = 2 * recKaAns;
+    return finalAns;
+    //processing 
+}
+
+// print counting from n to 1 
+void printCounting(int n) {
+    //base case
+    if(n == 0) {
+        return;
+    } 
+    
+    //processing
+    cout << n << " "; 
+    //recursive call 
+    printCounting(n-1);
+}
+
+int getFactorial(int n) {
+    //base case - mandatory
+    if(n == 0 || n == 1) {
+        return 1;
+    }
+    //recursive call - mandatory
+    //fact(n) = n * fact(n-1);
+    //recursion -> fact(n-1);
+    int recursionKaAns = getFactorial(n-1);
+    int finalAns = n * recursionKaAns;
+    return finalAns;
+    //processing - optional 
+}
+
+int main() {
+    cout << getSum(5)<<endl;
+    //cout << fib(9) << endl;
+    //cout << pow(10);
+    // printCounting(5);
+
+    // int n;
+    // cout << "Enter the value of n: " ;
+    // cin >> n;
+
+    // int ans = getFactorial(n);
+    // cout << "Factorial of " << n << " is: " << ans << endl;
+    return 0;
+}
+
+//------------------------------------------(Recursion class - 2)-------------------------------
+#include<iostream>
+#include<vector>
+using namespace std;
+
+// int max(int a, int b) {
+//     if(a > b) {
+//         return a;
+//     }
+//     else {
+//         return b;
+//     }
+// }
+
+void printAllEvens(int arr[],int n, int index) {
+    //base case
+    if(index == n) {
+        return;
+    }
+
+    //1 acse main
+    if( !(arr[index]&1) ) {
+        cout << arr[index] << " ";
+    }
+    //baaki recursion
+    printAllEvens(arr,n,index+1);
+}
+
+void printAllOdds(int arr[], int n, int index, vector<int> &ans) {
+    //base case
+    if(index == n) {
+        return;
+    }
+    //1 case main
+    if((arr[index])&1 ) {
+        ans.push_back(arr[index]);
+        //cout << arr[index] << ' ';
+    }
+    //baaki recursion karega
+    printAllOdds(arr,n,index+1,ans);
+}
+
+void minInArray(int arr[], int size,int index, int &mini) {
+    //base case
+    if(index == size) {
+        return;       
+    }
+    //1 case main 
+    mini = min(mini, arr[index]);
+    //baaki recursion
+    minInArray(arr,size,index+1, mini);
+}
+
+void maxInArray(int arr[], int size,int index, int &maxi) {
+    //base case
+    if(index == size) {
+        //entire array traverse kr chuka hu
+        return;
+    }
+    //recursive relation
+    //1 case mera
+    //processing
+    maxi = max( maxi, arr[index]);
+    //baaki recursion
+    maxInArray(arr,size, index+1, maxi);
+}
+
+bool searchInArray(int arr[], int size,int index, int target) {
+    //base case
+    //2 base case -> found / not found
+    //nopt found
+    if(index >= size) {
+        //invalid index -> out of bounds of array
+        return false;
+    }
+    //found -> 1 case
+    if(arr[index] == target) {
+        return true;
+    }
+    //recursive relation -> baaki cases
+    bool ans = searchInArray(arr,size,index+1, target);
+    return ans;
+}
+
+void printArray(int arr[], int size, int index) {
+    //base case
+    if(index == size) {
+        //array se bahar aagye ho
+        return ;
+    }
+    //recursive relation
+    //1 case main solve karunga
+    cout << arr[index] << " ";
+    //baaki recursion sambhal lega
+    printArray(arr, size, index+1);
+}
+
+// void printArray(int arr[], int size, int index) {
+//     //base case
+//     if(index == size) {
+//         return ;
+//     }
+//     cout << arr[index] << " ";
+//     printArray(arr, size, index+1);
+// }
+
+int main() {
+
+    int arr[] = {10,11,12,13,14,15,16};
+    int size = 7;
+    int index  = 0;
+    vector<int> ans;
+    printAllOdds(arr,size,index,ans);
+
+    //printing ans
+    for(auto num: ans) {
+        cout << num << " ";
+    }
+
+    // int arr[] = {10,20,30, 40, 50, 60};
+    // int size = 6;
+    // int index = 0;
+    // int mini = INT_MAX;
+    // minInArray(arr,size,index,mini);
+    // // int maxi = INT_MIN;
+    // // maxInArray(arr,size,index,maxi);
+    // cout << "Min no-> " << mini << endl;
+
+    // int target = 500;
+    // cout << searchInArray(arr,size,index,target) << endl;
+    // int index = 0;
+    // printArray(arr,size,index);
+    return 0;
+}
+
+//recursion class -2 (part - 2)
+#include <iostream>
+using namespace std;
+
+void printDigits(int n) {
+    //base case
+    if( n == 0) {
+        return ;
+    }
+    //baaki recursion krdega 
+    int newNumber = n / 10;
+    printDigits(newNumber);
+
+    //1 case main solve krdeta hu
+    int digit  = n % 10;
+    cout << digit << " ";
+    
+}
+
+int binarySearchRecursive(int arr[], int n, int s, int e, int target)
+{
+    if (s > e) { return -1; }
+    int mid = (s + e) / 2;
+    if (arr[mid] == target) { return mid;}
+    if (target > arr[mid])
+        return binarySearchRecursive(arr, n, mid + 1, e, target);
+    else
+        return binarySearchRecursive(arr, n, s, mid - 1, target);
+}
+
+// int binarySearchRecursive(int arr[], int n, int s, int e, int target)
+// {
+//     // base case
+//     if (s > e)
+//     {
+//         return -1;
+//     }
+
+//     int mid = (s + e) / 2;
+
+//     // 1 case main
+//     if (arr[mid] == target)
+//     {
+//         return mid;
+//     }
+//     // baakki recursion sambhal lega
+//     // arr[mid] agar target k equal nahi h
+//     //  iska matlab ya toh target bada h,
+//     // ya toh target chotta h
+//     if (target > arr[mid])
+//     {
+//         // right
+//         return binarySearchRecursive(arr, n, mid + 1, e, target);
+//     }
+//     else
+//     {
+//         // left
+//         return binarySearchRecursive(arr, n, s, mid - 1, target);
+//     }
+// }
+
+// // iterative - loop
+// int binarySearch(int arr[], int size, int target)
+// {
+//     int s = 0;
+//     int e = size - 1;
+//     int mid = (s + e) / 2;
+
+//     while (s <= e)
+//     {
+//         if (arr[mid] == target)
+//         {
+//             return mid;
+//         }
+//         if (target > arr[mid])
+//         {
+//             // right
+//             s = mid + 1;
+//         }
+//         else
+//         {
+//             // left
+//             e = mid - 1;
+//         }
+//         mid = (s + e) / 2;
+//     }
+//     return -1;
+// }
+
+int main()
+{   
+    int n = 21478;
+    printDigits(n);
+
+    // int arr[] = {10, 20, 30, 40, 50, 60, 70};
+    // int size = 7;
+
+    // int target = 60;
+    // int s = 0;
+    // int e = size - 1;
+    // int ans = binarySearchRecursive(arr, size, s, e, target);
+    // cout << "answer index: " << ans << endl;
+
+    return 0;
+}
 // ----------------------------------------------(linked list class -1) ---------------------------------------------
 #include <iostream>
 using namespace std;
