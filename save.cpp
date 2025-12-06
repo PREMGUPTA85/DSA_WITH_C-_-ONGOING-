@@ -1,24 +1,4 @@
-//1. WAP to print Namaste duniya 
-#include<iostream>
-using namespace std;
-int main () {
-    cout << "namaste duniya" << endl;
-    return 0;
-}
 
-// 2.wap to access the variable by declaring it 
-#include<iostream>
-using namespace std;
-int main () {
-    int age = 19;
-    cout << "Prem's age is: " << age << endl;
-    return 0;
-}
-
-// 3.wap to store values in all data types variables (int,bool,char,float,double)
-#include<iostream>
-using namespace std;
-int main () {
     int age = 12;
     float height = 8.4;
     double weight = 75.05;
@@ -9799,3 +9779,29 @@ void insertAtBottom(stack<int>& s, int value) {
   //baaki recursion
   insertAtBottom(s,value);
 
+  //backtrack
+  s.push(topElement);
+}
+
+int main() {
+  stack<int> s;
+  s.push(10);
+  s.push(20);
+  s.push(30);
+  s.push(40);
+  s.push(50);
+
+  int value = 13;
+
+  insertAtBottom(s,value);
+
+  //traverse
+  while(!s.empty()) {
+    cout << s.top() << " ";
+    s.pop();
+  }
+  cout << endl;
+
+
+  return 0;
+}
