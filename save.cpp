@@ -7884,17 +7884,15 @@ int main() {
 #include<iostream>
 using namespace std;
 
+// wap to print sum of first n natural numbers using recursion
 int getSum(int n) {
     //base case
-    if(n == 1) 
-        return 1;
-    //recursive relation
-    //sum(n) = sum(n-1) + n;
+    if(n == 1)  return 1;
     int ans = getSum(n-1) + n;
     return ans;
-    //processing
 }
 
+// wap to find nth fibonacci number using recursion
 int fib(int n) {
     if(n == 0 || n == 1) 
         return n;
@@ -7914,45 +7912,32 @@ int fib(int n) {
 //    //processing  
 // }
 
-
+// wap to calculate 2^n using recursion
 int pow(int n) {
     //base case
-    if( n == 0) {
-        return 1;
-    }
-    //recursive relation 
-    //pow(n) = 2 * pow(n-1);
+    if( n == 0)  return 1;
     int recKaAns = pow(n-1);
     int finalAns = 2 * recKaAns;
     return finalAns;
-    //processing 
 }
 
 // print counting from n to 1 
 void printCounting(int n) {
     //base case
-    if(n == 0) {
-        return;
-    } 
-    
-    //processing
+    if(n == 0) return;
     cout << n << " "; 
-    //recursive call 
     printCounting(n-1);
+    // cout << n << " "; // for printing 1 to n
 }
 
+// wap to calculate factorial of a number using recursion
 int getFactorial(int n) {
-    //base case - mandatory
     if(n == 0 || n == 1) {
         return 1;
     }
-    //recursive call - mandatory
-    //fact(n) = n * fact(n-1);
-    //recursion -> fact(n-1);
     int recursionKaAns = getFactorial(n-1);
     int finalAns = n * recursionKaAns;
     return finalAns;
-    //processing - optional 
 }
 
 int main() {
@@ -7975,51 +7960,34 @@ int main() {
 #include<vector>
 using namespace std;
 
-// int max(int a, int b) {
-//     if(a > b) {
-//         return a;
-//     }
-//     else {
-//         return b;
-//     }
-// }
+int max(int a, int b) {
+    if(a > b) { return a }
+    else  return b;
+}
 
+// wap to print all even numbers in an array using recursion
 void printAllEvens(int arr[],int n, int index) {
-    //base case
-    if(index == n) {
-        return;
-    }
-
-    //1 acse main
-    if( !(arr[index]&1) ) {
-        cout << arr[index] << " ";
-    }
-    //baaki recursion
+    if(index == n)   return;
+    if( !(arr[index]&1) ) cout << arr[index] << " ";
     printAllEvens(arr,n,index+1);
 }
 
-void printAllOdds(int arr[], int n, int index, vector<int> &ans) {
+// wap to print all odd numbers in an array using recursion
+void printAllOdds(int arr[],int n, int index, vector<int> &ans) {
     //base case
-    if(index == n) {
-        return;
-    }
-    //1 case main
-    if((arr[index])&1 ) {
+    if(index == n)   return;
+    //1 case
+    if(arr[index] & 1) {
         ans.push_back(arr[index]);
-        //cout << arr[index] << ' ';
     }
-    //baaki recursion karega
-    printAllOdds(arr,n,index+1,ans);
+    //baaki recursion
+    printAllOdds(arr,n,index+1, ans);
 }
 
+// wap to find min and max in an array using recursion
 void minInArray(int arr[], int size,int index, int &mini) {
-    //base case
-    if(index == size) {
-        return;       
-    }
-    //1 case main 
+    if(index == size) return;    
     mini = min(mini, arr[index]);
-    //baaki recursion
     minInArray(arr,size,index+1, mini);
 }
 
@@ -8037,33 +8005,18 @@ void maxInArray(int arr[], int size,int index, int &maxi) {
     maxInArray(arr,size, index+1, maxi);
 }
 
+// wap to search an element in an array using recursion 
 bool searchInArray(int arr[], int size,int index, int target) {
-    //base case
-    //2 base case -> found / not found
-    //nopt found
-    if(index >= size) {
-        //invalid index -> out of bounds of array
-        return false;
-    }
-    //found -> 1 case
-    if(arr[index] == target) {
-        return true;
-    }
-    //recursive relation -> baaki cases
+    if(index >= size)  return false;
+    if(arr[index] == target)  return true;
     bool ans = searchInArray(arr,size,index+1, target);
     return ans;
 }
 
+// wap to print an array using recursion
 void printArray(int arr[], int size, int index) {
-    //base case
-    if(index == size) {
-        //array se bahar aagye ho
-        return ;
-    }
-    //recursive relation
-    //1 case main solve karunga
+    if(index == size)  return ;
     cout << arr[index] << " ";
-    //baaki recursion sambhal lega
     printArray(arr, size, index+1);
 }
 
@@ -8105,94 +8058,29 @@ int main() {
     return 0;
 }
 
-//recursion class -2 (part - 2)
+//---------------------(recursion class -2 -----------------------------------
 #include <iostream>
 using namespace std;
 
+// wap to print digits of a number using recursion
 void printDigits(int n) {
-    //base case
-    if( n == 0) {
-        return ;
-    }
-    //baaki recursion krdega 
+    if( n == 0)   return ;
     int newNumber = n / 10;
     printDigits(newNumber);
-
-    //1 case main solve krdeta hu
     int digit  = n % 10;
     cout << digit << " ";
-    
 }
 
+// wap to perform binary search using recursion
 int binarySearchRecursive(int arr[], int n, int s, int e, int target)
 {
     if (s > e) { return -1; }
     int mid = (s + e) / 2;
     if (arr[mid] == target) { return mid;}
-    if (target > arr[mid])
-        return binarySearchRecursive(arr, n, mid + 1, e, target);
-    else
-        return binarySearchRecursive(arr, n, s, mid - 1, target);
+    if (target > arr[mid]) return binarySearchRecursive(arr, n, mid + 1, e, target);
+    else return binarySearchRecursive(arr, n, s, mid - 1, target);
 }
 
-// int binarySearchRecursive(int arr[], int n, int s, int e, int target)
-// {
-//     // base case
-//     if (s > e)
-//     {
-//         return -1;
-//     }
-
-//     int mid = (s + e) / 2;
-
-//     // 1 case main
-//     if (arr[mid] == target)
-//     {
-//         return mid;
-//     }
-//     // baakki recursion sambhal lega
-//     // arr[mid] agar target k equal nahi h
-//     //  iska matlab ya toh target bada h,
-//     // ya toh target chotta h
-//     if (target > arr[mid])
-//     {
-//         // right
-//         return binarySearchRecursive(arr, n, mid + 1, e, target);
-//     }
-//     else
-//     {
-//         // left
-//         return binarySearchRecursive(arr, n, s, mid - 1, target);
-//     }
-// }
-
-// // iterative - loop
-// int binarySearch(int arr[], int size, int target)
-// {
-//     int s = 0;
-//     int e = size - 1;
-//     int mid = (s + e) / 2;
-
-//     while (s <= e)
-//     {
-//         if (arr[mid] == target)
-//         {
-//             return mid;
-//         }
-//         if (target > arr[mid])
-//         {
-//             // right
-//             s = mid + 1;
-//         }
-//         else
-//         {
-//             // left
-//             e = mid - 1;
-//         }
-//         mid = (s + e) / 2;
-//     }
-//     return -1;
-// }
 
 int main()
 {   
@@ -9911,29 +9799,3 @@ void insertAtBottom(stack<int>& s, int value) {
   //baaki recursion
   insertAtBottom(s,value);
 
-  //backtrack
-  s.push(topElement);
-}
-
-int main() {
-  stack<int> s;
-  s.push(10);
-  s.push(20);
-  s.push(30);
-  s.push(40);
-  s.push(50);
-
-  int value = 13;
-
-  insertAtBottom(s,value);
-
-  //traverse
-  while(!s.empty()) {
-    cout << s.top() << " ";
-    s.pop();
-  }
-  cout << endl;
-
-
-  return 0;
-}
