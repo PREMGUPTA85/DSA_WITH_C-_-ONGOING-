@@ -1,4 +1,5 @@
 
+    return 0;
 }
 
 // 2.wap to access the variable by declaring it 
