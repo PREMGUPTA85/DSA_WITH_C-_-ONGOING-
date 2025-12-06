@@ -1,4 +1,7 @@
-variable by declaring it 
+
+}
+
+// 2.wap to access the variable by declaring it 
 #include<iostream>
 using namespace std;
 int main () {
