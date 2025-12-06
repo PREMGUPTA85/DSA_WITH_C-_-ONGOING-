@@ -1,31 +1,4 @@
-//1. WAP to print Namaste duniya 
-#include<iostream>
-using namespace std;
-int main () {
-    cout << "namaste duniya" << endl;
-    return 0;
-}
 
-// 2.wap to access the variable by declaring it 
-#include<iostream>
-using namespace std;
-int main () {
-    int age = 19;
-    cout << "Prem's age is: " << age << endl;
-    return 0;
-}
-
-// 3.wap to store values in all data types variables (int,bool,char,float,double)
-#include<iostream>
-using namespace std;
-int main () {
-    int age = 12;
-    float height = 8.4;
-    double weight = 75.05;
-    char alphabet = 'A';
-    bool ismale = true;
-    bool isboy = 1;
-    bool isfemale = false;
     bool isgirl = 0;
     cout << age << endl;
     cout << height << endl;
