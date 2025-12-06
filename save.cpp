@@ -7,6 +7,7 @@ int main () {
 }
 
 // 2.wap to access the variable by declaring it 
+#include<iostream>
 using namespace std;
 int main () {
     int age = 19;
@@ -8114,57 +8115,35 @@ class Node{
 };
 //returns head of the new LLL after insertion
 Node* insertAtHead(int value, Node* &head, Node* &tail) {
-  //LL is empty -> head and tail both nULL ko point krre honge
-  //it means we are creating first node of LL
   if(head == NULL && tail == NULL ) {
-    //step1: create a new node
     Node* newNode = new Node(value);
-    //step2: head ko node pr lagado
     head = newNode;
-    //step3: tail ko newNOde pr lagado 
     tail = newNode;
   }
   else {
-    //LL is not empty
-    //pehle se node present hai 
-    //insert at head
-    //step1: create node
     Node* newNode = new Node(value);
-    //step2: connect this newNOde to head node
     newNode->next = head;
-    //step3: head update krdo 
     head = newNode;
-    
   }
   return head;
-
-
 }
+
 //return head of the updated list 
 void insertAtTail(int value, Node* &head, Node* &tail) {
   if(head == NULL && tail == NULL) {
-    //LL is empty
-    //iska mtlb abhi tum first node create krne jaa rhe ho LL ki
-    //steps: create node, head on that node, tail on that node
     Node* newNode = new Node(value);
     head = newNode;
     tail = newNode;
   }
   else {
-    //LL is not empty
-    //step1: create node
     Node* newNode = new Node(value);
-    //step2: tail node ko new node se connect karo 
     tail->next  = newNode;
-    //step3: tail update
     tail = newNode;
   }
-
 }
 
 void print(Node* head) {
   Node* temp = head;
-  //jab tak merea temp NULL k equal nahi h, tab tak node print krte raho
   while(temp != NULL) {
     cout << temp -> data << "->";
     temp = temp-> next;
@@ -8175,27 +8154,17 @@ void print(Node* head) {
 int getLength(Node* head) {
   int len = 0;
   Node* temp = head;
-
   while(temp != NULL) {
     temp = temp->next;
-    len++;
-  }
+    len++;  }
   return len;
 }
 
 void insertAtPosition(int position,int value, Node* &head, Node* &tail ){
-  //assume -> valid positions input
   int length = getLength(head);
-  if(position == 1) {
-    //insert at ahead krna chahta hu 
-    head = insertAtHead(value, head, tail);
-  }
-  else if(position == length + 1) {
-    //insert at tail krna chahta hu 
-    insertAtTail(value, head, tail);
-  }
+  if(position == 1) head = insertAtHead(value, head, tail);
+  else if(position == length + 1)  insertAtTail(value, head, tail);
   else {
-    //insert in between kahin krna chahta hu 
     Node* temp = head;
     for(int i=0; i<position-2; i++) {
       temp = temp -> next;
@@ -8216,30 +8185,21 @@ bool searchLL(int target, Node* head) {
     }
     temp = temp->next;
   }
-  //agar yaha tak main pohoch gya
-  //iska matlab, poori LL traverse ho chuki h,/
-  //and kahin pr bhi target nahi mila
-  //iska mtlab return false krdo 
   return false;
 }
 
 void deleteNodeFromLL(int position, Node* &head, Node* &tail) {
-  //if LL is empty, then we cannot delete
   if(head == NULL && tail == NULL) {
     cout << "No node to delete" << endl;
     return;
   }
-  //single node in LL
   if(head == tail) {
     Node* temp = head;
     head = NULL;
     tail = NULL;
     delete temp;
   }
-  else {
-    //multiple nodes inside LL
-    //2 case 
-    //first case -> pos = 1 delete krna chahte h 
+  else { 
     if(position == 1) {
       Node* temp = head;
       head = temp->next;
@@ -8346,7 +8306,6 @@ Node* reverse(Node* head) {
     Node* prev = NULL;
     Node* curr = head;
     Node* next;
-
     while (curr != NULL) {
         next = curr->next; // Store next node
         curr->next = prev; // Reverse current node's pointer
@@ -8363,14 +8322,13 @@ bool isloop(Node* head) {
     while (fast != NULL && fast->next != NULL) {
         slow = slow->next;          // Move slow by one
         fast = fast->next->next;    // Move fast by two
-
         if (slow == fast) {
             return true; // Loop detected
         }
     }
     return false; // No loop
 }
----------------------------------------------------------(linked list class - 2)-----------------------------------------------
+//---------------------------------------------------------(linked list class-2)-----------------------------------------------
 #include <iostream>
 using namespace std;
 
@@ -8388,16 +8346,12 @@ class Node{
 };
 
 void insertAtHead(int value, Node* &head, Node* &tail) {
-  //2 cases -> LL is empty / non-empty
-  //empty wala case
   if(head == NULL && tail == NULL) {
-    //iska mtlb, main firstb node create krne wala hu 
     Node* newNode = new Node(value);
     head = newNode;
     tail= newNode;
   }
   else {
-    //LL is not empty
     Node* newNode = new Node(value);
     newNode->next = head;
     head -> prev = newNode;
@@ -8424,25 +8378,15 @@ void printReverse(Node* tail) {
 }
 
 void insertAtTail(int value, Node* &head, Node* &tail ){
-  //2 case -> LL is empty or non-empty;
   if(head == NULL && tail == NULL) {
-    //LL is empty
-    //Step1: create a new node
     Node* newNode = new Node(value);
-    //step2: head update
     head = newNode;
-    //step3: tail update
     tail = newNode;
   }
   else {
-    //LL is non-empty
-    //step1: create a new node
     Node* newNode = new Node(value);
-    //step3: connect newNode with tail node
     newNode->prev = tail;
-    //step2: connect tail node with newNode
     tail->next = newNode;
-    //step4: tail update
     tail = newNode;
   }
 }
@@ -8458,25 +8402,14 @@ int getLength(Node* &head) {
 }
 
 void insertAtPosition(int position,int value, Node* &head, Node* &tail) {
-  //3 cases -> leftmost end, rightmost end, middle me insert krna chahte ho
   int len = getLength(head);
-  if(position == 1) {
-    //insert leftmost me krna chahte h 
-    insertAtHead(value, head,tail);
-  }
-  else if(position == len+1) {
-    //rightmost end pr insert krna chahta hu
-    //tail pr insert krna chahta hu
-    insertAtTail(value, head, tail);
-  }
+  if(position == 1)   insertAtHead(value, head,tail);
+  else if(position == len+1)  insertAtTail(value, head, tail);
   else {
-    //middle me kisi poistion pr insert krna chahta hu 
     Node* temp = head;
-    //fer main temp ko position-2 steps aage badhaya 
     for(int i=0; i<position-2; i++) {
       temp = temp ->next;
     }
-    //create node
     Node* newNode = new Node(value);
     //forward pointer set
     Node* forward = temp->next;
@@ -8498,8 +8431,6 @@ bool searchElement(Node* head, int target) {
     }
     temp = temp -> next;
   }
-  //agar yaha tk pahuch gye, iska mtlb
- // LL poori travel krli h and target nahi mila
   return false;
 }
 
@@ -8511,14 +8442,12 @@ void deleteFromPosition(int position, Node* &head, Node* &tail) {
     return;
   }
   else if(head == tail) {
-    //single node to delete
     Node* temp = head;
     head = NULL;
     tail = NULL;
     delete temp;
   }
   else if(position == 1) {
-    //we want to delete head node
     Node* temp = head;
     head = head->next;
     head->prev = NULL;
@@ -8526,7 +8455,6 @@ void deleteFromPosition(int position, Node* &head, Node* &tail) {
     delete temp;
   }
   else if(length == position) {
-    //we want to delete the tail node
     Node* temp = tail;
     tail = temp->prev;
     tail->next = NULL;
@@ -8534,23 +8462,17 @@ void deleteFromPosition(int position, Node* &head, Node* &tail) {
     delete temp;
   }
   else {
-    //we want to delete any other node than head and tail node
     Node* backward = head;
     for(int i=0; i<position-2; i++) {
       backward = backward -> next;
     }
     Node* curr = backward->next;
     Node* forward = curr->next;
-
-    //pointers change
     backward->next = forward;
     forward->prev = backward;
-    //curr ko isolate karna h 
     curr->prev = NULL;
     curr->next = NULL;
-    //curr isolate ho chuka h 
     delete curr;
-
   }
 }
 
@@ -8583,7 +8505,7 @@ int main() {
   return 0;
 }
 
----------------------------------------------------(linked list - 3)---------------------------------------------------------------
+//---------------------------------------------------(linked list - 3)-------------------------------------------------------------
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -8674,107 +8596,28 @@ public:
         }
         return prev;
     }
-    bool isPalindrome(ListNode* head) {
-        if(head == NULL) {
-            //LL is empty
-            return true;
+bool isPalindrome(ListNode* head){
+    if(head==NULL){return true;}
+    if(head->next==NULL){return true;}
+    ListNode* firstHalfHead=head;
+    ListNode* middleNodeKaPrev=NULL;
+    ListNode* middleNode=getMiddle(head,middleNodeKaPrev);
+    middleNodeKaPrev->next=NULL;
+    ListNode* prev=NULL;
+    ListNode* curr=middleNode;
+    ListNode* secondHalfHead=reverseList(prev,curr);
+    ListNode* temphead1=firstHalfHead;
+    ListNode* temphead2=secondHalfHead;
+    while(temphead1!=NULL){
+        if(temphead1->val!=temphead2->val){return false;}
+        else{
+            temphead1=temphead1->next;
+            temphead2=temphead2->next;
         }
-        if(head->next == NULL ) {
-            //single node
-            return true;
-        }
-
-        //travel till middle node and break the LL in 2 halves
-        ListNode* firstHalfHead = head;
-        ListNode* middleNodeKaPrev = NULL;
-        ListNode* middleNode = getMiddle(head, middleNodeKaPrev); 
-        //break
-        middleNodeKaPrev -> next = NULL;
-
-        //reverse the second half
-        ListNode* prev = NULL;
-        ListNode* curr = middleNode;
-        ListNode* secondHalfHead = reverseList(prev, curr);
-
-        //compare both the halves and decide T/F
-        //even len wale case me dono part ki length equal hogi
-        //odd wale case , second half ki length badi hogi by 1 
-        //that's why main comparison hamesha first half ki length k hisaab se karunga 
-        ListNode* temphead1 = firstHalfHead;
-        ListNode* temphead2 = secondHalfHead;
-        while(temphead1 != NULL) {
-            if(temphead1 ->val != temphead2 ->val) {
-                //not a palindrome
-                return false;
-            }
-            else {
-                //data equal hai, toh let's move to aage wali nodes
-                temphead1 = temphead1 -> next;
-                temphead2 = temphead2 -> next;
-            }
-        }
-        //agar main yaha tk pohoch gya
-        //iska mtlab kahin por bhi 
-        //data mismatch nahi hua
-        //palindrome haib 
-        return true;
     }
-};
+    return true;
+}
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-class Solution {
-public:
-    // ListNode* reverseList(ListNode* &prev, ListNode* &curr) {
-    //     //base case
-    //     if(curr == NULL) {
-    //         //iska mtlb LL reverse ho chuki h
-    //         //reversed LL k  starting node pr prev wala pointer hai
-    //         return prev;
-    //     }
-    //     //1 case hum solve karenge 
-    //     ListNode* forward = curr->next;
-    //     //current node ko piche ki disha me point karwaya 
-    //     curr->next = prev;
-    //     //pointers ko 1 step aage badhaya and recursion ko pakkda dia aage solve krne k liye 
-    //     prev = curr;
-    //     curr = forward;
-    //     //baaki recursion sambhal lega
-    //     return reverseList(prev, curr);
-    // }
-    ListNode* reverseList(ListNode* head) {
-
-        //iterative approach
-        ListNode* prev = NULL;
-        ListNode* curr = head;
-
-        while(curr != NULL) {
-            ListNode* forward = curr->next;
-            //forward pointer set hogya, ab aage ki list lost nhi hogi 
-            curr->next = prev;
-            prev = curr;
-            curr = forward;
-        }
-
-        //newHead of linkedlist ko hoga -> prev pointer
-        return prev;
-
-
-        // ListNode* prev = NULL;
-        // ListNode* curr = head;
-
-        // ListNode* newHead = reverseList(prev, curr);
-        // return newHead;
-    }
-};
 
 //{ Driver Code Starts
 //Initial template for C++
@@ -8802,101 +8645,78 @@ void printList(Node* node)
     cout<<"\n";
 } 
 
+//Given a number represented as a linked list, add 1 to the number and return the updated linked list.
+#include <bits/stdc++.h>
+using namespace std;
 
-// } Driver Code Ends
-//User function template for C++
-
-/* 
-
-struct Node
-{
-    int data;
-    struct Node* next;
-    
-    Node(int x){
-        data = x;
-        next = NULL;
-    }
+struct Node{
+int data;
+Node* next;
+Node(int x){data=x;next=NULL;}
 };
 
-*/
+void printList(Node* node){
+while(node!=NULL){
+cout<<node->data%10;
+node=node->next;
+}
+cout<<"\n";
+}
 
-class Solution
-{
-    public:
-    Node* reverseList(Node* &head) {
-        Node* prev = NULL;
-        Node* curr = head;
-        while(curr != NULL) {
-            Node* forward = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = forward;
-        }
-        return prev;
+class Solution{
+public:
+Node* reverseList(Node* &head){
+    Node* prev=NULL;
+    Node* curr=head;
+    while(curr!=NULL){
+        Node* forward=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=forward;
     }
-    Node* addOne(Node *head) 
-    {
-        //step1: reverse list;
-        head = reverseList(head);
-        //step2: add one
-        //mujhe plus one karna h, toh main carry ko hi 1 maaanleta hu
-        int carry = 1;
-        Node* temp = head;
-        
-        while(temp != NULL) {
-            int sum = carry + temp->data;
-            //current node me 1 hi digit store hoga, double digit nahi ho skta 
-            int digit = sum % 10;
-            carry = sum / 10;
-            
-            temp -> data = digit;
-            //move to next node
-            //special case, jo last node k liye hoga
-            if(temp -> next == NULL && carry != 0) {
-                Node* newNode = new Node(carry);
-                newNode->next = NULL;
-                
-                temp->next = newNode;
-                temp = newNode;
-            }
-            //traverse krre h, toh aage toh badhna hi h 
-            temp = temp -> next;
+    return prev;
+}
+Node* addOne(Node *head){
+    head=reverseList(head);
+    int carry=1;
+    Node* temp=head;
+    while(temp!=NULL){
+        int sum=carry+temp->data;
+        int digit=sum%10;
+        carry=sum/10;
+        temp->data=digit;
+        if(temp->next==NULL&&carry!=0){
+            Node* newNode=new Node(carry);
+            newNode->next=NULL;
+            temp->next=newNode;
+            temp=newNode;
         }
-
-        
-        //step3: reverseList;
-        head = reverseList(head);
-        
-        return head;
-        
+        temp=temp->next;
     }
+    head=reverseList(head);
+    return head;
+}
 };
 
-//{ Driver Code Starts.
-
-int main() 
-{ 
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        string s;
-        cin>>s;
-        
-        Node* head = new Node( s[0]-'0' );
-        Node* tail = head;
-        for(int i=1; i<s.size(); i++)
-        {
-            tail->next = new Node( s[i]-'0' );
-            tail = tail->next;
-        }
-        Solution ob;
-        head = ob.addOne(head);
-        printList(head); 
+int main(){
+int t;
+cin>>t;
+while(t--){
+    string s;
+    cin>>s;
+    Node* head=new Node(s[0]-'0');
+    Node* tail=head;
+    for(int i=1;i<s.size();i++){
+        tail->next=new Node(s[i]-'0');
+        tail=tail->next;
     }
-    return 0; 
-} 
+    Solution ob;
+    head=ob.addOne(head);
+    printList(head);
+}
+return 0;
+}
+
 
 // } Driver Code Ends
 
@@ -8909,52 +8729,68 @@ int main()
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+// Detect whether a singly linked list contains a cycle (loop) or not.
 class Solution {
 public:
-    bool hasCycle(ListNode *head) {
-        ListNode* slow = head;
-        ListNode* fast = head;
-
-        while(fast != NULL) {
-            fast = fast -> next;
-            if(fast != NULL) {
-                fast = fast -> next;
-                slow = slow -> next;
-                if(fast == slow) {
-                    //cycle present
-                    return true;
-                }
-            }
-            
+   bool hasCycle(ListNode *head){
+    ListNode* slow = head;
+    ListNode* fast = head;
+    while(fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+            slow = slow->next;
+            if(fast == slow){ return true; }
         }
-        //loop se bahar, cycle absent
-        return false;
-
-
-
-        // unordered_map<ListNode* ,bool> m;
-        // ListNode* temp = head;
-        
-        // while(temp != NULL) {
-        //     if(m[temp] == true) {
-        //         ////pehlse hi true h
-        //         //cycle present
-        //         return true;
-        //     }
-        //     else {
-        //         //pehle se true nahi h, yaani false;
-        //         //toh main visit krra hu ise
-        //         m[temp] = true;
-        //     }
-        //     temp = temp -> next;
-        // }
-        // //agar yaha tk pohoch gye ho, iska mtlb loop se bahar aagye ho
-        // //iska mtlb link list poori traverse hogyi
-        // //and end me NULL milgya
-        // //no cycle present
-        // return false;
-
     }
+    return false;
+}
+ // or
+bool hasCycle(ListNode *head){
+    unordered_map<ListNode*,bool> m;
+    ListNode* temp = head;
+    while(temp != NULL){
+        if(m[temp] == true){ return true; }
+        else { m[temp] = true; }
+        temp = temp->next;
+    }
+    return false;
+}
+}
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+// Remove duplicates from a sorted singly linked list.
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head){
+    if(head == NULL){ return head; }
+    if(head->next == NULL){ return head; }
+
+    ListNode* prev = head;
+    ListNode* temp = head->next;
+
+    while(temp != NULL){
+        if(temp->val == prev->val){
+            prev->next = temp->next;
+            temp->next = NULL;
+            delete temp;
+        }else{
+            prev = prev->next;
+            temp = temp->next;
+        }
+        temp = prev->next;
+    }
+    return head;
+}
 };
 
 /**
@@ -8967,55 +8803,7 @@ public:
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
-public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        
-        // 1case -> LL is empty
-        if(head == NULL) {
-            return head;
-        }
-        //2 case -> LL -> single node 
-        if(head -> next == NULL) {
-            return head;
-        }
-        //3 case >1 node 
-        // atleast 2 node toh pkka hogi 
-        ListNode* prev = head;
-        ListNode* temp = head->next;
-
-        while(temp != NULL) {
-            
-            //duplicate check karo 
-            if(temp->val == prev->val) {
-                //duplicate found
-                prev->next = temp->next;
-                temp->next = NULL;
-                delete temp;
-            }
-            else {
-                //duplicate not found
-                prev = prev->next;
-                temp = temp->next;
-            }
-            //temp ko set kardo
-            temp = prev->next;
-        } 
-        return head;
-
-    }
-};
-
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
+// Reverse a singly linked list in groups of size k.
 class Solution {
 public:
     int getLength(ListNode* head) {
@@ -9072,176 +8860,106 @@ public:
     }
 };
 
-//{ Driver Code Starts
+// Sort a linked list that contains only 0, 1, and 2.
 #include <bits/stdc++.h>
-
 using namespace std;
-/* Link list Node */
-struct Node {
+
+struct Node{
     int data;
-    struct Node *next;
-    Node(int x) {
-        data = x;
-        next = NULL;
-    }
+    Node* next;
+    Node(int x){ data=x; next=NULL; }
 };
 
-struct Node *start = NULL;
+Node* start=NULL;
 
-
-// } Driver Code Ends
-/*
- 
-  Node is defined as
-  struct Node {
-    int data;
-    struct Node *next;
-    Node(int x) {
-        data = x;
-        next = NULL;
-    }
-};
-
-*/
-class Solution
-{
-    public:
-    void print(Node* head) {
-        Node* temp = head;
-        while(temp != NULL) {
-            cout << temp->data << "->";
-            temp = temp -> next;
+class Solution{
+public:
+    void insertAtTail(Node* &toMove,Node* &head,Node* &tail){
+        if(head==NULL&&tail==NULL){
+            head=toMove;
+            tail=toMove;
+        }else{
+            tail->next=toMove;
+            tail=toMove;
         }
-        cout << "NULL" << endl;
     }
-    void insertAtTail(Node* &toMove, Node* &head, Node* &tail) {
-       //LL is empty
-       if(head == NULL && tail == NULL) {
-           head = toMove;
-           tail = toMove;
-       }
-       else {
-           tail->next = toMove;
-           tail = toMove;
-       }
-    }
-    //Function to sort a linked list of 0s, 1s and 2s.
-    Node* segregate(Node *head) {
-        
-        Node* zeroHead = NULL;
-        Node* zeroTail = NULL;
-        
-        Node* oneHead = NULL;
-        Node* oneTail = NULL;
-        
-        Node* twoHead = NULL;
-        Node* twoTail = NULL;
-        
-        // LL pr traverse larenge and ye 3 LL ready krenge separate
-        Node* temp = head;
-        while(temp != NULL) {
-            
-            //create toMove node and isolate it
-            Node* toMove = temp;
-            temp = temp -> next;
-            toMove->next = NULL;
-            
-            if(toMove->data == 0) {
-                insertAtTail(toMove, zeroHead, zeroTail);
+
+    Node* segregate(Node *head){
+        Node* zeroHead=NULL;Node* zeroTail=NULL;
+        Node* oneHead=NULL;Node* oneTail=NULL;
+        Node* twoHead=NULL;Node* twoTail=NULL;
+
+        Node* temp=head;
+        while(temp!=NULL){
+            Node* toMove=temp;
+            temp=temp->next;
+            toMove->next=NULL;
+
+            if(toMove->data==0){
+                insertAtTail(toMove,zeroHead,zeroTail);
+            }else if(toMove->data==1){
+                insertAtTail(toMove,oneHead,oneTail);
+            }else{
+                insertAtTail(toMove,twoHead,twoTail);
             }
-            else if(toMove->data == 1) {
-                insertAtTail(toMove, oneHead, oneTail);
-            }
-            else if(toMove->data == 2) {
-                insertAtTail(toMove, twoHead, twoTail);
-            }
-            
         }
 
-        //yaha jab pohoche, toh teeno LL ready h 
-        //merge them 
-        //empty wali possibility bhulna mat
-        if(zeroHead != NULL) {
-            //zero list is non-empty
-            if(oneHead != NULL) {
-                //one list is non-empty
-                zeroTail->next = oneHead;
-                //merge with 2 wali list
-                oneTail->next = twoHead;
-            }
-            else {
-                //one list is empty
-                zeroTail->next = twoHead;
+        if(zeroHead!=NULL){
+            if(oneHead!=NULL){
+                zeroTail->next=oneHead;
+                oneTail->next=twoHead;
+            }else{
+                zeroTail->next=twoHead;
             }
             return zeroHead;
-        }
-        else {
-            //zero List is empty
-            if(oneHead != NULL) {
-                oneTail->next = twoHead;
+        }else{
+            if(oneHead!=NULL){
+                oneTail->next=twoHead;
                 return oneHead;
-            }
-            else {
+            }else{
                 return twoHead;
             }
         }
     }
 };
 
-
-//{ Driver Code Starts.
-
-// Function to sort a linked list of 0s, 1s and 2s
-void printList(struct Node *Node) {
-    while (Node != NULL) {
-        printf("%d ", Node->data);
-        Node = Node->next;
+void printList(Node *Node){
+    while(Node!=NULL){
+        printf("%d ",Node->data);
+        Node=Node->next;
     }
     printf("\n");
 }
 
-/* Drier program to test above function*/
-void insert(int n1) {
-    int n, value, i;
-    // scanf("%d",&n);
-    n = n1;
-    struct Node *temp;
-    for (i = 0; i < n; i++) {
-        scanf("%d", &value);
-
-        if (i == 0) {
-            start = new Node(value);
-            temp = start;
-            continue;
-        } else {
-            temp->next = new Node(value);
-            temp = temp->next;
-            temp->next = NULL;
+void insert(int n){
+    int value;
+    Node* temp;
+    for(int i=0;i<n;i++){
+        scanf("%d",&value);
+        if(i==0){
+            start=new Node(value);
+            temp=start;
+        }else{
+            temp->next=new Node(value);
+            temp=temp->next;
         }
     }
 }
 
-int main() {
-
-    int n;
-
-    int t;
-    scanf("%d", &t);
-
-    while (t--) {
-        scanf("%d", &n);
-
+int main(){
+    int t,n;
+    scanf("%d",&t);
+    while(t--){
+        scanf("%d",&n);
         insert(n);
         Solution ob;
-        struct Node *newHead = ob.segregate(start);
+        Node* newHead=ob.segregate(start);
         printList(newHead);
     }
-
     return 0;
 }
-// } Driver Code Ends
 
-//----------------------------------------------(mega class ll)------------------------------------------------------------------
+//----------------------------------------------(mega class ll)--------------------------------------------------------
 #include <iostream>
 using namespace std;
 
@@ -9259,23 +8977,19 @@ public:
     }
 };
 
-void print(Node *head)
-{
+void print(Node *head){
     Node *temp = head;
-    // jab tak merea temp NULL k equal nahi h, tab tak node print krte raho
-    while (temp != NULL)
-    {
+    while (temp != NULL) {
         cout << temp->data << "->";
         temp = temp->next;
     }
     cout << "NULL" << endl;
 }
 
-void solve(Node *head, int &carry)
-{
+void solve(Node *head, int &carry){
     if (!head)
         return;
-    solve(head->next, carry); 0->0 ->0-> x
+    solve(head->next, carry); 
 
     // 1 case
     int sum = head->data + carry;
@@ -9321,53 +9035,43 @@ int main()
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution
-{
+class Solution{
 public:
-    ListNode *iterative(ListNode *l1, ListNode *l2)
-    {
-        ListNode *ans = new ListNode(-1);
-        ListNode *it = ans;
-
-        int carry = 0;
-        while (l1 || l2 || carry)
-        {
-            int a = l1 ? l1->val : 0;
-            int b = l2 ? l2->val : 0;
-            int sum = a + b + carry;
-            int digit = sum % 10;
-            carry = sum / 10;
-            it->next = new ListNode(digit);
-            it = it->next;
-            l1 = l1 ? l1->next : nullptr;
-            l2 = l2 ? l2->next : nullptr;
+    ListNode* iterative(ListNode *l1,ListNode *l2){
+        ListNode* ans=new ListNode(-1);
+        ListNode* it=ans;
+        int carry=0;
+        while(l1||l2||carry){
+            int a=l1?l1->val:0;
+            int b=l2?l2->val:0;
+            int sum=a+b+carry;
+            int digit=sum%10;
+            carry=sum/10;
+            it->next=new ListNode(digit);
+            it=it->next;
+            l1=l1?l1->next:nullptr;
+            l2=l2?l2->next:nullptr;
         }
-        ListNode *finalAns = ans->next;
+        ListNode* finalAns=ans->next;
         delete ans;
         return finalAns;
     }
 
-    ListNode *recursive(ListNode *l1, ListNode *l2, int carry = 0)
-    {
-        if (!l1 && !l2 && !carry)
-            return 0;
-
-        int a = l1 ? l1->val : 0;
-        int b = l2 ? l2->val : 0;
-        int sum = a + b + carry;
-        int digit = sum % 10;
-        carry = sum / 10;
-
-        // build the ans LL
-        ListNode *ans = new ListNode(digit);
-        ans->next = recursive(l1 ? l1->next : l1, l2 ? l2->next : l2, carry);
+    ListNode* recursive(ListNode *l1,ListNode *l2,int carry=0){
+        if(!l1&&!l2&&!carry)return 0;
+        int a=l1?l1->val:0;
+        int b=l2?l2->val:0;
+        int sum=a+b+carry;
+        int digit=sum%10;
+        carry=sum/10;
+        ListNode* ans=new ListNode(digit);
+        ans->next=recursive(l1?l1->next:l1,l2?l2->next:l2,carry);
         return ans;
     }
 
-    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
-    {
-        // return iterative(l1, l2);
-        return recursive(l1, l2);
+    ListNode* addTwoNumbers(ListNode *l1,ListNode *l2){
+        // return iterative(l1,l2);
+        return recursive(l1,l2);
     }
 };
 
@@ -9379,23 +9083,17 @@ public:
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution
-{
+class Solution{
 public:
-    ListNode *hasCycle(ListNode *head)
-    {
-        ListNode *slow = head;
-        ListNode *fast = head;
-
-        while (fast != NULL)
-        {
-            fast = fast->next;
-            if (fast != NULL)
-            {
-                fast = fast->next;
-                slow = slow->next;
-                if (fast == slow)
-                {
+    ListNode* hasCycle(ListNode *head){
+        ListNode *slow=head;
+        ListNode *fast=head;
+        while(fast!=NULL){
+            fast=fast->next;
+            if(fast!=NULL){
+                fast=fast->next;
+                slow=slow->next;
+                if(fast==slow){
                     return fast;
                 }
             }
@@ -9403,31 +9101,21 @@ public:
         return nullptr;
     }
 
-    ListNode *detectCycle(ListNode *head)
-    {
-        // step 1: check if loop is there or not
-        ListNode *fast = hasCycle(head);
-        if (!fast)
-            return nullptr;
-
-        // fast is non-null means, cycle is there.
-        // let's find starting point of cycle
-        ListNode *slow = head;
-        // now move slow & fast ptr with 1x speed, and
-        // return where they meet.
-
-        ListNode *prev = 0;
-
-        while (slow != fast)
-        {
-            slow = slow->next;
-            prev = fast;
-            fast = fast->next;
+    ListNode* detectCycle(ListNode *head){
+        ListNode *fast=hasCycle(head);
+        if(!fast)return nullptr;
+        ListNode *slow=head;
+        ListNode *prev=0;
+        while(slow!=fast){
+            slow=slow->next;
+            prev=fast;
+            fast=fast->next;
         }
-        prev->next = nullptr; // loop removing
-        return slow;          // Starting point
+        prev->next=nullptr;
+        return slow;
     }
 };
+
 
 /**
  * Definition for singly-linked list.
@@ -9439,40 +9127,31 @@ public:
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution
-{
+class Solution{
 public:
-    vector<ListNode *> splitListToParts(ListNode *head, int k)
-    {
-        int N = 0;
-        auto it = head;
-        while (it)
-        {
+    vector<ListNode*> splitListToParts(ListNode* head,int k){
+        int N=0;
+        auto it=head;
+        while(it){
             N++;
-            it = it->next;
+            it=it->next;
         }
-
-        // determine size of each part/bucket
-        int partSize = N / k;
-        int extraNodes = N % k; // divide bucket by bucket
-
-        vector<ListNode *> ans(k, nullptr);
-        it = head;
-
-        for (int i = 0; i < k && it; i++)
-        {
-            ans[i] = it;
-            int currentPartSize = partSize + (extraNodes-- > 0 ? 1 : 0);
-            for (int j = 0; j < currentPartSize - 1; j++)
-                it = it->next;
-
-            auto nextPartStarting = it->next;
-            it->next = nullptr;
-            it = nextPartStarting;
+        int partSize=N/k;
+        int extraNodes=N%k;
+        vector<ListNode*> ans(k,nullptr);
+        it=head;
+        for(int i=0;i<k&&it;i++){
+            ans[i]=it;
+            int currentPartSize=partSize+(extraNodes-- >0?1:0);
+            for(int j=0;j<currentPartSize-1;j++) it=it->next;
+            auto nextPartStarting=it->next;
+            it->next=nullptr;
+            it=nextPartStarting;
         }
         return ans;
     }
 };
+
 
 /*
 // Definition for a Node.
@@ -9485,68 +9164,55 @@ public:
 };
 */
 
-class Solution
-{
+class Solution{
 public:
-    Node *solve(Node *head)
-    {
-        auto it = head;
-        auto tail = it; // for tracking tail node.
-
-        while (it)
-        {
-            if (it->child)
-            {
-                auto childTail = solve(it->child); // tail node
-                // flatten ka kaam
-                auto temp = it->next;
-                it->next = it->child;
-                it->next->prev = it;
-                childTail->next = temp;
-                if (temp)
-                    temp->prev = childTail;
-                it->child = nullptr;
+    Node* solve(Node* head){
+        auto it=head;
+        auto tail=it;
+        while(it){
+            if(it->child){
+                auto childTail=solve(it->child);
+                auto temp=it->next;
+                it->next=it->child;
+                it->next->prev=it;
+                childTail->next=temp;
+                if(temp) temp->prev=childTail;
+                it->child=nullptr;
             }
-            tail = it;
-            it = it->next;
+            tail=it;
+            it=it->next;
         }
         return tail;
     }
 
-    Node *flatten(Node *head)
-    {
-        if (!head)
-            return nullptr;
+    Node* flatten(Node* head){
+        if(!head) return nullptr;
         solve(head);
         return head;
     }
 };
 
 
+
 // ----------------------------Stack class - 1--------------------------------
+//Demonstrate basic operations on a stack using STL (push, pop, top, size, empty).
 #include <iostream>
 #include<stack>
 using namespace std;
 
-int main() {
-  //creation
-  stack<int> s;
-  //insertion
-  s.push(10);
-  s.push(20);
-  s.push(30);
-  //size
-  cout << s.size() << endl;
-  //check empty or not 
-  cout << s.empty() << endl;
-  //peek 
-  cout << s.top() << endl;
-  //removal 
-  s.pop();
-  cout << s.top() << endl;
-  
-  return 0;
+int main(){
+    stack<int> s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout<<s.size()<<endl;
+    cout<<s.empty()<<endl;
+    cout<<s.top()<<endl;
+    s.pop();
+    cout<<s.top()<<endl;
+    return 0;
 }
+
 
 //#include <iostream>
 using namespace std;
@@ -9563,60 +9229,49 @@ class Stack{
             top = -1;
           }
 
-          void push(int val) {
-              if(top == size-1) {
-                //astack is already full, agar insert karoge, toh stack overflow hojaega
-                cout << "Stack Overflow" << endl;
-              }
-              else {
-                //normal case -> stack me khaali jagah hai abhi
-                top++;
-                arr[top] = val;
-              }
-          }
+void push(int val){
+    if(top==size-1){
+        cout<<"Stack Overflow"<<endl;
+    }else{
+        top++;
+        arr[top]=val;
+    }
+}
 
-          void pop() {
-              if(top == -1) {
-                //stack is empty, cannot pop in this case, coz there is no elemnt to pop
-                cout << "Stack Underflow" << endl;
-              }
-              else {
-                //normal case
-                arr[top] = 0;
-                top--;
-              }
-          }
+void pop(){
+    if(top==-1){
+        cout<<"Stack Underflow"<<endl;
+    }else{
+        arr[top]=0;
+        top--;
+    }
+}
 
-          int getSize() {
-              return top+1;
-          }
+int getSize(){
+    return top+1;
+}
 
-          bool isEmpty() {
-              if(top == -1) {
-                return true;
-              }
-              else {
-                return false;
-              }
-          }
+bool isEmpty(){
+    if(top==-1) return true;
+    else return false;
+}
 
-          int getTop() {
-              if(top == -1) {
-                cout << "There is no element at the top, as stack is empty";
-                return -1;
-              }
-              else {
-                //normal case
-                return arr[top];
-              }
-          }
+int getTop(){
+    if(top==-1){
+        cout<<"There is no element at the top, as stack is empty";
+        return -1;
+    }else{
+        return arr[top];
+    }
+}
 
-          void print() {
-            cout << "Printing Stack" << endl;
-            for(int i=0; i<size; i++) {
-              cout << arr[i] << " " ;
-            }cout << endl;
-          }
+void print(){
+    cout<<"Printing Stack"<<endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
 };
 
 
@@ -9653,13 +9308,91 @@ int main() {
   s.print();
   s.pop();
   cout << s.getSize();
-
-
-
   return 0;
 }
 
 // hw stack using linked list 
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node{
+public:
+    int data;
+    Node* next;
+    Node(int val){
+        data=val;
+        next=NULL;
+    }
+};
+
+class Stack{
+public:
+    Node* top;
+
+    Stack(){
+        top=NULL;
+    }
+
+    void push(int val){
+        Node* newNode=new Node(val);
+        newNode->next=top;
+        top=newNode;
+    }
+
+    void pop(){
+        if(top==NULL){
+            cout<<"Stack Underflow"<<endl;
+            return;
+        }
+        Node* temp=top;
+        top=top->next;
+        delete temp;
+    }
+
+    int getTop(){
+        if(top==NULL){
+            cout<<"Stack is Empty"<<endl;
+            return -1;
+        }
+        return top->data;
+    }
+
+    bool isEmpty(){
+        return top==NULL;
+    }
+
+    int getSize(){
+        int count=0;
+        Node* temp=top;
+        while(temp!=NULL){
+            count++;
+            temp=temp->next;
+        }
+        return count;
+    }
+
+    void print(){
+        Node* temp=top;
+        while(temp!=NULL){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+        cout<<endl;
+    }
+};
+
+int main(){
+    Stack s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout<<s.getSize()<<endl;
+    cout<<s.getTop()<<endl;
+    s.pop();
+    cout<<s.getTop()<<endl;
+    s.print();
+    return 0;
+}
 
 // implement array using double stack
 #include <iostream>
