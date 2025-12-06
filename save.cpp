@@ -1,4 +1,5 @@
-
+variable by declaring it 
+#include<iostream>
 using namespace std;
 int main () {
     int age = 19;
