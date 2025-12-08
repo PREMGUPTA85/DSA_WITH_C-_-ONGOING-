@@ -1,4 +1,6 @@
 
+        tail = newnode;
+    }
     // ll is not empty 
     else {
         newnode->next = head ;
