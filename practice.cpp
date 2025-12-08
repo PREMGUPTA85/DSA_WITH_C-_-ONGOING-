@@ -1,4 +1,11 @@
 
+};
+
+void insertathead(Node* & head, Node* &tail, int val){
+    //initially if ll is empty 
+    Node* newnode = new Node(val);
+    if(head == NULL){
+        head = newnode;
         tail = newnode;
     }
     // ll is not empty 
