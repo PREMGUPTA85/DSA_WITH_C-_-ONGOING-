@@ -1,4 +1,6 @@
 
+    ListNode* hasCycle(ListNode *head){
+        ListNode *slow=head;
         ListNode *fast=head;
         while(fast!=NULL){
             fast=fast->next;
