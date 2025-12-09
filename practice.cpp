@@ -1,4 +1,17 @@
 
+        ListNode *fast=head;
+        while(fast!=NULL){
+            fast=fast->next;
+            if(fast!=NULL){
+                fast=fast->next;
+                slow=slow->next;
+                if(fast==slow){
+                    return fast;
+                }
+            }
+        }
+        return nullptr;
+    }
 
     ListNode* detectCycle(ListNode *head){
         ListNode *fast=hasCycle(head);
