@@ -1,4 +1,9 @@
 
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution{
+public:
     ListNode* hasCycle(ListNode *head){
         ListNode *slow=head;
         ListNode *fast=head;
