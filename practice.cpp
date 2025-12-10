@@ -1,5 +1,10 @@
 
+    return slow;
+}
 
+int main(){
+    Node* head=NULL;
+    Node* tail=NULL;
     for(int i=1;i<=9;i++){
         Node* newNode=new Node();
         newNode->data=i;
