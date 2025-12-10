@@ -1,4 +1,7 @@
 
+
+Node* PrintMid(Node* head){
+    if(head==nullptr) return nullptr;
     Node* slow=head;
     Node* fast=head;
     while(fast!=NULL && fast->next!=NULL){
