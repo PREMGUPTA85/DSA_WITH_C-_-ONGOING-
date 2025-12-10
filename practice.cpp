@@ -1,4 +1,6 @@
 
+    Node* next;
+};
 
 Node* PrintMid(Node* head){
     if(head==nullptr) return nullptr;
