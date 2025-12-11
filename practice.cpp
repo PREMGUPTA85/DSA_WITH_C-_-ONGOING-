@@ -1,41 +1,36 @@
 
-#include<iostream>
-using namespace std;
+int main() {
+  //creating a Stack of initial size 5 
+  Stack s(5);
+  s.print();
+  s.push(10);
+  s.print();
+  s.push(20);
+  s.print();
+  s.push(30);
+  s.print();
+  s.push(40);
+  s.print();
+  s.push(50);
+  s.print();
+  s.push(60);
+  s.print();
 
-struct Node{
-    int data;
-    Node* next;
-};
+  cout << s.getTop() << endl;
+  cout << s.getSize() << endl;
+  cout << s.isEmpty() << endl;
 
-Node* PrintMid(Node* head){
-    if(head==nullptr) return nullptr;
-    Node* slow=head;
-    Node* fast=head;
-    while(fast!=NULL && fast->next!=NULL){
-        slow=slow->next;
-        fast=fast->next->next;
-    }
-    return slow;
-}
-
-int main(){
-    Node* head=NULL;
-    Node* tail=NULL;
-    for(int i=1;i<=9;i++){
-        Node* newNode=new Node();
-        newNode->data=i;
-        newNode->next=NULL;
-        if(head==NULL){
-            head=newNode;
-            tail=newNode;
-        }else{
-            tail->next=newNode;
-            tail=newNode;
-        }
-    }
-
-    Node* mid=PrintMid(head);
-    cout<<mid->data;
-
-    return 0;
+  s.pop();
+  s.print();
+    s.pop();
+  s.print();
+    s.pop();
+  s.print();
+      s.pop();
+  s.print();
+      s.pop();
+  s.print();
+  s.pop();
+  cout << s.getSize();
+  return 0;
 }
