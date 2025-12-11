@@ -1,4 +1,26 @@
+// stack using arrays 
+#include<iostream>
+using namespace std;
 
+
+
+class Stack{
+    public:
+    int *arr;
+    int size;
+    int top;
+
+    stack(int capacity){
+        arr = new int[capacity];
+        size = capacity;
+        top = -1;
+    }
+
+
+    void push(int val){
+        if(top == size - 1){
+            cout << "Stack Overflow" << endl;
+        }
         else {
           arr[++top] = val;  
         }
