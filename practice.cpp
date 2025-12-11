@@ -1,4 +1,18 @@
 
+        }
+    }
+
+    void pop(){
+        if(top == -1){
+            cout << "Stack Underflow"<< endl;
+        }
+        else {
+            top--;
+        }
+    }
+
+
+
     int getsize() {
         return top + 1;
     }
