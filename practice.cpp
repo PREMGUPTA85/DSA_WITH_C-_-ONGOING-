@@ -1,7 +1,4 @@
 
-    }
-
-
     int getsize() {
         return top + 1;
     }
