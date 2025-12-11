@@ -1,4 +1,12 @@
 
+
+    bool isEmpty(){
+        if(top == -1) return true;
+        else return false;
+    }
+
+}
+
 int main() {
   //creating a Stack of initial size 5 
   Stack s(5);
