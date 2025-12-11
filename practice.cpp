@@ -1,4 +1,6 @@
 
+        else {
+          arr[++top] = val;  
         }
     }
 
