@@ -1,3 +1,10 @@
+;
+        }
+        else {
+            top--;
+        }
+    }
+
 
     int getsize() {
         return top + 1;
