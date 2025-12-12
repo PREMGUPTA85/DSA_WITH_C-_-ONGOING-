@@ -1,4 +1,6 @@
 
+
+    if (right < n && arr[right] > arr[largest])
         largest = right;
 
     if (largest != i) {
