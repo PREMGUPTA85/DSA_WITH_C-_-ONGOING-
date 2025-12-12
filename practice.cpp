@@ -1,4 +1,6 @@
 
+        largest = right;
+
     if (largest != i) {
         swap(arr[i], arr[largest]);
         heapify(arr, n, largest);
