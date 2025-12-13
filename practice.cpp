@@ -1,4 +1,5 @@
 
+public:
     double findMedianSortedArrays(vector<int>& a, vector<int>& b) {
         if(a.size() > b.size()) return findMedianSortedArrays(b, a);
         int n = a.size(), m = b.size();
