@@ -1,4 +1,7 @@
 
+            int cut1 = (low + high) / 2;
+            int cut2 = (n + m + 1)/2 - cut1;
+
             int left1 = (cut1 == 0) ? INT_MIN : a[cut1-1];
             int left2 = (cut2 == 0) ? INT_MIN : b[cut2-1];
             int right1 = (cut1 == n) ? INT_MAX : a[cut1];
