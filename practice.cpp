@@ -1,4 +1,5 @@
-;
+
+        if(a.size() > b.size()) return findMedianSortedArrays(b, a);
         int n = a.size(), m = b.size();
         int low = 0, high = n;
 
