@@ -1,4 +1,5 @@
-
+// Median of Two Sorted Arrays
+class Solution {
 public:
     double findMedianSortedArrays(vector<int>& a, vector<int>& b) {
         if(a.size() > b.size()) return findMedianSortedArrays(b, a);
