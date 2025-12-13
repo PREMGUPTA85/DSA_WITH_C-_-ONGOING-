@@ -1,4 +1,7 @@
 
+        int low = 0, high = n;
+
+        while(low <= high){
             int cut1 = (low + high) / 2;
             int cut2 = (n + m + 1)/2 - cut1;
 
