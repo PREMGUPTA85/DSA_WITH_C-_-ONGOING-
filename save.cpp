@@ -7651,7 +7651,7 @@ int powMod(int x, int n, int M) {
 // }
 
 
-// //--------------------------------------(optimised sieve and segmented sieve)---------------------------------------
+// //----------------------------------------------(optimised sieve and segmented sieve)---------------------------------------
 vector<bool> Sieve(long long n){
     vector<bool> sieve(n + 1, true);
     sieve[0] = sieve[1] = false;
@@ -8098,7 +8098,7 @@ int main()
 
     return 0;
 }
-// ----------------------------------------------(linked list class -1) ---------------------------------------------
+// ----------------------------(linked list class -1) --------------------------------
 #include <iostream>
 using namespace std;
 
@@ -9205,7 +9205,7 @@ int main(){
     s.push(10);
     s.push(20);
     s.push(30);
-    cout<<s.size()<<endl;
+    cout<<s.size()<<endl; 
     cout<<s.empty()<<endl;
     cout<<s.top()<<endl;
     s.pop();
@@ -9223,7 +9223,7 @@ class Stack{
           int size;
           int top;
 
-          Stack(int capacity) {
+        Stack(int capacity) {
             arr = new int[capacity];
             size = capacity;
             top = -1;
@@ -9292,23 +9292,23 @@ int main() {
   s.push(60);
   s.print();
 
-  cout << s.getTop() << endl;
-  cout << s.getSize() << endl;
-  cout << s.isEmpty() << endl;
+//   cout << s.getTop() << endl;
+//   cout << s.getSize() << endl;
+//   cout << s.isEmpty() << endl;
 
-  s.pop();
-  s.print();
-    s.pop();
-  s.print();
-    s.pop();
-  s.print();
-      s.pop();
-  s.print();
-      s.pop();
-  s.print();
-  s.pop();
-  cout << s.getSize();
-  return 0;
+//   s.pop();
+//   s.print();
+//     s.pop();
+//   s.print();
+//     s.pop();
+//   s.print();
+//       s.pop();
+//   s.print();
+//       s.pop();
+//   s.print();
+//   s.pop();
+//   cout << s.getSize();
+//   return 0;
 }
 
 // hw stack using linked list 
@@ -9328,17 +9328,14 @@ public:
 class Stack{
 public:
     Node* top;
-
     Stack(){
         top=NULL;
     }
-
     void push(int val){
         Node* newNode=new Node(val);
         newNode->next=top;
         top=newNode;
     }
-
     void pop(){
         if(top==NULL){
             cout<<"Stack Underflow"<<endl;
@@ -9348,7 +9345,6 @@ public:
         top=top->next;
         delete temp;
     }
-
     int getTop(){
         if(top==NULL){
             cout<<"Stack is Empty"<<endl;
@@ -9356,11 +9352,9 @@ public:
         }
         return top->data;
     }
-
     bool isEmpty(){
         return top==NULL;
     }
-
     int getSize(){
         int count=0;
         Node* temp=top;
@@ -9394,102 +9388,92 @@ int main(){
     return 0;
 }
 
-// implement array using double stack
+// Implement two stacks in a single array.
 #include <iostream>
 using namespace std;
+
 class Stack{
-  public:
-        int* arr;
-        int size;
-        int top1; 
-        int top2;
+public:
+    int* arr;
+    int size;
+    int top1;
+    int top2;
 
-        Stack(int capacity) {
-          arr= new int[capacity];
-          size = capacity;
-          top1 = -1;
-          top2 = size;
-        }
+    Stack(int capacity){
+        arr=new int[capacity];
+        size=capacity;
+        top1=-1;
+        top2=size;
+    }
 
-        void push1(int value) {
-          //if space available, then push
-          //else stack overflow karjaega
-          if(top2-top1 == 1) {
-            //cannot insert
-            cout << "Stack Overflow"<<endl;
-          }
-          else {
+    void push1(int value){
+        if(top2-top1==1){
+            cout<<"Stack Overflow"<<endl;
+        }else{
             top1++;
-            arr[top1] = value;
-          }
+            arr[top1]=value;
         }
+    }
 
-        void push2(int value) {
-          if(top2-top1 == 1) {
-            cout << "Stack Overflow" << endl;
-          }
-          else {
+    void push2(int value){
+        if(top2-top1==1){
+            cout<<"Stack Overflow"<<endl;
+        }else{
             top2--;
-            arr[top2] = value;
-          }
-
+            arr[top2]=value;
         }
+    }
 
-        void pop1() {
-          //if element available then pop
-          //if stack empty, then dont pop
-          if(top1 == -1){
-            //stack 1 is empty
-            cout << "Stack Underflow" << endl;
-          }
-          else {
-            arr[top1] = 0;
+    void pop1(){
+        if(top1==-1){
+            cout<<"Stack Underflow"<<endl;
+        }else{
+            arr[top1]=0;
             top1--;
-          }
         }
+    }
 
-        void pop2() {
-            if(top2 == size) {
-              //stack 2 is empty, no element to pop
-              cout << "Stack Underflow" << endl;
-            }
-            else {
-              arr[top2] = 0;
-              top2++;
-            }
+    void pop2(){
+        if(top2==size){
+            cout<<"Stack Underflow"<<endl;
+        }else{
+            arr[top2]=0;
+            top2++;
         }
+    }
 
-        void print() {
-          cout << "Top1: " << top1 << endl;
-          cout << "Top2: " << top2 << endl;
-          for(int i=0; i<size; i++) {
-            cout << arr[i] << " ";
-          }
-          cout << endl;
+    void print(){
+        cout<<"Top1: "<<top1<<endl;
+        cout<<"Top2: "<<top2<<endl;
+        for(int i=0;i<size;i++){
+            cout<<arr[i]<<" ";
         }
+        cout<<endl;
+    }
 };
 
-int main() {
-  Stack s(5);
-  s.push1(10);
-  s.print();
-  s.push2(90);
-  s.print();
-  s.push2(80);
-  s.print();
-  s.pop1();
-  s.print();
-  s.push2(90);
-  s.print();
-  s.push2(80);
-  s.print();
-  s.push2(80);
-  s.print();
-  s.push1(80);
-  s.print();
-  return 0;
+int main(){
+    Stack s(5);
+    s.push1(10);
+    s.print();
+    s.push2(90);
+    s.print();
+    s.push2(80);
+    s.print();
+    s.pop1();
+    s.print();
+    s.push2(90);
+    s.print();
+    s.push2(80);
+    s.print();
+    s.push2(80);
+    s.print();
+    s.push1(80);
+    s.print();
+    return 0;
 }
 
+// Reverse a string using a stack.
 #include <iostream>
 #include<stack>
 using namespace std;
@@ -9498,13 +9482,10 @@ int main() {
   stack<char> s;
   string name = "amitwala";
 
-  //inseration of characters into the stack
   for(int i=0; i<name.length(); i++) {
     char ch = name[i];
     s.push(ch);
   }
-
-  //retrieval of characters from the stack 
   while(!s.empty()) {
     cout << s.top();
     s.pop();
@@ -9513,7 +9494,7 @@ int main() {
   return 0;
 }
 
-// 
+// Insert an element at the bottom of a stack using recursion.
 #include <iostream>
 #include<stack>
 using namespace std;
@@ -9553,7 +9534,430 @@ int main() {
     s.pop();
   }
   cout << endl;
+  return 0;
+}
 
+
+// -----------------------------------(Queue class :-- 01)----------------------------------------
+#include <iostream>
+#include<queue>
+using namespace std;
+
+int main() {
+
+  //douly-ended queue 
+  deque<int> dq;
+  //insertion
+  dq.push_front(10);
+  //10
+  dq.push_front(30);
+  //10 30
+  dq.push_front(50);
+  //10 30 50
+  dq.push_back(70);
+  ///70 10 30 50;
+  dq.push_back(100);
+  //100 70 10 30 50
+  cout << dq.size() << endl;
+  cout << dq.empty() << endl; 
+  cout << dq.front() << endl;
+  cout << dq.back() << endl;
+
+  // removal;
+  dq.pop_front();
+  cout << dq.front() << endl;
+  dq.pop_back();
+  cout << dq.back() << endl;
+
+
+  // queue<int> q;
+  // //insertion
+  // q.push(10);
+  // q.push(20);
+  // q.push(30);
+  // q.push(40);
+  // //front 
+  // cout << q.front() << endl;
+  // //removal 
+  // q.pop();
+  // cout << q.front() << endl;
+  // //size
+  // cout << q.size() << endl;
+  // //empty
+  // cout << q.empty() << endl;
+  // //rear element
+  // cout << q.back() << endl;
+  //printing
+  // while(!q.emtpy()) {
+  //   cout << q.front() << " ";
+  //   q.pop();
+  // }
+  return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class Queue{
+  private:
+    int *arr;
+    int n;
+    int front;
+    int rear;
+  public:
+    Queue(int size) {
+      arr = new int[size];
+      n = size;
+      front = -1;
+      rear = -1;
+    }
+    void push(int val) {
+      if(rear == n-1) { cout << "Overflow" << endl; }
+      else if(front==-1 && rear == -1) {
+        rear++;
+        front++;
+        arr[rear]= val;
+      }
+      else {
+        rear++;
+        arr[rear] = val;
+      }
+    }
+    void pop() {
+      if(front==-1 && rear==-1) {
+        //queue is empty
+        cout << "Underflow" << endl;
+      }
+      else if(front == rear) {
+        //single element
+        arr[rear] = -1;
+        front = -1;
+        rear = -1;
+      }
+      else {
+        //normal flow
+        arr[front] = -1;
+        front++;
+      }
+
+    }
+    int getFront() {
+      if(front == -1) {
+        cout << "Queue is empty" ;
+      }
+      else {
+        return arr[front];
+      }
+    }
+    int getRear() {
+      if(rear == -1) {
+        cout << "Queue is empty" ;
+      }
+      else {
+        return arr[rear];
+      }
+    }
+    int getSize() {
+      //number of elements inside a queue
+      if(front == -1 && rear == -1) {
+        return 0;
+      }
+      else
+        return rear-front+1;
+    }
+    bool isEmpty() {
+      if(front==-1 && rear == -1) {
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+};
+
+
+int main() {
+  Queue q(5);
+
+  q.push(10);
+  q.push(20);
+  q.push(30);
+  q.push(40);
+  cout << q.getSize() << endl;
+  q.push(40);
+  cout << q.getFront() << endl;
+  q.push(100);
+  cout << q.isEmpty() << endl;
+
+  q.pop();
+  cout << q.getSize() << endl;
+  q.pop();
+  q.pop();
+  q.pop();
+  q.pop();
+  cout << q.getSize() << endl;
+  q.pop();
+
+  return 0;
+}
+
+
+// deque 
+#include <iostream>
+using namespace std;
+
+class Deque{
+  private:
+    int *arr;
+    int n ;
+    int front; 
+    int rear;
+  public:
+    Deque(int size) {
+      this->n = size;
+      arr = new int[size];
+      front = -1;
+      rear = -1;
+    }
+    void pushFront(int val) {
+      if(front == 0) {
+        //iska mtlb mere paas left side me koi or jagah hi nahi. 
+        //hai insert krne k liye
+        cout << "Overflow" << endl;
+      }
+      else if(front == -1 && rear == -1) {
+        //queue pehle empty thi, and ab main first elemnt
+        //insert krne aaya hu 
+        front++;
+        rear++;
+        arr[front] = val;
+      }
+      else {
+        //normal flow
+        front--;
+        arr[front] = val;
+      }
+    }
+    void popBack() {
+      if(front == -1 && rear == -1) {
+        //is case me queue phle sse hi empty h, no element to pop
+        // therefpore underflow hojaega
+        cout << "Underflow" << endl;
+      }
+      else if(front == rear) {
+        //iss case me queue k andar sirf 1 hielemtn bacha hua h 
+        //there after removing it, queue will get empty
+        arr[rear] = -1;
+        front = -1;
+        rear = -1;
+      }
+      else {
+        //normal flow';
+        arr[rear] = -1;
+        rear--;
+      }
+    }
+    void pushBack(int val) {
+      if(rear == n-1) {
+        cout << "Overflow" << endl;
+      }
+      else if(front==-1 && rear == -1) {
+        //inserting first element;
+        rear++;
+        front++;
+        arr[rear]= val;
+      }
+      else {
+        //normal flow
+        rear++;
+        arr[rear] = val;
+      }
+    }
+    void popFront() {
+      if(front==-1 && rear==-1) {
+        //queue is empty
+        cout << "Underflow" << endl;
+      }
+      else if(front == rear) {
+        //single element
+        arr[front] = -1;
+        front = -1;
+        rear = -1;
+      }
+      else {
+        //normal flow
+        arr[front] = -1;
+        front++;
+      }
+    }
+    void print() {
+      for(int i=0; i<n; i++) {
+        cout << arr[i] << " ";
+      }cout << endl;
+    }
+};
+
+
+int main() {
+  Deque dq(5);
+
+  dq.pushFront(10);
+  dq.print();
+  dq.pushFront(20);
+  dq.print();
+  dq.pushBack(15);
+  dq.print();
+  dq.pushBack(35);
+  dq.print();
+  dq.pushFront(100);
+  dq.print();
+  dq.popFront();
+  dq.print();
+  dq.popFront();
+  dq.print();
+  dq.popFront();
+  dq.print();
+  dq.popFront();
+  dq.print();
+  // dq.popBack();
+  // dq.print();
+  // dq.popBack();
+  // dq.print();
+  // dq.popBack();
+  // dq.print();
+  // dq.popBack();
+  // dq.print();
+  return 0;
+}
+
+// Circular queue implementation using array.
+#include <iostream>
+using namespace std;
+
+class CircularQueue{
+  public:
+    int *arr;
+    int n;
+    int front;
+    int rear;
+
+  CircularQueue(int size) {
+    this->n = size;
+    arr = new int[size];
+    front = -1;
+    rear = -1;
+  }
+
+  void push(int val) {
+    //4 cases: Overflow, first elemnt, circualr nature, normal flow
+    if((front == 0 && rear == n-1)||(rear == front-1)) {
+      cout << "Overflow" << endl;
+    }
+    else if(front==-1 && rear == -1) {
+      front++;
+      rear++;
+      arr[rear] = val;
+    }
+    else if(rear == n-1 && front != 0) {
+      //circular nature
+      rear = 0;
+      arr[rear] = val;
+    }
+    else {
+      //normal flow
+      rear++;
+      arr[rear] = val;
+    }
+
+  }
+  void pop() {
+    //4 cases: Underflow, single elemtn, circular nature , normal flow 
+    if(front==-1 && rear==-1) {
+      cout << "Underflow" << endl;
+    }
+    else if(front == rear) {
+      //single element
+      arr[front] = -1;
+      front=-1;
+      rear= -1;
+    }
+    else if(front== n-1 ) {
+      //circular nature
+      arr[front] = -1;
+      front = 0;
+    }
+    else {
+      //normal case
+      arr[front] = -1;
+      front++;
+    }
+
+  }
+  int getFront() {
+    if(front == -1) {
+      cout << "Queue is empty";
+      return -1;
+    }
+    else {
+      return arr[front];
+    }
+  }
+  
+  int getSize() {
+    if(front==-1 && rear == -1) {
+      return 0;
+    }
+    else if(rear >= front) {
+      return rear-front+1;
+    }
+    else{
+      return n-front+rear+1;
+    }
+  }
+  bool isEmpty() {
+    if(front == -1 && rear == -1) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  void print() {
+    for(int i=0; i<n; i++) {
+      cout << arr[i] << " ";
+    }
+    cout << endl;
+  }
+
+};
+
+int main() {
+  CircularQueue q(5);
+
+  q.push(10);
+  q.print();
+  q.push(20);
+  q.print();
+  q.push(30);
+  q.print();
+  q.push(40);
+  q.print();
+  q.push(50);
+  q.print();
+  q.push(60);
+  q.print();
+  q.pop();
+  q.print();
+  q.pop();
+  q.print();
+  q.push(100);
+  q.print();
+  q.push(101);
+  q.print();
+  cout << q.getSize() << endl;
+  cout << q.isEmpty() << endl;
+  cout << q.getFront() << endl;
 
   return 0;
 }
