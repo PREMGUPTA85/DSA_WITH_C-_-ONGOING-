@@ -1,13 +1,4 @@
-//1. WAP to print Namaste duniya 
-#include<iostream>
-using namespace std;
-int main () {
-    cout << "namaste duniya" << endl;
-    return 0;
-}
 
-// 2.wap to access the variable by declaring it 
-#include<iostream>
 using namespace std;
 int main () {
     int age = 19;
