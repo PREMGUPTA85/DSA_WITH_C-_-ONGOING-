@@ -1,4 +1,6 @@
 
+    }
+    ~base(){
         cout<<"base class destructor called"<<endl;    
     }
 };
