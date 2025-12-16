@@ -1,4 +1,9 @@
 
+        cout<<"base class destructor called"<<endl;    
+    }
+};
+
+class derived : public base {
     public:
     derived(){
         cout<<"derived class constructor called"<<endl;    
