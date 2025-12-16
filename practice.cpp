@@ -1,4 +1,8 @@
 
+    public:
+    derived(){
+        cout<<"derived class constructor called"<<endl;    
+    }
     ~derived(){
         cout<<"derived class destructor called"<<endl;    
     }
