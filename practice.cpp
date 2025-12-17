@@ -1,30 +1,15 @@
-#include<iostream>
-using namespace std;
 
-class base{
-    public: 
-    base(){
-        cout<<"base class constructor called"<<endl;    
-    }
-    ~base(){
-        cout<<"base class destructor called"<<endl;    
-    }
-};
+}
 
-class derived : public base {
-    public:
-    derived(){
-        cout<<"derived class constructor called"<<endl;    
-    }
-    ~derived(){
-        cout<<"derived class destructor called"<<endl;    
-    }
-};
+int main() {
+    int arr[] = {12, 11, 13, 5, 6, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-int main(){
-    derived* d = new derived();
-    base *b = d; // upcasting
-    delete b;
-    // delete d; // no double free error
+    heapSort(arr, n);
+
+    cout << "Sorted array is \n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
     return 0;
 }
