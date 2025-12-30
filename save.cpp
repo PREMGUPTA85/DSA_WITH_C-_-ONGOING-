@@ -8419,8 +8419,6 @@ void insertAtPosition(int position,int value, Node* &head, Node* &tail) {
     forward->prev = newNode;
     newNode->next = forward;
   }
-  
-
 }
 
 bool searchElement(Node* head, int target) {
@@ -8491,9 +8489,6 @@ int main() {
   print(head);
   deleteFromPosition(4, head, tail);
   print(head);
-
-
-
   // insertAtHead(10,head,tail);
   // //10->NULL
   // insertAtHead(20,head,tail);
@@ -8505,7 +8500,7 @@ int main() {
   return 0;
 }
 
-//---------------------------------------------------(linked list - 3)-------------------------------------------------------------
+//---------------------------------------------------(linked list - 3)------------------------------------------------------------
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -9194,7 +9189,7 @@ public:
 
 
 
-// ----------------------------Stack class - 1--------------------------------
+// ------------------------------------(Stack class - 1)--------------------------------
 //Demonstrate basic operations on a stack using STL (push, pop, top, size, empty).
 #include <iostream>
 #include<stack>
@@ -9213,7 +9208,6 @@ int main(){
     return 0;
 }
 
-
 //#include <iostream>
 using namespace std;
 
@@ -9222,7 +9216,6 @@ class Stack{
           int* arr;
           int size;
           int top;
-
         Stack(int capacity) {
             arr = new int[capacity];
             size = capacity;
@@ -9537,8 +9530,46 @@ int main() {
   return 0;
 }
 
+//-----------------------------------(stack class -2 codes)-------------------------------------
+#include <iostream>
+#include<stack>
+using namespace std;
 
-// -----------------------------------(Queue class :-- 01)----------------------------------------
+void printMiddle(stack<int>& s, int count ) {
+  //base case 
+    if(count == 0) {
+      cout << s.top() << endl;
+      return;
+    }
+
+    //1 case solve krna h 
+    int topElement = s.top();
+    s.pop();
+    count--;
+
+    //baaki rec
+    printMiddle(s,count);
+
+    //backtrack
+    s.push(topElement);
+  
+}
+
+
+int main() {
+  stack<int> s;
+  s.push(10);
+  s.push(20);
+  s.push(30);
+  s.push(40);
+  s.push(50);
+  s.push(60);
+  int count = s.size()/2;
+  printMiddle(s,count - 1);
+  return 0;
+}
+
+//------------------------------(Queue class :-- 01-------------------------------------
 #include <iostream>
 #include<queue>
 using namespace std;
@@ -9549,15 +9580,14 @@ int main() {
   deque<int> dq;
   //insertion
   dq.push_front(10);
-  //10
+
   dq.push_front(30);
-  //10 30
+
   dq.push_front(50);
-  //10 30 50
+
   dq.push_back(70);
-  ///70 10 30 50;
+
   dq.push_back(100);
-  //100 70 10 30 50
   cout << dq.size() << endl;
   cout << dq.empty() << endl; 
   cout << dq.front() << endl;
@@ -9594,6 +9624,8 @@ int main() {
   // }
   return 0;
 }
+
+// Implement a Queue using an array in C++ (push(val), pop(), getfront(), getRear(), getSize(), isEmpty()).
 
 #include <iostream>
 using namespace std;
@@ -9960,4 +9992,220 @@ int main() {
   cout << q.getFront() << endl;
 
   return 0;
+}
+
+// deque using circular array
+#include <iostream>
+using namespace std;
+
+class DeCircularQueue{
+  public :
+    int *arr;
+    int n;
+    int front;
+    int rear;
+
+    DeCircularQueue(int size) {
+      this-> n = size;
+      arr = new int[size];
+      front = -1;
+      rear = -1;
+    }
+    void pushFront(int val) {
+      //4 cases: Overflow, first elemnt, circualr nature, normal flow
+      if((front == 0 && rear == n-1)||(rear == front-1)) {
+        cout << "Overflow" << endl;
+      }
+      else if(front==-1 && rear == -1) {
+        front++;
+        rear++;
+        arr[front] = val;
+      }
+      else if(front == 0 && rear != n-1) {
+        //circular case
+        front = n-1;
+        arr[front]=val;
+      }
+      else {
+        //normal case
+        front--;
+        arr[front]= val;
+      }
+    }
+
+    void push_back(int val) {
+      //4 cases: Overflow, first elemnt, circualr nature, normal flow
+      if((front == 0 && rear == n-1)||(rear == front-1)) {
+        cout << "Overflow" << endl;
+      }
+      else if(front==-1 && rear == -1) {
+        front++;
+        rear++;
+        arr[rear] = val;
+      }
+      else if(rear == n-1 && front != 0) {
+        //circular nature
+        rear = 0;
+        arr[rear] = val;
+      }
+      else {
+        //normal flow
+        rear++;
+        arr[rear] = val;
+      }
+    }
+    void popFront() {
+      //4 cases: Underflow, single elemtn, circular nature , normal flow 
+      if(front==-1 && rear==-1) {
+        cout << "Underflow" << endl;
+      }
+      else if(front == rear) {
+        //single element
+        arr[front] = -1;
+        front=-1;
+        rear= -1;
+      }
+      else if(front== n-1 ) {
+        //circular nature
+        arr[front] = -1;
+        front = 0;
+      }
+      else {
+        //normal case
+        arr[front] = -1;
+        front++;
+      }
+    }
+
+    void popBack() {
+      //4 cases: Underflow, single elemtn, circular nature , normal flow 
+      if(front==-1 && rear==-1) {
+        cout << "Underflow" << endl;
+      }
+      else if(front == rear) {
+        //single element
+        arr[front] = -1;
+        front=-1;
+        rear= -1;
+      }
+      else if(rear == 0) {
+        //circular case
+        arr[rear] = -1;
+        rear = n-1;
+      }
+      else {
+       //normal case
+       arr[rear] = -1;
+       rear--; 
+      }
+
+    }
+    
+void print(){
+  if(isEmpty()){
+    cout << "Circular Deque is empty" << endl;
+    return;
+  }
+  if(rear >= front){
+    for(int i = front; i <= rear; i++){
+      cout << arr[i] << " ";
+    }
+    cout << endl;
+  }
+  else{
+    for(int i = front; i < capacity; i++){
+      cout << arr[i] << " ";
+    }
+    for(int i = 0; i <= rear; i++){
+      cout << arr[i] << " ";
+    }
+    cout << endl;
+  }
+}
+};
+
+
+int main() {
+  DeCircularQueue q(5);
+  
+  q.pushFront(10);
+  q.print();
+  q.pushFront(20);
+  q.print();
+  q.pushBack(30);
+  q.print();
+  q.pushBack(40);
+  q.print();
+  q.pushBack(50);
+  q.print();
+  q.pushFront(60);
+  q.print();
+  q.popFront();
+  q.print();
+  q.popFront();
+  q.print();
+    q.popFront();
+  q.print();
+    q.popBack();
+  q.print();
+    q.popFront();
+  q.print();
+    q.popFront();
+  q.print();
+  return 0;
+}
+
+// Queue class - 2 
+
+// reverse a Queue 
+// reverse a queue using stack and recursion
+#include<iostream>
+#include<queue>
+#include<stack>
+using namespace std;
+
+void reverseQueue(queue<int> &q){
+    // firstly put all elements of queue into stack
+    stack<int>st;
+    while(!q.empty()){
+        int element = q.front();
+        q.pop();
+
+        st.push(element);
+    }
+    // ab stack se lement waps queue m daalenge bcz stack m gye h to reverse hokr niklenge 
+    while(!st.empty()){
+        int element = st.top();
+        st.pop();
+        q.push(element);
+    }
+}
+
+// using recursion 
+void reverseQueueRec(queue<int> &q){
+    // base class 
+    if(q.empty()){
+        return;
+    }
+    int element = q.front();
+    q.pop();
+    reverseQueueRec(q);
+    q.push(element);
+}
+
+int main(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+
+     reverseQueue(q);
+    // reverseQueueRec(q);
+    cout << "Queue after reversing: ";
+    while(!q.empty()){
+        cout << q.front() << " ";
+        q.pop();
+    }
+    return 0;
 }
