@@ -9541,20 +9541,15 @@ void printMiddle(stack<int>& s, int count ) {
       cout << s.top() << endl;
       return;
     }
-
     //1 case solve krna h 
     int topElement = s.top();
     s.pop();
     count--;
-
     //baaki rec
     printMiddle(s,count);
-
     //backtrack
     s.push(topElement);
-  
 }
-
 
 int main() {
   stack<int> s;
@@ -9569,6 +9564,117 @@ int main() {
   return 0;
 }
 
+#include <iostream>
+#include<stack>
+#include<limits.h>
+using namespace std;
+
+bool checkSorted(stack<int>& s, int element1) {
+  if(s.empty()) {
+    return true;
+  }
+  int element2 = s.top();
+  s.pop();
+  if(element2 < element1) {
+    bool aageKaAns = checkSorted(s, element2);
+    s.push(element2);
+    return aageKaAns;
+  }
+  else {
+    return false;
+  }
+}
+
+int main() {
+  stack<int> s;
+  s.push(10);
+  s.push(20);
+  s.push(5);
+  s.push(40);
+  s.push(50);
+  int element1 = INT_MAX;
+  cout << checkSorted(s,element1) << endl;
+
+  return 0;
+}
+
+#include <iostream>
+#include<stack>
+using namespace std;
+
+void insertAtBottom(stack<int>& s, int val) {
+  if(s.empty()) {
+    s.push(val);
+    return;
+  }
+  int topE = s.top();
+  s.pop();
+  insertAtBottom(s,val);
+  s.push(topE);
+}
+
+void reverseStack(stack<int>& s) {
+  if(s.empty()) {
+    return;
+  }
+  int topE = s.top();
+  s.pop();
+  reverseStack(s);
+  insertAtBottom(s,topE);
+}
+
+void print(stack<int>& s) {
+  while(!s.empty()) {
+    cout << s.top()<< " ";
+    s.pop();
+  }
+}
+
+int main() {
+  stack<int> s;
+  s.push(10);
+  s.push(20);
+  s.push(30);
+  s.push(40);
+  s.push(50);
+  reverseStack(s);
+  print(s);
+  return 0;
+}
+
+void sortedInsert(stack<int>& s, int val) {
+  if(s.empty()) {
+    s.push(val);
+    return ;
+  }
+  if(!s.empty() && s.top() < val) {
+    s.push(val);
+    return;
+  } 
+  int topE = s.top();
+  s.pop();
+  sortedInsert(s, val);
+  s.push(topE);
+}
+
+void print(stack<int>& s) {
+  while(!s.empty()) {
+    cout << s.top()<< " ";
+    s.pop();
+  }
+}
+int main() {
+  stack<int> s;
+  // s.push(10);
+  // s.push(20);
+  // s.push(30);
+  // s.push(40);
+  // s.push(50);
+  int val = 23;
+  sortedInsert(s, val);
+  print(s);
+  return 0;
+}
 //------------------------------(Queue class :-- 01-------------------------------------
 #include <iostream>
 #include<queue>
@@ -10165,7 +10271,6 @@ int main() {
 using namespace std;
 
 void reverseQueue(queue<int> &q){
-    // firstly put all elements of queue into stack
     stack<int>st;
     while(!q.empty()){
         int element = q.front();
@@ -10173,7 +10278,6 @@ void reverseQueue(queue<int> &q){
 
         st.push(element);
     }
-    // ab stack se lement waps queue m daalenge bcz stack m gye h to reverse hokr niklenge 
     while(!st.empty()){
         int element = st.top();
         st.pop();
@@ -10208,4 +10312,334 @@ int main(){
         q.pop();
     }
     return 0;
+}
+#include <iostream>
+#include<queue>
+#include<stack>
+using namespace std;
+
+
+void reverseInKGroup(queue<int>& q, int k, int count) {
+  if(count >= k) {
+    stack<int> s;
+    for(int i=0; i<k; i++) {
+      int element = q.front();
+      q.pop();
+
+      s.push(element);
+    }
+    for(int i=0; i<k; i++) {
+      int element = s.top();
+      s.pop();
+
+      q.push(element);
+    }
+    reverseInKGroup(q, k, count-k);
+  }
+  else {
+    for(int i=0; i<count; i++) {
+      int element = q.front();
+      q.pop();
+      q.push(element);
+    }
+}
+}
+
+
+int main() {
+  queue<int> q;
+
+  q.push(10);
+  q.push(20);
+  q.push(30);
+  q.push(40);
+  q.push(50);
+  q.push(60);
+  q.push(70);
+  q.push(80);
+  q.push(90);
+  q.push(100);
+  q.push(110);
+  int k = 3;
+  int count = q.size();
+  //count -> it tracks the number of elements to reverse
+  reverseInKGroup(q, k, count);
+  //printing 
+  while(!q.empty()) {
+    cout << q.front() << " ";
+    q.pop();
+  }
+  return 0;
+}
+
+
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function Template for C++
+
+class Solution{
+public:
+    vector<int> rearrangeQueue(queue<int> &q1){
+        vector<int> ans;
+        queue<int> q2;
+        
+        int n = q1.size();
+        int half = n/2;
+        
+        while(half--) {
+            int element = q1.front();
+            q1.pop();
+            
+            q2.push(element);
+        }
+        //first half -> q2
+        //second half -> q1;
+        while(!q1.empty()) {
+            ans.push_back(q2.front());
+            q2.pop();
+            ans.push_back(q1.front());
+            q1.pop();
+        }
+        return ans;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main(){
+    
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        queue<int> q;
+        for(int i=0;i<n;i++){
+            int a;
+            cin>>a;
+            q.push(a);
+        }
+        Solution ob;
+        vector<int> ans=ob.rearrangeQueue(q);
+        for(int i=0;i<ans.size();i++){
+            cout<<ans[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
+
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<long long> printFirstNegativeInteger(long long int arr[], long long int n, long long int k);
+
+// Driver program to test above functions
+int main() {
+    long long int t, i;
+    cin >> t;
+    while (t--) {
+        long long int n;
+        cin >> n;
+        long long int arr[n];
+        for (i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+        long long int k;
+        cin >> k;
+
+        vector<long long> ans = printFirstNegativeInteger(arr, n, k);
+        for (auto it : ans) cout << it << " ";
+        cout << endl;
+    }
+    return 0;
+}
+
+// } Driver Code Ends
+
+
+vector<long long> printFirstNegativeInteger(long long int A[],
+                                             long long int N, long long int k) {
+        
+    deque<long long int> q;
+    vector<long long>  ans;
+    //index store karenge hum queue k andar, kyoki, vo hume bata dega 
+    //k current element current window me hai ya nahi 
+    
+    //step1: process first window
+    for(int i=0; i<k; i++ ){
+        int element = A[i];
+        
+        if(element < 0) {
+            q.push_back(i);
+        }
+    }
+    //store answer for first window
+        if(q.empty()) {
+            ans.push_back(0);
+        }
+        else {
+            int index = q.front();
+            int element = A[index];
+            ans.push_back(element);
+        }
+    for(int i=k; i<N; i++) {
+        if(!q.empty() && q.front() < i-k+1 ) {
+            q.pop_front();
+        }
+        //step C -> addition of new element
+        int element = A[i];
+        if(element < 0) {
+            q.push_back(i);
+        }
+                //stepA -> ans store karr rhe h purani window ka 
+        if(q.empty()) {
+            ans.push_back(0);
+        }
+        else {
+            int index = q.front();
+            int element = A[index];
+            ans.push_back(element);
+ 
+}
+    return ans;
+    
+ }
+
+
+ // ------------(Trees)--------------
+ // trees 
+#include <iostream>
+#include<queue>
+using namespace std;
+
+class Node{
+  public:
+	int data;
+	Node* left;
+	Node* right;
+
+	Node(int val) {
+	  this->data = val;
+	  left = NULL;
+	  right = NULL;
+	}
+};
+
+Node* createTree() {
+  //cout << "Enter the value for Node" << endl;
+  int value;
+  cin >> value;
+
+  if(value == -1) {
+	return NULL;
+  }
+  else {
+	//valid value 
+	Node* root = new Node(value);
+	///1 case maine karliya, baaaki left and right recursion dekh ;egea 
+	//cout << "adding left child for " << value << endl;
+	root->left = createTree();
+	//cout << "adding right child for " << value << endl;
+	root->right = createTree();
+	return root;
+  }
+}
+
+void preOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return;
+	}
+	//NLR
+	//N
+	cout << root->data << " ";
+	//L ->left subtree
+	preOrderTraversal(root->left);
+	//R->right subtree
+	preOrderTraversal(root->right);
+}
+
+void inOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return;
+	}
+	//LNR
+	//L
+	inOrderTraversal(root->left);
+	//N
+	cout << root->data << " ";
+	//R
+	inOrderTraversal(root->right);
+}
+
+void postOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return ;
+	}
+	//LRN
+	//L
+	postOrderTraversal(root->left);
+	//R
+	postOrderTraversal(root->right);
+	//N
+	cout << root->data << " ";
+}
+
+void levelOrderTraversal(Node* root) {
+	if(root == NULL) {
+		return ;
+	}
+	queue<Node*> q;
+	//initial state maintain
+	q.push(root);
+	q.push(NULL);
+	//logic -> step A, B C
+	while(!q.empty()) {
+		//queue se nikalo
+		Node* front = q.front();
+		q.pop();
+		if(front == NULL) {
+			//iska mtlb, current lvl complete hogya h
+			cout << endl;
+			if(!q.empty()) {
+				q.push(NULL);
+			}
+		}
+		else {
+			
+			//fer tum print karalo
+			cout << front->data << " ";
+			//iske bache khalo 
+			//khalo -> queue me insert krna
+			if(front->left != NULL) {
+				q.push(front->left);
+			}
+			if(front->right != NULL) {
+				q.push(front->right);
+			}	
+		}
+	}
+}
+
+int main() {
+	Node* root;
+	root = createTree();
+	// 10 50 40 -1 -1 -1 30 20 -1 -1 -1
+	//level order traversal ->
+	//10
+	//50 30
+	//40 20
+	levelOrderTraversal(root);
+
+	//cout << "printing root" << root->data << endl;
+
+  return 0;
 }
