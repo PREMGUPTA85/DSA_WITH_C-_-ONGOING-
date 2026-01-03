@@ -10543,9 +10543,8 @@ Node* createTree() {
 	return NULL;
   }
   else {
-	//valid value 
 	Node* root = new Node(value);
-	///1 case maine karliya, baaaki left and right recursion dekh ;egea 
+	//1 case maine karliya, baaaki left and right recursion dekh ;egea 
 	//cout << "adding left child for " << value << endl;
 	root->left = createTree();
 	//cout << "adding right child for " << value << endl;
@@ -10633,6 +10632,11 @@ int main() {
 	Node* root;
 	root = createTree();
 	// 10 50 40 -1 -1 -1 30 20 -1 -1 -1
+     // preorder(root);
+    // inorder(root);
+    // Postorder(root);
+    
+    levelOrderTraversal(root);
 	//level order traversal ->
 	//10
 	//50 30
@@ -10643,3 +10647,67 @@ int main() {
 
   return 0;
 }
+
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        //base case
+        if(root == NULL) {
+            return 0;
+        }
+        int leftSubtreeHeight = maxDepth(root->left);
+        int rightSubtreeHeight = maxDepth(root->right);
+        int maxHeight = max(leftSubtreeHeight, rightSubtreeHeight);
+        int totalHeight = maxHeight + 1;
+        return totalHeight;
+    }
+};
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int getHeight(TreeNode* root) {
+        if(root == NULL ) {
+            return 0;
+        }
+        int left = getHeight(root->left);
+        int right = getHeight(root->right);
+        int maxHeight = max(left, right);
+        int totalHeight = maxHeight + 1;
+        return totalHeight;
+    }
+    int diameterOfBinaryTree(TreeNode* root) {
+        if(root == NULL) {
+            return 0;
+        }
+        int option1 = diameterOfBinaryTree(root->left);
+        int option2 = diameterOfBinaryTree(root->right);
+        int option3 = getHeight(root->left) + getHeight(root->right);
+        int maxDiameter = max(option1, max(option2, option3));
+        return maxDiameter;
+    }
+};
