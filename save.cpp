@@ -1,4 +1,17 @@
 
+
+// 2.wap to access the variable by declaring it 
+#include<iostream>
+using namespace std;
+int main () {
+    int age = 19;
+    cout << "Prem's age is: " << age << endl;
+    return 0;
+}
+
+// 3.wap to store values in all data types variables (int,bool,char,float,double)
+#include<iostream>
+using namespace std;
 int main () {
     int age = 12;
     float height = 8.4;
