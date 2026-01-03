@@ -1,4 +1,5 @@
 
+    cout << "Prem's age is: " << age << endl;
     return 0;
 }
 
