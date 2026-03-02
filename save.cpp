@@ -1,4 +1,7 @@
 
+using namespace std;
+int main () {
+    int age = 19;
     cout << "Prem's age is: " << age << endl;
     return 0;
 }
