@@ -1,5 +1,42 @@
+;
+    bool ismale = true;
+    bool isboy = 1;
+    bool isfemale = false;
+    bool isgirl = 0;
+    cout << age << endl;
+    cout << height << endl;
+    cout << weight << endl;
+    cout << ismale << endl;
+    cout << isboy << endl;
+    cout << isfemale << endl;
+    cout << isgirl << endl;
+    cout << alphabet << endl;
+    return 0;
+} 
 
+// 4.wap to inter_conversion of data - type
+#include<iostream>
+#include<iomanip> // iomanip header file used for manipulation/manipulating like decimal precision, output formats setting 
+using namespace std;
+int main () {
+    int number = 12;
+    float decimal = static_cast<float>(number);
+    cout << fixed << setprecision(2) << "Decimal value of a number is: " << decimal << endl;
+    return 0;
+}
 
+//5. wap to know about the type of data 
+#include<iostream>
+#include<typeinfo> // header file type info used for identifying the type of data
+int main (){
+    int age = 12;
+    float decimal = 12.0;
+    char name = 'A';
+    std::cout<< "type of age is: " << typeid(age).name() << std::endl;
+    std::cout<< "type of age is: " << typeid(decimal).name()<< std::endl;
+    std::cout<< "type of age is: " << typeid(name).name() << std::endl;
+    return 0;
+}
 
 //6. wap to take an input from the user and print that value by taking input from the user.
 #include<iostream>
