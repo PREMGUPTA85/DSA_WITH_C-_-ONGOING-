@@ -1,4 +1,6 @@
-;
+
+    double weight = 75.05;
+    char alphabet = 'A';
     bool ismale = true;
     bool isboy = 1;
     bool isfemale = false;
