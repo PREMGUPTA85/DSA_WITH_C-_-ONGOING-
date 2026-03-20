@@ -1,4 +1,7 @@
 
+    int right = 2 * i + 2; // right child
+
+    // If left child is larger than root
     if (left < n && arr[left] > arr[largest])
         largest = left;
 
