@@ -1,4 +1,10 @@
 
+    if (left < n && arr[left] > arr[largest])
+        largest = left;
+
+    // If right child is larger than largest so far
+    if (right < n && arr[right] > arr[largest])
+        largest = right;
 
     // If largest is not root
     if (largest != i) {
