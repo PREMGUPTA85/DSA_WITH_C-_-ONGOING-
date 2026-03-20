@@ -1,4 +1,5 @@
 
+    int largest = i; // Initialize largest as root
     int left = 2 * i + 1; // left child
     int right = 2 * i + 2; // right child
 
