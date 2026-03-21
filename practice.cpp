@@ -1,4 +1,6 @@
 
+    int n = sizeof(arr) / sizeof(arr[0]);
+
     heapSort(arr, n);
 
     cout << "Sorted array is \n";
