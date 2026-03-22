@@ -1,4 +1,8 @@
-
+		
+			return 1;
+			else
+			return 2; 
+		}
 		else
 		if (square[0] == square [3]  && square[3] == square[6] )
 			{	if ( square [0] == 'X' )			
