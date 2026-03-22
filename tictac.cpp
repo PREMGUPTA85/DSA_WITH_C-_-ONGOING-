@@ -1,4 +1,4 @@
-
+(square[0] == square [1]  && square[1] == square[2] )
 		{	if ( square [0] == 'X' )			
 			return 1;
 			else
