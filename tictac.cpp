@@ -1,4 +1,6 @@
-		
+
+		if (square[6] == square [7]  && square[7] == square[8] )
+			{	if ( square [6] == 'X' )	
 			return 1;
 			else
 			return 2; 
