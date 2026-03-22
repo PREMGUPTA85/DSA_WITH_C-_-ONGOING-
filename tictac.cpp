@@ -1,4 +1,6 @@
 
+		{	if ( square [0] == 'X' )			
+			return 1;
 			else
 			return 2; 
 		}		
