@@ -1,3 +1,6 @@
+
+		}		
+		
 else
 		if (square[3] == square [4]  && square[4] == square[5] )
 			{	if ( square [3] == 'X' )			
