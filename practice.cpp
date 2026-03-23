@@ -1,4 +1,7 @@
 
+        largest = right;
+
+    // If largest is not root
     if (largest != i) {
         swap(arr[i], arr[largest]);
         // Recursively heapify the affected sub-tree
