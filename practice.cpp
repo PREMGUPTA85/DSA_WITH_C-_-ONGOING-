@@ -1,4 +1,6 @@
 
+    // If left child is larger than root
+    if (left < n && arr[left] > arr[largest])
         largest = left;
 
     // If right child is larger than largest so far
