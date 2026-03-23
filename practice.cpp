@@ -1,4 +1,6 @@
 
+        // call max heapify on the reduced heap
+        heapify(arr, i, 0);
     }
 }
 
