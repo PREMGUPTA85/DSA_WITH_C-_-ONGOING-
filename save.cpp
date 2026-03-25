@@ -1,4 +1,17 @@
 
+int main () {
+    int age = 12;
+    float height = 8.4;
+    double weight = 75.05;
+    char alphabet = 'A';
+    bool ismale = true;
+    bool isboy = 1;
+    bool isfemale = false;
+    bool isgirl = 0;
+    cout << age << endl;
+    cout << height << endl;
+    cout << weight << endl;
+    cout << ismale << endl;
     cout << isboy << endl;
     cout << isfemale << endl;
     cout << isgirl << endl;
