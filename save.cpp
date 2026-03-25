@@ -1,4 +1,11 @@
 
+    return 0;
+}
+
+
+// 3.wap to store values in all data types variables (int,bool,char,float,double)
+#include<iostream>
+using namespace std;
 int main () {
     int age = 12;
     float height = 8.4;
