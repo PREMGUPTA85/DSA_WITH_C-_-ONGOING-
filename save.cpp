@@ -1,4 +1,9 @@
 
+    cout << isboy << endl;
+    cout << isfemale << endl;
+    cout << isgirl << endl;
+    cout << alphabet << endl;
+    return 0;
 } 
 
 // 4.wap to inter_conversion of data - type
