@@ -1,4 +1,5 @@
-te duniya 
+
+//1.WAP to print Namaste duniya 
 #include<iostream>
 using namespace std;
 int main () {
