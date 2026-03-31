@@ -1,30 +1,4 @@
 
-//1.WAP to print Namaste duniya 
-#include<iostream>
-using namespace std;
-int main () {
-    cout << "namaste duniya" << endl;
-    return 0;
-}
-
-
-// 2.wap to access the variable by declaring it 
-#include<iostream>
-using namespace std;
-int main () {
-    int age = 19;
-    cout << "Prem's age is: " << age << endl;
-    return 0;
-}
-
-
-// 3.wap to store values in all data types variables (int,bool,char,float,double)
-#include<iostream>
-using namespace std;
-int main () {
-    int age = 12;
-    float height = 8.4;
-    double weight = 75.05;
     char alphabet = 'A';
     bool ismale = true;
     bool isboy = 1;
@@ -64,6 +38,7 @@ int main (){
     std::cout<< "type of age is: " << typeid(name).name() << std::endl;
     return 0;
 }
+
 
 //6. wap to take an input from the user and print that value by taking input from the user.
 #include<iostream>
@@ -7099,22 +7074,13 @@ int main() {
     cout << name.back() << endl;
     cout << name.length() << endl;
 
-
-
-
-
-
-
     // string sentence;
 
     //cin >> sentence;
     getline(cin, sentence, '\n');
 
     cout << sentence << endl;
-
-
-
-
+ 
     //creation
     string str;
     str.push_back('l');
@@ -7428,6 +7394,252 @@ vector<string> findAndReplacePattern(vector<string>& words,string pattern){
 //     return 0;
 // }
 
+// Strings assignments
+
+//242. Valid anagram :--
+// Example 1:
+// Input: s = "anagram", t = "nagaram"
+// Output: true
+// Example 2:
+// Input: s = "rat", t = "car"
+// Output: false
+
+// class Solution {
+// public:
+//     bool isAnagram(string s, string t) {
+//         // sort(s.begin(), s.end());
+//         // sort(t.begin(), t.end());
+//         // if(s == t) return true ;
+//         // return false;
+//         // method - 2
+//         int freqTable[256] = {0};
+//         for(int i = 0; i < s.size();i++){
+//             freqTable[s[i]]++;
+//         }
+//         for(int i = 0; i < t.size(); i++){
+//             freqTable[t[i]]--;
+//         }
+//         for(int i = 0 ; i < 256; i++){
+//             if(freqTable[i] != 0) return false;
+//         }
+//         return true;
+//     }
+// };
+
+// 917.Reverse only letters :-- 
+// Example 1:
+
+// Input: s = "ab-cd"
+// Output: "dc-ba"
+// Example 2:
+
+// Input: s = "a-bC-dEf-ghIj"
+// Output: "j-Ih-gfE-dCba"
+// class Solution {
+// public:
+//     string reverseOnlyLetters(string s) {
+//         int l = 0 , h = s.size() - 1;
+//         while(l < h){
+//             if(isalpha(s[l]) && isalpha(s[h])){
+//                 swap(s[l], s[h]);
+//                 l++; 
+//                 h--;
+//             }
+//             else if(!isalpha(s[l])){
+//                 l++;
+//             }
+//             else{
+//                 h--;
+//             }
+//         }
+//         return s;
+//     }
+// };
+
+// 14.Longest common prefix:--
+//Example 1:
+
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+// Example 2:
+
+// Input: strs = ["dog","racecar","car"]
+// Output: ""
+// Explanation: There is no common prefix among the input strings.
+
+// class Solution {
+// public:
+//     string longestCommonPrefix(vector<string>& strs) {
+//         string ans = "";
+//         int i = 0;
+//         while(true){
+//             char curr_char = 0;
+
+//             for(auto str: strs){
+//                 if(i >= str.size()){
+//                     curr_char = 0;
+//                     break;
+//                 }
+                
+//                 // starting phase me 
+//                 if(curr_char == 0){
+//                     curr_char = str[i];
+//                 }
+//                 else if(str[i] != curr_char){
+//                     curr_char = 0;
+//                     break;
+//                 }
+//             }
+//             if(curr_char == 0) {
+//                 break;
+//             }
+//             ans.push_back(curr_char);
+//             i++;
+//         }
+//     return ans;
+//     }
+// };
+
+/*
+Example 1:
+
+Input: s = "IceCreAm"
+
+Output: "AceCreIm"
+
+Explanation:
+
+The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+
+Example 2:
+
+Input: s = "leetcode"
+
+Output: "leotcede"
+ */
+
+ class Solution {
+public:
+bool isVowel(char ch){
+    ch = tolower(ch);
+    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
+
+    string reverseVowels(string s) {
+        // approach flowchart
+        // iterate krwao low and high se 
+        int l = 0;
+        int h = s.size() -1;
+        // low ko starting index p and high ko ending index pe bhejo
+        while(l < h){
+            if(isVowel(s[l]) && isVowel(s[h])){
+                swap(s[l], s[h]);
+                l++;
+                h--;
+            }
+            else if(isVowel(s[l]) == 0){
+                l++;
+            }
+            else{
+                h--;
+            }
+        } 
+        // and return kr do s
+        return s;
+    }
+};
+
+// Example 1:
+
+// Input: s = "egg", t = "add"
+
+// Output: true
+
+// Explanation:
+
+// The strings s and t can be made identical by:
+
+// Mapping 'e' to 'a'.
+// Mapping 'g' to 'd'.
+// Example 2:
+
+// Input: s = "f11", t = "b23"
+
+// Output: false
+
+// Explanation:
+
+// The strings s and t can not be made identical as '1' needs to be mapped to both '2' and '3'.
+
+// Example 3:
+
+// Input: s = "paper", t = "title"
+
+// Output: true
+
+
+// class Solution {
+// public:
+//     bool isIsomorphic(string s, string t) {
+
+//         if (s.length() != t.length()) return false;
+//         // Time & space --> O(n) & o(1)
+//         vector<int> mapST(256, -1);
+//         vector<int> mapTS(256, -1);
+
+//         for (int i = 0; i < s.length(); i++) {
+//             char c1 = s[i];
+//             char c2 = t[i];
+
+//             // Agar pehle mapping exist hai
+//             if (mapST[c1] != -1 && mapST[c1] != c2)
+//                 return false;
+
+//             if (mapTS[c2] != -1 && mapTS[c2] != c1)
+//                 return false;
+
+//             // Mapping set krna h 
+//             mapST[c1] = c2;
+//             mapTS[c2] = c1;
+//         }
+
+//         return true;
+
+
+//         // or 
+//         // Time and Space --> O(n)
+//          // Agar length alag hai → false
+//         // if (s.length() != t.length()) return false;
+
+//         // // Mapping ke liye 2 maps
+//         // unordered_map<char, char> mapST;
+//         // unordered_map<char, char> mapTS;
+
+//         // for (int i = 0; i < s.length(); i++) {
+//         //     char c1 = s[i];
+//         //     char c2 = t[i];
+
+//         //     // Check s -> t mapping
+//         //     if (mapST.count(c1)) {
+//         //         if (mapST[c1] != c2)
+//         //             return false;
+//         //     } else {
+//         //         mapST[c1] = c2;
+//         //     }
+
+//         //     // Check t -> s mapping (reverse)
+//         //     if (mapTS.count(c2)) {
+//         //         if (mapTS[c2] != c1)
+//         //             return false;
+//         //     } else {
+//         //         mapTS[c2] = c1;
+//         //     }
+//         // }
+
+//         // return true;
+    
+//     }
+// };
 
 // //----------------------------------------(basic maths for DSA)-----------------------------------------------------
 // // M1
@@ -8330,7 +8542,7 @@ bool isloop(Node* head) {
     }
     return false; // No loop
 }
-//---------------------------------------------------------(linked list class-2)-----------------------------------------------
+//------------ ------------------------------(linked list class-2)-----------------------------------------------
 #include <iostream>
 using namespace std;
 
@@ -8502,7 +8714,7 @@ int main() {
   return 0;
 }
 
-//---------------------------------------------------(linked list - 3)------------------------------------------------------------
+//----------------------------------(linked list - 3)-----------------------------------------------
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -8956,7 +9168,7 @@ int main(){
     return 0;
 }
 
-//----------------------------------------------(mega class ll)--------------------------------------------------------
+//-------------------------------(mega class ll)-----------------------------------------
 #include <iostream>
 using namespace std;
 
@@ -9677,7 +9889,7 @@ int main() {
   print(s);
   return 0;
 }
-//------------------------------(Queue class :-- 01-------------------------------------
+//---------(Queue class :-- 01---------------------------
 #include <iostream>
 #include<queue>
 using namespace std;
@@ -10517,7 +10729,7 @@ vector<long long> printFirstNegativeInteger(long long int A[],
  }
 
 
- // ------------(Trees)--------------
+ // ------------------------(Trees)-------------------------------
  // trees 
 #include <iostream>
 #include<queue>
@@ -10714,6 +10926,206 @@ public:
     }
 };
 
+// -------------------------------------------(heaps class - 1)-------------------------------------------
+#include<iostream>
+using namespace std;
+
+class Heap{
+
+public: 
+	int* arr;
+	int capacity;
+	int index;	
+
+	Heap(int n) {
+		this->capacity = n ;
+		arr = new int[n];
+		index = 0;
+		//jab bhi mujhe insert krna hoga, tab index+1 krke insert krdena 
+	}
+
+	void printHeap() {
+		for(int i=1; i<capacity; i++) {
+			cout << arr[i] << " ";
+		}
+		cout << endl;
+	}
+
+	void insert(int val) {
+		if(index == capacity - 1) {
+			cout << "Overflow" << endl;
+			return;
+		}
+
+		//agar jagah available h 
+		index++;
+		arr[index] = val;
+		cout << "placing "<< val << " index:  "<< index << endl; 
+		//now put  val at right position
+		//by comparing with parent node 
+		int i = index;
+		while(i > 1) {
+			int parentIndex = i/2;
+
+			if(arr[parentIndex] < arr[i]) {
+				swap(arr[parentIndex], arr[i]);
+				i = parentIndex;
+			}
+			else {
+				//parent already bada h , no need to do anything
+				break;
+			}
+		}
+	}
+
+	void deleteFromHeap() {
+		//replacement
+		swap(arr[1], arr[index]);
+		//size decrease
+		index--;
+		//heapify
+		//heapify(arr, index, 1);
+	}
+};
+//heapify value present at currIndex
+void heapify(int* arr, int n, int currIndex) {
+	//n -> number of elements in heap
+	int i = currIndex;
+	int leftIndex = 2*i;
+	int rightIndex = 2*i + 1;
+
+	int largestKaIndex = i;
+	//assuming i pr value hi sabse sabse badi value h 
+	//pr ho skta h , sabse badi value left  ya right me hu 
+
+	//check for left
+	if(leftIndex < n && arr[leftIndex] > arr[largestKaIndex]) {
+		//left me badi value mil gyi
+		largestKaIndex = leftIndex;
+	}
+
+	//check for Right
+	if(rightIndex < n && arr[rightIndex] > arr[largestKaIndex]) {
+		//right me badi value mil gyi
+		largestKaIndex = rightIndex;
+	}
+	//jab yaha aaoge, tb tumhare paas, sabse bade value ka index hoga 
+
+	//largestValue still i wali hi h, then no need to do anything
+	//agar largestKaIndex left ya right me se koi, then swap logic
+
+	if(largestKaIndex != i) {
+		//left ya right me se koi h 
+		cout << "replacing "<< arr[i] << " with " << arr[largestKaIndex] << endl;
+		swap(arr[i], arr[largestKaIndex]);
+		i = largestKaIndex;
+		//baaaki recursion sambhal lega 
+		heapify(arr, n, i);
+	}
+}
+
+void buildHeap(int* arr, int n) {
+	for(int i=n/2; i>=1; i--) {
+		heapify(arr, n, i);
+	}
+}
+
+//asssuming arr is a valid heap
+void heapSort(int* arr, int n){
+	//n -> size
+	while(n > 1) {
+		//delete root element, swap root element with the last element
+		swap(arr[1], arr[n-1]);
+		//delete last element
+		n--;
+		//heapify 1 index wala element	
+		heapify(arr, n, 1);
+	}
+}
+
+int main()  {
+	//Heap pq(6);
+	//50 40 20 10 30	
+	Heap h(10);
+
+    h.insert(50);
+    h.insert(30);
+    h.insert(40);
+    h.insert(10);
+    h.insert(60);
+
+    cout << "Heap elements: ";
+    h.printHeap();
+
+	/*
+	placing 50 index: 1
+placing 30 index: 2
+placing 40 index: 3
+placing 10 index: 4
+placing 60 index: 5
+Heap elements: 60 50 40 10 30
+	*/
+
+
+
+
+	// int arr[] = {-1, 10,20,30,40,50};
+	// int n = 6;
+
+	// buildHeap(arr, n);
+	// cout<<endl << "Printing heap" << endl;
+	// for(int i=1; i<n; i++) {
+	// 	cout << arr[i] << " ";
+	// }
+	// cout << endl;
+
+	// heapSort(arr, n);
+
+	// cout<<endl << "Printing heap" << endl;
+	// for(int i=1; i<n; i++) {
+	// 	cout << arr[i] << " ";
+	// }
+	// cout << endl;
+	
+
+	
+	
+	// pq.insert(10);
+	
+	// pq.insert(20);
+	
+	// pq.insert(30);
+	
+	// pq.insert(40);
+	
+	// pq.insert(50);
+	// cout << "printing heap: " << endl;
+	// pq.printHeap();
+	// cout << endl;
+	
+	// cout << "Showing heapSort :" << endl;
+
+	// pq.deleteFromHeap();
+	// pq.printHeap();
+	// cout << endl;
+
+	// pq.deleteFromHeap();
+	// pq.printHeap();
+	// cout << endl;
+
+	// pq.deleteFromHeap();
+	// pq.printHeap();
+	// cout << endl;
+
+	// pq.deleteFromHeap();
+	// pq.printHeap();
+	// cout << endl;
+
+	// pq.deleteFromHeap();
+	// pq.printHeap();
+
+	return 0;
+}
 
 
 // ----------------------------------------(BST class -1 codes)---------------------------------------------------
@@ -10865,6 +11277,26 @@ bool searchBST(Node* root, int target) {
 	return false;
 }
 
+bool SearchBST(int target, Node *root){ 
+    if(root == NULL){
+        return false;
+    }
+    while(root != NULL){
+     if(root->data == target){
+        return true;
+    }
+    else if(target > root->data){
+            // right jao
+            root = root->right;
+        }
+    else if(target < root->data){
+            // left jao 
+            root = root->left;
+        }
+    }
+    return false;
+}
+
 Node* deleteFromBST(Node* root, int target) {
 	
 }
@@ -10890,5 +11322,65 @@ int main() {
 	else
 		cout << "Node not found" << endl;
 	
+  return 0;
+}
+// yr yadav ji k 
+// goraya m ek muslim - >lehsun , 4-5 (milk)
+
+// 200 medicine - 550 oil (1 month ki)
+// 12 k pehle aur 3 k baad 
+// parso bekar h isliye kl hi theek h
+// iske side effect bhi nhi h
+//------------------------------------(Graph's)-----------------------------------------
+#include <iostream>
+#include<unordered_map>
+#include<list>
+using namespace std;
+class Graph {
+  public:
+    unordered_map<int,list<int> > adjList;
+    void addEdge(int u, int v, bool direction) {
+      //direction = 0 -> undirected graph
+      //direction = 1 => directed graph
+      if(direction == 0) {
+        adjList[u]. push_back(v);
+        adjList[v] .push_back(u);
+      }
+      else {
+        //directed edge
+        adjList[u].push_back(v);
+      }
+    }
+
+    void printAdjList(int n) {
+      for(int i=0; i<n; i++) {
+        cout << i << ": ";
+        cout << "{ ";
+        list<int> temp = adjList[i];
+        for(auto j:temp) {
+          cout << j <<", ";
+        }
+        cout << "}" << endl;
+      }
+      // for(auto i: adjList) {
+      //   cout << i.first << ": ";
+      //   cout << " {";
+      //   for(auto j: i.second) {
+      //     cout << j <<", ";
+      //   }
+      //   cout << "}" << endl;
+      // }
+    }
+};
+
+
+int main() {
+  Graph g;
+  g.addEdge(0,1,1);
+  g.addEdge(0,2,1);
+  g.addEdge(1,2,1);
+  g.addEdge(2,3,1);
+  int n = 4;
+  g.printAdjList(n);
   return 0;
 }
