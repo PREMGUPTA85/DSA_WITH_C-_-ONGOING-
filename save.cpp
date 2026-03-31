@@ -1,4 +1,9 @@
 
+using namespace std;
+int main () {
+    int age = 12;
+    float height = 8.4;
+    double weight = 75.05;
     char alphabet = 'A';
     bool ismale = true;
     bool isboy = 1;
