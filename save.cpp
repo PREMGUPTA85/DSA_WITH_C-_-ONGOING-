@@ -1,4 +1,7 @@
-
+//1. WAP to print Namaste duniya 
+#include<iostream>
+using namespace std;
+int main () {
     cout << "namaste duniya" << endl;
     return 0;
 }
