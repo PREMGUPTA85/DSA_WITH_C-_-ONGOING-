@@ -1,4 +1,5 @@
 
+    cout << "namaste duniya" << endl;
     return 0;
 }
 
@@ -10,7 +11,6 @@ int main () {
     cout << "Prem's age is: " << age << endl;
     return 0;
 }
-
 
 // 3.wap to store values in all data types variables (int,bool,char,float,double)
 #include<iostream>
