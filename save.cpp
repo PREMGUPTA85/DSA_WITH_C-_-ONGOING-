@@ -1,4 +1,20 @@
 
+    char alphabet = 'A';
+    bool ismale = true;
+    bool isboy = 1;
+    bool isfemale = false;
+    bool isgirl = 0;
+    cout << age << endl;
+    cout << height << endl;
+    cout << weight << endl;
+    cout << ismale << endl;
+    cout << isboy << endl;
+    cout << isfemale << endl;
+    cout << isgirl << endl;
+    cout << alphabet << endl;
+    return 0;
+} 
+
 // 4.wap to inter_conversion of data - type
 #include<iostream>
 #include<iomanip> // iomanip header file used for manipulation/manipulating like decimal precision, output formats setting 
