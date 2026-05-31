@@ -15,7 +15,6 @@
 //             auto [count2, char2] = pq.top(); pq.pop();
 //             result += char1;
 //             result += char2;
-            
 //             if(--count1 > 0) pq.push({count1, char1});
 //             if(--count2 > 0) pq.push({count2, char2});
 //         }
@@ -65,6 +64,16 @@ public:
             freq[maxChar]--;
         }
         
+        // place remaining chars
+        for(int i = 0; i < 26; i++) {
+            while(freq[i] > 0) {
+                if(index >= n) index = 1; // move to odd index
+                
+                res[index] = char(i + 'a');
+                index += 2;
+                freq[i]--;
+            }
+        }
         
         return res;
     }
