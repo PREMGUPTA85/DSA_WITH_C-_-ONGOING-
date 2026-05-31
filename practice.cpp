@@ -1,9 +1,9 @@
-
-//         // max heap
-//         priority_queue<pair<int, char>> pq;
-//         for(auto &p : freq) {
-//             pq.push({p.second, p.first});
-//         }
+// class Solution {
+// public:
+//     string reorganizeString(string s) {
+//         unordered_map<char, int> freq;
+//         for(char c : s) freq[c]++;
+        
 
 //         while(pq.size() > 1) {
 //             auto [count1, char1] = pq.top(); pq.pop();
