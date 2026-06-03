@@ -7,7 +7,9 @@ class Solution {
                 if(prefix.isEmpty())
                     return "";
             }
-   
+        }
+
+    
 }// class Solution {
 // public:
 //     string reorganizeString(string s) {
