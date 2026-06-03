@@ -1,4 +1,8 @@
-// class Solution {
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        String prefix = strs[0];
+
+}// class Solution {
 // public:
 //     string reorganizeString(string s) {
 //         unordered_map<char, int> freq;
