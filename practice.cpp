@@ -8,8 +8,8 @@ class Solution {
                     return "";
             }
         }
-
-    
+    return prefix;
+ 
 }// class Solution {
 // public:
 //     string reorganizeString(string s) {
