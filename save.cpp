@@ -1,7 +1,4 @@
 
-}
-// 2.wap to access the variable by declaring it 
-#include<iostream>
 using namespace std;
 int main () {
     int age = 19;
