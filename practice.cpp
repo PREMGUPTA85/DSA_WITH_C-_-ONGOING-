@@ -16,7 +16,6 @@
 //             if(--count1 > 0) pq.push({count1, char1});
 //             if(--count2 > 0) pq.push({count2, char2});
 //         }
-        
 //         if(!pq.empty()) {
 //             auto [count, ch] = pq.top();
 //             if(count > 1) return "";
