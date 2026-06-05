@@ -45,8 +45,6 @@ public:
                 maxChar = i;
             }
         }
-        
-        // check impossible case
         if(maxFreq > (n + 1) / 2) return "";
         
         string res(n, ' ');
