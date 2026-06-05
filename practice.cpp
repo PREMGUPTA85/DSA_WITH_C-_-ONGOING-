@@ -1,5 +1,4 @@
 
-                if(prefix.isEmpty())
                     return "";
             }
         }
