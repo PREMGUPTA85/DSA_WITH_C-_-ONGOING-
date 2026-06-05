@@ -72,7 +72,6 @@ public:
                 freq[i]--;
             }
         }
-        
         return res;
     }
 };
