@@ -33,8 +33,7 @@ public:
     }
     void fly()
     {
-        std::cout << "Eagle is flying \n";
-    }
+        std::cout << "Eagle is flying \n"; }
 };
 class Pigeion : public Bird
 {
@@ -49,15 +48,7 @@ public:
     }
 };
 #endif
-class Solution {
-public:
-    string reorganizeString(string s) {
-        int n = s.size();
-        vector<int> freq(26, 0);
         
-        // count frequency
-        for(char c : s) {
-            freq[c - 'a']++;
-        }
+        
         
      
