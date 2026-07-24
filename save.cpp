@@ -5,6 +5,7 @@ int main () {
     cout << "namaste duniya" << endl;
     return 0;
 }
+
 // 2.wap to access the variable by declaring it 
 #include<iostream>
 using namespace std;
@@ -13,6 +14,7 @@ int main () {
     cout << "Prem's age is: " << age << endl;
     return 0;
 }
+
 // 3.wap to store values in all data types variables (int,bool,char,float,double)
 #include<iostream>
 using namespace std;
@@ -11447,13 +11449,6 @@ int main() {
 	
   return 0;
 }
-// yr yadav ji k 
-// goraya m ek muslim - >lehsun , 4-5 (milk)
-
-// 200 medicine - 550 oil (1 month ki)
-// 12 k pehle aur 3 k baad 
-// parso bekar h isliye kl hi theek h
-// iske side effect bhi nhi h
 //------------------------------------(Graph's)-----------------------------------------
 #include <iostream>
 #include<unordered_map>
@@ -11507,20 +11502,3 @@ int main() {
   g.printAdjList(n);
   return 0;
 }
-
-
-////// DSA with jav
-// -------------(450) ---------a- 
-
-// ================================(Array)===========================
-// Reverse the Array 
-/*
-Input: arr[] = [1, 4, 3, 2, 6, 5]  
-Output:  [5, 6, 2, 3, 4, 1]
-Explanation: The first element 1 moves to last position, the second element 4 moves to second-last and so on.
-
-Input: arr[] = [4, 5, 1, 2]
-Output: [2, 1, 5, 4]
-Explanation: The first element 4 moves to last position, the second element 5 moves to second last and so on.
-*/
-
