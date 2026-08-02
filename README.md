@@ -377,12 +377,6 @@ This repository is updated regularly as I continue solving new problems.
 
 ---
 
-# ⭐ If you like this repository
-
-Please consider giving it a **Star ⭐**
-
----
-
 ## 👨‍💻 Author
 
 **Prem Kumar Gupta**
