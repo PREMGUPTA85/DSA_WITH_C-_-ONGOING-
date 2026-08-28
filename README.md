@@ -379,7 +379,6 @@ This repository is updated regularly as I continue solving new problems.
 
 ## 👨‍💻 Author
 
-- **Sakshi Kumari**
 - **Prem Kumar Gupta**
 
 B.Tech CSE Student
